@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <link rel="alternate" href=/atom.xml type="application/atom+xml">
+  <title>React-redux实践 [ 北方公园 ]</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  
+    
+      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+    
+  
+  
+    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  
+    
+      <link rel="stylesheet" href="/css/main.css">
+    
+  
+</head>
+<body>
+
+<div class="navbar-fixed white-text">
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/">主页</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/about">关于</a>
+          </li>
+        
+      </ul>
+      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</div>
+
+<ul id="slide-nav" class="side-nav">
+  <li>
+    <div class="userView lighten-2 teal">
+      <div class="background">
+        <h5 class="white-text inline-title">Noski</h5>
+      </div>
+      <img class="circle" src=/images/avatar.png>
+      <h5 class="white-text inline-title">北方公园</h5>
+      <br />
+      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+    </div>
+  </li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  
+</ul>
+
+
+
+
+
+  
+
+
+  
+
+
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
+  
+  <div class="parallax lighten-2 teal ">
+    <img src="/images/background.jpg">
+    <!-- {% qnimg background %} -->
+  </div>
+  <script type="text/javascript">
+    var container = document.querySelector('.parallax-container');
+    var tmpTitle = container.querySelector('.hide-on-image-load');
+    var img = container.querySelector('img');
+    img.onload = function() {
+      if (tmpTitle) {
+        tmpTitle.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+  
+
+</div>
+
+<main id="container-outer" class="">
+
+  
+    
+  
+
+  
+  
+    
+  
+
+  <div class="row ">
+
+    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+      
+        
+<section id="post" class="card article z-depth-0">
+  
+    <div class="card-panel z-depth-0 black-text">
+      <h1>React-redux实践</h1>
+
+      
+        <div class="valign-wrapper section">
+          
+          
+            
+            <span class="new badge category lighten-2 teal valign" data-badge-caption="">
+              <a href="/category/Diary" title="Diary" target="_blank" rel="external">Diary</a>
+            </span>
+            
+              <i class="tiny material-icons lighten-2 teal-text valign">chevron_right</i>
+            
+          
+            
+            <span class="new badge category lighten-2 teal valign" data-badge-caption="">
+              <a href="/category/Diary/PS3" title="PS3" target="_blank" rel="external">PS3</a>
+            </span>
+            
+              <i class="tiny material-icons lighten-2 teal-text valign">chevron_right</i>
+            
+          
+            
+            <span class="new badge category lighten-2 teal valign" data-badge-caption="">
+              <a href="/category/Diary/PS3/Games" title="Games" target="_blank" rel="external">Games</a>
+            </span>
+            
+          
+        </div>
+      
+
+      <div class="valign-wrapper blue-grey-text">
+        <i class="material-icons valign">query_builder</i>&nbsp
+        <time datetime="2016-08-01T09:16:56.000Z" class="valign">
+          2016 8月 1日
+          下午5:16:56
+        </time>
+      </div>
+
+      
+        <div class="valign-wrapper sm-text blue-grey-text">
+          <i class="material-icons valign">grade</i>&nbsp
+          <span id="busuanzi_container_page_pv" class="valign">
+            阅读<span id="busuanzi_value_page_pv"></span>次
+          </span>
+        </div>
+      
+
+      
+        <div class="section right">
+          
+            <span class="new badge amber left" data-badge-caption="">
+              <a href="/tag/frontend/" title="#frontend" class="white-text" target="_blank" rel="external">#frontend</a>
+            </span>
+          
+        </div>
+      
+
+    </div>
+  
+
+  <div class="card-content z-depth-0">
+
+    
+
+    <p>对于复杂的单页面应用，状态（state）管理非常重要。state 可能包括：服务端的响应数据、本地对响应数据的缓存、本地创建的数据（比如，表单数据）以及一些 UI 的状态信息（比如，路由、选中的 tab、是否显示下拉列表、页码控制等等）。如果 state 变化不可预测，就会难于调试（state 不易重现，很难复现一些 bug）和不易于扩展（比如，优化更新渲染、服务端渲染、路由切换时获取数据等等）。<br>redux解决了state的问题<a id="more"></a>，它的特点沿袭了flux，主要有：</p>
+<ul>
+<li>state 以单一对象存储在 store 对象中</li>
+<li>state 只读</li>
+<li>使用纯函数 reducer 执行 state 更新</li>
+</ul>
+<blockquote>
+<p>state 为单一对象，使得 Redux 只需要维护一棵状态树，服务端很容易初始化状态，易于服务器渲染。state 只能通过 dispatch(action) 来触发更新，更新逻辑由 reducer 来执行。</p>
+</blockquote>
+<p><img src="http://staltz.com/img/redux-unidir-ui-arch.jpg" alt="redux"><br>图来自 <a href="http://staltz.com/unidirectional-user-interface-architectures.html" target="_blank" rel="external">UNIDIRECTIONAL USER INTERFACE ARCHITECTURES</a></p>
+<h3 id="action"><a href="#action" class="headerlink" title="action"></a>action</h3><p>action一般是向store传递用户的交互信息。dispatch一个action是一个同步的过程，更新 state -&gt; 调用 store 的监听处理函数。如果需要在 dispatch 时执行一些异步操作（fetch action data），可以通过引入 Middleware 解决。</p>
+<h3 id="reducer"><a href="#reducer" class="headerlink" title="reducer"></a>reducer</h3><p>reducer 实际上就是一个函数：<code>(previousState, action) =&gt; newState</code>。用来执行根据指定 action 来更新 state 的逻辑。通过 <code>combineReducers(reducers)</code> 可以把多个 reducer 合并成一个 root reducer。</p>
+<h3 id="state"><a href="#state" class="headerlink" title="state"></a>state</h3><p>state的主要特征：</p>
+<ul>
+<li>管理应用的 state</li>
+<li>通过 <code>store.getState()</code> 可以获取 state</li>
+<li>通过 <code>store.dispatch(action)</code> 来触发 state 更新</li>
+<li>通过 <code>store.subscribe(listener)</code> 来注册 state 变化监听器</li>
+<li>通过 <code>createStore(reducer, [initialState])</code> 创建<h3 id="middleware"><a href="#middleware" class="headerlink" title="middleware"></a>middleware</h3>单页面应用中充斥着大量的异步请求（ajax）。dispatch(action) 是同步的，如果要处理异步 action，需要使用一些中间件。<br>中间件是某种实现特定功能的高阶函数，作用于 dispatch 返回一个新的 dispatch（附加了该中间件功能）。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">thunkMiddleware</span>(<span class="params">&#123; dispatch, getState &#125;</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="params">next</span> =&gt;</span> action =&gt;</div><div class="line">        <span class="keyword">typeof</span> action === <span class="string">'function'</span> ? action(dispatch, getState) : next(action)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>通过 thunk-middleware 我们可以看出中间件的一般形式：中间件函数接受两个参数参数： dispatch 和 getState（也就是说中间件可以获取 state 以及 dispatch new action）。中间件一般返回 next(action)。store 的创建过程如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> reducer = combineReducers(reducers)</div><div class="line"><span class="keyword">const</span> finalCreateStore = applyMiddleware(promiseMiddleware, warningMiddleware,</div><div class="line">    loggerMiddleWare)(createStore)</div><div class="line"><span class="keyword">const</span> store = finalCreateStore(reducer)</div></pre></td></tr></table></figure></p>
+
+
+    <div class="sibling-post center-align card-panel z-depth-0 section">
+
+      
+        <a href="/2016/07/30/Web-Audio-API/" class="btn-flat blue-grey-text right">
+          <i class="material-icons right">chevron_right</i>
+          Web Audio API
+        </a>
+      
+
+      
+        <a href="/2016/08/03/一个画曲线的canvas练习/" class="btn-flat blue-grey-text left">
+          <i class="material-icons left">chevron_left</i>
+          一个画曲线的canvas练习
+        </a>
+      
+
+    </div>
+
+    
+      <div class="comment" id="duoshuo">
+        <div class="ds-thread" data-thread-key="post-React-redux实践" data-title="React-redux实践" data-url="http://hunnble.github.io/2016/08/01/React-redux实践/"></div>
+        <script type="text/javascript">
+          var duoshuoQuery = { short_name:'hunnble' };
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';
+          ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        </script>
+      </div>
+    
+
+  </div>
+
+</section>
+
+        <div class="fixed-action-btn click-to-toggle">
+  <a class="btn-floating btn-large lighten-2 teal">
+    <i class="large material-icons">view_module</i>
+  </a>
+  <ul>
+    <li>
+      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+        <i class="material-icons">navigation</i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+      
+    </div>
+
+    
+      <aside class="col m2 push-m2 hide-on-med-and-down">
+        <div class="toc transparent card-panel z-depth-0">
+          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#action"><span class="table-of-contents-text">action</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#reducer"><span class="table-of-contents-text">reducer</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#state"><span class="table-of-contents-text">state</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#middleware"><span class="table-of-contents-text">middleware</span></a></li></ol>
+        </div>
+      </aside>
+    
+
+
+    
+
+  </div>
+
+</main>
+
+
+  
+
+
+<footer class="page-footer lighten-2 teal ">
+  <div class="container section">
+    <div class="center-align white-text text-lighten-4">
+      <p>
+        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+      </p>
+      
+        <h5>
+          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+        </h5>
+      
+    </div>
+  </div>
+  <div class="footer-copyright center-align">
+    Copyright © 2016 Noski
+  </div>
+</footer>
+
+
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src="/js/highlight.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
+<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+    <script type="text/javascript" src=/js/main.js></script>
+  
+
+
+</body>
+</html>

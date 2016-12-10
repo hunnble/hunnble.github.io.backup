@@ -1,0 +1,16 @@
+.about {
+  margin-top: 0;
+  &.hide-on-med-and-up>header {
+    padding-top: 6rem;
+  }
+  .row {
+    overflow: hidden;
+  }
+  .icon {
+    margin: 0.5rem;
+    float: left;
+  }
+  >header {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <link rel="alternate" href=/atom.xml type="application/atom+xml">
+  <title>ES6-let and const [ 北方公园 ]</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  
+    
+      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+    
+  
+  
+    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  
+    
+      <link rel="stylesheet" href="/css/main.css">
+    
+  
+</head>
+<body>
+
+<div class="navbar-fixed white-text">
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/">主页</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/about">关于</a>
+          </li>
+        
+      </ul>
+      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</div>
+
+<ul id="slide-nav" class="side-nav">
+  <li>
+    <div class="userView lighten-2 teal">
+      <div class="background">
+        <h5 class="white-text inline-title">Noski</h5>
+      </div>
+      <img class="circle" src=/images/avatar.png>
+      <h5 class="white-text inline-title">北方公园</h5>
+      <br />
+      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+    </div>
+  </li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  
+</ul>
+
+
+
+
+
+  
+
+
+  
+
+
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
+  
+  <div class="parallax lighten-2 teal ">
+    <img src="/images/background.jpg">
+    <!-- {% qnimg background %} -->
+  </div>
+  <script type="text/javascript">
+    var container = document.querySelector('.parallax-container');
+    var tmpTitle = container.querySelector('.hide-on-image-load');
+    var img = container.querySelector('img');
+    img.onload = function() {
+      if (tmpTitle) {
+        tmpTitle.style.display = 'none';
+      }
+    }
+  </script>
+</div>
+
+  
+
+</div>
+
+<main id="container-outer" class="">
+
+  
+    
+  
+
+  
+  
+    
+  
+
+  <div class="row ">
+
+    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+      
+        
+<section id="post" class="card article z-depth-0">
+  
+    <div class="card-panel z-depth-0 black-text">
+      <h1>ES6-let and const</h1>
+
+      
+
+      <div class="valign-wrapper blue-grey-text">
+        <i class="material-icons valign">query_builder</i>&nbsp
+        <time datetime="2016-06-24T14:58:32.000Z" class="valign">
+          2016 6月 24日
+          晚上10:58:32
+        </time>
+      </div>
+
+      
+        <div class="valign-wrapper sm-text blue-grey-text">
+          <i class="material-icons valign">grade</i>&nbsp
+          <span id="busuanzi_container_page_pv" class="valign">
+            阅读<span id="busuanzi_value_page_pv"></span>次
+          </span>
+        </div>
+      
+
+      
+        <div class="section right">
+          
+            <span class="new badge amber left" data-badge-caption="">
+              <a href="/tag/frontend/" title="#frontend" class="white-text" target="_blank" rel="external">#frontend</a>
+            </span>
+          
+            <span class="new badge green left" data-badge-caption="">
+              <a href="/tag/es6/" title="#es6" class="white-text" target="_blank" rel="external">#es6</a>
+            </span>
+          
+            <span class="new badge red left" data-badge-caption="">
+              <a href="/tag/ES6标准入门学习笔记/" title="#ES6标准入门学习笔记" class="white-text" target="_blank" rel="external">#ES6标准入门学习笔记</a>
+            </span>
+          
+        </div>
+      
+
+    </div>
+  
+
+  <div class="card-content z-depth-0">
+
+    
+
+    <p>es6学习笔记第一篇，let和const命令<br><a id="more"></a></p>
+<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>ES6新增了let命令，用于声明变量，但是它和var是有区别的。区别在于，它只在块级作用域内有效，而var呢，由于众所周知的语言特性，var声明的变量在函数作用域内有效（参考你不知道的javascript中没有块级作用域章节）。<br>let的使用使从前需要用IIFE解决的一些问题变得不再是问题了，比如下面的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> m = tasks.length - <span class="number">1</span>; m &gt;= <span class="number">0</span>; m--) &#123;</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="comment">//TODO</span></div><div class="line">    &#125;)(m);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>由于使用var声明的变量在循环中会被一次次地覆盖，如果不使用上面的解决方法，最终每次loop都处理的是m=0也就是最后一次的情况。IIFE能保存每一次的m不被回收掉，在let出现之前这是一个较优解。<br>如果使用let呢？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> m = tasks.length - <span class="number">1</span>; m &gt;= <span class="number">0</span>; m--) &#123;</div><div class="line">    <span class="comment">//TODO</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>和写c++呀java呀什么的一样啦~<br>于是js又少了一个被黑的点（没有块作用域）<br>let的其他特点：<br>1.不存在变量提升</p>
+<ul>
+<li>变量在声明前使用会报ReferenceError，也就是说形成了暂时性死区（temporal dead zone），简称TDZ<br>2.不允许在相同作用域内重复声明同一个变量</li>
+</ul>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>const用来声明常量，一旦声明就不能改变，修改const声明的常量会报TypeError，只声明不赋值会报SyntaxError。<br>其他方面const和let基本一致：只在块作用域内有效，不存在变量提升，形成TDZ，不允许在相同作用域内重复声明。<br>然而看下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = &#123;&#125;;</div><div class="line">foo.prop = <span class="number">123</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(foo.prop); <span class="comment">// 123</span></div></pre></td></tr></table></figure></p>
+<p>这个例子是可以运行的，是不是感觉不太对劲，foo是常量为什么可以改变？<br>原因：对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const之保证指向的地址不变，并不保证该地址的数据不变。上面的例子中foo始终指向一个Object实例的地址，这个是不变的，但是实例本身加了属性prop，const就要不起了。</p>
+<h3 id="全局对象的属性"><a href="#全局对象的属性" class="headerlink" title="全局对象的属性"></a>全局对象的属性</h3><p>一句话，var和function声明的变量原来在ES5中是全局对象的属性，ES6尊重这一点，没有变。但let和const（包括class）声明的就不属于了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> varObj = <span class="number">1024</span>;</div><div class="line"><span class="built_in">console</span>.log(varObj) <span class="comment">// 1024</span></div><div class="line"><span class="keyword">let</span> letObj = <span class="number">1024</span>;</div><div class="line"><span class="built_in">console</span>.log(letObj) <span class="comment">// undefined</span></div></pre></td></tr></table></figure></p>
+
+
+    <div class="sibling-post center-align card-panel z-depth-0 section">
+
+      
+        <a href="/2016/06/21/async库waterfall源码分析/" class="btn-flat blue-grey-text right">
+          <i class="material-icons right">chevron_right</i>
+          async库waterfall源码分析
+        </a>
+      
+
+      
+        <a href="/2016/06/25/ES6-变量的解构赋值/" class="btn-flat blue-grey-text left">
+          <i class="material-icons left">chevron_left</i>
+          ES6-变量的解构赋值
+        </a>
+      
+
+    </div>
+
+    
+      <div class="comment" id="duoshuo">
+        <div class="ds-thread" data-thread-key="post-ES6-let-and-const" data-title="ES6-let and const" data-url="http://hunnble.github.io/2016/06/24/ES6-let-and-const/"></div>
+        <script type="text/javascript">
+          var duoshuoQuery = { short_name:'hunnble' };
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';
+          ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        </script>
+      </div>
+    
+
+  </div>
+
+</section>
+
+        <div class="fixed-action-btn click-to-toggle">
+  <a class="btn-floating btn-large lighten-2 teal">
+    <i class="large material-icons">view_module</i>
+  </a>
+  <ul>
+    <li>
+      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+        <i class="material-icons">navigation</i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+      
+    </div>
+
+    
+      <aside class="col m2 push-m2 hide-on-med-and-down">
+        <div class="toc transparent card-panel z-depth-0">
+          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#let"><span class="table-of-contents-text">let</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#const"><span class="table-of-contents-text">const</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#全局对象的属性"><span class="table-of-contents-text">全局对象的属性</span></a></li></ol>
+        </div>
+      </aside>
+    
+
+
+    
+
+  </div>
+
+</main>
+
+
+  
+
+
+<footer class="page-footer lighten-2 teal ">
+  <div class="container section">
+    <div class="center-align white-text text-lighten-4">
+      <p>
+        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+      </p>
+      
+        <h5>
+          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+        </h5>
+      
+    </div>
+  </div>
+  <div class="footer-copyright center-align">
+    Copyright © 2016 Noski
+  </div>
+</footer>
+
+
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src="/js/highlight.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
+<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+    <script type="text/javascript" src=/js/main.js></script>
+  
+
+
+</body>
+</html>
