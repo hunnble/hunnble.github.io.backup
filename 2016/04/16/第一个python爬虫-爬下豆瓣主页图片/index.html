@@ -1,281 +1,146 @@
 
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <link rel="alternate" href=/atom.xml type="application/atom+xml">
-  <title>第一个python爬虫:爬下豆瓣主页图片 [ 北方公园 ]</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="/images/favicon.ico">
-  
-    
-      <link rel="stylesheet" href='/css/default_highlight.min.css'>
-    
-  
-  
-    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  
-    
-      <link rel="stylesheet" href="/css/main.css">
-    
-  
+<meta charset="UTF-8">
+<link rel="alternate" href="/atom.xml" type="application/atom+xml">
+<title>第一个python爬虫:爬下豆瓣主页图片 [ 北方公园 ]</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/default_highlight.min.css">
+<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-
 <div class="navbar-fixed white-text">
-  <nav class="transparent z-depth-0">
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/">主页</a>
-          </li>
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
-          </li>
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/about">关于</a>
-          </li>
-        
-      </ul>
-      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-</div>
-
-<ul id="slide-nav" class="side-nav">
-  <li>
-    <div class="userView lighten-2 teal">
-      <div class="background">
-        <h5 class="white-text inline-title">Noski</h5>
-      </div>
-      <img class="circle" src=/images/avatar.png>
-      <h5 class="white-text inline-title">北方公园</h5>
-      <br />
-      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-    </div>
-  </li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
-  
+<nav class="transparent z-depth-0">
+<div class="nav-wrapper">
+<ul id="nav-mobile" class="right hide-on-med-and-down">
+<li>
+<a class="waves-effect text-lighten-4" href="/">主页</a>
+</li>
+<li>
+<a class="waves-effect text-lighten-4" href="/archive">归档</a>
+</li>
+<li>
+<a class="waves-effect text-lighten-4" href="/about">关于</a>
+</li>
 </ul>
-
-
-
-
-
-  
-
-
-  
-
-
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
-  
-  <div class="parallax lighten-2 teal ">
-    <img src="/images/background.jpg">
-    <!-- {% qnimg background %} -->
-  </div>
-  <script type="text/javascript">
-    var container = document.querySelector('.parallax-container');
-    var tmpTitle = container.querySelector('.hide-on-image-load');
-    var img = container.querySelector('img');
-    img.onload = function() {
-      if (tmpTitle) {
-        tmpTitle.style.display = 'none';
-      }
-    }
-  </script>
+<a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
 </div>
-
-  
-
+</nav>
 </div>
-
+<ul id="slide-nav" class="side-nav">
+<li>
+<div class="userView lighten-2 teal">
+<div class="background">
+<h5 class="white-text inline-title">Noski</h5>
+</div>
+<img class="circle" src="/images/avatar.png">
+<h5 class="white-text inline-title">北方公园</h5>
+<br>
+<h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+</div>
+</li>
+<li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+<li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+<li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+</ul>
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height:400px">
+<div class="parallax lighten-2 teal">
+<img src="/images/background.jpg">
+</div>
+<script type="text/javascript">var container=document.querySelector(".parallax-container"),tmpTitle=container.querySelector(".hide-on-image-load"),img=container.querySelector("img");img.onload=function(){tmpTitle&&(tmpTitle.style.display="none")}</script>
+</div>
 <main id="container-outer" class="">
-
-  
-    
-  
-
-  
-  
-    
-  
-
-  <div class="row ">
-
-    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
-      
-        
+<div class="row">
+<div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
 <section id="post" class="card article z-depth-0">
-  
-    <div class="card-panel z-depth-0 black-text">
-      <h1>第一个python爬虫:爬下豆瓣主页图片</h1>
-
-      
-
-      <div class="valign-wrapper blue-grey-text">
-        <i class="material-icons valign">query_builder</i>&nbsp
-        <time datetime="2016-04-16T15:43:32.000Z" class="valign">
-          2016 4月 16日
-          晚上11:43:32
-        </time>
-      </div>
-
-      
-        <div class="valign-wrapper sm-text blue-grey-text">
-          <i class="material-icons valign">grade</i>&nbsp
-          <span id="busuanzi_container_page_pv" class="valign">
-            阅读<span id="busuanzi_value_page_pv"></span>次
-          </span>
-        </div>
-      
-
-      
-        <div class="section right">
-          
-            <span class="new badge amber left" data-badge-caption="">
-              <a href="/tag/python/" title="#python" class="white-text" target="_blank" rel="external">#python</a>
-            </span>
-          
-        </div>
-      
-
-    </div>
-  
-
-  <div class="card-content z-depth-0">
-
-    
-
-    <p>学而时戏之~~~<br>早就听说python很好玩,也早就听说python很好玩,所以就用好玩的语言写好玩的东西。<br>使用的版本3.5。所以很多很好的2.7版本教程不适用了。<br><a id="more"></a><br>代码不长,分为几个功能:</p>
+<div class="card-panel z-depth-0 black-text">
+<h1>第一个python爬虫:爬下豆瓣主页图片</h1>
+<div class="valign-wrapper blue-grey-text">
+<i class="material-icons valign">query_builder</i>&nbsp
+<time datetime="2016-04-16T15:43:32.000Z" class="valign">
+2016 4月 16日 晚上11:43:32
+</time>
+</div>
+<div class="valign-wrapper sm-text blue-grey-text">
+<i class="material-icons valign">grade</i>&nbsp
+<span id="busuanzi_container_page_pv" class="valign">
+阅读<span id="busuanzi_value_page_pv"></span>次
+</span>
+</div>
+<div class="section right">
+<span class="new badge amber left" data-badge-caption="">
+<a href="/tag/python/" title="#python" class="white-text" target="_blank" rel="external">#python</a>
+</span>
+</div>
+</div>
+<div class="card-content z-depth-0">
+<p>学而时戏之~~~<br>早就听说python很好玩,也早就听说python很好玩,所以就用好玩的语言写好玩的东西。<br>使用的版本3.5。所以很多很好的2.7版本教程不适用了。<br><a id="more"></a><br>代码不长,分为几个功能:</p>
 <h3 id="首先当然是写照顾linux-定义编码格式和导入依赖模块"><a href="#首先当然是写照顾linux-定义编码格式和导入依赖模块" class="headerlink" title="首先当然是写照顾linux,定义编码格式和导入依赖模块"></a>首先当然是写照顾linux,定义编码格式和导入依赖模块</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env/python</span></div><div class="line"><span class="comment">#-*-encoding: utf-8-*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">import</span> os</div></pre></td></tr></table></figure>
 <h3 id="把源码写入文件-这个就是爬下来页面看一看-豆瓣主页有两千一百多行"><a href="#把源码写入文件-这个就是爬下来页面看一看-豆瓣主页有两千一百多行" class="headerlink" title="把源码写入文件,这个就是爬下来页面看一看,豆瓣主页有两千一百多行~"></a>把源码写入文件,这个就是爬下来页面看一看,豆瓣主页有两千一百多行~</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveFile</span><span class="params">(data)</span>:</span></div><div class="line">    save_path = <span class="string">'D:/temp.out'</span></div><div class="line">    f_obj = open(save_path, <span class="string">'wb'</span>)</div><div class="line">    f_obj.write(data)</div><div class="line">    f_obj.close()</div></pre></td></tr></table></figure>
 <h3 id="为图片指定输出目录"><a href="#为图片指定输出目录" class="headerlink" title="为图片指定输出目录"></a>为图片指定输出目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">targetDir = <span class="string">r'D:/spiderImg'</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">destFile</span><span class="params">(path)</span>:</span></div><div class="line"><span class="comment"># 如果文件夹不存在就创建一个</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(targetDir):</div><div class="line">    os.mkdir(targetDir)</div><div class="line">pos = path.rindex(<span class="string">'/'</span>)</div><div class="line">t = os.path.join(targetDir, path[pos+<span class="number">1</span>:])</div><div class="line"><span class="keyword">return</span> t</div></pre></td></tr></table></figure>
 <h3 id="核心模块-用简单的正则找到页面中的所有图片并爬取"><a href="#核心模块-用简单的正则找到页面中的所有图片并爬取" class="headerlink" title="核心模块,用简单的正则找到页面中的所有图片并爬取"></a>核心模块,用简单的正则找到页面中的所有图片并爬取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">print(<span class="string">'开始'</span>)</div><div class="line">url = <span class="string">'http://www.douban.com/'</span></div><div class="line">webHeader = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0'</span>&#125;</div><div class="line">req = urllib.request.Request(url=url, headers=webHeader)</div><div class="line">webPage = urllib.request.urlopen(req)</div><div class="line">contentBytes = webPage.read()</div><div class="line">saveFile(contentBytes)</div><div class="line"><span class="keyword">for</span> link, t <span class="keyword">in</span> set(re.findall(<span class="string">r'(http[s]?:[^\s]*?(jpg|png|gif))'</span>, str(contentBytes))):</div><div class="line">    print(link)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        urllib.request.urlretrieve(link, destFile(link))</div><div class="line">        print(<span class="string">'\t\t成功'</span>)</div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        print(<span class="string">'\t\t失败'</span>)</div><div class="line">print(<span class="string">'结束'</span>)</div></pre></td></tr></table></figure>
 <p>这里我的正则很简单,[^\s]也就是非空格字符应该直接用\S,我一开始写的是http…什么都爬不下来。后来看了页面代码发现豆瓣主页图片是使用https的。于是改正,顺利完成！<br>这是在没有遇到阻拦的情况下爬一点数据,爬虫虽然是个小课题,但是深入发掘还是会有爬虫和反爬虫的矛盾对抗,各种框架的奇妙思路。千里之行,始于足下。晚安！</p>
-
-
-    <div class="sibling-post center-align card-panel z-depth-0 section">
-
-      
-        <a href="/2016/04/10/python之装饰器/" class="btn-flat blue-grey-text right">
-          <i class="material-icons right">chevron_right</i>
-          python回顾
-        </a>
-      
-
-      
-        <a href="/2016/04/17/第二个爬虫-requests和BeautifulSoup/" class="btn-flat blue-grey-text left">
-          <i class="material-icons left">chevron_left</i>
-          第二个爬虫:requests和BeautifulSoup
-        </a>
-      
-
-    </div>
-
-    
-      <div class="comment" id="duoshuo">
-        <div class="ds-thread" data-thread-key="post-第一个python爬虫-爬下豆瓣主页图片" data-title="第一个python爬虫:爬下豆瓣主页图片" data-url="http://hunnble.github.io/2016/04/16/第一个python爬虫-爬下豆瓣主页图片/"></div>
-        <script type="text/javascript">
-          var duoshuoQuery = { short_name:'hunnble' };
-          var ds = document.createElement('script');
-          ds.type = 'text/javascript';
-          ds.async = true;
-          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-          ds.charset = 'UTF-8';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-        </script>
-      </div>
-    
-
-  </div>
-
-</section>
-
-        <div class="fixed-action-btn click-to-toggle">
-  <a class="btn-floating btn-large lighten-2 teal">
-    <i class="large material-icons">view_module</i>
-  </a>
-  <ul>
-    <li>
-      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-        <i class="material-icons">navigation</i>
-      </a>
-    </li>
-  </ul>
+<div class="sibling-post center-align card-panel z-depth-0 section">
+<a href="/2016/04/10/python之装饰器/" class="btn-flat blue-grey-text right">
+<i class="material-icons right">chevron_right</i>
+python回顾
+</a>
+<a href="/2016/04/17/第二个爬虫-requests和BeautifulSoup/" class="btn-flat blue-grey-text left">
+<i class="material-icons left">chevron_left</i>
+第二个爬虫:requests和BeautifulSoup
+</a>
 </div>
-
-      
-    </div>
-
-    
-      <aside class="col m2 push-m2 hide-on-med-and-down">
-        <div class="toc transparent card-panel z-depth-0">
-          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#首先当然是写照顾linux-定义编码格式和导入依赖模块"><span class="table-of-contents-text">首先当然是写照顾linux,定义编码格式和导入依赖模块</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#把源码写入文件-这个就是爬下来页面看一看-豆瓣主页有两千一百多行"><span class="table-of-contents-text">把源码写入文件,这个就是爬下来页面看一看,豆瓣主页有两千一百多行~</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#为图片指定输出目录"><span class="table-of-contents-text">为图片指定输出目录</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#核心模块-用简单的正则找到页面中的所有图片并爬取"><span class="table-of-contents-text">核心模块,用简单的正则找到页面中的所有图片并爬取</span></a></li></ol>
-        </div>
-      </aside>
-    
-
-
-    
-
-  </div>
-
+<div class="comment" id="duoshuo">
+<div class="ds-thread" data-thread-key="post-第一个python爬虫-爬下豆瓣主页图片" data-title="第一个python爬虫:爬下豆瓣主页图片" data-url="http://hunnble.github.io/2016/04/16/第一个python爬虫-爬下豆瓣主页图片/"></div>
+<script type="text/javascript">var duoshuoQuery={short_name:"hunnble"},ds=document.createElement("script");ds.type="text/javascript",ds.async=!0,ds.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",ds.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(ds)</script>
+</div>
+</div>
+</section>
+<div class="fixed-action-btn click-to-toggle">
+<a class="btn-floating btn-large lighten-2 teal">
+<i class="large material-icons">view_module</i>
+</a>
+<ul>
+<li>
+<a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+<i class="material-icons">navigation</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<aside class="col m2 push-m2 hide-on-med-and-down">
+<div class="toc transparent card-panel z-depth-0">
+<ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#首先当然是写照顾linux-定义编码格式和导入依赖模块"><span class="table-of-contents-text">首先当然是写照顾linux,定义编码格式和导入依赖模块</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#把源码写入文件-这个就是爬下来页面看一看-豆瓣主页有两千一百多行"><span class="table-of-contents-text">把源码写入文件,这个就是爬下来页面看一看,豆瓣主页有两千一百多行~</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#为图片指定输出目录"><span class="table-of-contents-text">为图片指定输出目录</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#核心模块-用简单的正则找到页面中的所有图片并爬取"><span class="table-of-contents-text">核心模块,用简单的正则找到页面中的所有图片并爬取</span></a></li></ol>
+</div>
+</aside>
+</div>
 </main>
-
-
-  
-
-
-<footer class="page-footer lighten-2 teal ">
-  <div class="container section">
-    <div class="center-align white-text text-lighten-4">
-      <p>
-        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-      </p>
-      
-        <h5>
-          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-        </h5>
-      
-    </div>
-  </div>
-  <div class="footer-copyright center-align">
-    Copyright © 2016 Noski
-  </div>
+<footer class="page-footer lighten-2 teal">
+<div class="container section">
+<div class="center-align white-text text-lighten-4">
+<p>
+Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+</p>
+<h5>
+总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+</h5>
+</div>
+</div>
+<div class="footer-copyright center-align">
+Copyright © 2016 Noski
+</div>
 </footer>
-
-
-
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-  <script src="/js/highlight.min.js"></script>
-
-<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="/js/highlight.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
-
-  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-    <script type="text/javascript" src=/js/main.js></script>
-  
-
-
+<script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate" href="/atom.xml" type="application/atom+xml">
+<title>记一个React相关的坑 [ 北方公园 ]</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/default_highlight.min.css">
+<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div class="navbar-fixed white-text">
+<nav class="transparent z-depth-0">
+<div class="nav-wrapper">
+<ul id="nav-mobile" class="right hide-on-med-and-down">
+<li>
+<a class="waves-effect text-lighten-4" href="/">主页</a>
+</li>
+<li>
+<a class="waves-effect text-lighten-4" href="/archive">归档</a>
+</li>
+<li>
+<a class="waves-effect text-lighten-4" href="/about">关于</a>
+</li>
+</ul>
+<a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+</div>
+</nav>
+</div>
+<ul id="slide-nav" class="side-nav">
+<li>
+<div class="userView lighten-2 teal">
+<div class="background">
+<h5 class="white-text inline-title">Noski</h5>
+</div>
+<img class="circle" src="/images/avatar.png">
+<h5 class="white-text inline-title">北方公园</h5>
+<br>
+<h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+</div>
+</li>
+<li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+<li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+<li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+</ul>
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height:400px">
+<div class="parallax lighten-2 teal">
+<img src="/images/background.jpg">
+</div>
+<script type="text/javascript">var container=document.querySelector(".parallax-container"),tmpTitle=container.querySelector(".hide-on-image-load"),img=container.querySelector("img");img.onload=function(){tmpTitle&&(tmpTitle.style.display="none")}</script>
+</div>
+<main id="container-outer" class="">
+<div class="row">
+<div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+<section id="post" class="card article z-depth-0">
+<div class="card-panel z-depth-0 black-text">
+<h1>记一个React相关的坑</h1>
+<div class="valign-wrapper blue-grey-text">
+<i class="material-icons valign">query_builder</i>&nbsp
+<time datetime="2016-12-13T07:45:11.000Z" class="valign">
+2016 12月 13日 下午3:45:11
+</time>
+</div>
+<div class="valign-wrapper sm-text blue-grey-text">
+<i class="material-icons valign">grade</i>&nbsp
+<span id="busuanzi_container_page_pv" class="valign">
+阅读<span id="busuanzi_value_page_pv"></span>次
+</span>
+</div>
+<div class="section right">
+<span class="new badge amber left" data-badge-caption="">
+<a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
+</span>
+</div>
+</div>
+<div class="card-content z-depth-0">
+<p>React写表单一直挺难受的，即使有react-form也很难受，不过优点太大把这点小瑕疵掩盖住了。不过今天我要记一下redux-form-utils这个中间件的坑。<br><a id="more"></a><br>这个中间件开始用的时候很方便，可以用更少和更少重复的代码构建表单。不用给每个都加<code>onChange</code>。但是用了以后一直出bug，后来发现它的源码里只支持state里有一个formState，因为它是写死了的。<br>先看它的示例用法，我没复制写组件的那部分，那部分是无辜的：<br></p><figure class="highlight javascript"><figcaption><span>https://github.com/jasonslyvia/redux-form-utils</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; bindRedux &#125; <span class="keyword">from</span> <span class="string">'redux-form-utils'</span>;</div><div class="line"><span class="keyword">const</span> &#123; <span class="attr">state</span>: formState , <span class="attr">reducer</span>: formReducer, <span class="attr">actionCreators</span>: formActionCreators &#125; = bindRedux(&#123;</div><div class="line">  <span class="attr">form</span>: <span class="string">'my-form'</span>,</div><div class="line">  <span class="attr">fields</span>: [<span class="string">'name'</span>, <span class="string">'address'</span>]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// `formState` has a shape of:</span></div><div class="line"><span class="comment">//  &#123;</span></div><div class="line"><span class="comment">//    form: &#123;</span></div><div class="line"><span class="comment">//      name: &#123;</span></div><div class="line"><span class="comment">//        value: '',</span></div><div class="line"><span class="comment">//      &#125;,</span></div><div class="line"><span class="comment">//      address: &#123;</span></div><div class="line"><span class="comment">//        value: '',</span></div><div class="line"><span class="comment">//      &#125;</span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line"><span class="comment">//  &#125;</span></div><div class="line"></div><div class="line"><span class="comment">// Compose initialState with formState</span></div><div class="line"><span class="keyword">const</span> initialState = &#123;</div><div class="line">  <span class="attr">foo</span>: <span class="number">1</span>,</div><div class="line">  <span class="attr">bar</span>: <span class="number">2</span>,</div><div class="line">  ...formState</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state = initialState, action</span>) </span>&#123;</div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">    <span class="keyword">case</span> <span class="string">'XXX_ACTION'</span>: &#123;</div><div class="line">      <span class="comment">// Do sth for your own action</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">default</span>:</div><div class="line">      <span class="comment">// Let formReducer handle default situation instead of returning state directly</span></div><div class="line">      <span class="keyword">return</span> formReducer(state, action);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>我想有多个formState的话肯定需要把state改成类似这样<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">foo</span>: <span class="number">1</span>,</div><div class="line">  <span class="attr">bar</span>: <span class="number">2</span>,</div><div class="line">  <span class="attr">formState1</span>: formState1,</div><div class="line">  <span class="attr">formState2</span>: formState2</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>我就这么改的，然后发现onChange就没有用了，输入也不会改变value。原因看源码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">switch (action.type) &#123;</div><div class="line">  case &apos;@@form/VALUE_CHANGE&apos;: &#123;</div><div class="line">    const fieldConfig = findConfig(action.meta.field);</div><div class="line">    let newField;</div><div class="line">    if (action.meta.complex) &#123;</div><div class="line">      return &#123;</div><div class="line">        ...state,</div><div class="line">        form: &#123;</div><div class="line">          ...state.form,</div><div class="line">          [action.meta.field]: &#123;</div><div class="line">            ...state.form[action.meta.field],</div><div class="line">            ...action.payload,</div><div class="line">          &#125;,</div><div class="line">        &#125;,</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line">    // ...</div><div class="line">  &#125;</div><div class="line">  // ...</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>这里截取了源码的reducer中的对value change这种action的响应，还有对action.meta的判断由于篇幅就没有截取全。<br>问题就在于它把返回的格式写死了，永远都是放到form了。<br>默默uninstall掉它，还是自己写吧…<p></p>
+<div class="sibling-post center-align card-panel z-depth-0 section">
+<a href="/2016/12/08/AppleScript实现hexo新建-发布工作流/" class="btn-flat blue-grey-text right">
+<i class="material-icons right">chevron_right</i>
+AppleScript实现hexo新建/发布工作流
+</a>
+</div>
+<div class="comment" id="duoshuo">
+<div class="ds-thread" data-thread-key="post-记一个React相关的坑" data-title="记一个React相关的坑" data-url="http://hunnble.github.io/2016/12/13/记一个React相关的坑/"></div>
+<script type="text/javascript">var duoshuoQuery={short_name:"hunnble"},ds=document.createElement("script");ds.type="text/javascript",ds.async=!0,ds.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",ds.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(ds)</script>
+</div>
+</div>
+</section>
+<div class="fixed-action-btn click-to-toggle">
+<a class="btn-floating btn-large lighten-2 teal">
+<i class="large material-icons">view_module</i>
+</a>
+<ul>
+<li>
+<a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+<i class="material-icons">navigation</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<aside class="col m2 push-m2 hide-on-med-and-down">
+<div class="toc transparent card-panel z-depth-0">
+</div>
+</aside>
+</div>
+</main>
+<footer class="page-footer lighten-2 teal">
+<div class="container section">
+<div class="center-align white-text text-lighten-4">
+<p>
+Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+</p>
+<h5>
+总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+</h5>
+</div>
+</div>
+<div class="footer-copyright center-align">
+Copyright © 2016 Noski
+</div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
+<script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+</body>
+</html>
