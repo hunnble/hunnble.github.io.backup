@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hunnble.github.io/"/>
-  <updated>2016-12-13T13:40:31.000Z</updated>
+  <updated>2016-12-26T16:17:45.000Z</updated>
   <id>http://hunnble.github.io/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js中的装饰器</title>
+    <link href="http://hunnble.github.io/2016/12/26/js%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
+    <id>http://hunnble.github.io/2016/12/26/js中的装饰器/</id>
+    <published>2016-12-26T14:55:19.000Z</published>
+    <updated>2016-12-26T16:17:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果你学过<code>python</code>，一定对装饰器已经很熟悉了，在新标准下，<code>JavaScript</code>也支持了装饰器语法。如果你没有使用过装饰器，希望这篇文章可以带你入门。<br><a id="more"></a></p>
+<h3 id="我们所熟知的Python中的装饰器"><a href="#我们所熟知的Python中的装饰器" class="headerlink" title="我们所熟知的Python中的装饰器"></a>我们所熟知的Python中的装饰器</h3><p>装饰器装饰的是谁？是函数。<br>装饰器长什么样子？以<code>@</code>开头，接着是装饰器函数的名字和参数（可选），接下来是被修饰的函数和被修饰函数的参数。举个栗子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator(dec_opt_args)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">funcBeDecorated</span><span class="params">(func_opt_args)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
+<p>至于装饰器解决了什么问题，以及有参数无参数的装饰器的区别，我觉得下面的代码可以解释清楚：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator1</span></div><div class="line"><span class="meta">@decorator2(args)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
+<p>可以理解为<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func = decorator1(decorator2(args)(func))</div></pre></td></tr></table></figure></p>
+<p>也就是说，装饰器其实就是函数，被装饰的函数把自己当做中世纪农夫的新娘一样，作为参数献给装饰器（们），在装饰器行使了自己的权利（参数）之后，返回被装饰过了的函数对象。<br>但是要注意，这个例子实际上是不恰当的，因为实际上装饰器是柳下惠在世，根本就没有改变被修饰的函数。只是<em>装饰</em>了函数，在函数上扩展一些行为。<br>此外，对类（class）也可以用装饰器，道理是一样的。<br>那么在<code>JavaScript</code>中的装饰器又有什么特性呢？</p>
+<h3 id="JavaScript中的装饰器"><a href="#JavaScript中的装饰器" class="headerlink" title="JavaScript中的装饰器"></a>JavaScript中的装饰器</h3><p>先放结论：</p>
+<blockquote>
+<p>装饰器允许你在类和方法定义的时候去注释或者修改它。装饰器是一个作用于函数的表达式，它接收三个参数 <code>target</code>、 <code>name</code> 和 <code>descriptor</code> ， 然后可选性的返回被装饰之后的 <code>descriptor</code> 对象。<br><code>JavaScript</code>中的装饰器可以装饰类，也可以装饰类的属性，当它装饰类时，长这个样子：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">decorator</span> (<span class="params">target</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(target) <span class="comment">// target是Component</span></div><div class="line">    <span class="keyword">return</span> target</div><div class="line">&#125;</div><div class="line"></div><div class="line">@decorator</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>和上面说的<code>python</code>中的装饰器基本上差不多的样子<br>当装饰器装饰类的属性时，操作的不是类本身了，而是第三个参数：描述符。这也是为什么定义中说是可选性的返回被装饰之后的<code>descriptor</code>对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">decorator</span> (<span class="params">target, name, descriptor</span>) </span>&#123;</div><div class="line">    discriptor.writable = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">return</span> discriptor;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    @decorator</div><div class="line">    play () &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'too young'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> component = <span class="keyword">new</span> Component();</div><div class="line">component.play = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'too simple'</span>);</div><div class="line">&#125;</div><div class="line">component.play() <span class="comment">// too young</span></div></pre></td></tr></table></figure></p>
+<p>为什么对play属性的修改无效了呢？因为在装饰器中将被返回的描述符的play属性设置为只读，就这么简单。<br>随着JavaScript的完善，<del>它会越来越像python的</del> 好用的语法糖会越来越多的。</p>
+<h3 id="例行说一些闲话"><a href="#例行说一些闲话" class="headerlink" title="例行说一些闲话"></a>例行说一些闲话</h3><p>今天是做课程设计的第一天，选了一个偏理论的选题，其实还是有点想换选题的。还有一个感觉就是虽然同学们都很厉害，但是合作做项目或者课题的时候总是会有各种问题。基本上成绩好一些的队伍都是一个或者两个技术比较突出的同学作为主要生产力这样的。</p>
+<p>晚上大家从机房出来去吃饭的路上我才知道十一月份那个课设的成绩出来了，然后查了一下，老师给我们组优秀，觉得有点配不上。最近又看到前端圈里徐飞大牛因为技术选型然后从公司离职的事儿又想到也许当时不应该把自己喜好的技术栈强加给别的团队成员。这也是这次选了一个别人肯定不会选的课题的原因吧，还有一部分原因就是想给自己的网站加个密，嘿嘿嘿，能猜出来我选的什么了吧。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果你学过&lt;code&gt;python&lt;/code&gt;，一定对装饰器已经很熟悉了，在新标准下，&lt;code&gt;JavaScript&lt;/code&gt;也支持了装饰器语法。如果你没有使用过装饰器，希望这篇文章可以带你入门。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>记一个React相关的坑</title>
@@ -68,14 +102,14 @@
     <link href="http://hunnble.github.io/2016/11/05/%E7%94%A8js%E5%AE%9E%E7%8E%B0%E5%87%A0%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     <id>http://hunnble.github.io/2016/11/05/用js实现几种排序算法/</id>
     <published>2016-11-05T01:49:07.000Z</published>
-    <updated>2016-11-05T07:14:42.000Z</updated>
+    <updated>2016-12-26T14:57:01.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天周六，打算花一些时间把几种排序算法使用js实现一下。<br><a id="more"></a></p>
 <h3 id="0-准备工作"><a href="#0-准备工作" class="headerlink" title="0.准备工作"></a>0.准备工作</h3><p>首先用mocha+chai写几行测试，然后测排序是不是正确就不用自己瞅了…以测试归并排序为例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> expect = <span class="built_in">require</span>(<span class="string">'chai'</span>).expect;</div><div class="line"><span class="keyword">var</span> sortFuncs = <span class="built_in">require</span>(<span class="string">'./sort.js'</span>);</div><div class="line"></div><div class="line">describe(<span class="string">'sort function must be right'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    describe(<span class="string">'merge sort'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> arr = arrayGenerator(<span class="number">20</span>);</div><div class="line">        it(<span class="string">'merge sort should be correct'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            expect(sortFuncs.mergeSort(arr)).to.eql(sort(arr));</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrayGenerator</span> (<span class="params">n</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">        arr.push(<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">100</span>));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">v1, v2</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> v2 - v1;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>生成随机数组成的数组，然后去断言被测试的函数的排序结果是否和js的sort返回的正确结果一致。我今天写的所有排序都是从大到小哈。</p>
 <h3 id="1-归并排序"><a href="#1-归并排序" class="headerlink" title="1.归并排序"></a>1.归并排序</h3><p>直接上代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span> (<span class="params">a1, a2</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line">    <span class="keyword">var</span> a1Cursor = <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> a2Cursor = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span> (a1Cursor &lt; a1.length &amp;&amp; a2Cursor &lt; a2.length) &#123;</div><div class="line">        <span class="keyword">if</span> (a1[a1Cursor] &gt; a2[a2Cursor]) &#123;</div><div class="line">            result.push(a1[a1Cursor]);</div><div class="line">            a1Cursor += <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            result.push(a2[a2Cursor]);</div><div class="line">            a2Cursor += <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result.concat(a1.slice(a1Cursor)).concat(a2.slice(a2Cursor));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (arr.length === <span class="number">0</span> || arr.length === <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> arr;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> n = <span class="built_in">parseInt</span>(arr.length / <span class="number">2</span>, <span class="number">10</span>);</div><div class="line">    <span class="keyword">var</span> a1 = arr.slice(<span class="number">0</span>, n);</div><div class="line">    <span class="keyword">var</span> a2 = arr.slice(n);</div><div class="line">    <span class="keyword">return</span> merge(mergeSort(a1), mergeSort(a2));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这个是用递归实现了的，虽然实现了但是需要花很多额外的空间。<br>小小优化一下，在合并函数中不额外创建新数组result，而是把a2合并到a1上：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span> (<span class="params">a1, a2</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a1Cursor = <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> a2Cursor = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span> (a1Cursor &lt; a1.length &amp;&amp; a2Cursor &lt; a2.length) &#123;</div><div class="line">        <span class="keyword">if</span> (a1[a1Cursor] &lt; a2[a2Cursor]) &#123;</div><div class="line">            a1.splice(a1Cursor, <span class="number">0</span>, a2[a2Cursor]);</div><div class="line">            a2Cursor += <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        a1Cursor += <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> a1.concat(a2.slice(a2Cursor));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>嗯…好一点了。<br>实现了自顶向下的归并，下面来实现自底向上的非递归版本。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span> (<span class="params">arr</span>) </span>&#123;  </div><div class="line">    <span class="keyword">if</span> (arr.length === <span class="number">0</span> || arr.length === <span class="number">1</span>) &#123;  </div><div class="line">        <span class="keyword">return</span> arr;  </div><div class="line">    &#125;  </div><div class="line">    <span class="keyword">var</span> work = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;  </div><div class="line">        work.push([arr[i]]);  </div><div class="line">    &#125;  </div><div class="line">    work.push([]);  </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> lim = len; lim &gt; <span class="number">1</span>; lim = (lim + <span class="number">1</span>) / <span class="number">2</span>) &#123;  </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>, k = <span class="number">0</span>; k &lt; lim; j += <span class="number">1</span>, k += <span class="number">2</span>)&#123;  </div><div class="line">            work[j] = merge(work[k], work[k+<span class="number">1</span>]);  </div><div class="line">        &#125;  </div><div class="line">        work[j] = [];  </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> work[<span class="number">0</span>];  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>嗯…好一点了。<br>实现了自顶向下的归并，下面来实现自底向上的非递归版本。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (arr.length === <span class="number">0</span> || arr.length === <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> arr;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> work = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</div><div class="line">        work.push([arr[i]]);</div><div class="line">    &#125;</div><div class="line">    work.push([]);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> lim = len; lim &gt; <span class="number">1</span>; lim = (lim + <span class="number">1</span>) / <span class="number">2</span>) &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>, k = <span class="number">0</span>; k &lt; lim; j += <span class="number">1</span>, k += <span class="number">2</span>)&#123;</div><div class="line">            work[j] = merge(work[k], work[k+<span class="number">1</span>]);</div><div class="line">        &#125;</div><div class="line">        work[j] = [];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> work[<span class="number">0</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>思路很清晰，就是维护一个work数组，暂存分治的数组，自底向上合并。</p>
 <h3 id="2-快速排序"><a href="#2-快速排序" class="headerlink" title="2.快速排序"></a>2.快速排序</h3><p>冒泡排序是把最大/小的元素冒泡到最后，快速排序是把比基准值(pivot)小的放一边，大的放一边，然后再分别排序。<br>上代码:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (arr.length === <span class="number">0</span> || arr.length === <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> arr;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> left = [];</div><div class="line">    <span class="keyword">var</span> right = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>, len = arr.length; i &lt; len; ++i) &#123;</div><div class="line">        <span class="keyword">if</span> (arr[i] &gt; arr[<span class="number">0</span>]) &#123;</div><div class="line">            left.push(arr[i]);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            right.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> quickSort(left).concat(arr[<span class="number">0</span>]).concat(quickSort(right));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="3-希尔排序"><a href="#3-希尔排序" class="headerlink" title="3.希尔排序"></a>3.希尔排序</h3><p>希尔排序就是给直接插入排序升级成隔很远的能更快比较的版本。间隔(gap)为1时就是直接插入。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shellSort</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> gaps = [<span class="number">10</span>, <span class="number">4</span>, <span class="number">1</span>]; <span class="comment">// 间隔序列取10, 4, 1</span></div><div class="line">    <span class="keyword">var</span> arrLen = arr.length;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, gapsLen = gaps.length; i &lt; gapsLen; ++i) &#123;</div><div class="line">        <span class="keyword">var</span> gap = gaps[i];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = gap; j &lt; arrLen; ++j) &#123;</div><div class="line">            <span class="keyword">var</span> tmp = arr[j];</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> k = j; k &gt; gaps[i] &amp;&amp; arr[k - gap] &lt; tmp; k -= gap) &#123;</div><div class="line">                arr[k] = arr[k - gap];</div><div class="line">            &#125;</div><div class="line">            arr[k] = tmp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -89,9 +123,9 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="algorithm" scheme="http://hunnble.github.io/tag/algorithm/"/>
+      <category term="算法" scheme="http://hunnble.github.io/tag/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -100,7 +134,7 @@
     <link href="http://hunnble.github.io/2016/11/02/AMD%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E5%B7%A5%E5%85%B7requirejs/"/>
     <id>http://hunnble.github.io/2016/11/02/AMD模块加载工具requirejs/</id>
     <published>2016-11-02T12:58:44.000Z</published>
-    <updated>2016-11-30T09:49:50.000Z</updated>
+    <updated>2016-12-26T14:57:07.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>苏子曰：<br>“客亦知夫水与月乎?逝者如斯,而未尝往也；<br>盈虚者如彼,而卒莫消长也。<br>盖将自其变者而观之,而天地曾不能一瞬；<br>自其不变者而观之,则物于我皆无尽也。<br>而又何羡乎?<br>且夫天地之间,物各有主。<br>苟非吾之所有,虽一毫而莫取。<br>惟江上之清风,与山间之明月,耳得之而为声,目遇之而成色。<br>取之无禁,用之不竭。<br>是造物者之无尽藏也,而吾与子之所共适.”<br><a id="more"></a></p>
@@ -125,7 +159,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -155,7 +189,7 @@
     <link href="http://hunnble.github.io/2016/08/17/%E9%97%AD%E5%8C%85/"/>
     <id>http://hunnble.github.io/2016/08/17/闭包/</id>
     <published>2016-08-17T03:52:05.000Z</published>
-    <updated>2016-09-20T16:32:00.000Z</updated>
+    <updated>2016-12-26T14:56:27.000Z</updated>
     
     <content type="html"><![CDATA[<p>本篇文章简单介绍闭包及在JavaScript语言中的应用<br><a id="more"></a></p>
 <h2 id="离散数学中的闭包："><a href="#离散数学中的闭包：" class="headerlink" title="离散数学中的闭包："></a>离散数学中的闭包：</h2><p>包含指定集合的满足在某个运算下闭合的最小集合／如果集合A在某种操作作用下的结果仍然属于集合A，那么就认为集合A在这个操作下拥有闭包属性。也可以说，集合A在这个操作下是闭合的</p>
@@ -185,7 +219,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -194,7 +228,7 @@
     <link href="http://hunnble.github.io/2016/08/03/%E4%B8%80%E4%B8%AA%E7%94%BB%E6%9B%B2%E7%BA%BF%E7%9A%84canvas%E7%BB%83%E4%B9%A0/"/>
     <id>http://hunnble.github.io/2016/08/03/一个画曲线的canvas练习/</id>
     <published>2016-08-03T15:51:58.000Z</published>
-    <updated>2016-11-30T16:17:13.000Z</updated>
+    <updated>2016-12-26T14:56:50.000Z</updated>
     
     <content type="html"><![CDATA[<p>我在github上follow了好多很厉害的前端er，有一位有个好多star的repo里面就是各种canvas的小练习，canvas玩好了还是有好处的，毕竟前端要是每天光操作操作dom甚至切切页面是没什么长进的，甚至会被写CRUD的童鞋嘲讽。于是我今天又什么都没做，就写了一个画贝塞尔曲线的练习。<a id="more"></a><br>今天上午起来以后微信里有个大哥发朋友圈说替别人招前端，要先做个投名状，就是点几下就生成贝塞尔曲线的，当然要能拽着点到处动，类似于sketch软件里的那个小工具，我虽然不去应聘，但是还是写了。<br>写到这里我又很难过，因为我没有用过sketch，所以需求都是根据自己的感觉来的，也不知道要的交互效果和功能是不是这样。没有用过sketch的原因是没有macbook用，所以我要从现在开始攒钱买macbook，但是又没有钱赚，所以估计攒够的时候也就是以后工作以后了，只希望我现在的电脑能再给力点坚持两年，以及坏掉的linux系统我过段时间能修好或者重装好。<br>也许是因为今天看了张鑫旭的博客，中了毒，所以我的废话格外的多，还是要开始说这个练习了。</p>
 <h3 id="贝塞尔曲线是什么"><a href="#贝塞尔曲线是什么" class="headerlink" title="贝塞尔曲线是什么"></a>贝塞尔曲线是什么</h3><p>有时候在写css3的transition之后在开发者工具中看transition-timing-function这个属性，也就是什么ease-in,ease-out等等的时候，会发现是有不同形状的曲线从(0,0)坐标到(1,1)坐标的，代表不同的运动缓急，这个曲线就是贝塞尔曲线。它的特点是用少数的点就能产生复杂的平滑曲线。<br><img src="http://htmljs.b0.upaiyun.com/uploads/1415845715278-bezier-quadratic-animation.gif" alt="一次贝塞尔曲线"><br>它在计算机图形学领域的应用更加广泛，按下不表，贝塞尔曲线的更多内容可以看<a href="http://www.html-js.com/article/1628" target="_blank" rel="external">这里</a></p>
@@ -218,7 +252,7 @@
       <category term="demo" scheme="http://hunnble.github.io/category/frontend/demo/"/>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="canvas" scheme="http://hunnble.github.io/tag/canvas/"/>
     
@@ -229,7 +263,7 @@
     <link href="http://hunnble.github.io/2016/08/01/React-redux%E5%AE%9E%E8%B7%B5/"/>
     <id>http://hunnble.github.io/2016/08/01/React-redux实践/</id>
     <published>2016-08-01T09:16:56.000Z</published>
-    <updated>2016-11-30T16:16:53.000Z</updated>
+    <updated>2016-12-26T15:00:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>对于复杂的单页面应用，状态（state）管理非常重要。state 可能包括：服务端的响应数据、本地对响应数据的缓存、本地创建的数据（比如，表单数据）以及一些 UI 的状态信息（比如，路由、选中的 tab、是否显示下拉列表、页码控制等等）。如果 state 变化不可预测，就会难于调试（state 不易重现，很难复现一些 bug）和不易于扩展（比如，优化更新渲染、服务端渲染、路由切换时获取数据等等）。<br>redux解决了state的问题<a id="more"></a>，它的特点沿袭了flux，主要有：</p>
 <ul>
@@ -261,14 +295,10 @@
     
     </summary>
     
-      <category term="Diary" scheme="http://hunnble.github.io/category/Diary/"/>
     
-      <category term="PS3" scheme="http://hunnble.github.io/category/Diary/PS3/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="Games" scheme="http://hunnble.github.io/category/Diary/PS3/Games/"/>
-    
-    
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="React" scheme="http://hunnble.github.io/tag/React/"/>
     
   </entry>
   
@@ -277,7 +307,7 @@
     <link href="http://hunnble.github.io/2016/07/30/Web-Audio-API/"/>
     <id>http://hunnble.github.io/2016/07/30/Web-Audio-API/</id>
     <published>2016-07-30T13:11:23.000Z</published>
-    <updated>2016-12-07T17:28:07.000Z</updated>
+    <updated>2016-12-26T15:00:44.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天什么都没干，就看了一个Web Audio的API然后做了个音频可视化的小demo，呃呃，地址在这里。<br><del><a href="http://hunnble.github.io/JavaScript_demo/web-audio/index.html">demo地址(我把音乐删掉了所以demo看不了了)</a></del><br><a id="more"></a></p>
 <p>我早就想玩音频可视化了但是以前用html5的audio标签就没有解析音频的接口。然后昨天才知道有Web Audio这个东西。然后我发现audio标签的功能是这个API的子集，这个API跟多媒体啊信号啊有关的实现的属性和方法很多。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API" target="_blank" rel="external">Web Audio MDN文档</a><br>属性和方法太多了，我今天只掌握了用到的几个，而它们都是基于AudioContext的:</p>
@@ -315,7 +345,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -324,7 +354,7 @@
     <link href="http://hunnble.github.io/2016/07/21/%E8%BA%AB%E4%BB%BD%E8%AF%81%E5%8F%B7%E5%8C%B9%E9%85%8D%E6%AD%A3%E5%88%99/"/>
     <id>http://hunnble.github.io/2016/07/21/身份证号匹配正则/</id>
     <published>2016-07-20T19:17:47.000Z</published>
-    <updated>2016-07-23T10:40:34.000Z</updated>
+    <updated>2016-12-26T14:56:45.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天继续编写我的正则库cr.js，长了不少知识，比如手机号的格式啊身份证号的格式啊什么的。身份证号我写的是二代身份证，也就是18位的那个。<br><a id="more"></a><br>18位的身份证分成三部分：</p>
 <h4 id="1-地区码"><a href="#1-地区码" class="headerlink" title="1.地区码"></a>1.地区码</h4><p>前六位是地区码，跟注册身份证的地点（一般就是出生地）关联，正则表达式就很好写，是这个：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'\\d&#123;6&#125;'</span></div></pre></td></tr></table></figure></p>
@@ -343,7 +373,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="regexp" scheme="http://hunnble.github.io/tag/regexp/"/>
     
@@ -354,7 +384,7 @@
     <link href="http://hunnble.github.io/2016/07/11/%E5%87%A0%E7%A7%8D%E8%B7%A8%E5%9F%9F%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>http://hunnble.github.io/2016/07/11/几种跨域的方法/</id>
     <published>2016-07-11T13:49:20.000Z</published>
-    <updated>2016-07-13T02:26:54.000Z</updated>
+    <updated>2016-12-26T14:56:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>谈到前端肯定少不了Ajax,谈到Ajax肯定少不了跨域。诗兴大发的我很想说一句，哦，跨域，你就像毒蛇一样，美丽而又危险。<br>今天写小玩具的时候又遇到跨域问题，索性先粗略总结一下跨域的一些方法。<br><a id="more"></a></p>
 <h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>我刚开始学Ajax的时候要写demo练习嘛，所以就用世界上最好的语言php在后端echo一些数据。比如这样的：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">header(<span class="string">"Access-Control-Allow-Origin:./js/create_data.js"</span>);</div><div class="line">$test_obj1 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">2</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试一, data类型为数组"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading1"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">Array</span>(<span class="string">"aaaaaaaaaaaaa"</span>, <span class="string">"bbbbbbbbbbbbbb"</span>, <span class="string">"ccccccccccc"</span>)</div><div class="line">);</div><div class="line">$test_obj2 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">4</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试二, data类型为键值对(对象)"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading2"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">array</span>(</div><div class="line">        <span class="string">"aaa"</span>=&gt; <span class="string">"aaaaaa"</span>,</div><div class="line">        <span class="string">"bbb"</span>=&gt; <span class="string">"bbbbbbbbb"</span></div><div class="line">    )</div><div class="line">);</div><div class="line">$test_obj3 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">5</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试三, data类型为字符串(暂时不进行trim和过滤特殊字符操作)"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading3"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="string">"cccccccc！！！"</span></div><div class="line">);</div><div class="line">$test_obj4 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">5</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试四, data类型为含有对象的数组"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading4"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">Array</span>(<span class="string">"data1"</span>, <span class="keyword">array</span>(<span class="string">"data2"</span>=&gt; <span class="string">"data2value"</span>), <span class="string">"data3"</span>)</div><div class="line">);</div><div class="line">$test_obj5 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">5</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试五 data类型为含有数组的对象"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading5"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">array</span>(</div><div class="line">        <span class="string">'data1'</span>=&gt; <span class="string">"data1value"</span>,</div><div class="line">        <span class="string">'data2'</span>=&gt; <span class="keyword">Array</span>(<span class="string">"data2"</span>, <span class="string">"data3"</span>)</div><div class="line">    )</div><div class="line">);</div><div class="line"></div><div class="line"><span class="keyword">echo</span> json_encode(<span class="keyword">Array</span>($test_obj1, $test_obj2, $test_obj3, $test_obj4, $test_obj5));</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
@@ -376,7 +406,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -385,7 +415,7 @@
     <link href="http://hunnble.github.io/2016/07/05/ES6-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/"/>
     <id>http://hunnble.github.io/2016/07/05/ES6-函数的扩展/</id>
     <published>2016-07-05T02:41:30.000Z</published>
-    <updated>2016-07-06T10:42:34.000Z</updated>
+    <updated>2016-12-26T14:57:34.000Z</updated>
     
     <content type="html"><![CDATA[<p>js中函数是“一等公民”，ES6标准对函数做了一些扩展使得熟悉其它语言的程序员可以更快地上手，而js程序员也会发现函数更强大也更便于编写了。<br><a id="more"></a></p>
 <h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><p>很多语言都支持函数有默认值，比如<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span> <span class="params">(x = <span class="number">10</span>)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
@@ -416,7 +446,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
     
@@ -429,7 +459,7 @@
     <link href="http://hunnble.github.io/2016/06/30/ES6-%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95/"/>
     <id>http://hunnble.github.io/2016/06/30/ES6-数组的扩展/</id>
     <published>2016-06-30T02:38:03.000Z</published>
-    <updated>2016-06-30T15:24:20.000Z</updated>
+    <updated>2016-12-26T14:57:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>ES6对Array的扩展<br><a id="more"></a></p>
 <h3 id="from方法"><a href="#from方法" class="headerlink" title="from方法"></a>from方法</h3><p>Array.from方法用于将类似数组的对象（array-like object）和可遍历对象（iterable）转化为真正的数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arrayLike = &#123;</div><div class="line">    <span class="string">'0'</span>: <span class="string">'a'</span>,</div><div class="line">    <span class="string">'1'</span>: <span class="string">'o'</span>,</div><div class="line">    <span class="string">'2'</span>: <span class="string">'e'</span>,</div><div class="line">    <span class="attr">length</span>: <span class="number">3</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">let</span> arrES5 = [].slice.call(arrayLike); <span class="comment">// ['a', 'o', 'e']</span></div><div class="line"><span class="keyword">let</span> arrES6 = arrayLike.from(arrayLike); <span class="comment">// ['a', 'o', 'e']</span></div><div class="line"><span class="keyword">let</span> arr1 = <span class="built_in">Array</span>.from(<span class="string">'aoe'</span>); <span class="comment">// ['a', 'o', 'e']</span></div></pre></td></tr></table></figure></p>
@@ -466,7 +496,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
     
@@ -479,7 +509,7 @@
     <link href="http://hunnble.github.io/2016/06/28/ES6-%E6%95%B0%E5%80%BC%E7%9A%84%E6%89%A9%E5%B1%95/"/>
     <id>http://hunnble.github.io/2016/06/28/ES6-数值的扩展/</id>
     <published>2016-06-28T15:44:55.000Z</published>
-    <updated>2016-06-29T01:12:36.000Z</updated>
+    <updated>2016-12-26T14:57:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>JS的数值设计的不好，嗯，但是ES6说，还可以抢救一下…<br><a id="more"></a></p>
 <h3 id="二进制和八进制和十六进制…"><a href="#二进制和八进制和十六进制…" class="headerlink" title="二进制和八进制和十六进制…"></a>二进制和八进制和十六进制…</h3><p>从ES5开始，在严格模式中，八进制数值就不再允许使用前缀0表示，ES6进一步明确，要使用前缀0o表示。同理，二进制使用0B前缀。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">0b11</span> === <span class="number">3</span>); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="number">0o11</span> === <span class="number">9</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
@@ -500,7 +530,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
     
@@ -513,7 +543,7 @@
     <link href="http://hunnble.github.io/2016/06/27/ES6-RegExp%E6%89%A9%E5%B1%95/"/>
     <id>http://hunnble.github.io/2016/06/27/ES6-RegExp扩展/</id>
     <published>2016-06-27T14:39:50.000Z</published>
-    <updated>2016-06-27T16:03:12.000Z</updated>
+    <updated>2016-12-26T14:57:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>ES6扩展了JavaScript中的正则<br><a id="more"></a></p>
 <h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>ES5中的RegExp只能接收字符串作为参数，ES6中接收正则表达式作为参数，返回原有正则表达式的拷贝<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/abc/ig</span>);</div></pre></td></tr></table></figure></p>
@@ -532,7 +562,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
     
@@ -545,7 +575,7 @@
     <link href="http://hunnble.github.io/2016/06/25/ES6-%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     <id>http://hunnble.github.io/2016/06/25/ES6-字符串/</id>
     <published>2016-06-25T15:23:09.000Z</published>
-    <updated>2016-06-25T16:31:52.000Z</updated>
+    <updated>2016-12-26T14:57:46.000Z</updated>
     
     <content type="html"><![CDATA[<p>ES6扩展了很多字符串的属性和方法。<br><a id="more"></a></p>
 <h3 id="大括号表示Unicode字符"><a href="#大括号表示Unicode字符" class="headerlink" title="大括号表示Unicode字符"></a>大括号表示Unicode字符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> t = <span class="string">"\uD842\uDFB7"</span>;</div><div class="line"><span class="keyword">let</span> t1 = <span class="string">"\u&#123;20BB7&#125;"</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(t, t1); <span class="comment">//𠮷 𠮷</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'\u&#123;1f680&#125;'</span> === <span class="string">'\uD83D\uDE80'</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure>
@@ -565,7 +595,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
     
@@ -578,7 +608,7 @@
     <link href="http://hunnble.github.io/2016/06/25/ES6-%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/"/>
     <id>http://hunnble.github.io/2016/06/25/ES6-变量的解构赋值/</id>
     <published>2016-06-25T13:05:46.000Z</published>
-    <updated>2016-06-25T15:14:08.000Z</updated>
+    <updated>2016-12-26T14:57:23.000Z</updated>
     
     <content type="html"><![CDATA[<p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被成为解构赋值(Destructuring)。<br><a id="more"></a></p>
 <h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, [b, [c]], , e, ...tail] = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>]], <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, [<span class="number">8</span>]];</div><div class="line"><span class="keyword">let</span> [i, j] = [<span class="string">'a'</span>];</div><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="built_in">console</span>.log(a, b, c, e, tail); <span class="comment">// 1 2 3 6 [7, [8]]</span></div><div class="line"><span class="built_in">console</span>.log(i, j); <span class="comment">// 'a' undefined</span></div><div class="line"><span class="built_in">console</span>.log(x, y); <span class="comment">// 1, 2</span></div></pre></td></tr></table></figure>
@@ -597,7 +627,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
     
@@ -610,7 +640,7 @@
     <link href="http://hunnble.github.io/2016/06/24/ES6-let-and-const/"/>
     <id>http://hunnble.github.io/2016/06/24/ES6-let-and-const/</id>
     <published>2016-06-24T14:58:32.000Z</published>
-    <updated>2016-06-24T15:38:10.000Z</updated>
+    <updated>2016-12-26T14:57:51.000Z</updated>
     
     <content type="html"><![CDATA[<p>es6学习笔记第一篇，let和const命令<br><a id="more"></a></p>
 <h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>ES6新增了let命令，用于声明变量，但是它和var是有区别的。区别在于，它只在块级作用域内有效，而var呢，由于众所周知的语言特性，var声明的变量在函数作用域内有效（参考你不知道的javascript中没有块级作用域章节）。<br>let的使用使从前需要用IIFE解决的一些问题变得不再是问题了，比如下面的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> m = tasks.length - <span class="number">1</span>; m &gt;= <span class="number">0</span>; m--) &#123;</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="comment">//TODO</span></div><div class="line">    &#125;)(m);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -631,7 +661,7 @@
     </summary>
     
     
-      <category term="frontend" scheme="http://hunnble.github.io/tag/frontend/"/>
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
     
@@ -661,41 +691,6 @@
     
     
       <category term="node.js" scheme="http://hunnble.github.io/tag/node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTTP状态码</title>
-    <link href="http://hunnble.github.io/2016/06/17/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/"/>
-    <id>http://hunnble.github.io/2016/06/17/HTTP状态码/</id>
-    <published>2016-06-17T15:45:18.000Z</published>
-    <updated>2016-07-09T13:42:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>记一下常见的一些状态码。<br><a id="more"></a></p>
-<ul>
-<li>200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。</li>
-<li>201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。</li>
-<li>202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）</li>
-<li>204 NO CONTENT - [DELETE]：用户删除数据成功。</li>
-<li>400 INVALID REQUEST - [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。</li>
-<li>401 Unauthorized - [*]：表示用户没有权限（令牌、用户名、密码错误）。</li>
-<li>403 Forbidden - [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的。</li>
-<li>404 NOT FOUND - [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。</li>
-<li>406 Not Acceptable - [GET]：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。</li>
-<li>410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的。</li>
-<li>422 Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误。</li>
-<li>500 INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;记一下常见的一些状态码。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="HTTP" scheme="http://hunnble.github.io/tag/HTTP/"/>
     
   </entry>
   
