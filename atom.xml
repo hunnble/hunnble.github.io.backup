@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hunnble.github.io/"/>
-  <updated>2016-12-26T16:17:45.000Z</updated>
+  <updated>2017-01-02T02:19:52.000Z</updated>
   <id>http://hunnble.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>js中的装饰器</title>
-    <link href="http://hunnble.github.io/2016/12/26/js%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
-    <id>http://hunnble.github.io/2016/12/26/js中的装饰器/</id>
+    <title>JavaScript中的装饰器</title>
+    <link href="http://hunnble.github.io/2016/12/26/JavaScript%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
+    <id>http://hunnble.github.io/2016/12/26/JavaScript中的装饰器/</id>
     <published>2016-12-26T14:55:19.000Z</published>
-    <updated>2016-12-26T16:17:45.000Z</updated>
+    <updated>2017-01-02T02:19:52.000Z</updated>
     
     <content type="html"><![CDATA[<p>如果你学过<code>python</code>，一定对装饰器已经很熟悉了，在新标准下，<code>JavaScript</code>也支持了装饰器语法。如果你没有使用过装饰器，希望这篇文章可以带你入门。<br><a id="more"></a></p>
 <h3 id="我们所熟知的Python中的装饰器"><a href="#我们所熟知的Python中的装饰器" class="headerlink" title="我们所熟知的Python中的装饰器"></a>我们所熟知的Python中的装饰器</h3><p>装饰器装饰的是谁？是函数。<br>装饰器长什么样子？以<code>@</code>开头，接着是装饰器函数的名字和参数（可选），接下来是被修饰的函数和被修饰函数的参数。举个栗子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator(dec_opt_args)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">funcBeDecorated</span><span class="params">(func_opt_args)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
@@ -34,8 +34,6 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">decorator</span> (<span class="params">target</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(target) <span class="comment">// target是Component</span></div><div class="line">    <span class="keyword">return</span> target</div><div class="line">&#125;</div><div class="line"></div><div class="line">@decorator</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>和上面说的<code>python</code>中的装饰器基本上差不多的样子<br>当装饰器装饰类的属性时，操作的不是类本身了，而是第三个参数：描述符。这也是为什么定义中说是可选性的返回被装饰之后的<code>descriptor</code>对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">decorator</span> (<span class="params">target, name, descriptor</span>) </span>&#123;</div><div class="line">    discriptor.writable = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">return</span> discriptor;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    @decorator</div><div class="line">    play () &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'too young'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> component = <span class="keyword">new</span> Component();</div><div class="line">component.play = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'too simple'</span>);</div><div class="line">&#125;</div><div class="line">component.play() <span class="comment">// too young</span></div></pre></td></tr></table></figure></p>
 <p>为什么对play属性的修改无效了呢？因为在装饰器中将被返回的描述符的play属性设置为只读，就这么简单。<br>随着JavaScript的完善，<del>它会越来越像python的</del> 好用的语法糖会越来越多的。</p>
-<h3 id="例行说一些闲话"><a href="#例行说一些闲话" class="headerlink" title="例行说一些闲话"></a>例行说一些闲话</h3><p>今天是做课程设计的第一天，选了一个偏理论的选题，其实还是有点想换选题的。还有一个感觉就是虽然同学们都很厉害，但是合作做项目或者课题的时候总是会有各种问题。基本上成绩好一些的队伍都是一个或者两个技术比较突出的同学作为主要生产力这样的。</p>
-<p>晚上大家从机房出来去吃饭的路上我才知道十一月份那个课设的成绩出来了，然后查了一下，老师给我们组优秀，觉得有点配不上。最近又看到前端圈里徐飞大牛因为技术选型然后从公司离职的事儿又想到也许当时不应该把自己喜好的技术栈强加给别的团队成员。这也是这次选了一个别人肯定不会选的课题的原因吧，还有一部分原因就是想给自己的网站加个密，嘿嘿嘿，能猜出来我选的什么了吧。</p>
 ]]></content>
     
     <summary type="html">
@@ -98,11 +96,11 @@
   </entry>
   
   <entry>
-    <title>用js实现几种排序算法</title>
-    <link href="http://hunnble.github.io/2016/11/05/%E7%94%A8js%E5%AE%9E%E7%8E%B0%E5%87%A0%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
-    <id>http://hunnble.github.io/2016/11/05/用js实现几种排序算法/</id>
+    <title>用JavaScript实现几种排序算法</title>
+    <link href="http://hunnble.github.io/2016/11/05/%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E5%87%A0%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <id>http://hunnble.github.io/2016/11/05/用JavaScript实现几种排序算法/</id>
     <published>2016-11-05T01:49:07.000Z</published>
-    <updated>2016-12-26T14:57:01.000Z</updated>
+    <updated>2017-01-02T02:19:30.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天周六，打算花一些时间把几种排序算法使用js实现一下。<br><a id="more"></a></p>
 <h3 id="0-准备工作"><a href="#0-准备工作" class="headerlink" title="0.准备工作"></a>0.准备工作</h3><p>首先用mocha+chai写几行测试，然后测排序是不是正确就不用自己瞅了…以测试归并排序为例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> expect = <span class="built_in">require</span>(<span class="string">'chai'</span>).expect;</div><div class="line"><span class="keyword">var</span> sortFuncs = <span class="built_in">require</span>(<span class="string">'./sort.js'</span>);</div><div class="line"></div><div class="line">describe(<span class="string">'sort function must be right'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    describe(<span class="string">'merge sort'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> arr = arrayGenerator(<span class="number">20</span>);</div><div class="line">        it(<span class="string">'merge sort should be correct'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            expect(sortFuncs.mergeSort(arr)).to.eql(sort(arr));</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrayGenerator</span> (<span class="params">n</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">        arr.push(<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">100</span>));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">v1, v2</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> v2 - v1;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
