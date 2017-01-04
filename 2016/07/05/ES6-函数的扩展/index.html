@@ -1,100 +1,181 @@
 
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<link rel="alternate" href="/atom.xml" type="application/atom+xml">
-<title>ES6-函数的扩展 [ 北方公园 ]</title>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="shortcut icon" href="/images/favicon.ico">
-<link rel="stylesheet" href="/css/default_highlight.min.css">
-<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen">
-<link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <link rel="alternate" href=/atom.xml type="application/atom+xml">
+  <title>ES6-函数的扩展 [ 北方公园 ]</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  
+    
+      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+    
+  
+  
+    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  
+    
+      <link rel="stylesheet" href="/css/main.css">
+    
+  
 </head>
 <body>
+
 <div class="navbar-fixed white-text">
-<nav class="transparent z-depth-0">
-<div class="nav-wrapper">
-<ul id="nav-mobile" class="right hide-on-med-and-down">
-<li>
-<a class="waves-effect text-lighten-4" href="/">主页</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/archive">归档</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/about">关于</a>
-</li>
-</ul>
-<a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/">主页</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/about">关于</a>
+          </li>
+        
+      </ul>
+      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 </div>
-</nav>
-</div>
+
 <ul id="slide-nav" class="side-nav">
-<li>
-<div class="userView lighten-2 teal">
-<div class="background">
-<h5 class="white-text inline-title">Noski</h5>
-</div>
-<img class="circle" src="/images/avatar.png">
-<h5 class="white-text inline-title">北方公园</h5>
-<br>
-<h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-</div>
-</li>
-<li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  <li>
+    <div class="userView lighten-2 teal">
+      <div class="background">
+        <h5 class="white-text inline-title">Noski</h5>
+      </div>
+      <img class="circle" src=/images/avatar.png>
+      <h5 class="white-text inline-title">北方公园</h5>
+      <br />
+      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+    </div>
+  </li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  
 </ul>
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height:400px">
-<div class="parallax lighten-2 teal">
-<img src="/images/background.jpg">
+
+
+
+
+
+  
+
+
+  
+
+
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
+  
+  <div class="parallax lighten-2 teal ">
+    <img src="/images/background.jpg">
+  </div>
+  <script type="text/javascript">
+    var container = document.querySelector('.parallax-container');
+    var tmpTitle = container.querySelector('.hide-on-image-load');
+    var img = container.querySelector('img');
+    img.onload = function() {
+      if (tmpTitle) {
+        tmpTitle.style.display = 'none';
+      }
+    }
+  </script>
 </div>
-<script type="text/javascript">var container=document.querySelector(".parallax-container"),tmpTitle=container.querySelector(".hide-on-image-load"),img=container.querySelector("img");img.onload=function(){tmpTitle&&(tmpTitle.style.display="none")}</script>
+
+  
+
 </div>
+
 <main id="container-outer" class="">
-<div class="row">
-<div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+
+  
+    
+  
+
+  
+  
+    
+  
+
+  <div class="row ">
+
+    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+      
+        
 <section id="post" class="card article z-depth-0">
-<div class="card-panel z-depth-0 black-text">
-<h1>ES6-函数的扩展</h1>
-<div class="valign-wrapper blue-grey-text">
-<i class="material-icons valign">query_builder</i>&nbsp
-<time datetime="2016-07-05T02:41:30.000Z" class="valign">
-2016 7月 5日 上午10:41:30
-</time>
-</div>
-<div class="valign-wrapper sm-text blue-grey-text">
-<i class="material-icons valign">grade</i>&nbsp
-<span id="busuanzi_container_page_pv" class="valign">
-阅读<span id="busuanzi_value_page_pv"></span>次
-</span>
-</div>
-<div class="section right">
-<span class="new badge amber left" data-badge-caption="">
-<a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
-</span>
-<span class="new badge green left" data-badge-caption="">
-<a href="/tag/es6/" title="#es6" class="white-text" target="_blank" rel="external">#es6</a>
-</span>
-<span class="new badge red left" data-badge-caption="">
-<a href="/tag/ES6标准入门学习笔记/" title="#ES6标准入门学习笔记" class="white-text" target="_blank" rel="external">#ES6标准入门学习笔记</a>
-</span>
-</div>
-</div>
-<div class="card-content z-depth-0">
-<p>js中函数是“一等公民”，ES6标准对函数做了一些扩展使得熟悉其它语言的程序员可以更快地上手，而js程序员也会发现函数更强大也更便于编写了。<br><a id="more"></a></p>
-<h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><p>很多语言都支持函数有默认值，比如<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span> <span class="params">(x = <span class="number">10</span>)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure><p></p>
-<p>ES6也引入了函数默认参数<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">x = <span class="number">50</span>, y</span>) </span>&#123;</div><div class="line">    <span class="comment">// x: 50, y: undefined</span></div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>给参数指定默认值后，该参数及之后的参数不会被函数的length计数（rest参数也不会计数）。且有默认值的参数都不是尾参数，无法跳过，在调用函数的时候只能写undefined跳过。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">x, y = <span class="number">50</span>, z</span>) </span>&#123;&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span> (<span class="params">...args</span>) </span>&#123;&#125;</div><div class="line">foo.length <span class="comment">// 1 =&gt; 只有x被计入length</span></div><div class="line">bar.length <span class="comment">// 0</span></div></pre></td></tr></table></figure><p></p>
+  
+    <div class="card-panel z-depth-0 black-text">
+      <h1>ES6-函数的扩展</h1>
+
+      
+
+      <div class="valign-wrapper blue-grey-text">
+        <i class="material-icons valign">query_builder</i>&nbsp
+        <time datetime="2016-07-05T02:41:30.000Z" class="valign">
+          2016 7月 5日
+          上午10:41:30
+        </time>
+      </div>
+
+      
+        <div class="valign-wrapper sm-text blue-grey-text">
+          <i class="material-icons valign">grade</i>&nbsp
+          <span id="busuanzi_container_page_pv" class="valign">
+            阅读<span id="busuanzi_value_page_pv"></span>次
+          </span>
+        </div>
+      
+
+      
+        <div class="section right">
+          
+            <span class="new badge amber left" data-badge-caption="">
+              <a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
+            </span>
+          
+            <span class="new badge green left" data-badge-caption="">
+              <a href="/tag/es6/" title="#es6" class="white-text" target="_blank" rel="external">#es6</a>
+            </span>
+          
+            <span class="new badge red left" data-badge-caption="">
+              <a href="/tag/ES6标准入门学习笔记/" title="#ES6标准入门学习笔记" class="white-text" target="_blank" rel="external">#ES6标准入门学习笔记</a>
+            </span>
+          
+        </div>
+      
+
+    </div>
+  
+
+  <div class="card-content z-depth-0">
+
+    
+
+    <p>js中函数是“一等公民”，ES6标准对函数做了一些扩展使得熟悉其它语言的程序员可以更快地上手，而js程序员也会发现函数更强大也更便于编写了。<br><a id="more"></a></p>
+<h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><p>很多语言都支持函数有默认值，比如<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span> <span class="params">(x = <span class="number">10</span>)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
+<p>ES6也引入了函数默认参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">x = <span class="number">50</span>, y</span>) </span>&#123;</div><div class="line">    <span class="comment">// x: 50, y: undefined</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>给参数指定默认值后，该参数及之后的参数不会被函数的length计数（rest参数也不会计数）。且有默认值的参数都不是尾参数，无法跳过，在调用函数的时候只能写undefined跳过。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">x, y = <span class="number">50</span>, z</span>) </span>&#123;&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span> (<span class="params">...args</span>) </span>&#123;&#125;</div><div class="line">foo.length <span class="comment">// 1 =&gt; 只有x被计入length</span></div><div class="line">bar.length <span class="comment">// 0</span></div></pre></td></tr></table></figure></p>
 <p>而可以省略参数时，也可以将参数默认值设置成undefined。</p>
-<h3 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h3><p>扩展运算符（spread）是三个点…，作用是将一个数组转为参数序列。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(...[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]); <span class="comment">// 1 2 3</span></div></pre></td></tr></table></figure><p></p>
-<p>扩展运算符的主要用途是解构rest参数<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">array, ...items</span>) </span>&#123;</div><div class="line">    array.push(...items);</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<h3 id="name属性"><a href="#name属性" class="headerlink" title="name属性"></a>name属性</h3><p>函数的name属性返回该函数的函数名。<br>将具名函数赋值给一个变量，name属性返回具名函数的名字。<br>Function构造函数返回的函数实例，name属性的值为”anonymous”。<br>bind返回的函数name属性值会加上”bound “前缀。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span> (<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> f4 = <span class="function"><span class="keyword">function</span> <span class="title">f3</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> f5 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f1.name, f2.name, f4.name, (<span class="keyword">new</span> <span class="built_in">Function</span>).name, f5.bind(&#123;&#125;).name); <span class="comment">// f1 f2 f3 anonymous bound f5</span></div></pre></td></tr></table></figure><p></p>
-<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>ES6允许使用箭头定义函数，箭头长这样: =&gt;<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f = <span class="function">(<span class="params">arg1, arg2</span>) =&gt;</span> result;</div></pre></td></tr></table></figure><p></p>
-<p>这种是最简单的形式，参数列表加返回值。<br>如果代码部分多于一条语句就要用大括号了，且要写return。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f = <span class="function">(<span class="params">arg1, arg2</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> arg1;</div><div class="line">&#125;;</div></pre></td></tr></table></figure><p></p>
-<p>由于大括号被解释成代码块，所以返回的是对象的时候为了区分，要在对象外面加上括号。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">a</span> =&gt;</span> (&#123;<span class="attr">r1</span>: a&#125;);</div></pre></td></tr></table></figure><p></p>
+<h3 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h3><p>扩展运算符（spread）是三个点…，作用是将一个数组转为参数序列。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(...[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]); <span class="comment">// 1 2 3</span></div></pre></td></tr></table></figure></p>
+<p>扩展运算符的主要用途是解构rest参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">array, ...items</span>) </span>&#123;</div><div class="line">    array.push(...items);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="name属性"><a href="#name属性" class="headerlink" title="name属性"></a>name属性</h3><p>函数的name属性返回该函数的函数名。<br>将具名函数赋值给一个变量，name属性返回具名函数的名字。<br>Function构造函数返回的函数实例，name属性的值为”anonymous”。<br>bind返回的函数name属性值会加上”bound “前缀。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span> (<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> f4 = <span class="function"><span class="keyword">function</span> <span class="title">f3</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> f5 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f1.name, f2.name, f4.name, (<span class="keyword">new</span> <span class="built_in">Function</span>).name, f5.bind(&#123;&#125;).name); <span class="comment">// f1 f2 f3 anonymous bound f5</span></div></pre></td></tr></table></figure></p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>ES6允许使用箭头定义函数，箭头长这样: =&gt;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f = <span class="function">(<span class="params">arg1, arg2</span>) =&gt;</span> result;</div></pre></td></tr></table></figure></p>
+<p>这种是最简单的形式，参数列表加返回值。<br>如果代码部分多于一条语句就要用大括号了，且要写return。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f = <span class="function">(<span class="params">arg1, arg2</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> arg1;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>由于大括号被解释成代码块，所以返回的是对象的时候为了区分，要在对象外面加上括号。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">a</span> =&gt;</span> (&#123;<span class="attr">r1</span>: a&#125;);</div></pre></td></tr></table></figure></p>
 <h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><ul>
 <li>箭头函数可以绑定this对象，淘汰了显式绑定this对象的写法，如call,apply,bind等。</li>
 <li>函数体内的this对象就是定义时所在的对象，而不是使用时所在的对象。原因是上一条的箭头函数自身没有this，所以this总是指定义时所在的对象。</li>
@@ -102,65 +183,120 @@
 <li>没有arguments对象了，喜闻乐见。</li>
 <li>不可以使用yield命令，即不能作为Generator函数。</li>
 </ul>
-<h3 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h3><p>尾调用是函数式编程的一个概念，就是指某个函数的最后一步是调用另一个函数。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> g(x);</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>函数调用会在内部形成调用帧（call frame）用以保存调用位置和内部变量等信息，如果在函数A的内部调用函数B，那么B的调用帧会在A的调用帧上方。以此类推，调用帧会形成栈的数据结构，称为调用栈（call stack）。<br>由于尾调用是外部函数最后一次操作，所以可以如下优化：用内层函数的调用帧取代外层函数的。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>  <span class="title">f</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> m = <span class="number">1</span>;</div><div class="line">    <span class="keyword">let</span> n = <span class="number">2</span>;</div><div class="line">    <span class="keyword">return</span> g(m + n);</div><div class="line">&#125;</div><div class="line">f();</div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> g(<span class="number">3</span>);</div><div class="line">&#125;</div><div class="line">f();</div><div class="line"><span class="comment">// 等同于</span></div><div class="line">g(<span class="number">3</span>);</div></pre></td></tr></table></figure><p></p>
-<div class="sibling-post center-align card-panel z-depth-0 section">
-<a href="/2016/06/30/ES6-数组的扩展/" class="btn-flat blue-grey-text right">
-<i class="material-icons right">chevron_right</i>
-ES6-数组的扩展
-</a>
-<a href="/2016/07/11/几种跨域的方法/" class="btn-flat blue-grey-text left">
-<i class="material-icons left">chevron_left</i>
-几种跨域的方法
-</a>
-</div>
-<div class="comment" id="duoshuo">
-<div class="ds-thread" data-thread-key="post-ES6-函数的扩展" data-title="ES6-函数的扩展" data-url="http://hunnble.github.io/2016/07/05/ES6-函数的扩展/"></div>
-<script type="text/javascript">var duoshuoQuery={short_name:"hunnble"},ds=document.createElement("script");ds.type="text/javascript",ds.async=!0,ds.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",ds.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(ds)</script>
-</div>
-</div>
+<h3 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h3><p>尾调用是函数式编程的一个概念，就是指某个函数的最后一步是调用另一个函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> g(x);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>函数调用会在内部形成调用帧（call frame）用以保存调用位置和内部变量等信息，如果在函数A的内部调用函数B，那么B的调用帧会在A的调用帧上方。以此类推，调用帧会形成栈的数据结构，称为调用栈（call stack）。<br>由于尾调用是外部函数最后一次操作，所以可以如下优化：用内层函数的调用帧取代外层函数的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>  <span class="title">f</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> m = <span class="number">1</span>;</div><div class="line">    <span class="keyword">let</span> n = <span class="number">2</span>;</div><div class="line">    <span class="keyword">return</span> g(m + n);</div><div class="line">&#125;</div><div class="line">f();</div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> g(<span class="number">3</span>);</div><div class="line">&#125;</div><div class="line">f();</div><div class="line"><span class="comment">// 等同于</span></div><div class="line">g(<span class="number">3</span>);</div></pre></td></tr></table></figure></p>
+
+
+    <div class="sibling-post center-align card-panel z-depth-0 section">
+
+      
+        <a href="/2016/06/30/ES6-数组的扩展/" class="btn-flat blue-grey-text right">
+          <i class="material-icons right">chevron_right</i>
+          ES6-数组的扩展
+        </a>
+      
+
+      
+        <a href="/2016/07/11/几种跨域的方法/" class="btn-flat blue-grey-text left">
+          <i class="material-icons left">chevron_left</i>
+          几种跨域的方法
+        </a>
+      
+
+    </div>
+
+    
+      <div class="comment" id="duoshuo">
+        <div class="ds-thread" data-thread-key="post-ES6-函数的扩展" data-title="ES6-函数的扩展" data-url="http://hunnble.github.io/2016/07/05/ES6-函数的扩展/"></div>
+        <script type="text/javascript">
+          var duoshuoQuery = { short_name:'hunnble' };
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';
+          ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        </script>
+      </div>
+    
+
+  </div>
+
 </section>
-<div class="fixed-action-btn click-to-toggle">
-<a class="btn-floating btn-large lighten-2 teal">
-<i class="large material-icons">view_module</i>
-</a>
-<ul>
-<li>
-<a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-<i class="material-icons">navigation</i>
-</a>
-</li>
-</ul>
+
+        <div class="fixed-action-btn click-to-toggle">
+  <a class="btn-floating btn-large lighten-2 teal">
+    <i class="large material-icons">view_module</i>
+  </a>
+  <ul>
+    <li>
+      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+        <i class="material-icons">navigation</i>
+      </a>
+    </li>
+  </ul>
 </div>
-</div>
-<aside class="col m2 push-m2 hide-on-med-and-down">
-<div class="toc transparent card-panel z-depth-0">
-<ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#函数参数的默认值"><span class="table-of-contents-text">函数参数的默认值</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#扩展运算符"><span class="table-of-contents-text">扩展运算符</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#name属性"><span class="table-of-contents-text">name属性</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#箭头函数"><span class="table-of-contents-text">箭头函数</span></a><ol class="table-of-contents-child"><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#基本用法"><span class="table-of-contents-text">基本用法</span></a></li><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#注意点"><span class="table-of-contents-text">注意点</span></a></li></ol></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#尾调用优化"><span class="table-of-contents-text">尾调用优化</span></a></li></ol>
-</div>
-</aside>
-</div>
+
+      
+    </div>
+
+    
+      <aside class="col m2 push-m2 hide-on-med-and-down">
+        <div class="toc transparent card-panel z-depth-0">
+          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#函数参数的默认值"><span class="table-of-contents-text">函数参数的默认值</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#扩展运算符"><span class="table-of-contents-text">扩展运算符</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#name属性"><span class="table-of-contents-text">name属性</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#箭头函数"><span class="table-of-contents-text">箭头函数</span></a><ol class="table-of-contents-child"><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#基本用法"><span class="table-of-contents-text">基本用法</span></a></li><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#注意点"><span class="table-of-contents-text">注意点</span></a></li></ol></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#尾调用优化"><span class="table-of-contents-text">尾调用优化</span></a></li></ol>
+        </div>
+      </aside>
+    
+
+
+    
+
+  </div>
+
 </main>
-<footer class="page-footer lighten-2 teal">
-<div class="container section">
-<div class="center-align white-text text-lighten-4">
-<p>
-Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-</p>
-<h5>
-总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-</h5>
-</div>
-</div>
-<div class="footer-copyright center-align">
-Copyright © 2016 Noski
-</div>
+
+
+  
+
+
+<footer class="page-footer lighten-2 teal ">
+  <div class="container section">
+    <div class="center-align white-text text-lighten-4">
+      <p>
+        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+      </p>
+      
+        <h5>
+          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+        </h5>
+      
+    </div>
+  </div>
+  <div class="footer-copyright center-align">
+    Copyright © 2016 Noski
+  </div>
 </footer>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="/js/highlight.min.js"></script>
+
+
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src="/js/highlight.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+    <script type="text/javascript" src=/js/main.js></script>
+  
+
+
 </body>
 </html>

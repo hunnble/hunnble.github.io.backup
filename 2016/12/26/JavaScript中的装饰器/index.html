@@ -1,148 +1,281 @@
 
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<link rel="alternate" href="/atom.xml" type="application/atom+xml">
-<title>JavaScript中的装饰器 [ 北方公园 ]</title>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="shortcut icon" href="/images/favicon.ico">
-<link rel="stylesheet" href="/css/default_highlight.min.css">
-<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen">
-<link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <link rel="alternate" href=/atom.xml type="application/atom+xml">
+  <title>JavaScript中的装饰器 [ 北方公园 ]</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  
+    
+      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+    
+  
+  
+    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  
+    
+      <link rel="stylesheet" href="/css/main.css">
+    
+  
 </head>
 <body>
+
 <div class="navbar-fixed white-text">
-<nav class="transparent z-depth-0">
-<div class="nav-wrapper">
-<ul id="nav-mobile" class="right hide-on-med-and-down">
-<li>
-<a class="waves-effect text-lighten-4" href="/">主页</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/archive">归档</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/about">关于</a>
-</li>
-</ul>
-<a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/">主页</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/about">关于</a>
+          </li>
+        
+      </ul>
+      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 </div>
-</nav>
-</div>
+
 <ul id="slide-nav" class="side-nav">
-<li>
-<div class="userView lighten-2 teal">
-<div class="background">
-<h5 class="white-text inline-title">Noski</h5>
-</div>
-<img class="circle" src="/images/avatar.png">
-<h5 class="white-text inline-title">北方公园</h5>
-<br>
-<h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-</div>
-</li>
-<li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  <li>
+    <div class="userView lighten-2 teal">
+      <div class="background">
+        <h5 class="white-text inline-title">Noski</h5>
+      </div>
+      <img class="circle" src=/images/avatar.png>
+      <h5 class="white-text inline-title">北方公园</h5>
+      <br />
+      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+    </div>
+  </li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  
 </ul>
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height:400px">
-<div class="parallax lighten-2 teal">
-<img src="/images/background.jpg">
+
+
+
+
+
+  
+
+
+  
+
+
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
+  
+  <div class="parallax lighten-2 teal ">
+    <img src="/images/background.jpg">
+  </div>
+  <script type="text/javascript">
+    var container = document.querySelector('.parallax-container');
+    var tmpTitle = container.querySelector('.hide-on-image-load');
+    var img = container.querySelector('img');
+    img.onload = function() {
+      if (tmpTitle) {
+        tmpTitle.style.display = 'none';
+      }
+    }
+  </script>
 </div>
-<script type="text/javascript">var container=document.querySelector(".parallax-container"),tmpTitle=container.querySelector(".hide-on-image-load"),img=container.querySelector("img");img.onload=function(){tmpTitle&&(tmpTitle.style.display="none")}</script>
+
+  
+
 </div>
+
 <main id="container-outer" class="">
-<div class="row">
-<div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+
+  
+    
+  
+
+  
+  
+    
+  
+
+  <div class="row ">
+
+    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+      
+        
 <section id="post" class="card article z-depth-0">
-<div class="card-panel z-depth-0 black-text">
-<h1>JavaScript中的装饰器</h1>
-<div class="valign-wrapper blue-grey-text">
-<i class="material-icons valign">query_builder</i>&nbsp
-<time datetime="2016-12-26T14:55:19.000Z" class="valign">
-2016 12月 26日 晚上10:55:19
-</time>
-</div>
-<div class="valign-wrapper sm-text blue-grey-text">
-<i class="material-icons valign">grade</i>&nbsp
-<span id="busuanzi_container_page_pv" class="valign">
-阅读<span id="busuanzi_value_page_pv"></span>次
-</span>
-</div>
-<div class="section right">
-<span class="new badge amber left" data-badge-caption="">
-<a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
-</span>
-</div>
-</div>
-<div class="card-content z-depth-0">
-<p>如果你学过<code>python</code>，一定对装饰器已经很熟悉了，在新标准下，<code>JavaScript</code>也支持了装饰器语法。如果你没有使用过装饰器，希望这篇文章可以带你入门。<br><a id="more"></a></p>
-<h3 id="我们所熟知的Python中的装饰器"><a href="#我们所熟知的Python中的装饰器" class="headerlink" title="我们所熟知的Python中的装饰器"></a>我们所熟知的Python中的装饰器</h3><p>装饰器装饰的是谁？是函数。<br>装饰器长什么样子？以<code>@</code>开头，接着是装饰器函数的名字和参数（可选），接下来是被修饰的函数和被修饰函数的参数。举个栗子：<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator(dec_opt_args)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">funcBeDecorated</span><span class="params">(func_opt_args)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure><p></p>
-<p>至于装饰器解决了什么问题，以及有参数无参数的装饰器的区别，我觉得下面的代码可以解释清楚：<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator1</span></div><div class="line"><span class="meta">@decorator2(args)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure><p></p>
-<p>可以理解为<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func = decorator1(decorator2(args)(func))</div></pre></td></tr></table></figure><p></p>
+  
+    <div class="card-panel z-depth-0 black-text">
+      <h1>JavaScript中的装饰器</h1>
+
+      
+
+      <div class="valign-wrapper blue-grey-text">
+        <i class="material-icons valign">query_builder</i>&nbsp
+        <time datetime="2016-12-26T14:55:19.000Z" class="valign">
+          2016 12月 26日
+          晚上10:55:19
+        </time>
+      </div>
+
+      
+        <div class="valign-wrapper sm-text blue-grey-text">
+          <i class="material-icons valign">grade</i>&nbsp
+          <span id="busuanzi_container_page_pv" class="valign">
+            阅读<span id="busuanzi_value_page_pv"></span>次
+          </span>
+        </div>
+      
+
+      
+        <div class="section right">
+          
+            <span class="new badge amber left" data-badge-caption="">
+              <a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
+            </span>
+          
+        </div>
+      
+
+    </div>
+  
+
+  <div class="card-content z-depth-0">
+
+    
+
+    <p>如果你学过<code>python</code>，一定对装饰器已经很熟悉了，在新标准下，<code>JavaScript</code>也支持了装饰器语法。如果你没有使用过装饰器，希望这篇文章可以带你入门。<br><a id="more"></a></p>
+<h3 id="我们所熟知的Python中的装饰器"><a href="#我们所熟知的Python中的装饰器" class="headerlink" title="我们所熟知的Python中的装饰器"></a>我们所熟知的Python中的装饰器</h3><p>装饰器装饰的是谁？是函数。<br>装饰器长什么样子？以<code>@</code>开头，接着是装饰器函数的名字和参数（可选），接下来是被修饰的函数和被修饰函数的参数。举个栗子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator(dec_opt_args)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">funcBeDecorated</span><span class="params">(func_opt_args)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
+<p>至于装饰器解决了什么问题，以及有参数无参数的装饰器的区别，我觉得下面的代码可以解释清楚：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator1</span></div><div class="line"><span class="meta">@decorator2(args)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
+<p>可以理解为<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func = decorator1(decorator2(args)(func))</div></pre></td></tr></table></figure></p>
 <p>也就是说，装饰器其实就是函数，被装饰的函数把自己当做中世纪农夫的新娘一样，作为参数献给装饰器（们），在装饰器行使了自己的权利（参数）之后，返回被装饰过了的函数对象。<br>但是要注意，这个例子实际上是不恰当的，因为实际上装饰器是柳下惠在世，根本就没有改变被修饰的函数。只是<em>装饰</em>了函数，在函数上扩展一些行为。<br>此外，对类（class）也可以用装饰器，道理是一样的。<br>那么在<code>JavaScript</code>中的装饰器又有什么特性呢？</p>
 <h3 id="JavaScript中的装饰器"><a href="#JavaScript中的装饰器" class="headerlink" title="JavaScript中的装饰器"></a>JavaScript中的装饰器</h3><p>先放结论：</p>
 <blockquote>
 <p>装饰器允许你在类和方法定义的时候去注释或者修改它。装饰器是一个作用于函数的表达式，它接收三个参数 <code>target</code>、 <code>name</code> 和 <code>descriptor</code> ， 然后可选性的返回被装饰之后的 <code>descriptor</code> 对象。<br><code>JavaScript</code>中的装饰器可以装饰类，也可以装饰类的属性，当它装饰类时，长这个样子：</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">decorator</span> (<span class="params">target</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(target) <span class="comment">// target是Component</span></div><div class="line">    <span class="keyword">return</span> target</div><div class="line">&#125;</div><div class="line"></div><div class="line">@decorator</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>和上面说的<code>python</code>中的装饰器基本上差不多的样子<br>当装饰器装饰类的属性时，操作的不是类本身了，而是第三个参数：描述符。这也是为什么定义中说是可选性的返回被装饰之后的<code>descriptor</code>对象。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">decorator</span> (<span class="params">target, name, descriptor</span>) </span>&#123;</div><div class="line">    discriptor.writable = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">return</span> discriptor;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    @decorator</div><div class="line">    play () &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'too young'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> component = <span class="keyword">new</span> Component();</div><div class="line">component.play = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'too simple'</span>);</div><div class="line">&#125;</div><div class="line">component.play() <span class="comment">// too young</span></div></pre></td></tr></table></figure><p></p>
+<p>和上面说的<code>python</code>中的装饰器基本上差不多的样子<br>当装饰器装饰类的属性时，操作的不是类本身了，而是第三个参数：描述符。这也是为什么定义中说是可选性的返回被装饰之后的<code>descriptor</code>对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">decorator</span> (<span class="params">target, name, descriptor</span>) </span>&#123;</div><div class="line">    discriptor.writable = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">return</span> discriptor;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    @decorator</div><div class="line">    play () &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'too young'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> component = <span class="keyword">new</span> Component();</div><div class="line">component.play = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'too simple'</span>);</div><div class="line">&#125;</div><div class="line">component.play() <span class="comment">// too young</span></div></pre></td></tr></table></figure></p>
 <p>为什么对play属性的修改无效了呢？因为在装饰器中将被返回的描述符的play属性设置为只读，就这么简单。<br>随着JavaScript的完善，<del>它会越来越像python的</del> 好用的语法糖会越来越多的。</p>
-<div class="sibling-post center-align card-panel z-depth-0 section">
-<a href="/2016/12/13/记一个React相关的坑/" class="btn-flat blue-grey-text right">
-<i class="material-icons right">chevron_right</i>
-记一个React相关的坑
-</a>
-</div>
-<div class="comment" id="duoshuo">
-<div class="ds-thread" data-thread-key="post-JavaScript中的装饰器" data-title="JavaScript中的装饰器" data-url="http://hunnble.github.io/2016/12/26/JavaScript中的装饰器/"></div>
-<script type="text/javascript">var duoshuoQuery={short_name:"hunnble"},ds=document.createElement("script");ds.type="text/javascript",ds.async=!0,ds.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",ds.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(ds)</script>
-</div>
-</div>
+
+
+    <div class="sibling-post center-align card-panel z-depth-0 section">
+
+      
+        <a href="/2016/12/13/记一个React相关的坑/" class="btn-flat blue-grey-text right">
+          <i class="material-icons right">chevron_right</i>
+          记一个React相关的坑
+        </a>
+      
+
+      
+
+    </div>
+
+    
+      <div class="comment" id="duoshuo">
+        <div class="ds-thread" data-thread-key="post-JavaScript中的装饰器" data-title="JavaScript中的装饰器" data-url="http://hunnble.github.io/2016/12/26/JavaScript中的装饰器/"></div>
+        <script type="text/javascript">
+          var duoshuoQuery = { short_name:'hunnble' };
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';
+          ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        </script>
+      </div>
+    
+
+  </div>
+
 </section>
-<div class="fixed-action-btn click-to-toggle">
-<a class="btn-floating btn-large lighten-2 teal">
-<i class="large material-icons">view_module</i>
-</a>
-<ul>
-<li>
-<a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-<i class="material-icons">navigation</i>
-</a>
-</li>
-</ul>
+
+        <div class="fixed-action-btn click-to-toggle">
+  <a class="btn-floating btn-large lighten-2 teal">
+    <i class="large material-icons">view_module</i>
+  </a>
+  <ul>
+    <li>
+      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+        <i class="material-icons">navigation</i>
+      </a>
+    </li>
+  </ul>
 </div>
-</div>
-<aside class="col m2 push-m2 hide-on-med-and-down">
-<div class="toc transparent card-panel z-depth-0">
-<ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#我们所熟知的Python中的装饰器"><span class="table-of-contents-text">我们所熟知的Python中的装饰器</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#JavaScript中的装饰器"><span class="table-of-contents-text">JavaScript中的装饰器</span></a></li></ol>
-</div>
-</aside>
-</div>
+
+      
+    </div>
+
+    
+      <aside class="col m2 push-m2 hide-on-med-and-down">
+        <div class="toc transparent card-panel z-depth-0">
+          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#我们所熟知的Python中的装饰器"><span class="table-of-contents-text">我们所熟知的Python中的装饰器</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#JavaScript中的装饰器"><span class="table-of-contents-text">JavaScript中的装饰器</span></a></li></ol>
+        </div>
+      </aside>
+    
+
+
+    
+
+  </div>
+
 </main>
-<footer class="page-footer lighten-2 teal">
-<div class="container section">
-<div class="center-align white-text text-lighten-4">
-<p>
-Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-</p>
-<h5>
-总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-</h5>
-</div>
-</div>
-<div class="footer-copyright center-align">
-Copyright © 2016 Noski
-</div>
+
+
+  
+
+
+<footer class="page-footer lighten-2 teal ">
+  <div class="container section">
+    <div class="center-align white-text text-lighten-4">
+      <p>
+        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+      </p>
+      
+        <h5>
+          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+        </h5>
+      
+    </div>
+  </div>
+  <div class="footer-copyright center-align">
+    Copyright © 2016 Noski
+  </div>
 </footer>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="/js/highlight.min.js"></script>
+
+
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src="/js/highlight.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+    <script type="text/javascript" src=/js/main.js></script>
+  
+
+
 </body>
 </html>

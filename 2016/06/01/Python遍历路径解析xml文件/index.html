@@ -1,84 +1,163 @@
 
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<link rel="alternate" href="/atom.xml" type="application/atom+xml">
-<title>Python遍历路径解析xml文件 [ 北方公园 ]</title>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="shortcut icon" href="/images/favicon.ico">
-<link rel="stylesheet" href="/css/default_highlight.min.css">
-<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen">
-<link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <link rel="alternate" href=/atom.xml type="application/atom+xml">
+  <title>Python遍历路径解析xml文件 [ 北方公园 ]</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  
+    
+      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+    
+  
+  
+    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  
+    
+      <link rel="stylesheet" href="/css/main.css">
+    
+  
 </head>
 <body>
+
 <div class="navbar-fixed white-text">
-<nav class="transparent z-depth-0">
-<div class="nav-wrapper">
-<ul id="nav-mobile" class="right hide-on-med-and-down">
-<li>
-<a class="waves-effect text-lighten-4" href="/">主页</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/archive">归档</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/about">关于</a>
-</li>
-</ul>
-<a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/">主页</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/about">关于</a>
+          </li>
+        
+      </ul>
+      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 </div>
-</nav>
-</div>
+
 <ul id="slide-nav" class="side-nav">
-<li>
-<div class="userView lighten-2 teal">
-<div class="background">
-<h5 class="white-text inline-title">Noski</h5>
-</div>
-<img class="circle" src="/images/avatar.png">
-<h5 class="white-text inline-title">北方公园</h5>
-<br>
-<h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-</div>
-</li>
-<li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  <li>
+    <div class="userView lighten-2 teal">
+      <div class="background">
+        <h5 class="white-text inline-title">Noski</h5>
+      </div>
+      <img class="circle" src=/images/avatar.png>
+      <h5 class="white-text inline-title">北方公园</h5>
+      <br />
+      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+    </div>
+  </li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  
 </ul>
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height:400px">
-<div class="parallax lighten-2 teal">
-<img src="/images/background.jpg">
+
+
+
+
+
+  
+
+
+  
+
+
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
+  
+  <div class="parallax lighten-2 teal ">
+    <img src="/images/background.jpg">
+  </div>
+  <script type="text/javascript">
+    var container = document.querySelector('.parallax-container');
+    var tmpTitle = container.querySelector('.hide-on-image-load');
+    var img = container.querySelector('img');
+    img.onload = function() {
+      if (tmpTitle) {
+        tmpTitle.style.display = 'none';
+      }
+    }
+  </script>
 </div>
-<script type="text/javascript">var container=document.querySelector(".parallax-container"),tmpTitle=container.querySelector(".hide-on-image-load"),img=container.querySelector("img");img.onload=function(){tmpTitle&&(tmpTitle.style.display="none")}</script>
+
+  
+
 </div>
+
 <main id="container-outer" class="">
-<div class="row">
-<div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+
+  
+    
+  
+
+  
+  
+    
+  
+
+  <div class="row ">
+
+    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+      
+        
 <section id="post" class="card article z-depth-0">
-<div class="card-panel z-depth-0 black-text">
-<h1>Python遍历路径解析xml文件</h1>
-<div class="valign-wrapper blue-grey-text">
-<i class="material-icons valign">query_builder</i>&nbsp
-<time datetime="2016-06-01T11:38:02.000Z" class="valign">
-2016 6月 1日 晚上7:38:02
-</time>
-</div>
-<div class="valign-wrapper sm-text blue-grey-text">
-<i class="material-icons valign">grade</i>&nbsp
-<span id="busuanzi_container_page_pv" class="valign">
-阅读<span id="busuanzi_value_page_pv"></span>次
-</span>
-</div>
-<div class="section right">
-<span class="new badge amber left" data-badge-caption="">
-<a href="/tag/python/" title="#python" class="white-text" target="_blank" rel="external">#python</a>
-</span>
-</div>
-</div>
-<div class="card-content z-depth-0">
-<p>前段时间没学什么新东西，时间都花在复习考试科目和一个用Flask做的小外包上了，昨天晚上又通知我说有一个数据库的数据人家给的都是xml格式的，需要我写个脚本自己转化成BSON然后存到建好的那个MongoDB数据库里。所以今天上网搜了一下有关的模块看了看，写了一个。<br>如果你知道xml是什么,想知道python怎样解析大的xml文件就继续看下去吧.<br><a id="more"></a><br>在sax和dom这两种方法中我选了前者，这两个分别是什么意思有什么不同呢？简单地说，sax(simple API for XML)用事件驱动模型，通过在解析XML的过程中触发一个个的事件并调用用户定义的回调函数来处理XML文件,而dom(Document Object Model)是前端er的老熟人了，dom树dom树地叫着，dom就是把xml先一下子解析成一个树结构然后再选标签什么的。<br>所以大文件用sax就好了嘛，一条一条地来肯定比dom的先全部转换成树结构要速度，而且不占内存。<br>当然dom也有它的好，比如写的少了，不用写handler什么的还是比较省心的。总之要根据具体情况选择。<br>首先，我拿到的文件夹是一个大文件夹里面有很多子文件夹，每个子文件夹中有多个xml文档。那么先要实现对路径的遍历和路径下的文件的遍历:<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">tra_paths</span><span class="params">(path, func)</span>:</span></div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(path):</div><div class="line">        <span class="keyword">print</span> <span class="string">u"Error:' "</span>,path,<span class="string">u"' 不是有效路径"</span></div><div class="line">        <span class="keyword">return</span></div><div class="line">    list_dirs = os.walk(path)</div><div class="line">    <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> list_dirs:</div><div class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> dirs:</div><div class="line">            tra_files(os.path.join(root, d), func)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">tra_files</span><span class="params">(path, func)</span>:</span></div><div class="line">    files = os.listdir(path)</div><div class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> files:</div><div class="line">        func(path+<span class="string">'/'</span>+file)</div></pre></td></tr></table></figure><p></p>
+  
+    <div class="card-panel z-depth-0 black-text">
+      <h1>Python遍历路径解析xml文件</h1>
+
+      
+
+      <div class="valign-wrapper blue-grey-text">
+        <i class="material-icons valign">query_builder</i>&nbsp
+        <time datetime="2016-06-01T11:38:02.000Z" class="valign">
+          2016 6月 1日
+          晚上7:38:02
+        </time>
+      </div>
+
+      
+        <div class="valign-wrapper sm-text blue-grey-text">
+          <i class="material-icons valign">grade</i>&nbsp
+          <span id="busuanzi_container_page_pv" class="valign">
+            阅读<span id="busuanzi_value_page_pv"></span>次
+          </span>
+        </div>
+      
+
+      
+        <div class="section right">
+          
+            <span class="new badge amber left" data-badge-caption="">
+              <a href="/tag/python/" title="#python" class="white-text" target="_blank" rel="external">#python</a>
+            </span>
+          
+        </div>
+      
+
+    </div>
+  
+
+  <div class="card-content z-depth-0">
+
+    
+
+    <p>前段时间没学什么新东西，时间都花在复习考试科目和一个用Flask做的小外包上了，昨天晚上又通知我说有一个数据库的数据人家给的都是xml格式的，需要我写个脚本自己转化成BSON然后存到建好的那个MongoDB数据库里。所以今天上网搜了一下有关的模块看了看，写了一个。<br>如果你知道xml是什么,想知道python怎样解析大的xml文件就继续看下去吧.<br><a id="more"></a><br>在sax和dom这两种方法中我选了前者，这两个分别是什么意思有什么不同呢？简单地说，sax(simple API for XML)用事件驱动模型，通过在解析XML的过程中触发一个个的事件并调用用户定义的回调函数来处理XML文件,而dom(Document Object Model)是前端er的老熟人了，dom树dom树地叫着，dom就是把xml先一下子解析成一个树结构然后再选标签什么的。<br>所以大文件用sax就好了嘛，一条一条地来肯定比dom的先全部转换成树结构要速度，而且不占内存。<br>当然dom也有它的好，比如写的少了，不用写handler什么的还是比较省心的。总之要根据具体情况选择。<br>首先，我拿到的文件夹是一个大文件夹里面有很多子文件夹，每个子文件夹中有多个xml文档。那么先要实现对路径的遍历和路径下的文件的遍历:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">tra_paths</span><span class="params">(path, func)</span>:</span></div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(path):</div><div class="line">        <span class="keyword">print</span> <span class="string">u"Error:' "</span>,path,<span class="string">u"' 不是有效路径"</span></div><div class="line">        <span class="keyword">return</span></div><div class="line">    list_dirs = os.walk(path)</div><div class="line">    <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> list_dirs:</div><div class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> dirs:</div><div class="line">            tra_files(os.path.join(root, d), func)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">tra_files</span><span class="params">(path, func)</span>:</span></div><div class="line">    files = os.listdir(path)</div><div class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> files:</div><div class="line">        func(path+<span class="string">'/'</span>+file)</div></pre></td></tr></table></figure></p>
 <p>用python中的os模块可以很方便，os中的walk函数遍历参数路径下的所有路径，返回值是元组(root, dir, files)，分别是根路径，当前路径和当前路径下的文件。用os.path下的join将根路径和当前路径连成完整路径，然后进入遍历文件的函数。那个func函数就是要对每个文件使用的函数，在这篇博客里当然就是解析xml啦</p>
 <h2 id="sax怎样解析xml呢？"><a href="#sax怎样解析xml呢？" class="headerlink" title="sax怎样解析xml呢？"></a>sax怎样解析xml呢？</h2><p>利用SAX解析XML文档牵涉到两个部分:解析器和事件处理器。解析器负责读取XML文档,并向事件处理器发送事件，如元素开始跟元素结束事件，而事件处理器则负责对事件作出相应,对传递的XML数据进行处理。</p>
 <h2 id="ContentHandler类方法介绍"><a href="#ContentHandler类方法介绍" class="headerlink" title="ContentHandler类方法介绍"></a>ContentHandler类方法介绍</h2><h4 id="characters-content-方法"><a href="#characters-content-方法" class="headerlink" title="characters(content)方法"></a>characters(content)方法</h4><p>调用时机：<br>从行开始，遇到标签之前，存在字符，content的值为这些字符串。<br>从一个标签，遇到下一个标签之前， 存在字符，content的值为这些字符串。<br>从一个标签，遇到行结束符之前，存在字符，content的值为这些字符串。<br>标签可以是开始标签，也可以是结束标签。</p>
@@ -88,66 +167,121 @@
 <h4 id="endElement-name-方法"><a href="#endElement-name-方法" class="headerlink" title="endElement(name)方法"></a>endElement(name)方法</h4><p>遇到XML结束标签时调用。</p>
 <h2 id="如何使用解析器？"><a href="#如何使用解析器？" class="headerlink" title="如何使用解析器？"></a>如何使用解析器？</h2><p>xml.sax.make_parser([parser_list])方法可以创建一个新的解析器，parser_list是可选参数，指解析器列表<br>xml.sax.parse(xmlfile, contenthandler[, errorhandler])方法解析xml文件，xmlfile是xml文件名，contenthandler是ContentHandler对象，errorhandler是可选参数。<br>xml.sax.parseString(xmlstring, contenthandler[, errorhandler])与parse方法类似，唯一的不同就是第一个参数换成xml字符串。</p>
 <p>基本概念说完了，下面看代码，我给出的代码去掉数据库操作，直接打印，看官可以直接拿去改一下路径然后看效果。</p>
-<p>首先写一个ContentHandler类:<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">XML2DB</span><span class="params">(sax.ContentHandler)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.CurrentData = <span class="string">""</span></div><div class="line">        self.id = <span class="string">""</span></div><div class="line">        self.name = <span class="string">""</span></div><div class="line">        self.savepath = <span class="string">""</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">startElement</span><span class="params">(self, tag, attributes)</span>:</span></div><div class="line">        self.CurrentData = tag</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">endElement</span><span class="params">(self, tag)</span>:</span></div><div class="line">        <span class="keyword">if</span> tag == <span class="string">"ID"</span> <span class="keyword">or</span> tag == <span class="string">"id"</span>:</div><div class="line">            <span class="keyword">print</span> <span class="string">"ID:"</span>, self.id</div><div class="line">        <span class="keyword">elif</span> tag == <span class="string">"Name"</span>:</div><div class="line">            <span class="keyword">print</span> <span class="string">"Name:"</span>, self.name</div><div class="line">        <span class="keyword">elif</span> tag == <span class="string">"SavePath"</span>:</div><div class="line">            <span class="keyword">print</span> <span class="string">"SavePath:"</span>, self.savepath</div><div class="line">        self.CurrentData = <span class="string">""</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">characters</span><span class="params">(self, content)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.CurrentData == <span class="string">"ID"</span> <span class="keyword">or</span> self.CurrentData == <span class="string">"id"</span>:</div><div class="line">            self.id = content</div><div class="line">        <span class="keyword">elif</span> self.CurrentData == <span class="string">"Name"</span>:</div><div class="line">            self.name = content</div><div class="line">        <span class="keyword">elif</span> self.CurrentData == <span class="string">"SavePath"</span>:</div><div class="line">            self.savepath = content</div></pre></td></tr></table></figure><p></p>
-<p>我只需要xml中的Name,ID(或者id,这里吐槽一下，我拿到的xml里id这个标签有这两种写法。。。我差点漏了一种。。。)还有SavePath，那就在startElement用CurrentData保存当前标签然后在characters中解析内容(content)再在endElment中输出。很简单。<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parseXML</span><span class="params">(file)</span>:</span></div><div class="line">    parser = sax.make_parser()</div><div class="line">    changer = XML2DB()</div><div class="line">    parser.setContentHandler(changer)</div><div class="line">    parser.parse(file)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    tra_paths(<span class="string">'./Task'</span>, parseXML)</div></pre></td></tr></table></figure><p></p>
+<p>首先写一个ContentHandler类:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">XML2DB</span><span class="params">(sax.ContentHandler)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.CurrentData = <span class="string">""</span></div><div class="line">        self.id = <span class="string">""</span></div><div class="line">        self.name = <span class="string">""</span></div><div class="line">        self.savepath = <span class="string">""</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">startElement</span><span class="params">(self, tag, attributes)</span>:</span></div><div class="line">        self.CurrentData = tag</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">endElement</span><span class="params">(self, tag)</span>:</span></div><div class="line">        <span class="keyword">if</span> tag == <span class="string">"ID"</span> <span class="keyword">or</span> tag == <span class="string">"id"</span>:</div><div class="line">            <span class="keyword">print</span> <span class="string">"ID:"</span>, self.id</div><div class="line">        <span class="keyword">elif</span> tag == <span class="string">"Name"</span>:</div><div class="line">            <span class="keyword">print</span> <span class="string">"Name:"</span>, self.name</div><div class="line">        <span class="keyword">elif</span> tag == <span class="string">"SavePath"</span>:</div><div class="line">            <span class="keyword">print</span> <span class="string">"SavePath:"</span>, self.savepath</div><div class="line">        self.CurrentData = <span class="string">""</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">characters</span><span class="params">(self, content)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.CurrentData == <span class="string">"ID"</span> <span class="keyword">or</span> self.CurrentData == <span class="string">"id"</span>:</div><div class="line">            self.id = content</div><div class="line">        <span class="keyword">elif</span> self.CurrentData == <span class="string">"Name"</span>:</div><div class="line">            self.name = content</div><div class="line">        <span class="keyword">elif</span> self.CurrentData == <span class="string">"SavePath"</span>:</div><div class="line">            self.savepath = content</div></pre></td></tr></table></figure></p>
+<p>我只需要xml中的Name,ID(或者id,这里吐槽一下，我拿到的xml里id这个标签有这两种写法。。。我差点漏了一种。。。)还有SavePath，那就在startElement用CurrentData保存当前标签然后在characters中解析内容(content)再在endElment中输出。很简单。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parseXML</span><span class="params">(file)</span>:</span></div><div class="line">    parser = sax.make_parser()</div><div class="line">    changer = XML2DB()</div><div class="line">    parser.setContentHandler(changer)</div><div class="line">    parser.parse(file)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    tra_paths(<span class="string">'./Task'</span>, parseXML)</div></pre></td></tr></table></figure></p>
 <p>这就是最后的调用了，新建parser，然后设置ContentHandler为我刚刚写的，然后解析就可以了。main函数中就一句，遍历解析所有文件。</p>
-<div class="sibling-post center-align card-panel z-depth-0 section">
-<a href="/2016/05/07/React-Flux/" class="btn-flat blue-grey-text right">
-<i class="material-icons right">chevron_right</i>
-React-Flux
-</a>
-<a href="/2016/06/17/HTTP状态码/" class="btn-flat blue-grey-text left">
-<i class="material-icons left">chevron_left</i>
-HTTP状态码
-</a>
-</div>
-<div class="comment" id="duoshuo">
-<div class="ds-thread" data-thread-key="post-Python遍历路径解析xml文件" data-title="Python遍历路径解析xml文件" data-url="http://hunnble.github.io/2016/06/01/Python遍历路径解析xml文件/"></div>
-<script type="text/javascript">var duoshuoQuery={short_name:"hunnble"},ds=document.createElement("script");ds.type="text/javascript",ds.async=!0,ds.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",ds.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(ds)</script>
-</div>
-</div>
+
+
+    <div class="sibling-post center-align card-panel z-depth-0 section">
+
+      
+        <a href="/2016/05/07/React-Flux/" class="btn-flat blue-grey-text right">
+          <i class="material-icons right">chevron_right</i>
+          React-Flux
+        </a>
+      
+
+      
+        <a href="/2016/06/17/HTTP状态码/" class="btn-flat blue-grey-text left">
+          <i class="material-icons left">chevron_left</i>
+          HTTP状态码
+        </a>
+      
+
+    </div>
+
+    
+      <div class="comment" id="duoshuo">
+        <div class="ds-thread" data-thread-key="post-Python遍历路径解析xml文件" data-title="Python遍历路径解析xml文件" data-url="http://hunnble.github.io/2016/06/01/Python遍历路径解析xml文件/"></div>
+        <script type="text/javascript">
+          var duoshuoQuery = { short_name:'hunnble' };
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';
+          ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        </script>
+      </div>
+    
+
+  </div>
+
 </section>
-<div class="fixed-action-btn click-to-toggle">
-<a class="btn-floating btn-large lighten-2 teal">
-<i class="large material-icons">view_module</i>
-</a>
-<ul>
-<li>
-<a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-<i class="material-icons">navigation</i>
-</a>
-</li>
-</ul>
+
+        <div class="fixed-action-btn click-to-toggle">
+  <a class="btn-floating btn-large lighten-2 teal">
+    <i class="large material-icons">view_module</i>
+  </a>
+  <ul>
+    <li>
+      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+        <i class="material-icons">navigation</i>
+      </a>
+    </li>
+  </ul>
 </div>
-</div>
-<aside class="col m2 push-m2 hide-on-med-and-down">
-<div class="toc transparent card-panel z-depth-0">
-<ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#sax怎样解析xml呢？"><span class="table-of-contents-text">sax怎样解析xml呢？</span></a></li><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#ContentHandler类方法介绍"><span class="table-of-contents-text">ContentHandler类方法介绍</span></a><ol class="table-of-contents-child"><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#characters-content-方法"><span class="table-of-contents-text">characters(content)方法</span></a></li><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#startDocument-方法"><span class="table-of-contents-text">startDocument()方法</span></a></li><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#endDocument-方法"><span class="table-of-contents-text">endDocument()方法</span></a></li><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#startElement-name-attrs-方法"><span class="table-of-contents-text">startElement(name, attrs)方法</span></a></li><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#endElement-name-方法"><span class="table-of-contents-text">endElement(name)方法</span></a></li></ol></li></ol><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#如何使用解析器？"><span class="table-of-contents-text">如何使用解析器？</span></a></li>
-</div>
-</aside>
-</div>
+
+      
+    </div>
+
+    
+      <aside class="col m2 push-m2 hide-on-med-and-down">
+        <div class="toc transparent card-panel z-depth-0">
+          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#sax怎样解析xml呢？"><span class="table-of-contents-text">sax怎样解析xml呢？</span></a></li><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#ContentHandler类方法介绍"><span class="table-of-contents-text">ContentHandler类方法介绍</span></a><ol class="table-of-contents-child"><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#characters-content-方法"><span class="table-of-contents-text">characters(content)方法</span></a></li><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#startDocument-方法"><span class="table-of-contents-text">startDocument()方法</span></a></li><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#endDocument-方法"><span class="table-of-contents-text">endDocument()方法</span></a></li><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#startElement-name-attrs-方法"><span class="table-of-contents-text">startElement(name, attrs)方法</span></a></li><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#endElement-name-方法"><span class="table-of-contents-text">endElement(name)方法</span></a></li></ol></li></ol></li><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#如何使用解析器？"><span class="table-of-contents-text">如何使用解析器？</span></a></li></ol>
+        </div>
+      </aside>
+    
+
+
+    
+
+  </div>
+
 </main>
-<footer class="page-footer lighten-2 teal">
-<div class="container section">
-<div class="center-align white-text text-lighten-4">
-<p>
-Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-</p>
-<h5>
-总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-</h5>
-</div>
-</div>
-<div class="footer-copyright center-align">
-Copyright © 2016 Noski
-</div>
+
+
+  
+
+
+<footer class="page-footer lighten-2 teal ">
+  <div class="container section">
+    <div class="center-align white-text text-lighten-4">
+      <p>
+        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+      </p>
+      
+        <h5>
+          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+        </h5>
+      
+    </div>
+  </div>
+  <div class="footer-copyright center-align">
+    Copyright © 2016 Noski
+  </div>
 </footer>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="/js/highlight.min.js"></script>
+
+
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src="/js/highlight.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+    <script type="text/javascript" src=/js/main.js></script>
+  
+
+
 </body>
 </html>

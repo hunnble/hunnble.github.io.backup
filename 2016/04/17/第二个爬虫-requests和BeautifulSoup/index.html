@@ -1,145 +1,280 @@
 
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<link rel="alternate" href="/atom.xml" type="application/atom+xml">
-<title>第二个爬虫:requests和BeautifulSoup [ 北方公园 ]</title>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="shortcut icon" href="/images/favicon.ico">
-<link rel="stylesheet" href="/css/default_highlight.min.css">
-<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen">
-<link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <link rel="alternate" href=/atom.xml type="application/atom+xml">
+  <title>第二个爬虫:requests和BeautifulSoup [ 北方公园 ]</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  
+    
+      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+    
+  
+  
+    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  
+    
+      <link rel="stylesheet" href="/css/main.css">
+    
+  
 </head>
 <body>
+
 <div class="navbar-fixed white-text">
-<nav class="transparent z-depth-0">
-<div class="nav-wrapper">
-<ul id="nav-mobile" class="right hide-on-med-and-down">
-<li>
-<a class="waves-effect text-lighten-4" href="/">主页</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/archive">归档</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/about">关于</a>
-</li>
-</ul>
-<a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/">主页</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/about">关于</a>
+          </li>
+        
+      </ul>
+      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 </div>
-</nav>
-</div>
+
 <ul id="slide-nav" class="side-nav">
-<li>
-<div class="userView lighten-2 teal">
-<div class="background">
-<h5 class="white-text inline-title">Noski</h5>
-</div>
-<img class="circle" src="/images/avatar.png">
-<h5 class="white-text inline-title">北方公园</h5>
-<br>
-<h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-</div>
-</li>
-<li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  <li>
+    <div class="userView lighten-2 teal">
+      <div class="background">
+        <h5 class="white-text inline-title">Noski</h5>
+      </div>
+      <img class="circle" src=/images/avatar.png>
+      <h5 class="white-text inline-title">北方公园</h5>
+      <br />
+      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+    </div>
+  </li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  
 </ul>
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height:400px">
-<div class="parallax lighten-2 teal">
-<img src="/images/background.jpg">
+
+
+
+
+
+  
+
+
+  
+
+
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
+  
+  <div class="parallax lighten-2 teal ">
+    <img src="/images/background.jpg">
+  </div>
+  <script type="text/javascript">
+    var container = document.querySelector('.parallax-container');
+    var tmpTitle = container.querySelector('.hide-on-image-load');
+    var img = container.querySelector('img');
+    img.onload = function() {
+      if (tmpTitle) {
+        tmpTitle.style.display = 'none';
+      }
+    }
+  </script>
 </div>
-<script type="text/javascript">var container=document.querySelector(".parallax-container"),tmpTitle=container.querySelector(".hide-on-image-load"),img=container.querySelector("img");img.onload=function(){tmpTitle&&(tmpTitle.style.display="none")}</script>
+
+  
+
 </div>
+
 <main id="container-outer" class="">
-<div class="row">
-<div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+
+  
+    
+  
+
+  
+  
+    
+  
+
+  <div class="row ">
+
+    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+      
+        
 <section id="post" class="card article z-depth-0">
-<div class="card-panel z-depth-0 black-text">
-<h1>第二个爬虫:requests和BeautifulSoup</h1>
-<div class="valign-wrapper blue-grey-text">
-<i class="material-icons valign">query_builder</i>&nbsp
-<time datetime="2016-04-17T14:18:46.000Z" class="valign">
-2016 4月 17日 晚上10:18:46
-</time>
-</div>
-<div class="valign-wrapper sm-text blue-grey-text">
-<i class="material-icons valign">grade</i>&nbsp
-<span id="busuanzi_container_page_pv" class="valign">
-阅读<span id="busuanzi_value_page_pv"></span>次
-</span>
-</div>
-<div class="section right">
-<span class="new badge amber left" data-badge-caption="">
-<a href="/tag/python/" title="#python" class="white-text" target="_blank" rel="external">#python</a>
-</span>
-</div>
-</div>
-<div class="card-content z-depth-0">
-<p>今天又学习写了一个爬虫,爬取豆瓣前250个电影的名称。使用了requests和BeautifulSoup这两个第三方库来辅助我。<br><a href="http://docs.python-requests.org/en/latest/" target="_blank" rel="external">requests官网</a><br><a href="https://www.crummy.com/software/BeautifulSoup/" target="_blank" rel="external">BeautifulSoup官网</a><br>使用pip安装第三方库之后就可以开始编写爬虫了。<br><a id="more"></a><br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> codecs</div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"></div><div class="line">DOWNLOAD_URL = <span class="string">'http://movie.douban.com/top250'</span></div><div class="line">HEADERS = &#123;<span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'</span>&#125;</div></pre></td></tr></table></figure><p></p>
-<p>codecs处理字符,url就是要开始爬的页面,http头伪装成浏览器。<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_page</span><span class="params">(url)</span>:</span></div><div class="line">    data = requests.get(url, headers=HEADERS).content</div><div class="line">    <span class="keyword">return</span> data</div></pre></td></tr></table></figure><p></p>
-<p>使用requests可以不需要manual labor来进行get或者post请求,节省了我不少功夫。这个函数很简单,就是直接get到目标url的页面内容并返回<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_html</span><span class="params">(html)</span>:</span></div><div class="line">    soup = BeautifulSoup(html)</div><div class="line">    movie_list_soup = soup.find(<span class="string">'ol'</span>, attrs=&#123;<span class="string">'class'</span>: <span class="string">'grid_view'</span>&#125;)</div><div class="line">    movie_name_list = []</div><div class="line">    <span class="keyword">for</span> movie_li <span class="keyword">in</span> movie_list_soup.find_all(<span class="string">'li'</span>):</div><div class="line">        detail = movie_li.find(<span class="string">'div'</span>, attrs=&#123;<span class="string">'class'</span>: <span class="string">'hd'</span>&#125;)</div><div class="line">        movie_name = detail.find(<span class="string">'span'</span>, attrs=&#123;<span class="string">'class'</span>: <span class="string">'title'</span>&#125;).getText()</div><div class="line">        movie_name_list.append(movie_name)</div><div class="line">    next_page = soup.find(<span class="string">'span'</span>, attrs=&#123;<span class="string">'class'</span>: <span class="string">'next'</span>&#125;).find(<span class="string">'a'</span>)</div><div class="line">    <span class="keyword">if</span> next_page:</div><div class="line">        <span class="keyword">return</span> movie_name_list, DOWNLOAD_URL + next_page[<span class="string">'href'</span>]</div><div class="line">    <span class="keyword">return</span> movie_name_list, <span class="keyword">None</span></div></pre></td></tr></table></figure><p></p>
-<p>这个函数就是解析html页面了。使用开发者工具分析页面发现电影分在10页里,每个电影的信息都在ol(class=”grid_view”)的列表的li中。电影名在li中的div(class=”hd”)中。所以使用BeautifulSoup的find_all和find函数来找。<br>然后就是寻找有没有下一页这个a标签,分析页面发现它是在span(class=”next”)中的,如果有就返回已经爬到的所有的电影名数组和下一页的链接,否则返回电影名数组和None,代表爬完了。<br>下面就是向文件中输出和调用了:<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">url = DOWNLOAD_URL</div><div class="line"><span class="keyword">with</span> codecs.open(<span class="string">'movie.out'</span>, <span class="string">'wb'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> fp:</div><div class="line">    <span class="keyword">while</span>(url):</div><div class="line">        html = download_page(url)</div><div class="line">        movies, url = parse_html(html)</div><div class="line">        fp.write(<span class="string">u'&#123;movies&#125;\n'</span>.format(movies=<span class="string">'\n'</span>.join(movies)))</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">main()</div></pre></td></tr></table></figure><p></p>
+  
+    <div class="card-panel z-depth-0 black-text">
+      <h1>第二个爬虫:requests和BeautifulSoup</h1>
+
+      
+
+      <div class="valign-wrapper blue-grey-text">
+        <i class="material-icons valign">query_builder</i>&nbsp
+        <time datetime="2016-04-17T14:18:46.000Z" class="valign">
+          2016 4月 17日
+          晚上10:18:46
+        </time>
+      </div>
+
+      
+        <div class="valign-wrapper sm-text blue-grey-text">
+          <i class="material-icons valign">grade</i>&nbsp
+          <span id="busuanzi_container_page_pv" class="valign">
+            阅读<span id="busuanzi_value_page_pv"></span>次
+          </span>
+        </div>
+      
+
+      
+        <div class="section right">
+          
+            <span class="new badge amber left" data-badge-caption="">
+              <a href="/tag/python/" title="#python" class="white-text" target="_blank" rel="external">#python</a>
+            </span>
+          
+        </div>
+      
+
+    </div>
+  
+
+  <div class="card-content z-depth-0">
+
+    
+
+    <p>今天又学习写了一个爬虫,爬取豆瓣前250个电影的名称。使用了requests和BeautifulSoup这两个第三方库来辅助我。<br><a href="http://docs.python-requests.org/en/latest/" target="_blank" rel="external">requests官网</a><br><a href="https://www.crummy.com/software/BeautifulSoup/" target="_blank" rel="external">BeautifulSoup官网</a><br>使用pip安装第三方库之后就可以开始编写爬虫了。<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> codecs</div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"></div><div class="line">DOWNLOAD_URL = <span class="string">'http://movie.douban.com/top250'</span></div><div class="line">HEADERS = &#123;<span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36'</span>&#125;</div></pre></td></tr></table></figure></p>
+<p>codecs处理字符,url就是要开始爬的页面,http头伪装成浏览器。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_page</span><span class="params">(url)</span>:</span></div><div class="line">    data = requests.get(url, headers=HEADERS).content</div><div class="line">    <span class="keyword">return</span> data</div></pre></td></tr></table></figure></p>
+<p>使用requests可以不需要manual labor来进行get或者post请求,节省了我不少功夫。这个函数很简单,就是直接get到目标url的页面内容并返回<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_html</span><span class="params">(html)</span>:</span></div><div class="line">    soup = BeautifulSoup(html)</div><div class="line">    movie_list_soup = soup.find(<span class="string">'ol'</span>, attrs=&#123;<span class="string">'class'</span>: <span class="string">'grid_view'</span>&#125;)</div><div class="line">    movie_name_list = []</div><div class="line">    <span class="keyword">for</span> movie_li <span class="keyword">in</span> movie_list_soup.find_all(<span class="string">'li'</span>):</div><div class="line">        detail = movie_li.find(<span class="string">'div'</span>, attrs=&#123;<span class="string">'class'</span>: <span class="string">'hd'</span>&#125;)</div><div class="line">        movie_name = detail.find(<span class="string">'span'</span>, attrs=&#123;<span class="string">'class'</span>: <span class="string">'title'</span>&#125;).getText()</div><div class="line">        movie_name_list.append(movie_name)</div><div class="line">    next_page = soup.find(<span class="string">'span'</span>, attrs=&#123;<span class="string">'class'</span>: <span class="string">'next'</span>&#125;).find(<span class="string">'a'</span>)</div><div class="line">    <span class="keyword">if</span> next_page:</div><div class="line">        <span class="keyword">return</span> movie_name_list, DOWNLOAD_URL + next_page[<span class="string">'href'</span>]</div><div class="line">    <span class="keyword">return</span> movie_name_list, <span class="keyword">None</span></div></pre></td></tr></table></figure></p>
+<p>这个函数就是解析html页面了。使用开发者工具分析页面发现电影分在10页里,每个电影的信息都在ol(class=”grid_view”)的列表的li中。电影名在li中的div(class=”hd”)中。所以使用BeautifulSoup的find_all和find函数来找。<br>然后就是寻找有没有下一页这个a标签,分析页面发现它是在span(class=”next”)中的,如果有就返回已经爬到的所有的电影名数组和下一页的链接,否则返回电影名数组和None,代表爬完了。<br>下面就是向文件中输出和调用了:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">url = DOWNLOAD_URL</div><div class="line"><span class="keyword">with</span> codecs.open(<span class="string">'movie.out'</span>, <span class="string">'wb'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> fp:</div><div class="line">    <span class="keyword">while</span>(url):</div><div class="line">        html = download_page(url)</div><div class="line">        movies, url = parse_html(html)</div><div class="line">        fp.write(<span class="string">u'&#123;movies&#125;\n'</span>.format(movies=<span class="string">'\n'</span>.join(movies)))</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">main()</div></pre></td></tr></table></figure></p>
 <p>用换行符分隔,每个名字一行。运行之后打开movie.out(这个文件路径可以随意指定)发现250个电影的名字已经爬下来了。</p>
 <p>python的第三方库果然很丰富很强大。</p>
-<div class="sibling-post center-align card-panel z-depth-0 section">
-<a href="/2016/04/16/第一个python爬虫-爬下豆瓣主页图片/" class="btn-flat blue-grey-text right">
-<i class="material-icons right">chevron_right</i>
-第一个python爬虫:爬下豆瓣主页图片
-</a>
-<a href="/2016/04/24/4月总结/" class="btn-flat blue-grey-text left">
-<i class="material-icons left">chevron_left</i>
-4月总结
-</a>
-</div>
-<div class="comment" id="duoshuo">
-<div class="ds-thread" data-thread-key="post-第二个爬虫-requests和BeautifulSoup" data-title="第二个爬虫:requests和BeautifulSoup" data-url="http://hunnble.github.io/2016/04/17/第二个爬虫-requests和BeautifulSoup/"></div>
-<script type="text/javascript">var duoshuoQuery={short_name:"hunnble"},ds=document.createElement("script");ds.type="text/javascript",ds.async=!0,ds.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",ds.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(ds)</script>
-</div>
-</div>
+
+
+    <div class="sibling-post center-align card-panel z-depth-0 section">
+
+      
+        <a href="/2016/04/16/第一个python爬虫-爬下豆瓣主页图片/" class="btn-flat blue-grey-text right">
+          <i class="material-icons right">chevron_right</i>
+          第一个python爬虫:爬下豆瓣主页图片
+        </a>
+      
+
+      
+        <a href="/2016/04/24/4月总结/" class="btn-flat blue-grey-text left">
+          <i class="material-icons left">chevron_left</i>
+          4月总结
+        </a>
+      
+
+    </div>
+
+    
+      <div class="comment" id="duoshuo">
+        <div class="ds-thread" data-thread-key="post-第二个爬虫-requests和BeautifulSoup" data-title="第二个爬虫:requests和BeautifulSoup" data-url="http://hunnble.github.io/2016/04/17/第二个爬虫-requests和BeautifulSoup/"></div>
+        <script type="text/javascript">
+          var duoshuoQuery = { short_name:'hunnble' };
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';
+          ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        </script>
+      </div>
+    
+
+  </div>
+
 </section>
-<div class="fixed-action-btn click-to-toggle">
-<a class="btn-floating btn-large lighten-2 teal">
-<i class="large material-icons">view_module</i>
-</a>
-<ul>
-<li>
-<a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-<i class="material-icons">navigation</i>
-</a>
-</li>
-</ul>
+
+        <div class="fixed-action-btn click-to-toggle">
+  <a class="btn-floating btn-large lighten-2 teal">
+    <i class="large material-icons">view_module</i>
+  </a>
+  <ul>
+    <li>
+      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+        <i class="material-icons">navigation</i>
+      </a>
+    </li>
+  </ul>
 </div>
-</div>
-<aside class="col m2 push-m2 hide-on-med-and-down">
-<div class="toc transparent card-panel z-depth-0">
-</div>
-</aside>
-</div>
+
+      
+    </div>
+
+    
+      <aside class="col m2 push-m2 hide-on-med-and-down">
+        <div class="toc transparent card-panel z-depth-0">
+          
+        </div>
+      </aside>
+    
+
+
+    
+
+  </div>
+
 </main>
-<footer class="page-footer lighten-2 teal">
-<div class="container section">
-<div class="center-align white-text text-lighten-4">
-<p>
-Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-</p>
-<h5>
-总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-</h5>
-</div>
-</div>
-<div class="footer-copyright center-align">
-Copyright © 2016 Noski
-</div>
+
+
+  
+
+
+<footer class="page-footer lighten-2 teal ">
+  <div class="container section">
+    <div class="center-align white-text text-lighten-4">
+      <p>
+        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+      </p>
+      
+        <h5>
+          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+        </h5>
+      
+    </div>
+  </div>
+  <div class="footer-copyright center-align">
+    Copyright © 2016 Noski
+  </div>
 </footer>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="/js/highlight.min.js"></script>
+
+
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src="/js/highlight.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+    <script type="text/javascript" src=/js/main.js></script>
+  
+
+
 </body>
 </html>

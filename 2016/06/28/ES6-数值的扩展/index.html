@@ -1,156 +1,292 @@
 
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<link rel="alternate" href="/atom.xml" type="application/atom+xml">
-<title>ES6-数值的扩展 [ 北方公园 ]</title>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="shortcut icon" href="/images/favicon.ico">
-<link rel="stylesheet" href="/css/default_highlight.min.css">
-<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen">
-<link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <link rel="alternate" href=/atom.xml type="application/atom+xml">
+  <title>ES6-数值的扩展 [ 北方公园 ]</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  
+    
+      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+    
+  
+  
+    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  
+    
+      <link rel="stylesheet" href="/css/main.css">
+    
+  
 </head>
 <body>
+
 <div class="navbar-fixed white-text">
-<nav class="transparent z-depth-0">
-<div class="nav-wrapper">
-<ul id="nav-mobile" class="right hide-on-med-and-down">
-<li>
-<a class="waves-effect text-lighten-4" href="/">主页</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/archive">归档</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/about">关于</a>
-</li>
-</ul>
-<a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/">主页</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/about">关于</a>
+          </li>
+        
+      </ul>
+      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 </div>
-</nav>
-</div>
+
 <ul id="slide-nav" class="side-nav">
-<li>
-<div class="userView lighten-2 teal">
-<div class="background">
-<h5 class="white-text inline-title">Noski</h5>
-</div>
-<img class="circle" src="/images/avatar.png">
-<h5 class="white-text inline-title">北方公园</h5>
-<br>
-<h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-</div>
-</li>
-<li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  <li>
+    <div class="userView lighten-2 teal">
+      <div class="background">
+        <h5 class="white-text inline-title">Noski</h5>
+      </div>
+      <img class="circle" src=/images/avatar.png>
+      <h5 class="white-text inline-title">北方公园</h5>
+      <br />
+      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+    </div>
+  </li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  
 </ul>
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height:400px">
-<div class="parallax lighten-2 teal">
-<img src="/images/background.jpg">
+
+
+
+
+
+  
+
+
+  
+
+
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
+  
+  <div class="parallax lighten-2 teal ">
+    <img src="/images/background.jpg">
+  </div>
+  <script type="text/javascript">
+    var container = document.querySelector('.parallax-container');
+    var tmpTitle = container.querySelector('.hide-on-image-load');
+    var img = container.querySelector('img');
+    img.onload = function() {
+      if (tmpTitle) {
+        tmpTitle.style.display = 'none';
+      }
+    }
+  </script>
 </div>
-<script type="text/javascript">var container=document.querySelector(".parallax-container"),tmpTitle=container.querySelector(".hide-on-image-load"),img=container.querySelector("img");img.onload=function(){tmpTitle&&(tmpTitle.style.display="none")}</script>
+
+  
+
 </div>
+
 <main id="container-outer" class="">
-<div class="row">
-<div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+
+  
+    
+  
+
+  
+  
+    
+  
+
+  <div class="row ">
+
+    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+      
+        
 <section id="post" class="card article z-depth-0">
-<div class="card-panel z-depth-0 black-text">
-<h1>ES6-数值的扩展</h1>
-<div class="valign-wrapper blue-grey-text">
-<i class="material-icons valign">query_builder</i>&nbsp
-<time datetime="2016-06-28T15:44:55.000Z" class="valign">
-2016 6月 28日 晚上11:44:55
-</time>
-</div>
-<div class="valign-wrapper sm-text blue-grey-text">
-<i class="material-icons valign">grade</i>&nbsp
-<span id="busuanzi_container_page_pv" class="valign">
-阅读<span id="busuanzi_value_page_pv"></span>次
-</span>
-</div>
-<div class="section right">
-<span class="new badge amber left" data-badge-caption="">
-<a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
-</span>
-<span class="new badge green left" data-badge-caption="">
-<a href="/tag/es6/" title="#es6" class="white-text" target="_blank" rel="external">#es6</a>
-</span>
-<span class="new badge red left" data-badge-caption="">
-<a href="/tag/ES6标准入门学习笔记/" title="#ES6标准入门学习笔记" class="white-text" target="_blank" rel="external">#ES6标准入门学习笔记</a>
-</span>
-</div>
-</div>
-<div class="card-content z-depth-0">
-<p>JS的数值设计的不好，嗯，但是ES6说，还可以抢救一下…<br><a id="more"></a></p>
-<h3 id="二进制和八进制和十六进制…"><a href="#二进制和八进制和十六进制…" class="headerlink" title="二进制和八进制和十六进制…"></a>二进制和八进制和十六进制…</h3><p>从ES5开始，在严格模式中，八进制数值就不再允许使用前缀0表示，ES6进一步明确，要使用前缀0o表示。同理，二进制使用0B前缀。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">0b11</span> === <span class="number">3</span>); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="number">0o11</span> === <span class="number">9</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure><p></p>
-<p>而16进制依然是0x前缀。<br>要将8进制和16进制的数值转化成10进制可以使用Number:<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Number</span>(<span class="number">0o11</span>) <span class="comment">// 9</span></div><div class="line"><span class="built_in">Number</span>(<span class="number">0x11</span>) <span class="comment">// 17</span></div></pre></td></tr></table></figure><p></p>
-<h3 id="判断Infinite-NaN"><a href="#判断Infinite-NaN" class="headerlink" title="判断Infinite,NaN"></a>判断Infinite,NaN</h3><p>ES6对Number对象提供了isFinite和isNaN两个方法来检查Infinite和NaN两个特殊值，又算是填上了一个坑。<br>这两个方法和原来的同名全局方法的区别在于：传统方法将非数值一律转为数值再判断，而新方法对非数值一律返回false。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="string">'100'</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isFinite(<span class="string">'100'</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure><p></p>
+  
+    <div class="card-panel z-depth-0 black-text">
+      <h1>ES6-数值的扩展</h1>
+
+      
+
+      <div class="valign-wrapper blue-grey-text">
+        <i class="material-icons valign">query_builder</i>&nbsp
+        <time datetime="2016-06-28T15:44:55.000Z" class="valign">
+          2016 6月 28日
+          晚上11:44:55
+        </time>
+      </div>
+
+      
+        <div class="valign-wrapper sm-text blue-grey-text">
+          <i class="material-icons valign">grade</i>&nbsp
+          <span id="busuanzi_container_page_pv" class="valign">
+            阅读<span id="busuanzi_value_page_pv"></span>次
+          </span>
+        </div>
+      
+
+      
+        <div class="section right">
+          
+            <span class="new badge amber left" data-badge-caption="">
+              <a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
+            </span>
+          
+            <span class="new badge green left" data-badge-caption="">
+              <a href="/tag/es6/" title="#es6" class="white-text" target="_blank" rel="external">#es6</a>
+            </span>
+          
+            <span class="new badge red left" data-badge-caption="">
+              <a href="/tag/ES6标准入门学习笔记/" title="#ES6标准入门学习笔记" class="white-text" target="_blank" rel="external">#ES6标准入门学习笔记</a>
+            </span>
+          
+        </div>
+      
+
+    </div>
+  
+
+  <div class="card-content z-depth-0">
+
+    
+
+    <p>JS的数值设计的不好，嗯，但是ES6说，还可以抢救一下…<br><a id="more"></a></p>
+<h3 id="二进制和八进制和十六进制…"><a href="#二进制和八进制和十六进制…" class="headerlink" title="二进制和八进制和十六进制…"></a>二进制和八进制和十六进制…</h3><p>从ES5开始，在严格模式中，八进制数值就不再允许使用前缀0表示，ES6进一步明确，要使用前缀0o表示。同理，二进制使用0B前缀。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">0b11</span> === <span class="number">3</span>); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="number">0o11</span> === <span class="number">9</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>而16进制依然是0x前缀。<br>要将8进制和16进制的数值转化成10进制可以使用Number:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Number</span>(<span class="number">0o11</span>) <span class="comment">// 9</span></div><div class="line"><span class="built_in">Number</span>(<span class="number">0x11</span>) <span class="comment">// 17</span></div></pre></td></tr></table></figure></p>
+<h3 id="判断Infinite-NaN"><a href="#判断Infinite-NaN" class="headerlink" title="判断Infinite,NaN"></a>判断Infinite,NaN</h3><p>ES6对Number对象提供了isFinite和isNaN两个方法来检查Infinite和NaN两个特殊值，又算是填上了一个坑。<br>这两个方法和原来的同名全局方法的区别在于：传统方法将非数值一律转为数值再判断，而新方法对非数值一律返回false。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="string">'100'</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isFinite(<span class="string">'100'</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
 <h3 id="Number-isInteger"><a href="#Number-isInteger" class="headerlink" title="Number.isInteger"></a>Number.isInteger</h3><p>判断一个数是否是整数</p>
 <h3 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h3><p>一个很小的数，是常量。值是2.220446049250313e-16。<br>我们知道JS存数是按浮点型地存，所以数值运算常常有误差，ES6规定吗，误差比EPSILON小就认为得到了正确结果。</p>
-<h3 id="安全整数"><a href="#安全整数" class="headerlink" title="安全整数"></a>安全整数</h3><p>话说,坑好多呀…<br>JS能精确表示的正数范围是-2^[53]—2^[53]，超过就无法精确表示了<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">53</span>)); <span class="comment">// 9007199254740992</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">53</span>) + <span class="number">1</span>); <span class="comment">// 还是9007199254740992</span></div></pre></td></tr></table></figure><p></p>
+<h3 id="安全整数"><a href="#安全整数" class="headerlink" title="安全整数"></a>安全整数</h3><p>话说,坑好多呀…<br>JS能精确表示的正数范围是-2^[53]—2^[53]，超过就无法精确表示了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">53</span>)); <span class="comment">// 9007199254740992</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">53</span>) + <span class="number">1</span>); <span class="comment">// 还是9007199254740992</span></div></pre></td></tr></table></figure></p>
 <p>Number引入了MAX_SAFE_INTEGER和MIN_SAFE_INTEGER来表示上面说的两个临界值，以及isSafeInteger方法来判断数是否在这个闭区间内。</p>
 <h3 id="Math对象扩展"><a href="#Math对象扩展" class="headerlink" title="Math对象扩展"></a>Math对象扩展</h3><p>Math对象上都是些数学相关方法，ES6新增了16个，我不打算记录下来了，因为由于水平所限，实际应用中还没有遇到过需要这些方法的情况。</p>
-<h3 id="指数运算符"><a href="#指数运算符" class="headerlink" title="指数运算符**"></a>指数运算符**</h3><p>刚才又有用Math.pow,现在来说一下**这个运算符，它叫指数运算符，就是来算幂指数的。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">2</span> ** <span class="number">3</span>); <span class="comment">// 8</span></div></pre></td></tr></table></figure><p></p>
-<div class="sibling-post center-align card-panel z-depth-0 section">
-<a href="/2016/06/27/ES6-RegExp扩展/" class="btn-flat blue-grey-text right">
-<i class="material-icons right">chevron_right</i>
-ES6-RegExp扩展
-</a>
-<a href="/2016/06/30/ES6-数组的扩展/" class="btn-flat blue-grey-text left">
-<i class="material-icons left">chevron_left</i>
-ES6-数组的扩展
-</a>
-</div>
-<div class="comment" id="duoshuo">
-<div class="ds-thread" data-thread-key="post-ES6-数值的扩展" data-title="ES6-数值的扩展" data-url="http://hunnble.github.io/2016/06/28/ES6-数值的扩展/"></div>
-<script type="text/javascript">var duoshuoQuery={short_name:"hunnble"},ds=document.createElement("script");ds.type="text/javascript",ds.async=!0,ds.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",ds.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(ds)</script>
-</div>
-</div>
+<h3 id="指数运算符"><a href="#指数运算符" class="headerlink" title="指数运算符**"></a>指数运算符**</h3><p>刚才又有用Math.pow,现在来说一下**这个运算符，它叫指数运算符，就是来算幂指数的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">2</span> ** <span class="number">3</span>); <span class="comment">// 8</span></div></pre></td></tr></table></figure></p>
+
+
+    <div class="sibling-post center-align card-panel z-depth-0 section">
+
+      
+        <a href="/2016/06/27/ES6-RegExp扩展/" class="btn-flat blue-grey-text right">
+          <i class="material-icons right">chevron_right</i>
+          ES6-RegExp扩展
+        </a>
+      
+
+      
+        <a href="/2016/06/30/ES6-数组的扩展/" class="btn-flat blue-grey-text left">
+          <i class="material-icons left">chevron_left</i>
+          ES6-数组的扩展
+        </a>
+      
+
+    </div>
+
+    
+      <div class="comment" id="duoshuo">
+        <div class="ds-thread" data-thread-key="post-ES6-数值的扩展" data-title="ES6-数值的扩展" data-url="http://hunnble.github.io/2016/06/28/ES6-数值的扩展/"></div>
+        <script type="text/javascript">
+          var duoshuoQuery = { short_name:'hunnble' };
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';
+          ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        </script>
+      </div>
+    
+
+  </div>
+
 </section>
-<div class="fixed-action-btn click-to-toggle">
-<a class="btn-floating btn-large lighten-2 teal">
-<i class="large material-icons">view_module</i>
-</a>
-<ul>
-<li>
-<a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-<i class="material-icons">navigation</i>
-</a>
-</li>
-</ul>
+
+        <div class="fixed-action-btn click-to-toggle">
+  <a class="btn-floating btn-large lighten-2 teal">
+    <i class="large material-icons">view_module</i>
+  </a>
+  <ul>
+    <li>
+      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+        <i class="material-icons">navigation</i>
+      </a>
+    </li>
+  </ul>
 </div>
-</div>
-<aside class="col m2 push-m2 hide-on-med-and-down">
-<div class="toc transparent card-panel z-depth-0">
-<ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#二进制和八进制和十六进制…"><span class="table-of-contents-text">二进制和八进制和十六进制…</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#判断Infinite-NaN"><span class="table-of-contents-text">判断Infinite,NaN</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Number-isInteger"><span class="table-of-contents-text">Number.isInteger</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Number-EPSILON"><span class="table-of-contents-text">Number.EPSILON</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#安全整数"><span class="table-of-contents-text">安全整数</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Math对象扩展"><span class="table-of-contents-text">Math对象扩展</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#指数运算符"><span class="table-of-contents-text">指数运算符**</span></a></li></ol>
-</div>
-</aside>
-</div>
+
+      
+    </div>
+
+    
+      <aside class="col m2 push-m2 hide-on-med-and-down">
+        <div class="toc transparent card-panel z-depth-0">
+          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#二进制和八进制和十六进制…"><span class="table-of-contents-text">二进制和八进制和十六进制…</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#判断Infinite-NaN"><span class="table-of-contents-text">判断Infinite,NaN</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Number-isInteger"><span class="table-of-contents-text">Number.isInteger</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Number-EPSILON"><span class="table-of-contents-text">Number.EPSILON</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#安全整数"><span class="table-of-contents-text">安全整数</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Math对象扩展"><span class="table-of-contents-text">Math对象扩展</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#指数运算符"><span class="table-of-contents-text">指数运算符**</span></a></li></ol>
+        </div>
+      </aside>
+    
+
+
+    
+
+  </div>
+
 </main>
-<footer class="page-footer lighten-2 teal">
-<div class="container section">
-<div class="center-align white-text text-lighten-4">
-<p>
-Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-</p>
-<h5>
-总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-</h5>
-</div>
-</div>
-<div class="footer-copyright center-align">
-Copyright © 2016 Noski
-</div>
+
+
+  
+
+
+<footer class="page-footer lighten-2 teal ">
+  <div class="container section">
+    <div class="center-align white-text text-lighten-4">
+      <p>
+        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+      </p>
+      
+        <h5>
+          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+        </h5>
+      
+    </div>
+  </div>
+  <div class="footer-copyright center-align">
+    Copyright © 2016 Noski
+  </div>
 </footer>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="/js/highlight.min.js"></script>
+
+
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src="/js/highlight.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+    <script type="text/javascript" src=/js/main.js></script>
+  
+
+
 </body>
 </html>

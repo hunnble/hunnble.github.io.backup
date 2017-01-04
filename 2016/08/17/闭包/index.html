@@ -1,84 +1,163 @@
 
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<link rel="alternate" href="/atom.xml" type="application/atom+xml">
-<title>闭包 [ 北方公园 ]</title>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="shortcut icon" href="/images/favicon.ico">
-<link rel="stylesheet" href="/css/default_highlight.min.css">
-<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen">
-<link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <link rel="alternate" href=/atom.xml type="application/atom+xml">
+  <title>闭包 [ 北方公园 ]</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  
+    
+      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+    
+  
+  
+    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  
+    
+      <link rel="stylesheet" href="/css/main.css">
+    
+  
 </head>
 <body>
+
 <div class="navbar-fixed white-text">
-<nav class="transparent z-depth-0">
-<div class="nav-wrapper">
-<ul id="nav-mobile" class="right hide-on-med-and-down">
-<li>
-<a class="waves-effect text-lighten-4" href="/">主页</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/archive">归档</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/about">关于</a>
-</li>
-</ul>
-<a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/">主页</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/about">关于</a>
+          </li>
+        
+      </ul>
+      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 </div>
-</nav>
-</div>
+
 <ul id="slide-nav" class="side-nav">
-<li>
-<div class="userView lighten-2 teal">
-<div class="background">
-<h5 class="white-text inline-title">Noski</h5>
-</div>
-<img class="circle" src="/images/avatar.png">
-<h5 class="white-text inline-title">北方公园</h5>
-<br>
-<h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-</div>
-</li>
-<li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  <li>
+    <div class="userView lighten-2 teal">
+      <div class="background">
+        <h5 class="white-text inline-title">Noski</h5>
+      </div>
+      <img class="circle" src=/images/avatar.png>
+      <h5 class="white-text inline-title">北方公园</h5>
+      <br />
+      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+    </div>
+  </li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  
 </ul>
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height:400px">
-<div class="parallax lighten-2 teal">
-<img src="/images/background.jpg">
+
+
+
+
+
+  
+
+
+  
+
+
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
+  
+  <div class="parallax lighten-2 teal ">
+    <img src="/images/background.jpg">
+  </div>
+  <script type="text/javascript">
+    var container = document.querySelector('.parallax-container');
+    var tmpTitle = container.querySelector('.hide-on-image-load');
+    var img = container.querySelector('img');
+    img.onload = function() {
+      if (tmpTitle) {
+        tmpTitle.style.display = 'none';
+      }
+    }
+  </script>
 </div>
-<script type="text/javascript">var container=document.querySelector(".parallax-container"),tmpTitle=container.querySelector(".hide-on-image-load"),img=container.querySelector("img");img.onload=function(){tmpTitle&&(tmpTitle.style.display="none")}</script>
+
+  
+
 </div>
+
 <main id="container-outer" class="">
-<div class="row">
-<div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+
+  
+    
+  
+
+  
+  
+    
+  
+
+  <div class="row ">
+
+    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+      
+        
 <section id="post" class="card article z-depth-0">
-<div class="card-panel z-depth-0 black-text">
-<h1>闭包</h1>
-<div class="valign-wrapper blue-grey-text">
-<i class="material-icons valign">query_builder</i>&nbsp
-<time datetime="2016-08-17T03:52:05.000Z" class="valign">
-2016 8月 17日 中午11:52:05
-</time>
-</div>
-<div class="valign-wrapper sm-text blue-grey-text">
-<i class="material-icons valign">grade</i>&nbsp
-<span id="busuanzi_container_page_pv" class="valign">
-阅读<span id="busuanzi_value_page_pv"></span>次
-</span>
-</div>
-<div class="section right">
-<span class="new badge amber left" data-badge-caption="">
-<a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
-</span>
-</div>
-</div>
-<div class="card-content z-depth-0">
-<p>本篇文章简单介绍闭包及在JavaScript语言中的应用<br><a id="more"></a></p>
+  
+    <div class="card-panel z-depth-0 black-text">
+      <h1>闭包</h1>
+
+      
+
+      <div class="valign-wrapper blue-grey-text">
+        <i class="material-icons valign">query_builder</i>&nbsp
+        <time datetime="2016-08-17T03:52:05.000Z" class="valign">
+          2016 8月 17日
+          中午11:52:05
+        </time>
+      </div>
+
+      
+        <div class="valign-wrapper sm-text blue-grey-text">
+          <i class="material-icons valign">grade</i>&nbsp
+          <span id="busuanzi_container_page_pv" class="valign">
+            阅读<span id="busuanzi_value_page_pv"></span>次
+          </span>
+        </div>
+      
+
+      
+        <div class="section right">
+          
+            <span class="new badge amber left" data-badge-caption="">
+              <a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
+            </span>
+          
+        </div>
+      
+
+    </div>
+  
+
+  <div class="card-content z-depth-0">
+
+    
+
+    <p>本篇文章简单介绍闭包及在JavaScript语言中的应用<br><a id="more"></a></p>
 <h2 id="离散数学中的闭包："><a href="#离散数学中的闭包：" class="headerlink" title="离散数学中的闭包："></a>离散数学中的闭包：</h2><p>包含指定集合的满足在某个运算下闭合的最小集合／如果集合A在某种操作作用下的结果仍然属于集合A，那么就认为集合A在这个操作下拥有闭包属性。也可以说，集合A在这个操作下是闭合的</p>
 <h2 id="程序语言中的闭包："><a href="#程序语言中的闭包：" class="headerlink" title="程序语言中的闭包："></a>程序语言中的闭包：</h2><p>又叫词法闭包，或者函数闭包，指的是程序语言中的特性，具备该特性的程序语言能将函数和函数所处的环境当做整体使用。有时也把这个整体叫做闭包。</p>
 <p><em>二者是不同的，这里说的是程序语言中的JavaScript中的闭包。JavaScript中的闭包指持有外部环境变量的函数。</em></p>
@@ -86,74 +165,129 @@
 <h3 id="1-词法作用域"><a href="#1-词法作用域" class="headerlink" title="1.词法作用域"></a>1.词法作用域</h3><p>JavaScript的作用域链是指每一个函数内部不止可以访问它自己作用域中的变量，还可以访问包含它的函数作用域中的变量，一直上溯到全局变量，是为作用域链。</p>
 <h3 id="2-函数当作值传递"><a href="#2-函数当作值传递" class="headerlink" title="2.函数当作值传递"></a>2.函数当作值传递</h3><p>JavaScript中函数是first-class的，可以被当做值来传递，一个函数可以return一个函数。</p>
 <p><em>以上两点组成了形成闭包的条件，一言以蔽之，就是封闭外部作用域中一部分自由变量以及内部作用域，让内部作用域“记忆”外部状态。</em></p>
-<p>看一个最简单的例子：<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">functionAdd(y)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> x + y</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p>看一个最简单的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">functionAdd(y)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> x + y</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>对内部函数function(x)来讲，y就是自由变量，而且function(x)的返回值，依赖于这个外部自由变量y。而往上推一层，外围Add(y)函数正好就是那个包含自由变量y的环境。而且Javascript的语法允许内部函数function(x)访问外部函数Add(y)的局部变量。满足这三个条件，所以这个时候，外部函数Add(y)对内部函数function(x)构成了闭包。</p>
 <h2 id="常见例子："><a href="#常见例子：" class="headerlink" title="常见例子："></a>常见例子：</h2><h3 id="1-调用函数里面的函数"><a href="#1-调用函数里面的函数" class="headerlink" title="1.调用函数里面的函数"></a>1.调用函数里面的函数</h3><p>函数里面的函数能够保证外面的函数的作用域不会被销毁，所以无论是在函数里面还是在外面调用函数里面的函数都可以访问到外层函数的作用域，具体做法可以将里面函数当做返回值返回后通过两次的括号调用。</p>
 <h3 id="2-回调函数"><a href="#2-回调函数" class="headerlink" title="2.回调函数"></a>2.回调函数</h3><p>回调函数会保留当前外层的作用域，然后回调到另一个地方执行，执行的时候就是闭包，nodejs中回调函数十分常见。</p>
 <h3 id="3-IIFE方式"><a href="#3-IIFE方式" class="headerlink" title="3.IIFE方式"></a>3.IIFE方式</h3><p>(function(){})()这种格式，立即执行函数。可以将外部变量显式传入。</p>
-<h3 id="4-循环"><a href="#4-循环" class="headerlink" title="4.循环"></a>4.循环</h3><p>由于JavaScript没有块级作用域，所以循环直接是循环外面的作用域，如果循环是写在全局中，则循环里面的闭包保留的就是全局作用域，全局作用域只有一个，所以如下代码的输出不会是想象中的1到10，而是10个10<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; ++i) &#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i);</div><div class="line">    &#125;, <span class="number">0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>原因是上面说的，每次循环保存的都是唯一的全局作用域，作用域中的i的值是循环最后一次的i，也就是10。<br>如果想得到1到10，应该用闭包保存每一次循环的i<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; ++i) &#123;</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">j</span>) </span>&#123;</div><div class="line">        setTimeout( <span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(j);</div><div class="line">        &#125;, <span class="number">0</span> );</div><div class="line">    &#125;)(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<h3 id="4-循环"><a href="#4-循环" class="headerlink" title="4.循环"></a>4.循环</h3><p>由于JavaScript没有块级作用域，所以循环直接是循环外面的作用域，如果循环是写在全局中，则循环里面的闭包保留的就是全局作用域，全局作用域只有一个，所以如下代码的输出不会是想象中的1到10，而是10个10<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; ++i) &#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i);</div><div class="line">    &#125;, <span class="number">0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>原因是上面说的，每次循环保存的都是唯一的全局作用域，作用域中的i的值是循环最后一次的i，也就是10。<br>如果想得到1到10，应该用闭包保存每一次循环的i<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; ++i) &#123;</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">j</span>) </span>&#123;</div><div class="line">        setTimeout( <span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(j);</div><div class="line">        &#125;, <span class="number">0</span> );</div><div class="line">    &#125;)(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>循环中的闭包的最常见用法之一就是在循环中的事件绑定，需要正确地获取到元素才能正确地绑定事件。不过大部分情况下这种都是用事件委托的~</p>
 <p>当然，<code>es6</code>以后就有块级作用域一说了，事情可以变得不那么复杂，不过闭包还是终究有用武之地的。</p>
-<h2 id="特别需要注意使用闭包时this对象的指向"><a href="#特别需要注意使用闭包时this对象的指向" class="headerlink" title="特别需要注意使用闭包时this对象的指向"></a>特别需要注意使用闭包时<code>this</code>对象的指向</h2><p><code>this</code>对象是在运行时基于函数的执行环境绑定的：在全局函数中，<code>this</code>等于<code>window</code>，而当函数被作为某个对象的方法调用时，<code>this</code>等于那个对象。不过，匿名函数的执行环境具有全局性，因此其<code>this</code>对象通常指向<code>window</code>。<a href="http://blog.csdn.net/huntererer/article/details/50101129" target="_blank" rel="external">更多关于this的知识看这个</a><br>看一下下面这个例子会打印出”window”还是”outer”吧<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"window"</span>;</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"outer"</span>,</div><div class="line">    <span class="attr">f</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj.f()();  <span class="comment">// ?</span></div></pre></td></tr></table></figure><p></p>
-<p>在闭包中，内部函数不会到外部函数去搜索<code>this</code>，所以例子中打印的是”window”。但是，可以通过把外部作用域的<code>this</code>对象保存到一个变量里，闭包就可以访问了，例子如下：<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"window"</span>;</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"outer"</span>,</div><div class="line">    <span class="attr">f</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> self.name;</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj.f()();  <span class="comment">// "outer"</span></div></pre></td></tr></table></figure><p></p>
-<div class="sibling-post center-align card-panel z-depth-0 section">
-<a href="/2016/08/03/一个画曲线的canvas练习/" class="btn-flat blue-grey-text right">
-<i class="material-icons right">chevron_right</i>
-一个画曲线的canvas练习
-</a>
-<a href="/2016/09/21/好久没更新博客了/" class="btn-flat blue-grey-text left">
-<i class="material-icons left">chevron_left</i>
-好久没更新博客了
-</a>
-</div>
-<div class="comment" id="duoshuo">
-<div class="ds-thread" data-thread-key="post-闭包" data-title="闭包" data-url="http://hunnble.github.io/2016/08/17/闭包/"></div>
-<script type="text/javascript">var duoshuoQuery={short_name:"hunnble"},ds=document.createElement("script");ds.type="text/javascript",ds.async=!0,ds.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",ds.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(ds)</script>
-</div>
-</div>
+<h2 id="特别需要注意使用闭包时this对象的指向"><a href="#特别需要注意使用闭包时this对象的指向" class="headerlink" title="特别需要注意使用闭包时this对象的指向"></a>特别需要注意使用闭包时<code>this</code>对象的指向</h2><p><code>this</code>对象是在运行时基于函数的执行环境绑定的：在全局函数中，<code>this</code>等于<code>window</code>，而当函数被作为某个对象的方法调用时，<code>this</code>等于那个对象。不过，匿名函数的执行环境具有全局性，因此其<code>this</code>对象通常指向<code>window</code>。<a href="http://blog.csdn.net/huntererer/article/details/50101129" target="_blank" rel="external">更多关于this的知识看这个</a><br>看一下下面这个例子会打印出”window”还是”outer”吧<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"window"</span>;</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"outer"</span>,</div><div class="line">    <span class="attr">f</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj.f()();  <span class="comment">// ?</span></div></pre></td></tr></table></figure></p>
+<p>在闭包中，内部函数不会到外部函数去搜索<code>this</code>，所以例子中打印的是”window”。但是，可以通过把外部作用域的<code>this</code>对象保存到一个变量里，闭包就可以访问了，例子如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"window"</span>;</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"outer"</span>,</div><div class="line">    <span class="attr">f</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> self.name;</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj.f()();  <span class="comment">// "outer"</span></div></pre></td></tr></table></figure></p>
+
+
+    <div class="sibling-post center-align card-panel z-depth-0 section">
+
+      
+        <a href="/2016/08/03/一个画曲线的canvas练习/" class="btn-flat blue-grey-text right">
+          <i class="material-icons right">chevron_right</i>
+          一个画曲线的canvas练习
+        </a>
+      
+
+      
+        <a href="/2016/09/21/好久没更新博客了/" class="btn-flat blue-grey-text left">
+          <i class="material-icons left">chevron_left</i>
+          好久没更新博客了
+        </a>
+      
+
+    </div>
+
+    
+      <div class="comment" id="duoshuo">
+        <div class="ds-thread" data-thread-key="post-闭包" data-title="闭包" data-url="http://hunnble.github.io/2016/08/17/闭包/"></div>
+        <script type="text/javascript">
+          var duoshuoQuery = { short_name:'hunnble' };
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';
+          ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        </script>
+      </div>
+    
+
+  </div>
+
 </section>
-<div class="fixed-action-btn click-to-toggle">
-<a class="btn-floating btn-large lighten-2 teal">
-<i class="large material-icons">view_module</i>
-</a>
-<ul>
-<li>
-<a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-<i class="material-icons">navigation</i>
-</a>
-</li>
-</ul>
+
+        <div class="fixed-action-btn click-to-toggle">
+  <a class="btn-floating btn-large lighten-2 teal">
+    <i class="large material-icons">view_module</i>
+  </a>
+  <ul>
+    <li>
+      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+        <i class="material-icons">navigation</i>
+      </a>
+    </li>
+  </ul>
 </div>
-</div>
-<aside class="col m2 push-m2 hide-on-med-and-down">
-<div class="toc transparent card-panel z-depth-0">
-<ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#离散数学中的闭包："><span class="table-of-contents-text">离散数学中的闭包：</span></a></li><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#程序语言中的闭包："><span class="table-of-contents-text">程序语言中的闭包：</span></a></li><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#JavaScript中的闭包"><span class="table-of-contents-text">JavaScript中的闭包</span></a><ol class="table-of-contents-child"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#1-词法作用域"><span class="table-of-contents-text">1.词法作用域</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#2-函数当作值传递"><span class="table-of-contents-text">2.函数当作值传递</span></a></li></ol></li><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#常见例子："><span class="table-of-contents-text">常见例子：</span></a><ol class="table-of-contents-child"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#1-调用函数里面的函数"><span class="table-of-contents-text">1.调用函数里面的函数</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#2-回调函数"><span class="table-of-contents-text">2.回调函数</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#3-IIFE方式"><span class="table-of-contents-text">3.IIFE方式</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#4-循环"><span class="table-of-contents-text">4.循环</span></a></li></ol></li><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#特别需要注意使用闭包时this对象的指向"><span class="table-of-contents-text">特别需要注意使用闭包时this对象的指向</span></a></li></ol>
-</div>
-</aside>
-</div>
+
+      
+    </div>
+
+    
+      <aside class="col m2 push-m2 hide-on-med-and-down">
+        <div class="toc transparent card-panel z-depth-0">
+          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#离散数学中的闭包："><span class="table-of-contents-text">离散数学中的闭包：</span></a></li><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#程序语言中的闭包："><span class="table-of-contents-text">程序语言中的闭包：</span></a></li><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#JavaScript中的闭包"><span class="table-of-contents-text">JavaScript中的闭包</span></a><ol class="table-of-contents-child"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#1-词法作用域"><span class="table-of-contents-text">1.词法作用域</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#2-函数当作值传递"><span class="table-of-contents-text">2.函数当作值传递</span></a></li></ol></li><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#常见例子："><span class="table-of-contents-text">常见例子：</span></a><ol class="table-of-contents-child"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#1-调用函数里面的函数"><span class="table-of-contents-text">1.调用函数里面的函数</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#2-回调函数"><span class="table-of-contents-text">2.回调函数</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#3-IIFE方式"><span class="table-of-contents-text">3.IIFE方式</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#4-循环"><span class="table-of-contents-text">4.循环</span></a></li></ol></li><li class="table-of-contents-item table-of-contents-level-2"><a class="table-of-contents-link" href="#特别需要注意使用闭包时this对象的指向"><span class="table-of-contents-text">特别需要注意使用闭包时this对象的指向</span></a></li></ol>
+        </div>
+      </aside>
+    
+
+
+    
+
+  </div>
+
 </main>
-<footer class="page-footer lighten-2 teal">
-<div class="container section">
-<div class="center-align white-text text-lighten-4">
-<p>
-Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-</p>
-<h5>
-总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-</h5>
-</div>
-</div>
-<div class="footer-copyright center-align">
-Copyright © 2016 Noski
-</div>
+
+
+  
+
+
+<footer class="page-footer lighten-2 teal ">
+  <div class="container section">
+    <div class="center-align white-text text-lighten-4">
+      <p>
+        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+      </p>
+      
+        <h5>
+          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+        </h5>
+      
+    </div>
+  </div>
+  <div class="footer-copyright center-align">
+    Copyright © 2016 Noski
+  </div>
 </footer>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="/js/highlight.min.js"></script>
+
+
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src="/js/highlight.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+    <script type="text/javascript" src=/js/main.js></script>
+  
+
+
 </body>
 </html>

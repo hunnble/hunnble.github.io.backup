@@ -1,84 +1,163 @@
 
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<link rel="alternate" href="/atom.xml" type="application/atom+xml">
-<title>Gulp入门 [ 北方公园 ]</title>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="shortcut icon" href="/images/favicon.ico">
-<link rel="stylesheet" href="/css/default_highlight.min.css">
-<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen">
-<link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <link rel="alternate" href=/atom.xml type="application/atom+xml">
+  <title>Gulp入门 [ 北方公园 ]</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  
+    
+      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+    
+  
+  
+    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  
+    
+      <link rel="stylesheet" href="/css/main.css">
+    
+  
 </head>
 <body>
+
 <div class="navbar-fixed white-text">
-<nav class="transparent z-depth-0">
-<div class="nav-wrapper">
-<ul id="nav-mobile" class="right hide-on-med-and-down">
-<li>
-<a class="waves-effect text-lighten-4" href="/">主页</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/archive">归档</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/about">关于</a>
-</li>
-</ul>
-<a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/">主页</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/about">关于</a>
+          </li>
+        
+      </ul>
+      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 </div>
-</nav>
-</div>
+
 <ul id="slide-nav" class="side-nav">
-<li>
-<div class="userView lighten-2 teal">
-<div class="background">
-<h5 class="white-text inline-title">Noski</h5>
-</div>
-<img class="circle" src="/images/avatar.png">
-<h5 class="white-text inline-title">北方公园</h5>
-<br>
-<h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-</div>
-</li>
-<li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  <li>
+    <div class="userView lighten-2 teal">
+      <div class="background">
+        <h5 class="white-text inline-title">Noski</h5>
+      </div>
+      <img class="circle" src=/images/avatar.png>
+      <h5 class="white-text inline-title">北方公园</h5>
+      <br />
+      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+    </div>
+  </li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  
 </ul>
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height:400px">
-<div class="parallax lighten-2 teal">
-<img src="/images/background.jpg">
+
+
+
+
+
+  
+
+
+  
+
+
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
+  
+  <div class="parallax lighten-2 teal ">
+    <img src="/images/background.jpg">
+  </div>
+  <script type="text/javascript">
+    var container = document.querySelector('.parallax-container');
+    var tmpTitle = container.querySelector('.hide-on-image-load');
+    var img = container.querySelector('img');
+    img.onload = function() {
+      if (tmpTitle) {
+        tmpTitle.style.display = 'none';
+      }
+    }
+  </script>
 </div>
-<script type="text/javascript">var container=document.querySelector(".parallax-container"),tmpTitle=container.querySelector(".hide-on-image-load"),img=container.querySelector("img");img.onload=function(){tmpTitle&&(tmpTitle.style.display="none")}</script>
+
+  
+
 </div>
+
 <main id="container-outer" class="">
-<div class="row">
-<div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+
+  
+    
+  
+
+  
+  
+    
+  
+
+  <div class="row ">
+
+    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+      
+        
 <section id="post" class="card article z-depth-0">
-<div class="card-panel z-depth-0 black-text">
-<h1>Gulp入门</h1>
-<div class="valign-wrapper blue-grey-text">
-<i class="material-icons valign">query_builder</i>&nbsp
-<time datetime="2016-04-09T14:55:52.000Z" class="valign">
-2016 4月 9日 晚上10:55:52
-</time>
-</div>
-<div class="valign-wrapper sm-text blue-grey-text">
-<i class="material-icons valign">grade</i>&nbsp
-<span id="busuanzi_container_page_pv" class="valign">
-阅读<span id="busuanzi_value_page_pv"></span>次
-</span>
-</div>
-<div class="section right">
-<span class="new badge amber left" data-badge-caption="">
-<a href="/tag/frontend/" title="#frontend" class="white-text" target="_blank" rel="external">#frontend</a>
-</span>
-</div>
-</div>
-<div class="card-content z-depth-0">
-<p>前端工程化的知识对于前端开发者越来越重要,于是我也开始学习Gulp—–一个前端自动化构建工具<br><a id="more"></a></p>
+  
+    <div class="card-panel z-depth-0 black-text">
+      <h1>Gulp入门</h1>
+
+      
+
+      <div class="valign-wrapper blue-grey-text">
+        <i class="material-icons valign">query_builder</i>&nbsp
+        <time datetime="2016-04-09T14:55:52.000Z" class="valign">
+          2016 4月 9日
+          晚上10:55:52
+        </time>
+      </div>
+
+      
+        <div class="valign-wrapper sm-text blue-grey-text">
+          <i class="material-icons valign">grade</i>&nbsp
+          <span id="busuanzi_container_page_pv" class="valign">
+            阅读<span id="busuanzi_value_page_pv"></span>次
+          </span>
+        </div>
+      
+
+      
+        <div class="section right">
+          
+            <span class="new badge amber left" data-badge-caption="">
+              <a href="/tag/frontend/" title="#frontend" class="white-text" target="_blank" rel="external">#frontend</a>
+            </span>
+          
+        </div>
+      
+
+    </div>
+  
+
+  <div class="card-content z-depth-0">
+
+    
+
+    <p>前端工程化的知识对于前端开发者越来越重要,于是我也开始学习Gulp—–一个前端自动化构建工具<br><a id="more"></a></p>
 <h3 id="Gulp的安装"><a href="#Gulp的安装" class="headerlink" title="Gulp的安装"></a>Gulp的安装</h3><p>使用npm安装</p>
 <pre><code>npm install -g gulp
 </code></pre><p>这是全局安装,安装到项目则是在项目目录下使用</p>
@@ -86,73 +165,128 @@
 </code></pre><p>使用gulp -v查看版本确认安装成功</p>
 <h3 id="使用Gulp"><a href="#使用Gulp" class="headerlink" title="使用Gulp"></a>使用Gulp</h3><h4 id="新建gulpfile文件-运行Gulp"><a href="#新建gulpfile文件-运行Gulp" class="headerlink" title="新建gulpfile文件, 运行Gulp"></a>新建gulpfile文件, 运行Gulp</h4><p>还是用npm安装依赖的插件,Gulp的插件功能很好很强大<br>比如要使用sass插件编译sass:</p>
 <pre><code>npm install gulp-sass --save-dev
-</code></pre><p>然后在gulpfile.js中引入插件:<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">    sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);</div></pre></td></tr></table></figure><p></p>
+</code></pre><p>然后在gulpfile.js中引入插件:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">    sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);</div></pre></td></tr></table></figure></p>
 <p>这只是冰山一角,更多用法和更多插件请移步<a href="http://www.gulpjs.com.cn/" target="_blank" rel="external">Gulp中文网</a>借助API文档学习。Gulp的中文资料还是很多的,而且翻译的很好,所以我没有去啃英文文档,很感谢那些布道者们为我们这些后来人铺好了很多路。</p>
 <p>在命令行中使用</p>
 <pre><code>gulp &lt;task&gt;
 </code></pre><p>来运行,task是命令</p>
-<h3 id="Gulp的4个API"><a href="#Gulp的4个API" class="headerlink" title="Gulp的4个API:"></a>Gulp的4个API:</h3><p>1.gulp.src(globs[, options]),返回Vinyl files的stream,可以被pipe到别的插件中<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.src(<span class="string">'client/templates/*.jade'</span>)</div></pre></td></tr></table></figure><p></p>
-<p>编译JADE<br>2.gulp.dest(path[, options])<br>能被pipe进来,能写文件和重新输出所有数据<br></p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.src('./client/templates/*.jade)</div><div class="line">    .pipe(jade())</div><div class="line">    .pipe(gulp.dest('./build/templates'));</div></pre></td></tr></table></figure><p></p>
-<p>3.gulp.task(name[, deps],fn)<br>定义一个使用Orchestrator实现的任务(task)<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'jshint'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// do something</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure><p></p>
-<p>4.gulp.watch(glob[,opts],tasks)<br>监视文件变动<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.watch(<span class="string">'../ife/stage2/css/task26.scss'</span>, [<span class="string">'style'</span>]);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p></p>
+<h3 id="Gulp的4个API"><a href="#Gulp的4个API" class="headerlink" title="Gulp的4个API:"></a>Gulp的4个API:</h3><p>1.gulp.src(globs[, options]),返回Vinyl files的stream,可以被pipe到别的插件中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.src(<span class="string">'client/templates/*.jade'</span>)</div></pre></td></tr></table></figure></p>
+<p>编译JADE<br>2.gulp.dest(path[,  options])<br>能被pipe进来,能写文件和重新输出所有数据<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.src('./client/templates/*.jade)</div><div class="line">    .pipe(jade())</div><div class="line">    .pipe(gulp.dest('./build/templates'));</div></pre></td></tr></table></figure></p>
+<p>3.gulp.task(name[, deps],fn)<br>定义一个使用Orchestrator实现的任务(task)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'jshint'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// do something</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>4.gulp.watch(glob[,opts],tasks)<br>监视文件变动<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.watch(<span class="string">'../ife/stage2/css/task26.scss'</span>, [<span class="string">'style'</span>]);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>我在项目中运用到的有对js文件压缩合并,对图片压缩等,将Gulp运用到实际开发中可以解放我等coder的手脚,怎一个爽字了得</p>
-<div class="sibling-post center-align card-panel z-depth-0 section">
-<a href="/2016/04/07/MVC模式/" class="btn-flat blue-grey-text right">
-<i class="material-icons right">chevron_right</i>
-MVC模式学习笔记
-</a>
-<a href="/2016/04/10/python回顾/" class="btn-flat blue-grey-text left">
-<i class="material-icons left">chevron_left</i>
-python回顾
-</a>
-</div>
-<div class="comment" id="duoshuo">
-<div class="ds-thread" data-thread-key="post-Gulp入门" data-title="Gulp入门" data-url="http://hunnble.github.io/2016/04/09/Gulp入门/"></div>
-<script type="text/javascript">var duoshuoQuery={short_name:"hunnble"},ds=document.createElement("script");ds.type="text/javascript",ds.async=!0,ds.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",ds.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(ds)</script>
-</div>
-</div>
+
+
+    <div class="sibling-post center-align card-panel z-depth-0 section">
+
+      
+        <a href="/2016/04/07/MVC模式/" class="btn-flat blue-grey-text right">
+          <i class="material-icons right">chevron_right</i>
+          MVC模式学习笔记
+        </a>
+      
+
+      
+        <a href="/2016/04/10/python回顾/" class="btn-flat blue-grey-text left">
+          <i class="material-icons left">chevron_left</i>
+          python回顾
+        </a>
+      
+
+    </div>
+
+    
+      <div class="comment" id="duoshuo">
+        <div class="ds-thread" data-thread-key="post-Gulp入门" data-title="Gulp入门" data-url="http://hunnble.github.io/2016/04/09/Gulp入门/"></div>
+        <script type="text/javascript">
+          var duoshuoQuery = { short_name:'hunnble' };
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';
+          ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        </script>
+      </div>
+    
+
+  </div>
+
 </section>
-<div class="fixed-action-btn click-to-toggle">
-<a class="btn-floating btn-large lighten-2 teal">
-<i class="large material-icons">view_module</i>
-</a>
-<ul>
-<li>
-<a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-<i class="material-icons">navigation</i>
-</a>
-</li>
-</ul>
+
+        <div class="fixed-action-btn click-to-toggle">
+  <a class="btn-floating btn-large lighten-2 teal">
+    <i class="large material-icons">view_module</i>
+  </a>
+  <ul>
+    <li>
+      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+        <i class="material-icons">navigation</i>
+      </a>
+    </li>
+  </ul>
 </div>
-</div>
-<aside class="col m2 push-m2 hide-on-med-and-down">
-<div class="toc transparent card-panel z-depth-0">
-<ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Gulp的安装"><span class="table-of-contents-text">Gulp的安装</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#使用Gulp"><span class="table-of-contents-text">使用Gulp</span></a><ol class="table-of-contents-child"><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#新建gulpfile文件-运行Gulp"><span class="table-of-contents-text">新建gulpfile文件, 运行Gulp</span></a></li></ol></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Gulp的4个API"><span class="table-of-contents-text">Gulp的4个API:</span></a></li></ol>
-</div>
-</aside>
-</div>
+
+      
+    </div>
+
+    
+      <aside class="col m2 push-m2 hide-on-med-and-down">
+        <div class="toc transparent card-panel z-depth-0">
+          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Gulp的安装"><span class="table-of-contents-text">Gulp的安装</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#使用Gulp"><span class="table-of-contents-text">使用Gulp</span></a><ol class="table-of-contents-child"><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#新建gulpfile文件-运行Gulp"><span class="table-of-contents-text">新建gulpfile文件, 运行Gulp</span></a></li></ol></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Gulp的4个API"><span class="table-of-contents-text">Gulp的4个API:</span></a></li></ol>
+        </div>
+      </aside>
+    
+
+
+    
+
+  </div>
+
 </main>
-<footer class="page-footer lighten-2 teal">
-<div class="container section">
-<div class="center-align white-text text-lighten-4">
-<p>
-Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-</p>
-<h5>
-总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-</h5>
-</div>
-</div>
-<div class="footer-copyright center-align">
-Copyright © 2016 Noski
-</div>
+
+
+  
+
+
+<footer class="page-footer lighten-2 teal ">
+  <div class="container section">
+    <div class="center-align white-text text-lighten-4">
+      <p>
+        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+      </p>
+      
+        <h5>
+          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+        </h5>
+      
+    </div>
+  </div>
+  <div class="footer-copyright center-align">
+    Copyright © 2016 Noski
+  </div>
 </footer>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="/js/highlight.min.js"></script>
+
+
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src="/js/highlight.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+    <script type="text/javascript" src=/js/main.js></script>
+  
+
+
 </body>
 </html>

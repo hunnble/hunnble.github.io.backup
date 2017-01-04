@@ -1,94 +1,175 @@
 
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<link rel="alternate" href="/atom.xml" type="application/atom+xml">
-<title>ES6-数组的扩展 [ 北方公园 ]</title>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="shortcut icon" href="/images/favicon.ico">
-<link rel="stylesheet" href="/css/default_highlight.min.css">
-<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen">
-<link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <link rel="alternate" href=/atom.xml type="application/atom+xml">
+  <title>ES6-数组的扩展 [ 北方公园 ]</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  
+    
+      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+    
+  
+  
+    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  
+    
+      <link rel="stylesheet" href="/css/main.css">
+    
+  
 </head>
 <body>
+
 <div class="navbar-fixed white-text">
-<nav class="transparent z-depth-0">
-<div class="nav-wrapper">
-<ul id="nav-mobile" class="right hide-on-med-and-down">
-<li>
-<a class="waves-effect text-lighten-4" href="/">主页</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/archive">归档</a>
-</li>
-<li>
-<a class="waves-effect text-lighten-4" href="/about">关于</a>
-</li>
-</ul>
-<a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/">主页</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
+          </li>
+        
+          <li>
+            <a class="waves-effect text-lighten-4" href="/about">关于</a>
+          </li>
+        
+      </ul>
+      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 </div>
-</nav>
-</div>
+
 <ul id="slide-nav" class="side-nav">
-<li>
-<div class="userView lighten-2 teal">
-<div class="background">
-<h5 class="white-text inline-title">Noski</h5>
-</div>
-<img class="circle" src="/images/avatar.png">
-<h5 class="white-text inline-title">北方公园</h5>
-<br>
-<h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-</div>
-</li>
-<li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-<li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  <li>
+    <div class="userView lighten-2 teal">
+      <div class="background">
+        <h5 class="white-text inline-title">Noski</h5>
+      </div>
+      <img class="circle" src=/images/avatar.png>
+      <h5 class="white-text inline-title">北方公园</h5>
+      <br />
+      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
+    </div>
+  </li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
+  
+    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
+  
 </ul>
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height:400px">
-<div class="parallax lighten-2 teal">
-<img src="/images/background.jpg">
+
+
+
+
+
+  
+
+
+  
+
+
+<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
+  
+  <div class="parallax lighten-2 teal ">
+    <img src="/images/background.jpg">
+  </div>
+  <script type="text/javascript">
+    var container = document.querySelector('.parallax-container');
+    var tmpTitle = container.querySelector('.hide-on-image-load');
+    var img = container.querySelector('img');
+    img.onload = function() {
+      if (tmpTitle) {
+        tmpTitle.style.display = 'none';
+      }
+    }
+  </script>
 </div>
-<script type="text/javascript">var container=document.querySelector(".parallax-container"),tmpTitle=container.querySelector(".hide-on-image-load"),img=container.querySelector("img");img.onload=function(){tmpTitle&&(tmpTitle.style.display="none")}</script>
+
+  
+
 </div>
+
 <main id="container-outer" class="">
-<div class="row">
-<div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+
+  
+    
+  
+
+  
+  
+    
+  
+
+  <div class="row ">
+
+    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
+      
+        
 <section id="post" class="card article z-depth-0">
-<div class="card-panel z-depth-0 black-text">
-<h1>ES6-数组的扩展</h1>
-<div class="valign-wrapper blue-grey-text">
-<i class="material-icons valign">query_builder</i>&nbsp
-<time datetime="2016-06-30T02:38:03.000Z" class="valign">
-2016 6月 30日 上午10:38:03
-</time>
-</div>
-<div class="valign-wrapper sm-text blue-grey-text">
-<i class="material-icons valign">grade</i>&nbsp
-<span id="busuanzi_container_page_pv" class="valign">
-阅读<span id="busuanzi_value_page_pv"></span>次
-</span>
-</div>
-<div class="section right">
-<span class="new badge amber left" data-badge-caption="">
-<a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
-</span>
-<span class="new badge green left" data-badge-caption="">
-<a href="/tag/es6/" title="#es6" class="white-text" target="_blank" rel="external">#es6</a>
-</span>
-<span class="new badge red left" data-badge-caption="">
-<a href="/tag/ES6标准入门学习笔记/" title="#ES6标准入门学习笔记" class="white-text" target="_blank" rel="external">#ES6标准入门学习笔记</a>
-</span>
-</div>
-</div>
-<div class="card-content z-depth-0">
-<p>ES6对Array的扩展<br><a id="more"></a></p>
-<h3 id="from方法"><a href="#from方法" class="headerlink" title="from方法"></a>from方法</h3><p>Array.from方法用于将类似数组的对象（array-like object）和可遍历对象（iterable）转化为真正的数组。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arrayLike = &#123;</div><div class="line">    <span class="string">'0'</span>: <span class="string">'a'</span>,</div><div class="line">    <span class="string">'1'</span>: <span class="string">'o'</span>,</div><div class="line">    <span class="string">'2'</span>: <span class="string">'e'</span>,</div><div class="line">    <span class="attr">length</span>: <span class="number">3</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">let</span> arrES5 = [].slice.call(arrayLike); <span class="comment">// ['a', 'o', 'e']</span></div><div class="line"><span class="keyword">let</span> arrES6 = arrayLike.from(arrayLike); <span class="comment">// ['a', 'o', 'e']</span></div><div class="line"><span class="keyword">let</span> arr1 = <span class="built_in">Array</span>.from(<span class="string">'aoe'</span>); <span class="comment">// ['a', 'o', 'e']</span></div></pre></td></tr></table></figure><p></p>
-<p>实际应用中，常见的类似数组的对象是DOM操作返回的NodeList集合以及函数内部的arguments对象，Array.form可以将它们转换成真正的数组。<br>Array.from的用处在于，将各种值转为数组后，可以有效使用各种数组方法来处理。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 返回参数类型组成的数组</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">typesOf</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>, value =&gt; <span class="keyword">typeof</span> value);</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<p>另一个应用是将字符串转为数组来求长度，绕过了Unicode的\uFFFF限制<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">countSymbols</span> (<span class="params">string</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(string).length;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
-<h3 id="of方法"><a href="#of方法" class="headerlink" title="of方法"></a>of方法</h3><p>Array.of方法将一组值转换为数组<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.of(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>) <span class="comment">// [2, 3, 4]</span></div></pre></td></tr></table></figure><p></p>
+  
+    <div class="card-panel z-depth-0 black-text">
+      <h1>ES6-数组的扩展</h1>
+
+      
+
+      <div class="valign-wrapper blue-grey-text">
+        <i class="material-icons valign">query_builder</i>&nbsp
+        <time datetime="2016-06-30T02:38:03.000Z" class="valign">
+          2016 6月 30日
+          上午10:38:03
+        </time>
+      </div>
+
+      
+        <div class="valign-wrapper sm-text blue-grey-text">
+          <i class="material-icons valign">grade</i>&nbsp
+          <span id="busuanzi_container_page_pv" class="valign">
+            阅读<span id="busuanzi_value_page_pv"></span>次
+          </span>
+        </div>
+      
+
+      
+        <div class="section right">
+          
+            <span class="new badge amber left" data-badge-caption="">
+              <a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
+            </span>
+          
+            <span class="new badge green left" data-badge-caption="">
+              <a href="/tag/es6/" title="#es6" class="white-text" target="_blank" rel="external">#es6</a>
+            </span>
+          
+            <span class="new badge red left" data-badge-caption="">
+              <a href="/tag/ES6标准入门学习笔记/" title="#ES6标准入门学习笔记" class="white-text" target="_blank" rel="external">#ES6标准入门学习笔记</a>
+            </span>
+          
+        </div>
+      
+
+    </div>
+  
+
+  <div class="card-content z-depth-0">
+
+    
+
+    <p>ES6对Array的扩展<br><a id="more"></a></p>
+<h3 id="from方法"><a href="#from方法" class="headerlink" title="from方法"></a>from方法</h3><p>Array.from方法用于将类似数组的对象（array-like object）和可遍历对象（iterable）转化为真正的数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arrayLike = &#123;</div><div class="line">    <span class="string">'0'</span>: <span class="string">'a'</span>,</div><div class="line">    <span class="string">'1'</span>: <span class="string">'o'</span>,</div><div class="line">    <span class="string">'2'</span>: <span class="string">'e'</span>,</div><div class="line">    <span class="attr">length</span>: <span class="number">3</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">let</span> arrES5 = [].slice.call(arrayLike); <span class="comment">// ['a', 'o', 'e']</span></div><div class="line"><span class="keyword">let</span> arrES6 = arrayLike.from(arrayLike); <span class="comment">// ['a', 'o', 'e']</span></div><div class="line"><span class="keyword">let</span> arr1 = <span class="built_in">Array</span>.from(<span class="string">'aoe'</span>); <span class="comment">// ['a', 'o', 'e']</span></div></pre></td></tr></table></figure></p>
+<p>实际应用中，常见的类似数组的对象是DOM操作返回的NodeList集合以及函数内部的arguments对象，Array.form可以将它们转换成真正的数组。<br>Array.from的用处在于，将各种值转为数组后，可以有效使用各种数组方法来处理。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 返回参数类型组成的数组</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">typesOf</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>, value =&gt; <span class="keyword">typeof</span> value);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>另一个应用是将字符串转为数组来求长度，绕过了Unicode的\uFFFF限制<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">countSymbols</span> (<span class="params">string</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(string).length;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="of方法"><a href="#of方法" class="headerlink" title="of方法"></a>of方法</h3><p>Array.of方法将一组值转换为数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.of(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>) <span class="comment">// [2, 3, 4]</span></div></pre></td></tr></table></figure></p>
 <h3 id="copyWithin方法"><a href="#copyWithin方法" class="headerlink" title="copyWithin方法"></a>copyWithin方法</h3><p>Array.prototype.copyWithin将当前数组内部指定位置的成员复制到其它位置（会覆盖原有成员），然后返回当前数组。它接受三个参数：target, start = 0, end = this.length</p>
 <ul>
 <li>target（必需）： 从这个位置开始替换数据。</li>
@@ -96,10 +177,10 @@
 <li>end：到这个位置停止读取数据。</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">0</span>, <span class="number">-3</span>) <span class="comment">// [4,5,3,4,5]</span></div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">0</span>, <span class="number">-3</span>) <span class="comment">// [3,4,5,4,5]</span></div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">0</span>, <span class="number">3</span>, <span class="number">4</span>) <span class="comment">// [4,2,3,4,5]</span></div></pre></td></tr></table></figure>
-<h3 id="find-findIndex方法"><a href="#find-findIndex方法" class="headerlink" title="find,findIndex方法"></a>find,findIndex方法</h3><p>find方法用于找出数组中第一个符合条件的数据。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].find(<span class="function"><span class="keyword">function</span> (<span class="params">value, index, arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> value &gt; <span class="number">3</span>;</div><div class="line">&#125;) <span class="comment">// 4</span></div></pre></td></tr></table></figure><p></p>
-<p>findIndex则是返回索引值。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].findIndex(<span class="function"><span class="keyword">function</span> (<span class="params">value, index, arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> value &gt; <span class="number">3</span>;</div><div class="line">&#125;) <span class="comment">// 3</span></div></pre></td></tr></table></figure><p></p>
+<h3 id="find-findIndex方法"><a href="#find-findIndex方法" class="headerlink" title="find,findIndex方法"></a>find,findIndex方法</h3><p>find方法用于找出数组中第一个符合条件的数据。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].find(<span class="function"><span class="keyword">function</span> (<span class="params">value, index, arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> value &gt; <span class="number">3</span>;</div><div class="line">&#125;) <span class="comment">// 4</span></div></pre></td></tr></table></figure></p>
+<p>findIndex则是返回索引值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].findIndex(<span class="function"><span class="keyword">function</span> (<span class="params">value, index, arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> value &gt; <span class="number">3</span>;</div><div class="line">&#125;) <span class="comment">// 3</span></div></pre></td></tr></table></figure></p>
 <h3 id="fill方法"><a href="#fill方法" class="headerlink" title="fill方法"></a>fill方法</h3><p>fill方法使用给定值填充数组，第二个参数指定填充的起始位置，第三个参数指定填充的结束位置。</p>
-<h3 id="entries-keys-values方法"><a href="#entries-keys-values方法" class="headerlink" title="entries,keys,values方法"></a>entries,keys,values方法</h3><p>这三个方法都用于遍历数组，返回值都是遍历器对象，区别是：entries是对键值对的遍历，keys是对键名的遍历，而values是对键值的遍历。<br></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [index, elem] <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'o'</span>, <span class="string">'e'</span>].entries()) &#123;</div><div class="line">    <span class="built_in">console</span>.log(index + <span class="string">':'</span> + elem);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 0:a</span></div><div class="line"><span class="comment">// 1:o</span></div><div class="line"><span class="comment">// 2:e</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'o'</span>, <span class="string">'e'</span>].keys()) &#123;</div><div class="line">    <span class="built_in">console</span>.log(index);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 0</span></div><div class="line"><span class="comment">// 1</span></div><div class="line"><span class="comment">// 2</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> elem <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'o'</span>, <span class="string">'e'</span>].values()) &#123;</div><div class="line">    <span class="built_in">console</span>.log(elem);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 'a'</span></div><div class="line"><span class="comment">// 'o'</span></div><div class="line"><span class="comment">// 'e'</span></div></pre></td></tr></table></figure><p></p>
+<h3 id="entries-keys-values方法"><a href="#entries-keys-values方法" class="headerlink" title="entries,keys,values方法"></a>entries,keys,values方法</h3><p>这三个方法都用于遍历数组，返回值都是遍历器对象，区别是：entries是对键值对的遍历，keys是对键名的遍历，而values是对键值的遍历。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [index, elem] <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'o'</span>, <span class="string">'e'</span>].entries()) &#123;</div><div class="line">    <span class="built_in">console</span>.log(index + <span class="string">':'</span> + elem);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 0:a</span></div><div class="line"><span class="comment">// 1:o</span></div><div class="line"><span class="comment">// 2:e</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'o'</span>, <span class="string">'e'</span>].keys()) &#123;</div><div class="line">    <span class="built_in">console</span>.log(index);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 0</span></div><div class="line"><span class="comment">// 1</span></div><div class="line"><span class="comment">// 2</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> elem <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'o'</span>, <span class="string">'e'</span>].values()) &#123;</div><div class="line">    <span class="built_in">console</span>.log(elem);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 'a'</span></div><div class="line"><span class="comment">// 'o'</span></div><div class="line"><span class="comment">// 'e'</span></div></pre></td></tr></table></figure></p>
 <h3 id="includes方法"><a href="#includes方法" class="headerlink" title="includes方法"></a>includes方法</h3><p>Array.prototype.includes方法返回一个布尔值，表示数组是否包含给定值。第二个参数表示搜索的起始位置。</p>
 <h3 id="对数组空位的处理"><a href="#对数组空位的处理" class="headerlink" title="对数组空位的处理"></a>对数组空位的处理</h3><p>书上说，数组各方法对数组空位的处理是有区别的，不过大部分都是忽略二字。</p>
 <ul>
@@ -110,63 +191,118 @@
 <li>copyWithin():不忽略空位，也会一视同仁地复制</li>
 <li>fill():不跳过空位，空位也会被填充</li>
 </ul>
-<div class="sibling-post center-align card-panel z-depth-0 section">
-<a href="/2016/06/28/ES6-数值的扩展/" class="btn-flat blue-grey-text right">
-<i class="material-icons right">chevron_right</i>
-ES6-数值的扩展
-</a>
-<a href="/2016/07/05/ES6-函数的扩展/" class="btn-flat blue-grey-text left">
-<i class="material-icons left">chevron_left</i>
-ES6-函数的扩展
-</a>
-</div>
-<div class="comment" id="duoshuo">
-<div class="ds-thread" data-thread-key="post-ES6-数组的扩展" data-title="ES6-数组的扩展" data-url="http://hunnble.github.io/2016/06/30/ES6-数组的扩展/"></div>
-<script type="text/javascript">var duoshuoQuery={short_name:"hunnble"},ds=document.createElement("script");ds.type="text/javascript",ds.async=!0,ds.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",ds.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(ds)</script>
-</div>
-</div>
+
+
+    <div class="sibling-post center-align card-panel z-depth-0 section">
+
+      
+        <a href="/2016/06/28/ES6-数值的扩展/" class="btn-flat blue-grey-text right">
+          <i class="material-icons right">chevron_right</i>
+          ES6-数值的扩展
+        </a>
+      
+
+      
+        <a href="/2016/07/05/ES6-函数的扩展/" class="btn-flat blue-grey-text left">
+          <i class="material-icons left">chevron_left</i>
+          ES6-函数的扩展
+        </a>
+      
+
+    </div>
+
+    
+      <div class="comment" id="duoshuo">
+        <div class="ds-thread" data-thread-key="post-ES6-数组的扩展" data-title="ES6-数组的扩展" data-url="http://hunnble.github.io/2016/06/30/ES6-数组的扩展/"></div>
+        <script type="text/javascript">
+          var duoshuoQuery = { short_name:'hunnble' };
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';
+          ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        </script>
+      </div>
+    
+
+  </div>
+
 </section>
-<div class="fixed-action-btn click-to-toggle">
-<a class="btn-floating btn-large lighten-2 teal">
-<i class="large material-icons">view_module</i>
-</a>
-<ul>
-<li>
-<a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-<i class="material-icons">navigation</i>
-</a>
-</li>
-</ul>
+
+        <div class="fixed-action-btn click-to-toggle">
+  <a class="btn-floating btn-large lighten-2 teal">
+    <i class="large material-icons">view_module</i>
+  </a>
+  <ul>
+    <li>
+      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
+        <i class="material-icons">navigation</i>
+      </a>
+    </li>
+  </ul>
 </div>
-</div>
-<aside class="col m2 push-m2 hide-on-med-and-down">
-<div class="toc transparent card-panel z-depth-0">
-<ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#from方法"><span class="table-of-contents-text">from方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#of方法"><span class="table-of-contents-text">of方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#copyWithin方法"><span class="table-of-contents-text">copyWithin方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#find-findIndex方法"><span class="table-of-contents-text">find,findIndex方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#fill方法"><span class="table-of-contents-text">fill方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#entries-keys-values方法"><span class="table-of-contents-text">entries,keys,values方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#includes方法"><span class="table-of-contents-text">includes方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#对数组空位的处理"><span class="table-of-contents-text">对数组空位的处理</span></a></li></ol>
-</div>
-</aside>
-</div>
+
+      
+    </div>
+
+    
+      <aside class="col m2 push-m2 hide-on-med-and-down">
+        <div class="toc transparent card-panel z-depth-0">
+          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#from方法"><span class="table-of-contents-text">from方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#of方法"><span class="table-of-contents-text">of方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#copyWithin方法"><span class="table-of-contents-text">copyWithin方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#find-findIndex方法"><span class="table-of-contents-text">find,findIndex方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#fill方法"><span class="table-of-contents-text">fill方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#entries-keys-values方法"><span class="table-of-contents-text">entries,keys,values方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#includes方法"><span class="table-of-contents-text">includes方法</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#对数组空位的处理"><span class="table-of-contents-text">对数组空位的处理</span></a></li></ol>
+        </div>
+      </aside>
+    
+
+
+    
+
+  </div>
+
 </main>
-<footer class="page-footer lighten-2 teal">
-<div class="container section">
-<div class="center-align white-text text-lighten-4">
-<p>
-Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-</p>
-<h5>
-总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-</h5>
-</div>
-</div>
-<div class="footer-copyright center-align">
-Copyright © 2016 Noski
-</div>
+
+
+  
+
+
+<footer class="page-footer lighten-2 teal ">
+  <div class="container section">
+    <div class="center-align white-text text-lighten-4">
+      <p>
+        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
+      </p>
+      
+        <h5>
+          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
+        </h5>
+      
+    </div>
+  </div>
+  <div class="footer-copyright center-align">
+    Copyright © 2016 Noski
+  </div>
 </footer>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="/js/highlight.min.js"></script>
+
+
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src="/js/highlight.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
+
+  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+    <script type="text/javascript" src=/js/main.js></script>
+  
+
+
 </body>
 </html>
