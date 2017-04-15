@@ -1,171 +1,74 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
+
+<!-- Head tag -->
 <head>
-  <meta charset="UTF-8">
-  <link rel="alternate" href=/atom.xml type="application/atom+xml">
-  <title>ES6-函数的扩展 [ 北方公园 ]</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="/images/favicon.ico">
-  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
     
-      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+        <meta name="description" content="90后，异性恋，飞天拉面教，梦想是变胖。最想成为的人是挪威的森林里的渡边，其次想成为南方公园里的Eric Cartman。">
     
-  
-  
-    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  
+
+    <!--Author-->
     
-      <link rel="stylesheet" href="/css/main.css">
+        <meta name="author" content="Noski">
     
-  
+
+    <!-- Title -->
+    
+    <title>ES6-函数的扩展 | 北方公园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
 
-<div class="navbar-fixed white-text">
-  <nav class="transparent z-depth-0">
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/">主页</a>
-          </li>
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
-          </li>
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/about">关于</a>
-          </li>
-        
-      </ul>
-      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-</div>
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
 
-<ul id="slide-nav" class="side-nav">
-  <li>
-    <div class="userView lighten-2 teal">
-      <div class="background">
-        <h5 class="white-text inline-title">Noski</h5>
-      </div>
-      <img class="circle" src=/images/avatar.png>
-      <h5 class="white-text inline-title">北方公园</h5>
-      <br />
-      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-    </div>
-  </li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
-  
-</ul>
-
-
-
-
-
-  
-
-
-  
-
-
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
-  
-  <div class="parallax lighten-2 teal ">
-    <img src="/images/background.jpg">
-  </div>
-  <script type="text/javascript">
-    var container = document.querySelector('.parallax-container');
-    var tmpTitle = container.querySelector('.hide-on-image-load');
-    var img = container.querySelector('img');
-    img.onload = function() {
-      if (tmpTitle) {
-        tmpTitle.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-  
-
-</div>
-
-<main id="container-outer" class="">
-
-  
-    
-  
-
-  
-  
-    
-  
-
-  <div class="row ">
-
-    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
-      
-        
-<section id="post" class="card article z-depth-0">
-  
-    <div class="card-panel z-depth-0 black-text">
-      <h1>ES6-函数的扩展</h1>
-
-      
-
-      <div class="valign-wrapper blue-grey-text">
-        <i class="material-icons valign">query_builder</i>&nbsp
-        <time datetime="2016-07-05T02:41:30.000Z" class="valign">
-          2016 7月 5日
-          上午10:41:30
-        </time>
-      </div>
-
-      
-        <div class="valign-wrapper sm-text blue-grey-text">
-          <i class="material-icons valign">grade</i>&nbsp
-          <span id="busuanzi_container_page_pv" class="valign">
-            阅读<span id="busuanzi_value_page_pv"></span>次
-          </span>
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>ES6-函数的扩展</h1>
+                </div>
+            </div>
         </div>
-      
-
-      
-        <div class="section right">
-          
-            <span class="new badge amber left" data-badge-caption="">
-              <a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
-            </span>
-          
-            <span class="new badge green left" data-badge-caption="">
-              <a href="/tag/es6/" title="#es6" class="white-text" target="_blank" rel="external">#es6</a>
-            </span>
-          
-            <span class="new badge red left" data-badge-caption="">
-              <a href="/tag/ES6标准入门学习笔记/" title="#ES6标准入门学习笔记" class="white-text" target="_blank" rel="external">#ES6标准入门学习笔记</a>
-            </span>
-          
-        </div>
-      
-
     </div>
-  
+</header>
 
-  <div class="card-content z-depth-0">
-
-    
-
-    <p>js中函数是“一等公民”，ES6标准对函数做了一些扩展使得熟悉其它语言的程序员可以更快地上手，而js程序员也会发现函数更强大也更便于编写了。<br><a id="more"></a></p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>js中函数是“一等公民”，ES6标准对函数做了一些扩展使得熟悉其它语言的程序员可以更快地上手，而js程序员也会发现函数更强大也更便于编写了。<br><a id="more"></a></p>
 <h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><p>很多语言都支持函数有默认值，比如<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span> <span class="params">(x = <span class="number">10</span>)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
 <p>ES6也引入了函数默认参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">x = <span class="number">50</span>, y</span>) </span>&#123;</div><div class="line">    <span class="comment">// x: 50, y: undefined</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>给参数指定默认值后，该参数及之后的参数不会被函数的length计数（rest参数也不会计数）。且有默认值的参数都不是尾参数，无法跳过，在调用函数的时候只能写undefined跳过。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">x, y = <span class="number">50</span>, z</span>) </span>&#123;&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span> (<span class="params">...args</span>) </span>&#123;&#125;</div><div class="line">foo.length <span class="comment">// 1 =&gt; 只有x被计入length</span></div><div class="line">bar.length <span class="comment">// 0</span></div></pre></td></tr></table></figure></p>
@@ -186,117 +89,50 @@
 <h3 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h3><p>尾调用是函数式编程的一个概念，就是指某个函数的最后一步是调用另一个函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> g(x);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>函数调用会在内部形成调用帧（call frame）用以保存调用位置和内部变量等信息，如果在函数A的内部调用函数B，那么B的调用帧会在A的调用帧上方。以此类推，调用帧会形成栈的数据结构，称为调用栈（call stack）。<br>由于尾调用是外部函数最后一次操作，所以可以如下优化：用内层函数的调用帧取代外层函数的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>  <span class="title">f</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> m = <span class="number">1</span>;</div><div class="line">    <span class="keyword">let</span> n = <span class="number">2</span>;</div><div class="line">    <span class="keyword">return</span> g(m + n);</div><div class="line">&#125;</div><div class="line">f();</div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> g(<span class="number">3</span>);</div><div class="line">&#125;</div><div class="line">f();</div><div class="line"><span class="comment">// 等同于</span></div><div class="line">g(<span class="number">3</span>);</div></pre></td></tr></table></figure></p>
 
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                            
 
-    <div class="sibling-post center-align card-panel z-depth-0 section">
+<a href="/tag/前端/">#前端</a> <a href="/tag/es6/">#es6</a> <a href="/tag/ES6标准入门学习笔记/">#ES6标准入门学习笔记</a>
 
-      
-        <a href="/2016/06/30/ES6-数组的扩展/" class="btn-flat blue-grey-text right">
-          <i class="material-icons right">chevron_right</i>
-          ES6-数组的扩展
-        </a>
-      
 
-      
-        <a href="/2016/07/11/几种跨域的方法/" class="btn-flat blue-grey-text left">
-          <i class="material-icons left">chevron_left</i>
-          几种跨域的方法
-        </a>
-      
+                        
+                    </div>
+                    <div class="post-date">
+                        2016 年 07 月 05 日
+                    </div>
+                </div>
+            </div>
 
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
     </div>
-
-    
-      <div class="comment" id="duoshuo">
-        <div class="ds-thread" data-thread-key="post-ES6-函数的扩展" data-title="ES6-函数的扩展" data-url="http://hunnble.github.io/2016/07/05/ES6-函数的扩展/"></div>
-        <script type="text/javascript">
-          var duoshuoQuery = { short_name:'hunnble' };
-          var ds = document.createElement('script');
-          ds.type = 'text/javascript';
-          ds.async = true;
-          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-          ds.charset = 'UTF-8';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-        </script>
-      </div>
-    
-
-  </div>
-
+</article>
 </section>
 
-        <div class="fixed-action-btn click-to-toggle">
-  <a class="btn-floating btn-large lighten-2 teal">
-    <i class="large material-icons">view_module</i>
-  </a>
-  <ul>
-    <li>
-      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-        <i class="material-icons">navigation</i>
-      </a>
-    </li>
-  </ul>
-</div>
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-      
-    </div>
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
 
+    <!-- Google Analytics -->
     
-      <aside class="col m2 push-m2 hide-on-med-and-down">
-        <div class="toc transparent card-panel z-depth-0">
-          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#函数参数的默认值"><span class="table-of-contents-text">函数参数的默认值</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#扩展运算符"><span class="table-of-contents-text">扩展运算符</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#name属性"><span class="table-of-contents-text">name属性</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#箭头函数"><span class="table-of-contents-text">箭头函数</span></a><ol class="table-of-contents-child"><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#基本用法"><span class="table-of-contents-text">基本用法</span></a></li><li class="table-of-contents-item table-of-contents-level-4"><a class="table-of-contents-link" href="#注意点"><span class="table-of-contents-text">注意点</span></a></li></ol></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#尾调用优化"><span class="table-of-contents-text">尾调用优化</span></a></li></ol>
-        </div>
-      </aside>
-    
-
-
-    
-
-  </div>
-
-</main>
-
-
-  
-
-
-<footer class="page-footer lighten-2 teal ">
-  <div class="container section">
-    <div class="center-align white-text text-lighten-4">
-      <p>
-        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-      </p>
-      
-        <h5>
-          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-        </h5>
-      
-    </div>
-  </div>
-  <div class="footer-copyright center-align">
-    Copyright © 2016 Noski
-  </div>
-</footer>
-
-
-
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-  <script src="/js/highlight.min.js"></script>
-
-<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
-<script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
-
-  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-    <script type="text/javascript" src=/js/main.js></script>
-  
-
 
 </body>
+
 </html>

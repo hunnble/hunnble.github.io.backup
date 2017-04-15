@@ -1,171 +1,74 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
+
+<!-- Head tag -->
 <head>
-  <meta charset="UTF-8">
-  <link rel="alternate" href=/atom.xml type="application/atom+xml">
-  <title>ES6-字符串 [ 北方公园 ]</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="/images/favicon.ico">
-  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
     
-      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+        <meta name="description" content="90后，异性恋，飞天拉面教，梦想是变胖。最想成为的人是挪威的森林里的渡边，其次想成为南方公园里的Eric Cartman。">
     
-  
-  
-    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  
+
+    <!--Author-->
     
-      <link rel="stylesheet" href="/css/main.css">
+        <meta name="author" content="Noski">
     
-  
+
+    <!-- Title -->
+    
+    <title>ES6-字符串 | 北方公园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
 
-<div class="navbar-fixed white-text">
-  <nav class="transparent z-depth-0">
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/">主页</a>
-          </li>
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
-          </li>
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/about">关于</a>
-          </li>
-        
-      </ul>
-      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-</div>
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
 
-<ul id="slide-nav" class="side-nav">
-  <li>
-    <div class="userView lighten-2 teal">
-      <div class="background">
-        <h5 class="white-text inline-title">Noski</h5>
-      </div>
-      <img class="circle" src=/images/avatar.png>
-      <h5 class="white-text inline-title">北方公园</h5>
-      <br />
-      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-    </div>
-  </li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
-  
-</ul>
-
-
-
-
-
-  
-
-
-  
-
-
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
-  
-  <div class="parallax lighten-2 teal ">
-    <img src="/images/background.jpg">
-  </div>
-  <script type="text/javascript">
-    var container = document.querySelector('.parallax-container');
-    var tmpTitle = container.querySelector('.hide-on-image-load');
-    var img = container.querySelector('img');
-    img.onload = function() {
-      if (tmpTitle) {
-        tmpTitle.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-  
-
-</div>
-
-<main id="container-outer" class="">
-
-  
-    
-  
-
-  
-  
-    
-  
-
-  <div class="row ">
-
-    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
-      
-        
-<section id="post" class="card article z-depth-0">
-  
-    <div class="card-panel z-depth-0 black-text">
-      <h1>ES6-字符串</h1>
-
-      
-
-      <div class="valign-wrapper blue-grey-text">
-        <i class="material-icons valign">query_builder</i>&nbsp
-        <time datetime="2016-06-25T15:23:09.000Z" class="valign">
-          2016 6月 25日
-          晚上11:23:09
-        </time>
-      </div>
-
-      
-        <div class="valign-wrapper sm-text blue-grey-text">
-          <i class="material-icons valign">grade</i>&nbsp
-          <span id="busuanzi_container_page_pv" class="valign">
-            阅读<span id="busuanzi_value_page_pv"></span>次
-          </span>
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>ES6-字符串</h1>
+                </div>
+            </div>
         </div>
-      
-
-      
-        <div class="section right">
-          
-            <span class="new badge amber left" data-badge-caption="">
-              <a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
-            </span>
-          
-            <span class="new badge green left" data-badge-caption="">
-              <a href="/tag/es6/" title="#es6" class="white-text" target="_blank" rel="external">#es6</a>
-            </span>
-          
-            <span class="new badge red left" data-badge-caption="">
-              <a href="/tag/ES6标准入门学习笔记/" title="#ES6标准入门学习笔记" class="white-text" target="_blank" rel="external">#ES6标准入门学习笔记</a>
-            </span>
-          
-        </div>
-      
-
     </div>
-  
+</header>
 
-  <div class="card-content z-depth-0">
-
-    
-
-    <p>ES6扩展了很多字符串的属性和方法。<br><a id="more"></a></p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>ES6扩展了很多字符串的属性和方法。<br><a id="more"></a></p>
 <h3 id="大括号表示Unicode字符"><a href="#大括号表示Unicode字符" class="headerlink" title="大括号表示Unicode字符"></a>大括号表示Unicode字符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> t = <span class="string">"\uD842\uDFB7"</span>;</div><div class="line"><span class="keyword">let</span> t1 = <span class="string">"\u&#123;20BB7&#125;"</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(t, t1); <span class="comment">//𠮷 𠮷</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'\u&#123;1f680&#125;'</span> === <span class="string">'\uD83D\uDE80'</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure>
 <p>现在可以不受0xFFFF的最大限制了，只要把码点放到大括号里就可以正确解读。</p>
 <h3 id="codePointAt-fromCodePoint-at"><a href="#codePointAt-fromCodePoint-at" class="headerlink" title="codePointAt, fromCodePoint, at"></a>codePointAt, fromCodePoint, at</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(t.charCodeAt(<span class="number">0</span>)); <span class="comment">// 55362</span></div><div class="line"><span class="built_in">console</span>.log(t.codePointAt(<span class="number">0</span>)); <span class="comment">// 134071</span></div></pre></td></tr></table></figure>
@@ -175,117 +78,50 @@
 <h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat"></a>repeat</h3><p>返回一个新字符串，值是原字符串重复n次<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(goodnight.repeat(<span class="number">10</span>));</div></pre></td></tr></table></figure></p>
 <h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>使用反引号括起来的字符串称为模板字符串（template string），可以换行的时候保留空格和缩进，还可以使用变量, 将变量名放在${}中即可。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="number">1</span>,</div><div class="line">    y = <span class="number">3</span>;</div><div class="line"></div><div class="line"><span class="string">`<span class="subst">$&#123;x&#125;</span> + <span class="subst">$&#123;y&#125;</span></span></div><div class="line">   = ?`</div></pre></td></tr></table></figure></p>
 
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                            
 
-    <div class="sibling-post center-align card-panel z-depth-0 section">
+<a href="/tag/前端/">#前端</a> <a href="/tag/es6/">#es6</a> <a href="/tag/ES6标准入门学习笔记/">#ES6标准入门学习笔记</a>
 
-      
-        <a href="/2016/06/25/ES6-变量的解构赋值/" class="btn-flat blue-grey-text right">
-          <i class="material-icons right">chevron_right</i>
-          ES6-变量的解构赋值
-        </a>
-      
 
-      
-        <a href="/2016/06/27/ES6-RegExp扩展/" class="btn-flat blue-grey-text left">
-          <i class="material-icons left">chevron_left</i>
-          ES6-RegExp扩展
-        </a>
-      
+                        
+                    </div>
+                    <div class="post-date">
+                        2016 年 06 月 25 日
+                    </div>
+                </div>
+            </div>
 
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
     </div>
-
-    
-      <div class="comment" id="duoshuo">
-        <div class="ds-thread" data-thread-key="post-ES6-字符串" data-title="ES6-字符串" data-url="http://hunnble.github.io/2016/06/25/ES6-字符串/"></div>
-        <script type="text/javascript">
-          var duoshuoQuery = { short_name:'hunnble' };
-          var ds = document.createElement('script');
-          ds.type = 'text/javascript';
-          ds.async = true;
-          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-          ds.charset = 'UTF-8';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-        </script>
-      </div>
-    
-
-  </div>
-
+</article>
 </section>
 
-        <div class="fixed-action-btn click-to-toggle">
-  <a class="btn-floating btn-large lighten-2 teal">
-    <i class="large material-icons">view_module</i>
-  </a>
-  <ul>
-    <li>
-      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-        <i class="material-icons">navigation</i>
-      </a>
-    </li>
-  </ul>
-</div>
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-      
-    </div>
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
 
+    <!-- Google Analytics -->
     
-      <aside class="col m2 push-m2 hide-on-med-and-down">
-        <div class="toc transparent card-panel z-depth-0">
-          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#大括号表示Unicode字符"><span class="table-of-contents-text">大括号表示Unicode字符</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#codePointAt-fromCodePoint-at"><span class="table-of-contents-text">codePointAt, fromCodePoint, at</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#includes-startsWith-endsWith"><span class="table-of-contents-text">includes, startsWith, endsWith</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#repeat"><span class="table-of-contents-text">repeat</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#模板字符串"><span class="table-of-contents-text">模板字符串</span></a></li></ol>
-        </div>
-      </aside>
-    
-
-
-    
-
-  </div>
-
-</main>
-
-
-  
-
-
-<footer class="page-footer lighten-2 teal ">
-  <div class="container section">
-    <div class="center-align white-text text-lighten-4">
-      <p>
-        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-      </p>
-      
-        <h5>
-          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-        </h5>
-      
-    </div>
-  </div>
-  <div class="footer-copyright center-align">
-    Copyright © 2016 Noski
-  </div>
-</footer>
-
-
-
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-  <script src="/js/highlight.min.js"></script>
-
-<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
-<script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
-
-  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-    <script type="text/javascript" src=/js/main.js></script>
-  
-
 
 </body>
+
 </html>

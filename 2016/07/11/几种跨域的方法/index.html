@@ -1,163 +1,74 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
+
+<!-- Head tag -->
 <head>
-  <meta charset="UTF-8">
-  <link rel="alternate" href=/atom.xml type="application/atom+xml">
-  <title>几种跨域的方法 [ 北方公园 ]</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="/images/favicon.ico">
-  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
     
-      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+        <meta name="description" content="90后，异性恋，飞天拉面教，梦想是变胖。最想成为的人是挪威的森林里的渡边，其次想成为南方公园里的Eric Cartman。">
     
-  
-  
-    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  
+
+    <!--Author-->
     
-      <link rel="stylesheet" href="/css/main.css">
+        <meta name="author" content="Noski">
     
-  
+
+    <!-- Title -->
+    
+    <title>几种跨域的方法 | 北方公园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
 
-<div class="navbar-fixed white-text">
-  <nav class="transparent z-depth-0">
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/">主页</a>
-          </li>
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
-          </li>
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/about">关于</a>
-          </li>
-        
-      </ul>
-      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-</div>
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
 
-<ul id="slide-nav" class="side-nav">
-  <li>
-    <div class="userView lighten-2 teal">
-      <div class="background">
-        <h5 class="white-text inline-title">Noski</h5>
-      </div>
-      <img class="circle" src=/images/avatar.png>
-      <h5 class="white-text inline-title">北方公园</h5>
-      <br />
-      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-    </div>
-  </li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
-  
-</ul>
-
-
-
-
-
-  
-
-
-  
-
-
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
-  
-  <div class="parallax lighten-2 teal ">
-    <img src="/images/background.jpg">
-  </div>
-  <script type="text/javascript">
-    var container = document.querySelector('.parallax-container');
-    var tmpTitle = container.querySelector('.hide-on-image-load');
-    var img = container.querySelector('img');
-    img.onload = function() {
-      if (tmpTitle) {
-        tmpTitle.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-  
-
-</div>
-
-<main id="container-outer" class="">
-
-  
-    
-  
-
-  
-  
-    
-  
-
-  <div class="row ">
-
-    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
-      
-        
-<section id="post" class="card article z-depth-0">
-  
-    <div class="card-panel z-depth-0 black-text">
-      <h1>几种跨域的方法</h1>
-
-      
-
-      <div class="valign-wrapper blue-grey-text">
-        <i class="material-icons valign">query_builder</i>&nbsp
-        <time datetime="2016-07-11T13:49:20.000Z" class="valign">
-          2016 7月 11日
-          晚上9:49:20
-        </time>
-      </div>
-
-      
-        <div class="valign-wrapper sm-text blue-grey-text">
-          <i class="material-icons valign">grade</i>&nbsp
-          <span id="busuanzi_container_page_pv" class="valign">
-            阅读<span id="busuanzi_value_page_pv"></span>次
-          </span>
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>几种跨域的方法</h1>
+                </div>
+            </div>
         </div>
-      
-
-      
-        <div class="section right">
-          
-            <span class="new badge amber left" data-badge-caption="">
-              <a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
-            </span>
-          
-        </div>
-      
-
     </div>
-  
+</header>
 
-  <div class="card-content z-depth-0">
-
-    
-
-    <p>谈到前端肯定少不了Ajax,谈到Ajax肯定少不了跨域。诗兴大发的我很想说一句，哦，跨域，你就像毒蛇一样，美丽而又危险。<br>今天写小玩具的时候又遇到跨域问题，索性先粗略总结一下跨域的一些方法。<br><a id="more"></a></p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>谈到前端肯定少不了Ajax,谈到Ajax肯定少不了跨域。诗兴大发的我很想说一句，哦，跨域，你就像毒蛇一样，美丽而又危险。<br>今天写小玩具的时候又遇到跨域问题，索性先粗略总结一下跨域的一些方法。<br><a id="more"></a></p>
 <h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>我刚开始学Ajax的时候要写demo练习嘛，所以就用世界上最好的语言php在后端echo一些数据。比如这样的：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">header(<span class="string">"Access-Control-Allow-Origin:./js/create_data.js"</span>);</div><div class="line">$test_obj1 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">2</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试一, data类型为数组"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading1"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">Array</span>(<span class="string">"aaaaaaaaaaaaa"</span>, <span class="string">"bbbbbbbbbbbbbb"</span>, <span class="string">"ccccccccccc"</span>)</div><div class="line">);</div><div class="line">$test_obj2 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">4</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试二, data类型为键值对(对象)"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading2"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">array</span>(</div><div class="line">        <span class="string">"aaa"</span>=&gt; <span class="string">"aaaaaa"</span>,</div><div class="line">        <span class="string">"bbb"</span>=&gt; <span class="string">"bbbbbbbbb"</span></div><div class="line">    )</div><div class="line">);</div><div class="line">$test_obj3 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">5</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试三, data类型为字符串(暂时不进行trim和过滤特殊字符操作)"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading3"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="string">"cccccccc！！！"</span></div><div class="line">);</div><div class="line">$test_obj4 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">5</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试四, data类型为含有对象的数组"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading4"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">Array</span>(<span class="string">"data1"</span>, <span class="keyword">array</span>(<span class="string">"data2"</span>=&gt; <span class="string">"data2value"</span>), <span class="string">"data3"</span>)</div><div class="line">);</div><div class="line">$test_obj5 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">5</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试五 data类型为含有数组的对象"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading5"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">array</span>(</div><div class="line">        <span class="string">'data1'</span>=&gt; <span class="string">"data1value"</span>,</div><div class="line">        <span class="string">'data2'</span>=&gt; <span class="keyword">Array</span>(<span class="string">"data2"</span>, <span class="string">"data3"</span>)</div><div class="line">    )</div><div class="line">);</div><div class="line"></div><div class="line"><span class="keyword">echo</span> json_encode(<span class="keyword">Array</span>($test_obj1, $test_obj2, $test_obj3, $test_obj4, $test_obj5));</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
 <p>第一次写的时候没有加第二行的那个添加http头的语句，在运行的时候就报错，因为我当时测试当然是在本地，本地不同文件夹不在同一域内，这就形成了跨域。<br>而聪明的我机智地找到了破解之法，那就是给php手动设置Access-Control-Allow-Origin，允许我前端的文件去访问，再次在前端get，成功得到数据。这种方法叫做CORS（跨域资源共享，Cross-Origin Resource Sharing），这种方法比较方便，浏览器的兼容性也不错，被广泛运用在移动端。<br>但是不能满足于此，比如今天我遇到的问题是要用豆瓣的读书API，总不能给豆瓣API小组打电话说：“嗨，给我加一行代码吧我跨域了解决不了了在线等挺急的。”吧。所以说打铁还需自身硬（这句话怎么怪怪的），一定有别的方法可以（在一定程度上）直接解决跨域问题。</p>
 <h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP吧，这个方法很强大滴。<br>今天想玩玩豆瓣API，给自己正在用express做的一个书单（叫图书管理系统总是有种浓浓的大作业风）应用加点内容，然后去<a href="https://developers.douban.com/wiki/?title=book_v2" target="_blank" rel="external">豆瓣API文档</a>看了看就开始写了。为了简洁还是用上了jQuery，今天试的是根据图书名来获取图书信息。<br>路由：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">router.get(<span class="string">'/book/:name/:author'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  book.get(req.params.name, req.params.author, <span class="function"><span class="keyword">function</span> (<span class="params">err, _book</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!_book) &#123;</div><div class="line">      req.flash(<span class="string">'error'</span>, <span class="string">'获取书籍信息失败'</span>);</div><div class="line">      <span class="keyword">return</span> res.redirect(<span class="string">'/'</span>);</div><div class="line">    &#125;</div><div class="line">    res.render(<span class="string">'book'</span>, &#123;</div><div class="line">      <span class="attr">title</span>: _book.name,</div><div class="line">      <span class="attr">user</span>: req.session.user,</div><div class="line">      <span class="attr">success</span>: req.flash(<span class="string">'success'</span>).toString(),</div><div class="line">      <span class="attr">error</span>: req.flash(<span class="string">'error'</span>).toString()</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
@@ -169,117 +80,50 @@
 <h3 id="Web-Sockets"><a href="#Web-Sockets" class="headerlink" title="Web Sockets"></a>Web Sockets</h3><p>这个技术似乎被评价得很高，它是一个新浏览器API，可以现在浏览器和服务器之间提供一个单独而持久的连接，是基于HTTP而升级成的网Web Socket协议的连接。所以服务器需要是支持这个协议的。<br>Web Sockets提供一套API来实现，过段时间我学完会回来填坑的。</p>
 <h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><p>放假回来一周了，每天晚上一点多都要习惯性地看一下电脑的电量然后看到是百分之百就会愣一下。同时看几本书所以导致一周下来都没有看到一半以上的所以潜意识里有点消沉，但是又都想看，但愿下周能看完最薄的一本哈哈哈。<br>好久没写css了再写的时候用LESS玩玩吧，感觉文档也不多，也有用过scss所以应该会很容易上手吧哈哈哈，也不知道它的媒体查询那块简洁不简洁。</p>
 
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                            
 
-    <div class="sibling-post center-align card-panel z-depth-0 section">
+<a href="/tag/前端/">#前端</a>
 
-      
-        <a href="/2016/07/05/ES6-函数的扩展/" class="btn-flat blue-grey-text right">
-          <i class="material-icons right">chevron_right</i>
-          ES6-函数的扩展
-        </a>
-      
 
-      
-        <a href="/2016/07/21/身份证号匹配正则/" class="btn-flat blue-grey-text left">
-          <i class="material-icons left">chevron_left</i>
-          身份证号匹配正则
-        </a>
-      
+                        
+                    </div>
+                    <div class="post-date">
+                        2016 年 07 月 11 日
+                    </div>
+                </div>
+            </div>
 
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
     </div>
-
-    
-      <div class="comment" id="duoshuo">
-        <div class="ds-thread" data-thread-key="post-几种跨域的方法" data-title="几种跨域的方法" data-url="http://hunnble.github.io/2016/07/11/几种跨域的方法/"></div>
-        <script type="text/javascript">
-          var duoshuoQuery = { short_name:'hunnble' };
-          var ds = document.createElement('script');
-          ds.type = 'text/javascript';
-          ds.async = true;
-          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-          ds.charset = 'UTF-8';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-        </script>
-      </div>
-    
-
-  </div>
-
+</article>
 </section>
 
-        <div class="fixed-action-btn click-to-toggle">
-  <a class="btn-floating btn-large lighten-2 teal">
-    <i class="large material-icons">view_module</i>
-  </a>
-  <ul>
-    <li>
-      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-        <i class="material-icons">navigation</i>
-      </a>
-    </li>
-  </ul>
-</div>
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-      
-    </div>
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
 
+    <!-- Google Analytics -->
     
-      <aside class="col m2 push-m2 hide-on-med-and-down">
-        <div class="toc transparent card-panel z-depth-0">
-          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#CORS"><span class="table-of-contents-text">CORS</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#JSONP"><span class="table-of-contents-text">JSONP</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#img-Ping"><span class="table-of-contents-text">img Ping</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Comet"><span class="table-of-contents-text">Comet</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#Web-Sockets"><span class="table-of-contents-text">Web Sockets</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#结尾"><span class="table-of-contents-text">结尾</span></a></li></ol>
-        </div>
-      </aside>
-    
-
-
-    
-
-  </div>
-
-</main>
-
-
-  
-
-
-<footer class="page-footer lighten-2 teal ">
-  <div class="container section">
-    <div class="center-align white-text text-lighten-4">
-      <p>
-        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-      </p>
-      
-        <h5>
-          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-        </h5>
-      
-    </div>
-  </div>
-  <div class="footer-copyright center-align">
-    Copyright © 2016 Noski
-  </div>
-</footer>
-
-
-
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-  <script src="/js/highlight.min.js"></script>
-
-<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
-<script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
-
-  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-    <script type="text/javascript" src=/js/main.js></script>
-  
-
 
 </body>
+
 </html>

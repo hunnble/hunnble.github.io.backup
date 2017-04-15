@@ -1,186 +1,74 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
+
+<!-- Head tag -->
 <head>
-  <meta charset="UTF-8">
-  <link rel="alternate" href=/atom.xml type="application/atom+xml">
-  <title>一个画曲线的canvas练习 [ 北方公园 ]</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="/images/favicon.ico">
-  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
     
-      <link rel="stylesheet" href='/css/default_highlight.min.css'>
+        <meta name="description" content="90后，异性恋，飞天拉面教，梦想是变胖。最想成为的人是挪威的森林里的渡边，其次想成为南方公园里的Eric Cartman。">
     
-  
-  
-    <link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  
+
+    <!--Author-->
     
-      <link rel="stylesheet" href="/css/main.css">
+        <meta name="author" content="Noski">
     
-  
+
+    <!-- Title -->
+    
+    <title>一个画曲线的canvas练习 | 北方公园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
 
-<div class="navbar-fixed white-text">
-  <nav class="transparent z-depth-0">
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/">主页</a>
-          </li>
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/archive">归档</a>
-          </li>
-        
-          <li>
-            <a class="waves-effect text-lighten-4" href="/about">关于</a>
-          </li>
-        
-      </ul>
-      <a href="#" data-activates="slide-nav" class="button-collapse text-lighten-4" id="side-nav-switcher"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-</div>
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
 
-<ul id="slide-nav" class="side-nav">
-  <li>
-    <div class="userView lighten-2 teal">
-      <div class="background">
-        <h5 class="white-text inline-title">Noski</h5>
-      </div>
-      <img class="circle" src=/images/avatar.png>
-      <h5 class="white-text inline-title">北方公园</h5>
-      <br />
-      <h5 class="white-text inline-title">Web/书和思考/一派胡言</h5>
-    </div>
-  </li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/">主页</a></li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/archive">归档</a></li>
-  
-    <li><a class="waves-effect lighten-2 teal-text" href="/about">关于</a></li>
-  
-</ul>
-
-
-
-
-
-  
-
-
-  
-
-
-<div class="parallax-container valign-wrapper hide-on-small-only" style="height: 400px">
-  
-  <div class="parallax lighten-2 teal ">
-    <img src="/images/background.jpg">
-  </div>
-  <script type="text/javascript">
-    var container = document.querySelector('.parallax-container');
-    var tmpTitle = container.querySelector('.hide-on-image-load');
-    var img = container.querySelector('img');
-    img.onload = function() {
-      if (tmpTitle) {
-        tmpTitle.style.display = 'none';
-      }
-    }
-  </script>
-</div>
-
-  
-
-</div>
-
-<main id="container-outer" class="">
-
-  
-    
-  
-
-  
-  
-    
-  
-
-  <div class="row ">
-
-    <div class="col s12 m10 push-m1 l8 push-l2" id="container-inner">
-      
-        
-<section id="post" class="card article z-depth-0">
-  
-    <div class="card-panel z-depth-0 black-text">
-      <h1>一个画曲线的canvas练习</h1>
-
-      
-        <div class="valign-wrapper section">
-          
-          
-            
-            <span class="new badge category lighten-2 teal valign" data-badge-caption="">
-              <a href="/category/frontend" title="frontend" target="_blank" rel="external">frontend</a>
-            </span>
-            
-              <i class="tiny material-icons lighten-2 teal-text valign">chevron_right</i>
-            
-          
-            
-            <span class="new badge category lighten-2 teal valign" data-badge-caption="">
-              <a href="/category/frontend/demo" title="demo" target="_blank" rel="external">demo</a>
-            </span>
-            
-          
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>一个画曲线的canvas练习</h1>
+                </div>
+            </div>
         </div>
-      
-
-      <div class="valign-wrapper blue-grey-text">
-        <i class="material-icons valign">query_builder</i>&nbsp
-        <time datetime="2016-08-03T15:51:58.000Z" class="valign">
-          2016 8月 3日
-          晚上11:51:58
-        </time>
-      </div>
-
-      
-        <div class="valign-wrapper sm-text blue-grey-text">
-          <i class="material-icons valign">grade</i>&nbsp
-          <span id="busuanzi_container_page_pv" class="valign">
-            阅读<span id="busuanzi_value_page_pv"></span>次
-          </span>
-        </div>
-      
-
-      
-        <div class="section right">
-          
-            <span class="new badge amber left" data-badge-caption="">
-              <a href="/tag/前端/" title="#前端" class="white-text" target="_blank" rel="external">#前端</a>
-            </span>
-          
-            <span class="new badge green left" data-badge-caption="">
-              <a href="/tag/canvas/" title="#canvas" class="white-text" target="_blank" rel="external">#canvas</a>
-            </span>
-          
-        </div>
-      
-
     </div>
-  
+</header>
 
-  <div class="card-content z-depth-0">
-
-    
-
-    <p>我在github上follow了好多很厉害的前端er，有一位有个好多star的repo里面就是各种canvas的小练习，canvas玩好了还是有好处的，毕竟前端要是每天光操作操作dom甚至切切页面是没什么长进的，甚至会被写CRUD的童鞋嘲讽。于是我今天又什么都没做，就写了一个画贝塞尔曲线的练习。<a id="more"></a><br>今天上午起来以后微信里有个大哥发朋友圈说替别人招前端，要先做个投名状，就是点几下就生成贝塞尔曲线的，当然要能拽着点到处动，类似于sketch软件里的那个小工具，我虽然不去应聘，但是还是写了。<br>写到这里我又很难过，因为我没有用过sketch，所以需求都是根据自己的感觉来的，也不知道要的交互效果和功能是不是这样。没有用过sketch的原因是没有macbook用，所以我要从现在开始攒钱买macbook，但是又没有钱赚，所以估计攒够的时候也就是以后工作以后了，只希望我现在的电脑能再给力点坚持两年，以及坏掉的linux系统我过段时间能修好或者重装好。<br>也许是因为今天看了张鑫旭的博客，中了毒，所以我的废话格外的多，还是要开始说这个练习了。</p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>我在github上follow了好多很厉害的前端er，有一位有个好多star的repo里面就是各种canvas的小练习，canvas玩好了还是有好处的，毕竟前端要是每天光操作操作dom甚至切切页面是没什么长进的，甚至会被写CRUD的童鞋嘲讽。于是我今天又什么都没做，就写了一个画贝塞尔曲线的练习。<a id="more"></a><br>今天上午起来以后微信里有个大哥发朋友圈说替别人招前端，要先做个投名状，就是点几下就生成贝塞尔曲线的，当然要能拽着点到处动，类似于sketch软件里的那个小工具，我虽然不去应聘，但是还是写了。<br>写到这里我又很难过，因为我没有用过sketch，所以需求都是根据自己的感觉来的，也不知道要的交互效果和功能是不是这样。没有用过sketch的原因是没有macbook用，所以我要从现在开始攒钱买macbook，但是又没有钱赚，所以估计攒够的时候也就是以后工作以后了，只希望我现在的电脑能再给力点坚持两年，以及坏掉的linux系统我过段时间能修好或者重装好。<br>也许是因为今天看了张鑫旭的博客，中了毒，所以我的废话格外的多，还是要开始说这个练习了。</p>
 <h3 id="贝塞尔曲线是什么"><a href="#贝塞尔曲线是什么" class="headerlink" title="贝塞尔曲线是什么"></a>贝塞尔曲线是什么</h3><p>有时候在写css3的transition之后在开发者工具中看transition-timing-function这个属性，也就是什么ease-in,ease-out等等的时候，会发现是有不同形状的曲线从(0,0)坐标到(1,1)坐标的，代表不同的运动缓急，这个曲线就是贝塞尔曲线。它的特点是用少数的点就能产生复杂的平滑曲线。<br><img src="http://htmljs.b0.upaiyun.com/uploads/1415845715278-bezier-quadratic-animation.gif" alt="一次贝塞尔曲线"><br>它在计算机图形学领域的应用更加广泛，按下不表，贝塞尔曲线的更多内容可以看<a href="http://www.html-js.com/article/1628" target="_blank" rel="external">这里</a></p>
 <h3 id="canvas如何画贝塞尔曲线"><a href="#canvas如何画贝塞尔曲线" class="headerlink" title="canvas如何画贝塞尔曲线"></a>canvas如何画贝塞尔曲线</h3><p>我们知道，有n个控制点的贝塞尔曲线称为n次贝塞尔曲线，canvas中提供了<code>quadraticCurveTo</code>和<code>bezierCurveTo</code>函数来画一次和二次贝塞尔曲线。</p>
 <pre><code>quadraticCurveTo(x1, y1, x2, y2)
@@ -190,117 +78,50 @@
 <h3 id="拖拽的实现"><a href="#拖拽的实现" class="headerlink" title="拖拽的实现"></a>拖拽的实现</h3><p>js中拖拽的最常见实现思路很清晰，mousedown时改变一个变量的状态，mousemove时看这个变量的状态表示正在拖拽的话就根据鼠标坐标改变被拖拽元素的位置，mouseup时把变量状态变成表示未拖拽即可。<br>具体到这个练习中，mousedown时先判断按下的点是否有曲线的点，canvas有<code>isPointInPath</code>方法，但是这个方法只能判断点，而我的曲线点是有半径的小圆。所以用我定义好的<code>isSameNode</code>函数用距离判断，在两个半径距离以内的都属于重合（两个圆外切的最小圆心距就是两个圆的半径之和，这里两个圆半径一样）。如果有曲线就记下它在所有曲线（数组存储）的索引<code>draggingNodeIndex</code>和当前位置<code>lastLoc</code>。<br>然后是mousemove，这个前面已经说了。<br>mouseup的时候<code>draggingNodeIndex</code>变回-1，也就是没有被拖拽的状态。不过还要再判断一下放下的这里有没有点已经在这儿了，如果有，被拖拽的点就回到<code>lastLoc</code>存储的旧位置中去。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这个练习实现起来没什么难度，我是用requirejs来模块化的，感觉不错。<br><a href="http://hunnble.github.io/JavaScript_demo/bezier-drawer/index.html">demo地址，双击创建新点/画曲线/曲线消失</a><br><a href="https://github.com/hunnble/JavaScript_demo/tree/gh-pages/bezier-drawer" target="_blank" rel="external">源码地址</a></p>
 
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                            
 
-    <div class="sibling-post center-align card-panel z-depth-0 section">
+<a href="/tag/前端/">#前端</a> <a href="/tag/canvas/">#canvas</a>
 
-      
-        <a href="/2016/08/01/React-redux实践/" class="btn-flat blue-grey-text right">
-          <i class="material-icons right">chevron_right</i>
-          React-redux实践
-        </a>
-      
 
-      
-        <a href="/2016/08/17/闭包/" class="btn-flat blue-grey-text left">
-          <i class="material-icons left">chevron_left</i>
-          闭包
-        </a>
-      
+                        
+                    </div>
+                    <div class="post-date">
+                        2016 年 08 月 03 日
+                    </div>
+                </div>
+            </div>
 
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
     </div>
-
-    
-      <div class="comment" id="duoshuo">
-        <div class="ds-thread" data-thread-key="post-一个画曲线的canvas练习" data-title="一个画曲线的canvas练习" data-url="http://hunnble.github.io/2016/08/03/一个画曲线的canvas练习/"></div>
-        <script type="text/javascript">
-          var duoshuoQuery = { short_name:'hunnble' };
-          var ds = document.createElement('script');
-          ds.type = 'text/javascript';
-          ds.async = true;
-          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-          ds.charset = 'UTF-8';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-        </script>
-      </div>
-    
-
-  </div>
-
+</article>
 </section>
 
-        <div class="fixed-action-btn click-to-toggle">
-  <a class="btn-floating btn-large lighten-2 teal">
-    <i class="large material-icons">view_module</i>
-  </a>
-  <ul>
-    <li>
-      <a id="back-to-top" class="btn-floating lighten-2 teal waves-effect %>" href="#">
-        <i class="material-icons">navigation</i>
-      </a>
-    </li>
-  </ul>
-</div>
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-      
-    </div>
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
 
+    <!-- Google Analytics -->
     
-      <aside class="col m2 push-m2 hide-on-med-and-down">
-        <div class="toc transparent card-panel z-depth-0">
-          <ol class="table-of-contents"><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#贝塞尔曲线是什么"><span class="table-of-contents-text">贝塞尔曲线是什么</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#canvas如何画贝塞尔曲线"><span class="table-of-contents-text">canvas如何画贝塞尔曲线</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#拖拽的实现"><span class="table-of-contents-text">拖拽的实现</span></a></li><li class="table-of-contents-item table-of-contents-level-3"><a class="table-of-contents-link" href="#总结"><span class="table-of-contents-text">总结</span></a></li></ol>
-        </div>
-      </aside>
-    
-
-
-    
-
-  </div>
-
-</main>
-
-
-  
-
-
-<footer class="page-footer lighten-2 teal ">
-  <div class="container section">
-    <div class="center-align white-text text-lighten-4">
-      <p>
-        Powerd by <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">hexo</a>. Theme by <a href="https://github.com/hunnble/hexo-theme-immortal" title="immortal" target="_blank" rel="external">immortal</a>.
-      </p>
-      
-        <h5>
-          总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
-          总访客数&nbsp;<span id="busuanzi_value_site_uv"></span>
-        </h5>
-      
-    </div>
-  </div>
-  <div class="footer-copyright center-align">
-    Copyright © 2016 Noski
-  </div>
-</footer>
-
-
-
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-  <script src="/js/highlight.min.js"></script>
-
-<!-- <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script> -->
-<script type="text/javascript" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.staticfile.org/materialize/0.97.8/js/materialize.min.js"></script>
-<!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
-
-  <script type="text/javascript" src="/libs/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-    <script type="text/javascript" src=/js/main.js></script>
-  
-
 
 </body>
+
 </html>
