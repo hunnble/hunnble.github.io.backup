@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hunnble.github.io/"/>
-  <updated>2017-04-15T15:54:48.000Z</updated>
+  <updated>2017-05-06T08:03:12.000Z</updated>
   <id>http://hunnble.github.io/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>koa源码分析</title>
+    <link href="http://hunnble.github.io/2017/05/06/koa%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    <id>http://hunnble.github.io/2017/05/06/koa源码分析/</id>
+    <published>2017-05-06T02:10:18.000Z</published>
+    <updated>2017-05-06T08:03:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文是对Node.js框架koa部分源码的分析，如有错误欢迎指正。<br><a id="more"></a></p>
+<h3 id="从构造函数开始"><a href="#从构造函数开始" class="headerlink" title="从构造函数开始"></a>从构造函数开始</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>() &#123;</div><div class="line">  <span class="keyword">super</span>();</div><div class="line">  <span class="keyword">this</span>.proxy = <span class="literal">false</span>;</div><div class="line">  <span class="keyword">this</span>.middleware = [];</div><div class="line">  <span class="keyword">this</span>.subdomainOffset = <span class="number">2</span>;</div><div class="line">  <span class="keyword">this</span>.env = process.env.NODE_ENV || <span class="string">'development'</span>;</div><div class="line">  <span class="keyword">this</span>.context = <span class="built_in">Object</span>.create(context);</div><div class="line">  <span class="keyword">this</span>.request = <span class="built_in">Object</span>.create(request);</div><div class="line">  <span class="keyword">this</span>.response = <span class="built_in">Object</span>.create(response);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>koa的Application类继承了events模块，在构造函数中做了这些事情：</p>
+<ul>
+<li>默认不设置代理</li>
+<li>middleware是中间件数组</li>
+<li>子域名偏移量默认为2，也就是默认忽略数量为2</li>
+<li>环境变量的处理</li>
+<li>挂载context、request、response</li>
+</ul>
+<h3 id="服务器的启动"><a href="#服务器的启动" class="headerlink" title="服务器的启动"></a>服务器的启动</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">listen(...args) &#123;</div><div class="line">  <span class="keyword">const</span> server = http.createServer(<span class="keyword">this</span>.callback());</div><div class="line">  <span class="keyword">return</span> server.listen(...args);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>调用Node.js的http模块来创建一个服务器，具体的handle是使用callback方法的返回值。最后将listen函数的参数透传到创建好的服务器实例的listen方法中完成服务器的启动。</p>
+<h3 id="请求的处理"><a href="#请求的处理" class="headerlink" title="请求的处理"></a>请求的处理</h3><p>下面来分析刚刚说过的callback方法，我们已经知道，它的返回值是一个交付给http模块的server实例的请求处理(request handler)函数，下面来看实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">callback() &#123;</div><div class="line">  <span class="keyword">const</span> fn = compose(<span class="keyword">this</span>.middleware);</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (!<span class="keyword">this</span>.listeners(<span class="string">'error'</span>).length) <span class="keyword">this</span>.on(<span class="string">'error'</span>, <span class="keyword">this</span>.onerror);</div><div class="line"></div><div class="line">  <span class="keyword">const</span> handleRequest = <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</div><div class="line">    res.statusCode = <span class="number">404</span>;</div><div class="line">    <span class="keyword">const</span> ctx = <span class="keyword">this</span>.createContext(req, res);</div><div class="line">    <span class="keyword">const</span> onerror = <span class="function"><span class="params">err</span> =&gt;</span> ctx.onerror(err);</div><div class="line">    <span class="keyword">const</span> handleResponse = <span class="function"><span class="params">()</span> =&gt;</span> respond(ctx);</div><div class="line">    onFinished(res, onerror);</div><div class="line">    <span class="keyword">return</span> fn(ctx).then(handleResponse).catch(onerror);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> handleRequest;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="使用koa-compose模块组合中间件-gt-中间件机制"><a href="#使用koa-compose模块组合中间件-gt-中间件机制" class="headerlink" title="使用koa-compose模块组合中间件 -&gt; 中间件机制"></a>使用koa-compose模块组合中间件 -&gt; 中间件机制</h4><p>koa的中间件遵循流水线模式，多个中间件依次输入，之后倒序执行，也就是官方的那张洋葱图。</p>
+<p><img src="https://camo.githubusercontent.com/d80cf3b511ef4898bcde9a464de491fa15a50d06/68747470733a2f2f7261772e6769746875622e636f6d2f66656e676d6b322f6b6f612d67756964652f6d61737465722f6f6e696f6e2e706e67" alt="执行顺序"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span> (<span class="params">middleware</span>) </span>&#123;</div><div class="line">  <span class="comment">// 这里对middleware的类型和每一个中间件的类型做了判断</span></div><div class="line">  <span class="comment">// 话说js类型系统是一大黑点啊</span></div><div class="line">  <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(middleware)) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Middleware stack must be an array!'</span>)</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> fn <span class="keyword">of</span> middleware) &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">'function'</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Middleware must be composed of functions!'</span>)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">context, next</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> index = <span class="number">-1</span></div><div class="line">    <span class="comment">// 递归调用dispatch，每一次在调用async next()时都resolve一个中间件，最后倒序执行每一个函数体后面的代码。</span></div><div class="line">    <span class="keyword">return</span> dispatch(<span class="number">0</span>)</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dispatch</span> (<span class="params">i</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (i &lt;= index) <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'next() called multiple times'</span>))</div><div class="line">      index = i</div><div class="line">      <span class="keyword">let</span> fn = middleware[i]</div><div class="line">      <span class="keyword">if</span> (i === middleware.length) fn = next</div><div class="line">      <span class="comment">// 返回Promise实例，使后面的逻辑可以执行</span></div><div class="line">      <span class="keyword">if</span> (!fn) <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve()</div><div class="line">      <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(fn(context, <span class="function"><span class="keyword">function</span> <span class="title">next</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="keyword">return</span> dispatch(i + <span class="number">1</span>)</div><div class="line">        &#125;))</div><div class="line">      &#125; <span class="keyword">catch</span> (err) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="handleRequest"><a href="#handleRequest" class="headerlink" title="handleRequest"></a>handleRequest</h4><ul>
+<li>通过createContext方法得到ctx，也就是context对象，它把request和response的一些方法代理到自己身上</li>
+<li>onerror: 可以监听全局错误，包含了一些基本的异常处理，具体的代码是在源码的context.js中</li>
+<li>handleResponse处理response</li>
+<li>用on-finished模块+刚才说的onerror来捕获和处理异常</li>
+</ul>
+<h3 id="use方法"><a href="#use方法" class="headerlink" title="use方法"></a>use方法</h3><p>koa中，使用中间件非常方便，只需要写类似的代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">app.use(<span class="keyword">async</span> (ctx, next) =&gt; &#123;</div><div class="line">  <span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">  <span class="keyword">await</span> next();</div><div class="line">  <span class="keyword">const</span> ms = <span class="keyword">new</span> <span class="built_in">Date</span>() - start;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;ctx.method&#125;</span> <span class="subst">$&#123;ctx.url&#125;</span> - <span class="subst">$&#123;ms&#125;</span>`</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>use方法接受一个函数参数， 返回app实例自身，所以可以链式地写一长串。下面分析一下use方法的源码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">use(fn) &#123;</div><div class="line">  <span class="comment">// 又见类型检测...</span></div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">'function'</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'middleware must be a function!'</span>);</div><div class="line">  <span class="comment">// 这里我删掉一段判断Generator函数的代码，众所周知，koa1是基于generator和co的，而koa2换成了async await的语法糖</span></div><div class="line">  <span class="keyword">this</span>.middleware.push(fn);</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>哈，其实就是简单地往middleware数组push了中间件而已，很简单。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是对Node.js框架koa部分源码的分析，如有错误欢迎指正。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Node.js" scheme="http://hunnble.github.io/tag/Node-js/"/>
+    
+  </entry>
   
   <entry>
     <title>4月总结(二)</title>
@@ -645,40 +693,6 @@
     <summary type="html">
     
       &lt;p&gt;ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被成为解构赋值(Destructuring)。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
-    
-      <category term="ES6标准入门学习笔记" scheme="http://hunnble.github.io/tag/ES6%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6-let and const</title>
-    <link href="http://hunnble.github.io/2016/06/24/ES6-let-and-const/"/>
-    <id>http://hunnble.github.io/2016/06/24/ES6-let-and-const/</id>
-    <published>2016-06-24T14:58:32.000Z</published>
-    <updated>2016-12-26T14:57:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>es6学习笔记第一篇，let和const命令<br><a id="more"></a></p>
-<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>ES6新增了let命令，用于声明变量，但是它和var是有区别的。区别在于，它只在块级作用域内有效，而var呢，由于众所周知的语言特性，var声明的变量在函数作用域内有效（参考你不知道的javascript中没有块级作用域章节）。<br>let的使用使从前需要用IIFE解决的一些问题变得不再是问题了，比如下面的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> m = tasks.length - <span class="number">1</span>; m &gt;= <span class="number">0</span>; m--) &#123;</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="comment">//TODO</span></div><div class="line">    &#125;)(m);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>由于使用var声明的变量在循环中会被一次次地覆盖，如果不使用上面的解决方法，最终每次loop都处理的是m=0也就是最后一次的情况。IIFE能保存每一次的m不被回收掉，在let出现之前这是一个较优解。<br>如果使用let呢？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> m = tasks.length - <span class="number">1</span>; m &gt;= <span class="number">0</span>; m--) &#123;</div><div class="line">    <span class="comment">//TODO</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>和写c++呀java呀什么的一样啦~<br>于是js又少了一个被黑的点（没有块作用域）<br>let的其他特点：<br>1.不存在变量提升</p>
-<ul>
-<li>变量在声明前使用会报ReferenceError，也就是说形成了暂时性死区（temporal dead zone），简称TDZ<br>2.不允许在相同作用域内重复声明同一个变量</li>
-</ul>
-<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>const用来声明常量，一旦声明就不能改变，修改const声明的常量会报TypeError，只声明不赋值会报SyntaxError。<br>其他方面const和let基本一致：只在块作用域内有效，不存在变量提升，形成TDZ，不允许在相同作用域内重复声明。<br>然而看下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = &#123;&#125;;</div><div class="line">foo.prop = <span class="number">123</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(foo.prop); <span class="comment">// 123</span></div></pre></td></tr></table></figure></p>
-<p>这个例子是可以运行的，是不是感觉不太对劲，foo是常量为什么可以改变？<br>原因：对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const之保证指向的地址不变，并不保证该地址的数据不变。上面的例子中foo始终指向一个Object实例的地址，这个是不变的，但是实例本身加了属性prop，const就要不起了。</p>
-<h3 id="全局对象的属性"><a href="#全局对象的属性" class="headerlink" title="全局对象的属性"></a>全局对象的属性</h3><p>一句话，var和function声明的变量原来在ES5中是全局对象的属性，ES6尊重这一点，没有变。但let和const（包括class）声明的就不属于了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> varObj = <span class="number">1024</span>;</div><div class="line"><span class="built_in">console</span>.log(varObj) <span class="comment">// 1024</span></div><div class="line"><span class="keyword">let</span> letObj = <span class="number">1024</span>;</div><div class="line"><span class="built_in">console</span>.log(letObj) <span class="comment">// undefined</span></div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;es6学习笔记第一篇，let和const命令&lt;br&gt;
     
     </summary>
     
