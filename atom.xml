@@ -64,30 +64,6 @@
   </entry>
   
   <entry>
-    <title>4月总结(二)</title>
-    <link href="http://hunnble.github.io/2017/04/15/4%E6%9C%88%E6%80%BB%E7%BB%93(%E4%BA%8C)/"/>
-    <id>http://hunnble.github.io/2017/04/15/4月总结(二)/</id>
-    <published>2017-04-15T15:39:56.000Z</published>
-    <updated>2017-04-15T15:54:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>前段时间本来是想自己完整地实现一个静态博客系统的，但是后来发现确实没什么必要，就继续使用hexo。<br><a id="more"></a><br>去年4月写过一篇博客，就叫4月总结，差不多一年过去了，觉得自己经历了挺多事情，有了一些成长。但是博客是很久没写了，刚才把主题换成hollow，有时间的话把预览时代码宽度问题和没有分页的问题改一下就不准备大动干戈地折腾博客了，省下时间来好好写一些东西。</p>
-<p>拿自己和一年前做个对比，发现变化真的太大了，不只是自身各方面的改变，还有身处的环境和周围的人。</p>
-<p>技术博客还是多写技术，今天就写这么多，还是用去年4月写的博客的结尾来结尾吧：</p>
-<p>4月每天天气都很好,真舍不得它。</p>
-<h2 id="最是人间留不住-朱颜辞镜花辞树。"><a href="#最是人间留不住-朱颜辞镜花辞树。" class="headerlink" title="最是人间留不住,朱颜辞镜花辞树。"></a>最是人间留不住,朱颜辞镜花辞树。</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前段时间本来是想自己完整地实现一个静态博客系统的，但是后来发现确实没什么必要，就继续使用hexo。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="life" scheme="http://hunnble.github.io/tag/life/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JavaScript中的装饰器</title>
     <link href="http://hunnble.github.io/2016/12/26/JavaScript%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
     <id>http://hunnble.github.io/2016/12/26/JavaScript中的装饰器/</id>
@@ -230,27 +206,6 @@
     
     
       <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>好久没更新博客了</title>
-    <link href="http://hunnble.github.io/2016/09/21/%E5%A5%BD%E4%B9%85%E6%B2%A1%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2%E4%BA%86/"/>
-    <id>http://hunnble.github.io/2016/09/21/好久没更新博客了/</id>
-    <published>2016-09-20T16:04:02.000Z</published>
-    <updated>2017-01-04T11:43:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>好久没更新博客了，即便是买了域名以后都一直没来写。主要的原因是买了新电脑，原来配置好hexo的这个电脑平常不怎么用了。倒是搜到有很多方便的多个电脑一起写hexo博客的方法，但是不想折腾了。而且最近一直在深入理解redux还有学koa，然后就是写那个名字还没起好的做问卷的系统。说真的，可能是我比较笨，所以花几乎一个月才掌握了koa再加熟练地把redux初步理解并且结合react写出来。<br>还是挺慢的，不过还好收获也蛮大的。<br><a id="more"></a><br>本来的计划是一个月左右写完，十一假期的时候部署起来。但是今天发现估计要延期好久，甚至koa2出beta版本以后这个应用能不能上线还不一定。koa1转koa2啊immutable.js啊什么的各种玩意儿也想都别想了。<br>收获还是蛮大的，之前那个聊天室应用我就发现我的js水平&gt;css水平&gt;审美水平了，这才第一次有了整自己的ui库/读bootstrap的scss版本源码的念头，但是这个项目用上material ui以后发现自己确实审美没天分，哈哈。而且我以前还没玩过svg，这就又是好几个事儿。偏偏我们这学校的课都是瞎安排，有用的课还没有水课多，比如周五一整天的工程实践这种简直反人类。而且我最近还发烧了，每天十二点多就要睡觉不然会很难受，还好每天起的还算早，基本上一天能有写一个组件的速率。<br>反正就是太慢了，没时间，十一之前但愿能做完基本功能吧, 前天又听说react-router又要发新版本大改api了，简直就是在鞭策我。<br>然后明天还要做出来课程设计的项目的文档，这个倒是挺exciting的，玩玩软件工程的东西，玩玩网络，要是买不起云服务器就还准备用electron写客户端，哈哈哈。<br>不过最近做这些东西都是乐趣远大于压力，所以最近还是很开心的哈哈哈。要学的东西还是太多太多了，怎么说呢，庶竭驽钝吧。<br>对了还有，经过ccf认证考试之后我发现我算法方面还是短板(虽然不知道我第一题是怎么0分的，但是最短路径那个题没写出代码真是自己水平太低的问题)，虽然假期很安逸地用js啊python啊写了60道不到的leetcode吧，但是还是太少了。希望我能在这学期结束前把免费题hard以下基本做完。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;好久没更新博客了，即便是买了域名以后都一直没来写。主要的原因是买了新电脑，原来配置好hexo的这个电脑平常不怎么用了。倒是搜到有很多方便的多个电脑一起写hexo博客的方法，但是不想折腾了。而且最近一直在深入理解redux还有学koa，然后就是写那个名字还没起好的做问卷的系统。说真的，可能是我比较笨，所以花几乎一个月才掌握了koa再加熟练地把redux初步理解并且结合react写出来。&lt;br&gt;还是挺慢的，不过还好收获也蛮大的。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="life" scheme="http://hunnble.github.io/tag/life/"/>
     
   </entry>
   
@@ -702,6 +657,65 @@
       <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
     
       <category term="ES6标准入门学习笔记" scheme="http://hunnble.github.io/tag/ES6%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6-let and const</title>
+    <link href="http://hunnble.github.io/2016/06/24/ES6-let-and-const/"/>
+    <id>http://hunnble.github.io/2016/06/24/ES6-let-and-const/</id>
+    <published>2016-06-24T14:58:32.000Z</published>
+    <updated>2016-12-26T14:57:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>es6学习笔记第一篇，let和const命令<br><a id="more"></a></p>
+<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>ES6新增了let命令，用于声明变量，但是它和var是有区别的。区别在于，它只在块级作用域内有效，而var呢，由于众所周知的语言特性，var声明的变量在函数作用域内有效（参考你不知道的javascript中没有块级作用域章节）。<br>let的使用使从前需要用IIFE解决的一些问题变得不再是问题了，比如下面的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> m = tasks.length - <span class="number">1</span>; m &gt;= <span class="number">0</span>; m--) &#123;</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="comment">//TODO</span></div><div class="line">    &#125;)(m);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>由于使用var声明的变量在循环中会被一次次地覆盖，如果不使用上面的解决方法，最终每次loop都处理的是m=0也就是最后一次的情况。IIFE能保存每一次的m不被回收掉，在let出现之前这是一个较优解。<br>如果使用let呢？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> m = tasks.length - <span class="number">1</span>; m &gt;= <span class="number">0</span>; m--) &#123;</div><div class="line">    <span class="comment">//TODO</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>和写c++呀java呀什么的一样啦~<br>于是js又少了一个被黑的点（没有块作用域）<br>let的其他特点：<br>1.不存在变量提升</p>
+<ul>
+<li>变量在声明前使用会报ReferenceError，也就是说形成了暂时性死区（temporal dead zone），简称TDZ<br>2.不允许在相同作用域内重复声明同一个变量</li>
+</ul>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>const用来声明常量，一旦声明就不能改变，修改const声明的常量会报TypeError，只声明不赋值会报SyntaxError。<br>其他方面const和let基本一致：只在块作用域内有效，不存在变量提升，形成TDZ，不允许在相同作用域内重复声明。<br>然而看下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = &#123;&#125;;</div><div class="line">foo.prop = <span class="number">123</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(foo.prop); <span class="comment">// 123</span></div></pre></td></tr></table></figure></p>
+<p>这个例子是可以运行的，是不是感觉不太对劲，foo是常量为什么可以改变？<br>原因：对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const之保证指向的地址不变，并不保证该地址的数据不变。上面的例子中foo始终指向一个Object实例的地址，这个是不变的，但是实例本身加了属性prop，const就要不起了。</p>
+<h3 id="全局对象的属性"><a href="#全局对象的属性" class="headerlink" title="全局对象的属性"></a>全局对象的属性</h3><p>一句话，var和function声明的变量原来在ES5中是全局对象的属性，ES6尊重这一点，没有变。但let和const（包括class）声明的就不属于了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> varObj = <span class="number">1024</span>;</div><div class="line"><span class="built_in">console</span>.log(varObj) <span class="comment">// 1024</span></div><div class="line"><span class="keyword">let</span> letObj = <span class="number">1024</span>;</div><div class="line"><span class="built_in">console</span>.log(letObj) <span class="comment">// undefined</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;es6学习笔记第一篇，let和const命令&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
+    
+      <category term="ES6标准入门学习笔记" scheme="http://hunnble.github.io/tag/ES6%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>async库waterfall源码分析</title>
+    <link href="http://hunnble.github.io/2016/06/21/async%E5%BA%93waterfall%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    <id>http://hunnble.github.io/2016/06/21/async库waterfall源码分析/</id>
+    <published>2016-06-21T14:32:49.000Z</published>
+    <updated>2016-06-21T14:56:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天重构node.js博客代码的时候为了把好几层的嵌套消除就使用了大名鼎鼎的aysnc库中的waterfall函数。<a id="more"></a>使用async前画风是这样:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">User.prototype.get = <span class="function"><span class="keyword">function</span> (<span class="params">name, callback</span>) </span>&#123;</div><div class="line">    mongodb.open(<span class="function"><span class="keyword">function</span> (<span class="params">err, db</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (err) &#123;</div><div class="line">            <span class="keyword">return</span> callback(err);</div><div class="line">        &#125;</div><div class="line">        db.collection(DBNAME, <span class="function"><span class="keyword">function</span> (<span class="params">err, collection</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (err) &#123;</div><div class="line">                mongodb.close();</div><div class="line">                <span class="keyword">return</span> callback(err);</div><div class="line">            &#125;</div><div class="line">            collection.findOne(&#123;</div><div class="line">                <span class="attr">name</span>: name</div><div class="line">            &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err, user</span>) </span>&#123;</div><div class="line">                mongodb.close();</div><div class="line">                <span class="keyword">if</span> (err) &#123;</div><div class="line">                    <span class="keyword">return</span> callback(err);</div><div class="line">                &#125;</div><div class="line">                callback(<span class="literal">null</span>, user);</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>使用async后画风变成这样:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">User.prototype.get = <span class="function"><span class="keyword">function</span> (<span class="params">name, callback</span>) </span>&#123;</div><div class="line">    <span class="keyword">async</span>.waterfall([</div><div class="line">        <span class="function"><span class="keyword">function</span> (<span class="params">cb</span>) </span>&#123;</div><div class="line">            mongodb.open(<span class="function"><span class="keyword">function</span> (<span class="params">err, db</span>) </span>&#123;</div><div class="line">                cb(err, db);</div><div class="line">            &#125;);</div><div class="line">        &#125;,</div><div class="line">        <span class="function"><span class="keyword">function</span> (<span class="params">db, cb</span>) </span>&#123;</div><div class="line">            db.collection(DBNAME, <span class="function"><span class="keyword">function</span> (<span class="params">err, collection</span>) </span>&#123;</div><div class="line">                cb(err, collection);</div><div class="line">            &#125;);</div><div class="line">        &#125;,</div><div class="line">        <span class="function"><span class="keyword">function</span> (<span class="params">collection, cb</span>) </span>&#123;</div><div class="line">            collection.findOne(&#123;</div><div class="line">                <span class="attr">name</span>: name</div><div class="line">            &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err, user</span>) </span>&#123;</div><div class="line">                cb(err, user);</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">    ], <span class="function"><span class="keyword">function</span> (<span class="params">err, result</span>) </span>&#123;</div><div class="line">        mongodb.close();</div><div class="line">        <span class="keyword">if</span>(err) &#123;</div><div class="line">            <span class="keyword">return</span> callback(err);</div><div class="line">        &#125;</div><div class="line">        callback(<span class="literal">null</span>, result[<span class="number">0</span>]);</div><div class="line">    &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>哈哈哈！<br>那么waterfall的源码长这样:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span>.waterfall = <span class="function"><span class="keyword">function</span> (<span class="params">tasks, callback</span>) </span>&#123;</div><div class="line">        callback = callback || <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line">        <span class="keyword">if</span> (!_isArray(tasks)) &#123;</div><div class="line">          <span class="keyword">var</span> err = <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'First argument to waterfall must be an array of functions'</span>);</div><div class="line">          <span class="keyword">return</span> callback(err);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (!tasks.length) &#123;</div><div class="line">            <span class="keyword">return</span> callback();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">var</span> wrapIterator = <span class="function"><span class="keyword">function</span> (<span class="params">iterator</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">                <span class="keyword">if</span> (err) &#123;</div><div class="line">                    callback.apply(<span class="literal">null</span>, <span class="built_in">arguments</span>);</div><div class="line">                    callback = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span> &#123;</div><div class="line">                    <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</div><div class="line">                    <span class="keyword">var</span> next = iterator.next();</div><div class="line">                    <span class="keyword">if</span> (next) &#123;</div><div class="line">                        args.push(wrapIterator(next));</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">else</span> &#123;</div><div class="line">                        args.push(callback);</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">async</span>.setImmediate(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                        iterator.apply(<span class="literal">null</span>, args);</div><div class="line">                    &#125;);</div><div class="line">                &#125;</div><div class="line">            &#125;;</div><div class="line">        &#125;;</div><div class="line">        wrapIterator(<span class="keyword">async</span>.iterator(tasks))();</div><div class="line">    &#125;;</div></pre></td></tr></table></figure></p>
+<p>其中的iterator函数是:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span>.iterator = <span class="function"><span class="keyword">function</span> (<span class="params">tasks</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> makeCallback = <span class="function"><span class="keyword">function</span> (<span class="params">index</span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="keyword">if</span> (tasks.length) &#123;</div><div class="line">                    tasks[index].apply(<span class="literal">null</span>, <span class="built_in">arguments</span>);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> fn.next();</div><div class="line">            &#125;;</div><div class="line">            fn.next = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="keyword">return</span> (index &lt; tasks.length - <span class="number">1</span>) ? makeCallback(index + <span class="number">1</span>): <span class="literal">null</span>;</div><div class="line">            &#125;;</div><div class="line">            <span class="keyword">return</span> fn;</div><div class="line">        &#125;;</div><div class="line">        <span class="keyword">return</span> makeCallback(<span class="number">0</span>);</div><div class="line">    &#125;;</div></pre></td></tr></table></figure></p>
+<p>waterfall开头先对第一个参数做限制，必须是function数组，接下来的wrapIterator封装了iterator，执行后返回的是一个匿名function。其明确的参数只有一个err。当err不为空的时候，直接执行callback function。否则从index为1开始取出参数列表，并把iterator的下一个function包装之后push到args中（如果没有下一个function了则push回调函数）。接下来，则执行当前的iterator，执行的参数是下一个iterator function（作为这一步的回调函数）以及参数（如果当前的iterator被调用时传递了其他参数）。这样在当前iterator中回调下一个iterator，依次迭代执行，直至执行完所有function和callback。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天重构node.js博客代码的时候为了把好几层的嵌套消除就使用了大名鼎鼎的aysnc库中的waterfall函数。
+    
+    </summary>
+    
+    
+      <category term="node.js" scheme="http://hunnble.github.io/tag/node-js/"/>
     
   </entry>
   
