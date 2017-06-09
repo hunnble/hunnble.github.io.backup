@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hunnble.github.io/"/>
-  <updated>2017-05-30T16:22:20.000Z</updated>
+  <updated>2017-06-09T10:28:14.000Z</updated>
   <id>http://hunnble.github.io/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6 class实现私有方法</title>
+    <link href="http://hunnble.github.io/2017/06/09/ES6-class%E5%AE%9E%E7%8E%B0%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/"/>
+    <id>http://hunnble.github.io/2017/06/09/ES6-class实现私有方法/</id>
+    <published>2017-06-09T09:18:14.000Z</published>
+    <updated>2017-06-09T10:28:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>ES6中的<code>class</code>是没有<code>private</code>、<code>protected</code>和<code>public</code>关键字的，也就是说，在语法层面直接对<code>class</code>进行访问权限控制是无法做到的。这篇文章会介绍一些可行的解决方法。<br><a id="more"></a></p>
+<h3 id="简单解决方法"><a href="#简单解决方法" class="headerlink" title="简单解决方法"></a>简单解决方法</h3><p>如果只考虑访问权限的限制，可以使用如下的解决方案</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> privateMethods = &#123;</div><div class="line">  privateMethod () &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.say);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Service</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.say = <span class="string">"Hello"</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  publicMethod() &#123;</div><div class="line">    privateMethods.privateMethod.call(<span class="keyword">this</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>也就是说，在外部维护所谓的<code>private</code>方法，然后在使用时通过<code>call/apply</code>来把<code>this</code>绑定到类的实例上。这是一种丑陋的解决方案，因为<code>privateMethods</code>根本不是<code>Service</code>类的方法，只是在调用的时候通过额外的代码使其能访问到自己。然而，如果一个东西走起来像鸭子，叫起来也像鸭子，那么它就是鸭子，这种方案是可行的。</p>
+<h3 id="更好地方案：使用ES6的Symbol"><a href="#更好地方案：使用ES6的Symbol" class="headerlink" title="更好地方案：使用ES6的Symbol"></a>更好地方案：使用ES6的Symbol</h3><p>我们来仔细思考一下，我们要做出来的这个东西有哪些要求？</p>
+<p>1.外部不可访问<br>2.内部可以访问</p>
+<p>好的，问题分解了，完美。接下来考虑怎么实现？在标题那里已经剧透了，用<code>Symbol</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> privateMethod = <span class="built_in">Symbol</span>(<span class="string">'privateMethod'</span>);</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Service</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span> () &#123;</div><div class="line">    <span class="keyword">this</span>.say = <span class="string">"Hello"</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  [privateMethod] () &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.say);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  publicMethod () &#123;</div><div class="line">    <span class="keyword">this</span>[privateMethod]()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Uncaught TypeError: (intermediate value).privateMethod is not a function</span></div><div class="line"><span class="keyword">new</span> Service().privateMethod()</div><div class="line"></div><div class="line"><span class="comment">// Uncaught TypeError: (intermediate value)[Symbol(...)] is not a function</span></div><div class="line"><span class="keyword">new</span> Service()[<span class="built_in">Symbol</span>(<span class="string">'privateMethod'</span>)]();</div><div class="line"></div><div class="line"><span class="comment">// log: Hello</span></div><div class="line">newService().publicMethod()</div></pre></td></tr></table></figure></p>
+<p>在要求1中，外部不可访问的实现通过<code>Symbol</code>自身的特性完美解决，首先，使用<code>Symbol</code>做私有方法的实际<code>name</code>属性，可以在外部访问<code>privateMethod</code>时隐藏实际的函数；其次，<code>Symbol</code>具有唯一性，可以确保同样的初始私有方法名不会被重复使用。</p>
+<h3 id="同样的思路，另一种数据结构：WeakMap"><a href="#同样的思路，另一种数据结构：WeakMap" class="headerlink" title="同样的思路，另一种数据结构：WeakMap"></a>同样的思路，另一种数据结构：WeakMap</h3><p>使用同样的思路封装私有方法：将它们包在<code>WeakMap</code>中，如下所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> privateMethods = <span class="keyword">new</span> <span class="built_in">WeakMap</span>();</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Service</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span> () &#123;</div><div class="line">    <span class="keyword">this</span>.say = <span class="string">"Hello"</span>;</div><div class="line">    privateMethods.set(<span class="keyword">this</span>, &#123;</div><div class="line">    	<span class="attr">privateMethod</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>.say)</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  publicMethod() &#123;</div><div class="line">    privateMethods.get(<span class="keyword">this</span>).privateMethod();</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">new</span> Service().publicMethod();</div></pre></td></tr></table></figure>
+<p>原理几乎一样，值得用一句话说一下的就是为什么用<code>WeakMap</code>而不是<code>Map</code>： 一个仅被<code>WeakMap</code>作为key引用的对象，会被垃圾回收器回收掉。</p>
+<h3 id="还有哪些可行的方案？"><a href="#还有哪些可行的方案？" class="headerlink" title="还有哪些可行的方案？"></a>还有哪些可行的方案？</h3><p>在stackoverflow上浏览的时候还看到一种利用<code>Object.defineProperty</code>的解决方法，因为这种方法过于繁琐所以就不介绍了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ES6中的&lt;code&gt;class&lt;/code&gt;是没有&lt;code&gt;private&lt;/code&gt;、&lt;code&gt;protected&lt;/code&gt;和&lt;code&gt;public&lt;/code&gt;关键字的，也就是说，在语法层面直接对&lt;code&gt;class&lt;/code&gt;进行访问权限控制是无法做到的。这篇文章会介绍一些可行的解决方法。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
+    
+  </entry>
   
   <entry>
     <title>霜花店</title>
@@ -673,40 +707,6 @@
     <summary type="html">
     
       &lt;p&gt;ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被成为解构赋值(Destructuring)。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
-    
-      <category term="ES6标准入门学习笔记" scheme="http://hunnble.github.io/tag/ES6%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6-let and const</title>
-    <link href="http://hunnble.github.io/2016/06/24/ES6-let-and-const/"/>
-    <id>http://hunnble.github.io/2016/06/24/ES6-let-and-const/</id>
-    <published>2016-06-24T14:58:32.000Z</published>
-    <updated>2016-12-26T14:57:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>es6学习笔记第一篇，let和const命令<br><a id="more"></a></p>
-<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>ES6新增了let命令，用于声明变量，但是它和var是有区别的。区别在于，它只在块级作用域内有效，而var呢，由于众所周知的语言特性，var声明的变量在函数作用域内有效（参考你不知道的javascript中没有块级作用域章节）。<br>let的使用使从前需要用IIFE解决的一些问题变得不再是问题了，比如下面的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> m = tasks.length - <span class="number">1</span>; m &gt;= <span class="number">0</span>; m--) &#123;</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="comment">//TODO</span></div><div class="line">    &#125;)(m);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>由于使用var声明的变量在循环中会被一次次地覆盖，如果不使用上面的解决方法，最终每次loop都处理的是m=0也就是最后一次的情况。IIFE能保存每一次的m不被回收掉，在let出现之前这是一个较优解。<br>如果使用let呢？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> m = tasks.length - <span class="number">1</span>; m &gt;= <span class="number">0</span>; m--) &#123;</div><div class="line">    <span class="comment">//TODO</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>和写c++呀java呀什么的一样啦~<br>于是js又少了一个被黑的点（没有块作用域）<br>let的其他特点：<br>1.不存在变量提升</p>
-<ul>
-<li>变量在声明前使用会报ReferenceError，也就是说形成了暂时性死区（temporal dead zone），简称TDZ<br>2.不允许在相同作用域内重复声明同一个变量</li>
-</ul>
-<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>const用来声明常量，一旦声明就不能改变，修改const声明的常量会报TypeError，只声明不赋值会报SyntaxError。<br>其他方面const和let基本一致：只在块作用域内有效，不存在变量提升，形成TDZ，不允许在相同作用域内重复声明。<br>然而看下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = &#123;&#125;;</div><div class="line">foo.prop = <span class="number">123</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(foo.prop); <span class="comment">// 123</span></div></pre></td></tr></table></figure></p>
-<p>这个例子是可以运行的，是不是感觉不太对劲，foo是常量为什么可以改变？<br>原因：对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const之保证指向的地址不变，并不保证该地址的数据不变。上面的例子中foo始终指向一个Object实例的地址，这个是不变的，但是实例本身加了属性prop，const就要不起了。</p>
-<h3 id="全局对象的属性"><a href="#全局对象的属性" class="headerlink" title="全局对象的属性"></a>全局对象的属性</h3><p>一句话，var和function声明的变量原来在ES5中是全局对象的属性，ES6尊重这一点，没有变。但let和const（包括class）声明的就不属于了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> varObj = <span class="number">1024</span>;</div><div class="line"><span class="built_in">console</span>.log(varObj) <span class="comment">// 1024</span></div><div class="line"><span class="keyword">let</span> letObj = <span class="number">1024</span>;</div><div class="line"><span class="built_in">console</span>.log(letObj) <span class="comment">// undefined</span></div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;es6学习笔记第一篇，let和const命令&lt;br&gt;
     
     </summary>
     
