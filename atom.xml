@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hunnble.github.io/"/>
-  <updated>2017-06-09T10:28:14.000Z</updated>
+  <updated>2017-08-13T08:43:40.000Z</updated>
   <id>http://hunnble.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Fiber</title>
+    <link href="http://hunnble.github.io/2017/08/13/%E5%BC%82%E6%AD%A5/"/>
+    <id>http://hunnble.github.io/2017/08/13/异步/</id>
+    <published>2017-08-13T05:36:14.000Z</published>
+    <updated>2017-08-13T08:43:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>随着React 16-beta的正式发布，Fiber这一概念进入很多前端工程师的视角，那么，Fiber究竟是什么？</p>
+<a id="more"></a>
+<h3 id="Fiber-纤程"><a href="#Fiber-纤程" class="headerlink" title="Fiber(纤程)"></a>Fiber(纤程)</h3><p>在操作系统层面，coroutines和fibers是一个概念，只不过fibers是在windows下的实现。二者都是用户控制切换，且能自动保存上下文状态，切换之间可以通过参数通信。下文fibers统称纤程。<br>纤程和线程的区别较大，纤程更为轻量级，一个线程可以包含一个或多个纤程；内核会对线程进行抢占式调度，所以线程一次只能执行一个纤程。<br>我的理解是，Fiber可以看做coroutines，或者可以理解为程序员而不是VM管理的线程。</p>
+<h3 id="Fiber-in-Ruby"><a href="#Fiber-in-Ruby" class="headerlink" title="Fiber in Ruby"></a>Fiber in Ruby</h3><p>Fiber在Ruby1.9之后引入，举个栗子：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">nums = Fiber.new <span class="keyword">do</span></div><div class="line">  num = <span class="number">2</span></div><div class="line">  loop <span class="keyword">do</span></div><div class="line">    Fiber.<span class="keyword">yield</span>(num) <span class="keyword">unless</span> num % <span class="number">3</span> == <span class="number">0</span></div><div class="line">    num += <span class="number">2</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="number">10</span>.times &#123; p nums.resume &#125;</div></pre></td></tr></table></figure>
+<p>这个栗子做的事情是产生前十个可以被2整除但是不能被3整除的数，其中用到了Fiber。<br>Fiber的构造方法接受代码块，返回的是一个Fiber实例，这个代码块中的代码不会立即执行，而会在Fiber实例调用resume方法时执行，而在yield方法被调用时，当前执行将被挂起，把控制权交回调用resume时的代码，上一次resume方法的返回值是yield传入的值，在上面的代码中就是num。当返回值是nil时，将抛出FiberError。<br>具体应用见<a href="https://ruby-doc.org/core-2.2.0/Fiber.html" target="_blank" rel="external">文档</a></p>
+<h3 id="React-Fiber"><a href="#React-Fiber" class="headerlink" title="React Fiber"></a>React Fiber</h3><p>进入正题，现在来介绍React Fiber。</p>
+<h4 id="为什么需要它"><a href="#为什么需要它" class="headerlink" title="为什么需要它"></a>为什么需要它</h4><p>在现有React中，更新过程是同步的，无法暂停。所以当组件树很庞大的时候，更新组件树会占用浏览器唯一的线程直到更新操作完成，所以有时会有卡顿的感觉。这种情况通常发生在组件层级较深，更新时React的调用栈也很深的情况下。</p>
+<h4 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h4><p>通过上文的对比，我们了解到纤程比线程要“细”的多，也就是说，它是一种更精密的并发处理机制。纤程可以帮助框架将更新操作进行分片，分片的目的是在每个小片进行完之后可以暂停，将浏览器线程出让，以便其他任务运行。<br>为了实现这种处理机制，React重新实现了Component渲染函数的调用栈，叫做虚拟调用栈(virtual call stack)，每个fiber可以看做一个虚拟栈帧(virtual stack frame)，我们都知道，React的渲染机制满足view = f(data)，那么在渲染函数被调用时会将fiber压栈，这个fiber代表的事务(执行计算和更新状态的单元)是可以暂停/复用/通过设置优先级来决定调用顺序的。于是渲染可以被理解为动态变化的fiber链表，可以做到高度的可控。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;随着React 16-beta的正式发布，Fiber这一概念进入很多前端工程师的视角，那么，Fiber究竟是什么？&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>ES6 class实现私有方法</title>
@@ -682,40 +709,6 @@
     <summary type="html">
     
       &lt;p&gt;ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被成为解构赋值(Destructuring)。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
-    
-      <category term="ES6标准入门学习笔记" scheme="http://hunnble.github.io/tag/ES6%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6-let and const</title>
-    <link href="http://hunnble.github.io/2016/06/24/ES6-let-and-const/"/>
-    <id>http://hunnble.github.io/2016/06/24/ES6-let-and-const/</id>
-    <published>2016-06-24T14:58:32.000Z</published>
-    <updated>2016-12-26T14:57:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>es6学习笔记第一篇，let和const命令<br><a id="more"></a></p>
-<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>ES6新增了let命令，用于声明变量，但是它和var是有区别的。区别在于，它只在块级作用域内有效，而var呢，由于众所周知的语言特性，var声明的变量在函数作用域内有效（参考你不知道的javascript中没有块级作用域章节）。<br>let的使用使从前需要用IIFE解决的一些问题变得不再是问题了，比如下面的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> m = tasks.length - <span class="number">1</span>; m &gt;= <span class="number">0</span>; m--) &#123;</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="comment">//TODO</span></div><div class="line">    &#125;)(m);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>由于使用var声明的变量在循环中会被一次次地覆盖，如果不使用上面的解决方法，最终每次loop都处理的是m=0也就是最后一次的情况。IIFE能保存每一次的m不被回收掉，在let出现之前这是一个较优解。<br>如果使用let呢？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> m = tasks.length - <span class="number">1</span>; m &gt;= <span class="number">0</span>; m--) &#123;</div><div class="line">    <span class="comment">//TODO</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>和写c++呀java呀什么的一样啦~<br>于是js又少了一个被黑的点（没有块作用域）<br>let的其他特点：<br>1.不存在变量提升</p>
-<ul>
-<li>变量在声明前使用会报ReferenceError，也就是说形成了暂时性死区（temporal dead zone），简称TDZ<br>2.不允许在相同作用域内重复声明同一个变量</li>
-</ul>
-<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>const用来声明常量，一旦声明就不能改变，修改const声明的常量会报TypeError，只声明不赋值会报SyntaxError。<br>其他方面const和let基本一致：只在块作用域内有效，不存在变量提升，形成TDZ，不允许在相同作用域内重复声明。<br>然而看下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = &#123;&#125;;</div><div class="line">foo.prop = <span class="number">123</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(foo.prop); <span class="comment">// 123</span></div></pre></td></tr></table></figure></p>
-<p>这个例子是可以运行的，是不是感觉不太对劲，foo是常量为什么可以改变？<br>原因：对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const之保证指向的地址不变，并不保证该地址的数据不变。上面的例子中foo始终指向一个Object实例的地址，这个是不变的，但是实例本身加了属性prop，const就要不起了。</p>
-<h3 id="全局对象的属性"><a href="#全局对象的属性" class="headerlink" title="全局对象的属性"></a>全局对象的属性</h3><p>一句话，var和function声明的变量原来在ES5中是全局对象的属性，ES6尊重这一点，没有变。但let和const（包括class）声明的就不属于了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> varObj = <span class="number">1024</span>;</div><div class="line"><span class="built_in">console</span>.log(varObj) <span class="comment">// 1024</span></div><div class="line"><span class="keyword">let</span> letObj = <span class="number">1024</span>;</div><div class="line"><span class="built_in">console</span>.log(letObj) <span class="comment">// undefined</span></div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;es6学习笔记第一篇，let和const命令&lt;br&gt;
     
     </summary>
     
