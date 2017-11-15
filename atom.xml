@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hunnble.github.io/"/>
-  <updated>2017-08-13T08:43:40.000Z</updated>
+  <updated>2017-11-15T12:51:29.000Z</updated>
   <id>http://hunnble.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>提前总结一下2017年</title>
+    <link href="http://hunnble.github.io/2017/11/15/%E6%8F%90%E5%89%8D%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B2017%E5%B9%B4/"/>
+    <id>http://hunnble.github.io/2017/11/15/提前总结一下2017年/</id>
+    <published>2017-11-15T12:48:17.000Z</published>
+    <updated>2017-11-15T12:51:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.发现了更多自己不擅长做的事<br>2.赚钱，花更多的钱<br>3.有一段时间没有自我驱动学习，因为忙着做不擅长做的东西，看来选择很重要</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.发现了更多自己不擅长做的事&lt;br&gt;2.赚钱，花更多的钱&lt;br&gt;3.有一段时间没有自我驱动学习，因为忙着做不擅长做的东西，看来选择很重要&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Fiber</title>
@@ -677,38 +697,6 @@
     <summary type="html">
     
       &lt;p&gt;ES6扩展了很多字符串的属性和方法。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
-    
-      <category term="ES6标准入门学习笔记" scheme="http://hunnble.github.io/tag/ES6%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6-变量的解构赋值</title>
-    <link href="http://hunnble.github.io/2016/06/25/ES6-%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/"/>
-    <id>http://hunnble.github.io/2016/06/25/ES6-变量的解构赋值/</id>
-    <published>2016-06-25T13:05:46.000Z</published>
-    <updated>2016-12-26T14:57:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被成为解构赋值(Destructuring)。<br><a id="more"></a></p>
-<h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, [b, [c]], , e, ...tail] = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>]], <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, [<span class="number">8</span>]];</div><div class="line"><span class="keyword">let</span> [i, j] = [<span class="string">'a'</span>];</div><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="built_in">console</span>.log(a, b, c, e, tail); <span class="comment">// 1 2 3 6 [7, [8]]</span></div><div class="line"><span class="built_in">console</span>.log(i, j); <span class="comment">// 'a' undefined</span></div><div class="line"><span class="built_in">console</span>.log(x, y); <span class="comment">// 1, 2</span></div></pre></td></tr></table></figure>
-<p>上面的是对数组的解构赋值，下面写用于对象的。</p>
-<h3 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h3><p>对对象的解构赋值要求变量与属性同名，因为对象的属性是不能像数组那样用索引取得的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> &#123;s1, s2, s3&#125; = &#123;<span class="attr">s1</span>: <span class="string">'s1'</span>, <span class="attr">s2</span>: <span class="string">'s2'</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(s1, s2, s3); <span class="comment">// s1 s2 undefined</span></div></pre></td></tr></table></figure></p>
-<p>解构赋值时会重新声明变量，所以对已经声明的变量解构赋值应该这么写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> s4;</div><div class="line">(&#123;s4&#125; = &#123;<span class="attr">s4</span>: <span class="number">100</span>&#125;);</div></pre></td></tr></table></figure></p>
-<p>为什么{s4} = {s4: 100};不行而要套上括号呢？原因在于JavaScript引擎会将{}包围的代码理解成一个代码块，发生syntax error，所以不能将大括号写在行首，套上括号来解决。<br>下面说其它数据类型的解构赋值，直接举栗子吧</p>
-<h3 id="字符串的解构赋值"><a href="#字符串的解构赋值" class="headerlink" title="字符串的解构赋值"></a>字符串的解构赋值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [c1, c2, c3] = <span class="string">'let'</span>;</div><div class="line"><span class="built_in">console</span>.log(c1, c2, c3); <span class="comment">// 'l' 'e' 't'</span></div></pre></td></tr></table></figure>
-<h3 id="函数参数的解构赋值"><a href="#函数参数的解构赋值" class="headerlink" title="函数参数的解构赋值"></a>函数参数的解构赋值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params">[x1, x2]</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> x1 + x2;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(add([<span class="number">1</span>, <span class="number">1</span>])); <span class="comment">// 2</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被成为解构赋值(Destructuring)。&lt;br&gt;
     
     </summary>
     
