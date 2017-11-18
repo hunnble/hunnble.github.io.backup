@@ -1,5 +1,74 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="hunnble,hante_hunter@163.com"><title>React-动画 · 北方公园</title><meta name="description" content="React的TransitionGroup插件配合css3可以做出流畅美观的动画。引入ReactCSSTransitionGroup:1var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-在使用ES6语法加载模块时:首先需要r"><meta name="keywords" content="frontend,life"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">北方公园</a></h3><div class="description"><p>痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原</p></div></div></div><ul class="social-links"><li><a href="http://github.com/hunnble"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"></a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>React-动画</a></h3></div><div class="post-content"><p>React的TransitionGroup插件配合css3可以做出流畅美观的动画。<br>引入ReactCSSTransitionGroup:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;</div></pre></td></tr></table></figure></p>
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Noski">
+    
+
+    <!-- Title -->
+    
+    <title>React-动画 | 北方公园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>React-动画</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>React的TransitionGroup插件配合css3可以做出流畅美观的动画。<br>引入ReactCSSTransitionGroup:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;</div></pre></td></tr></table></figure></p>
 <p>在使用ES6语法加载模块时:<br>首先需要react-addons-css-transition-group:</p>
 <pre><code>npm install --save-dev react-addons-css-transition-group;
 </code></pre><p>之后在代码中import<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> ReactCSSTransitionGroup <span class="keyword">from</span> <span class="string">'react-addons-css-transition-group'</span>;</div></pre></td></tr></table></figure></p>
@@ -8,4 +77,51 @@
 <p>这相当于为元素添加了task-enter、task-enter-active、task-leave、task-leave-active四个class。然后就可以设置样式，类似这样<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.task-enter</span> &#123;</div><div class="line">    <span class="attribute">opacity</span>: <span class="number">0.01</span>;</div><div class="line">    <span class="attribute">transition</span>: opacity .<span class="number">5s</span> ease-in;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.task-enter-active</span> &#123;</div><div class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.task-leave</span> &#123;</div><div class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</div><div class="line">    <span class="attribute">transition</span>: opacity .<span class="number">5s</span> ease-in;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.task-leave-active</span> &#123;</div><div class="line">    <span class="attribute">opacity</span>: <span class="number">0.01</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>要注意，渐变组会延迟子组件的移除直到动画完成，这意味着剐没有为transitionName指定对应的css，组件移除会不成功。另外，渐变组的子组件需要设置key，哪怕只有一个子组件也是。<br>如果不想要进入或者移除动画，可以给ReactCSSTransitionGroup添加transitionEnter={false}或者transitionLeave={false} props来禁用这些动画。<br>完整代码如下，是一个TodoList的雏形，一开始我想把每个task做成一个组件，后来发现没法成功使用ReactCSSTransitionGroup，就把列表做成一个组件，根据state变化而变化。css代码就是上面的透明度渐变。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> TodoListCtrl = React.createClass(&#123;</div><div class="line">    <span class="attr">render</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">                <span class="tag">&lt;<span class="name">h3</span>&gt;</span>To do list<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.props.addTask&#125;</span>&gt;</span>新增任务<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"><span class="keyword">var</span> TodoList = React.createClass(&#123;</div><div class="line">    <span class="attr">getInitialState</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            <span class="attr">tasks</span>: [<span class="string">"taskA"</span>, <span class="string">"taskB"</span>, <span class="string">"taskC"</span>, <span class="string">"阿森纳"</span>]</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">addTask</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> taskMsg = prompt(<span class="string">"请输入任务内容"</span>);</div><div class="line">        <span class="keyword">if</span> (taskMsg.length &gt; <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">this</span>.setState(&#123;</div><div class="line">                <span class="attr">tasks</span>: <span class="keyword">this</span>.state.tasks.concat(taskMsg)</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">removeTask</span>: <span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> newTasks = <span class="keyword">this</span>.state.tasks;</div><div class="line">        newTasks.splice(i, <span class="number">1</span>);</div><div class="line">        <span class="keyword">this</span>.setState(&#123;</div><div class="line">            <span class="attr">tasks</span>: newTasks</div><div class="line">        &#125;);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">render</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> tasks = <span class="keyword">this</span>.state.tasks.map(<span class="function"><span class="keyword">function</span> (<span class="params">task, index</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> (</div><div class="line">                <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;task&#125;</span>&gt;</span></span></div><div class="line">                    &#123;task&#125;</div><div class="line">                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">"deleteBtn"</span> <span class="attr">onClick</span>=<span class="string">&#123;this.removeTask.bind(this,</span> <span class="attr">index</span>)&#125;&gt;</span>删除<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            )</div><div class="line">        &#125;.bind(<span class="keyword">this</span>));</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">                <span class="tag">&lt;<span class="name">TodoListCtrl</span> <span class="attr">addTask</span>=<span class="string">&#123;this.addTask&#125;</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">ReactCSSTransitionGroup</span> <span class="attr">transitionName</span>=<span class="string">"task"</span>&gt;</span></div><div class="line">                    &#123;tasks&#125;</div><div class="line">                <span class="tag">&lt;/<span class="name">ReactCSSTransitionGroup</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>在JavaScript中做动画效果常用requestAnimationFrame，如果有不兼容的情况也可以使用setTimeout和setTimeInterval，React对这些方法都是支持的，当css3不是最好选择的时候React结合这几个方法一样能做出动画，包括canvas动画。</p>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-05-06</span><i class="fa fa-tag"></i><a href="/tag/前端/" title="前端" class="tag">前端 </a><a href="/tag/React/" title="React" class="tag">React </a></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://hunnble.github.io/2016/05/06/React-动画/,北方公园,React-动画,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2016/05/07/React-Flux/" title="React-Flux" class="btn">上一篇</a></li><li class="next pagbuttons"><a role="navigation" href="/2016/05/05/React-mixin/" title="React-mixin" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                            
+
+<a href="/tag/前端/">#前端</a> <a href="/tag/React/">#React</a>
+
+
+                        
+                    </div>
+                    <div class="post-date">
+                        2016 年 05 月 06 日
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
+    </div>
+</article>
+</section>
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
+
+    <!-- Google Analytics -->
+    
+
+</body>
+
+</html>

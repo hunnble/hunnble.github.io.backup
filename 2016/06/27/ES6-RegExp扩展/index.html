@@ -1,6 +1,74 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="hunnble,hante_hunter@163.com"><title>ES6-RegExp扩展 · 北方公园</title><meta name="description" content="ES6扩展了JavaScript中的正则
-构造函数ES5中的RegExp只能接收字符串作为参数，ES6中接收正则表达式作为参数，返回原有正则表达式的拷贝1var regex = new RegExp(/abc/ig);
-另外，第二个参数可以改变修饰符1var regex = new RegExp(/"><meta name="keywords" content="frontend,life"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">北方公园</a></h3><div class="description"><p>痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原</p></div></div></div><ul class="social-links"><li><a href="http://github.com/hunnble"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"></a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>ES6-RegExp扩展</a></h3></div><div class="post-content"><p>ES6扩展了JavaScript中的正则<br><a id="more"></a></p>
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Noski">
+    
+
+    <!-- Title -->
+    
+    <title>ES6-RegExp扩展 | 北方公园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>ES6-RegExp扩展</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>ES6扩展了JavaScript中的正则<br><a id="more"></a></p>
 <h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>ES5中的RegExp只能接收字符串作为参数，ES6中接收正则表达式作为参数，返回原有正则表达式的拷贝<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/abc/ig</span>);</div></pre></td></tr></table></figure></p>
 <p>另外，第二个参数可以改变修饰符<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/abc/ig</span>, <span class="string">"i"</span>);</div></pre></td></tr></table></figure></p>
 <p>但是在使用gulp转化ES6到ES5后代码还是形如上面这样，所以浏览器按ES5解释后报错，也许是转的有问题。</p>
@@ -8,4 +76,51 @@
 <h3 id="新增修饰符"><a href="#新增修饰符" class="headerlink" title="新增修饰符"></a>新增修饰符</h3><h4 id="u修饰符"><a href="#u修饰符" class="headerlink" title="u修饰符"></a>u修饰符</h4><p>新增的u修饰符含义为”Unicode模式”，上篇博客（ES-字符串）介绍了Es6对Unicode的0xFFFF限制没有了， 以及可以用大括号表示Unicode字符，在正则中用u修饰符来开启这些功能。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/^\uD83D/.test(<span class="string">'\uD83D\uDC2A'</span>); <span class="comment">// false</span></div><div class="line">/^\uD83D/u.test(<span class="string">'\uD83D\uDC2A'</span>); <span class="comment">// true</span></div><div class="line">/\u&#123;<span class="number">61</span>&#125;/.test(<span class="string">'a'</span>)；<span class="comment">// false</span></div><div class="line">/\u&#123;<span class="number">61</span>&#125;/u.test(<span class="string">'a'</span>)；<span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 正确返回字符串长度的函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">codePointLength</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> result = str.match(<span class="regexp">/[\s\S]/gu</span>);</div><div class="line">    <span class="keyword">return</span> result ? result.length : <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h4 id="y修饰符"><a href="#y修饰符" class="headerlink" title="y修饰符"></a>y修饰符</h4><p>y修饰符是粘连（sticky）修饰符，也不知道为什么要用y这个字母。<br>y修饰符和g修饰符类似，都是全局匹配，但是不同于g修饰符每次匹配的时候只需要剩余未匹配位置中存在匹配，而y修饰符要求匹配必须从剩余的第一个位置开始，也就是sticky。<br>与y修饰符相配，ES6为正则对象添加了sticky属性，表示是否设置了y修饰符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> r = <span class="regexp">/abc/y</span>;</div><div class="line">r.sticky <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
 <h3 id="flags属性"><a href="#flags属性" class="headerlink" title="flags属性"></a>flags属性</h3><p>ES6为正则对象添加了flags属性，会返回修饰符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> r = <span class="regexp">/abc/ig</span>;</div><div class="line">r.source <span class="comment">// "abc"</span></div><div class="line">r.flags <span class="comment">// "ig"</span></div></pre></td></tr></table></figure></p>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-06-27</span><i class="fa fa-tag"></i><a href="/tag/前端/" title="前端" class="tag">前端 </a><a href="/tag/es6/" title="es6" class="tag">es6 </a><a href="/tag/ES6标准入门学习笔记/" title="ES6标准入门学习笔记" class="tag">ES6标准入门学习笔记 </a></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://hunnble.github.io/2016/06/27/ES6-RegExp扩展/,北方公园,ES6-RegExp扩展,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2016/06/28/ES6-数值的扩展/" title="ES6-数值的扩展" class="btn">上一篇</a></li><li class="next pagbuttons"><a role="navigation" href="/2016/06/25/ES6-字符串/" title="ES6-字符串" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                            
+
+<a href="/tag/前端/">#前端</a> <a href="/tag/es6/">#es6</a> <a href="/tag/ES6标准入门学习笔记/">#ES6标准入门学习笔记</a>
+
+
+                        
+                    </div>
+                    <div class="post-date">
+                        2016 年 06 月 27 日
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
+    </div>
+</article>
+</section>
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
+
+    <!-- Google Analytics -->
+    
+
+</body>
+
+</html>

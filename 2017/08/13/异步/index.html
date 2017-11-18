@@ -1,6 +1,74 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="hunnble,hante_hunter@163.com"><title>Fiber · 北方公园</title><meta name="description" content="随着React 16-beta的正式发布，Fiber这一概念进入很多前端工程师的视角，那么，Fiber究竟是什么？
+<!DOCTYPE html>
+<html lang="zh-Hans">
 
-Fiber(纤程)在操作系统层面，coroutines和fibers是一个概念，只不过fibers是在windows下的实现。二者都是用户控制切换，且能自动保存上下文状态，切换之间可"><meta name="keywords" content="frontend,life"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">北方公园</a></h3><div class="description"><p>痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原</p></div></div></div><ul class="social-links"><li><a href="http://github.com/hunnble"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"></a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Fiber</a></h3></div><div class="post-content"><p>随着React 16-beta的正式发布，Fiber这一概念进入很多前端工程师的视角，那么，Fiber究竟是什么？</p>
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Noski">
+    
+
+    <!-- Title -->
+    
+    <title>Fiber | 北方公园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Fiber</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>随着React 16-beta的正式发布，Fiber这一概念进入很多前端工程师的视角，那么，Fiber究竟是什么？</p>
 <a id="more"></a>
 <h3 id="Fiber-纤程"><a href="#Fiber-纤程" class="headerlink" title="Fiber(纤程)"></a>Fiber(纤程)</h3><p>在操作系统层面，coroutines和fibers是一个概念，只不过fibers是在windows下的实现。二者都是用户控制切换，且能自动保存上下文状态，切换之间可以通过参数通信。下文fibers统称纤程。<br>纤程和线程的区别较大，纤程更为轻量级，一个线程可以包含一个或多个纤程；内核会对线程进行抢占式调度，所以线程一次只能执行一个纤程。<br>我的理解是，Fiber可以看做coroutines，或者可以理解为程序员而不是VM管理的线程。</p>
 <h3 id="Fiber-in-Ruby"><a href="#Fiber-in-Ruby" class="headerlink" title="Fiber in Ruby"></a>Fiber in Ruby</h3><p>Fiber在Ruby1.9之后引入，举个栗子：</p>
@@ -9,4 +77,45 @@ Fiber(纤程)在操作系统层面，coroutines和fibers是一个概念，只不
 <h3 id="React-Fiber"><a href="#React-Fiber" class="headerlink" title="React Fiber"></a>React Fiber</h3><p>进入正题，现在来介绍React Fiber。</p>
 <h4 id="为什么需要它"><a href="#为什么需要它" class="headerlink" title="为什么需要它"></a>为什么需要它</h4><p>在现有React中，更新过程是同步的，无法暂停。所以当组件树很庞大的时候，更新组件树会占用浏览器唯一的线程直到更新操作完成，所以有时会有卡顿的感觉。这种情况通常发生在组件层级较深，更新时React的调用栈也很深的情况下。</p>
 <h4 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h4><p>通过上文的对比，我们了解到纤程比线程要“细”的多，也就是说，它是一种更精密的并发处理机制。纤程可以帮助框架将更新操作进行分片，分片的目的是在每个小片进行完之后可以暂停，将浏览器线程出让，以便其他任务运行。<br>为了实现这种处理机制，React重新实现了Component渲染函数的调用栈，叫做虚拟调用栈(virtual call stack)，每个fiber可以看做一个虚拟栈帧(virtual stack frame)，我们都知道，React的渲染机制满足view = f(data)，那么在渲染函数被调用时会将fiber压栈，这个fiber代表的事务(执行计算和更新状态的单元)是可以暂停/复用/通过设置优先级来决定调用顺序的。于是渲染可以被理解为动态变化的fiber链表，可以做到高度的可控。</p>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-08-13</span><i class="fa fa-tag"></i></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://hunnble.github.io/2017/08/13/异步/,北方公园,Fiber,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2017/11/15/提前总结一下2017年/" title="提前总结一下2017年" class="btn">上一篇</a></li><li class="next pagbuttons"><a role="navigation" href="/2017/06/09/ES6-class实现私有方法/" title="ES6 class实现私有方法" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                    </div>
+                    <div class="post-date">
+                        2017 年 08 月 13 日
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
+    </div>
+</article>
+</section>
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
+
+    <!-- Google Analytics -->
+    
+
+</body>
+
+</html>

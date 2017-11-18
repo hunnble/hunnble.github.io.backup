@@ -1,5 +1,74 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="hunnble,hante_hunter@163.com"><title>Web Audio API · 北方公园</title><meta name="description" content="今天什么都没干，就看了一个Web Audio的API然后做了个音频可视化的小demo，呃呃，地址在这里。demo地址(我把音乐删掉了所以demo看不了了)
-我早就想玩音频可视化了但是以前用html5的audio标签就没有解析音频的接口。然后昨天才知道有Web Audio这个东西。然后我发现audio"><meta name="keywords" content="frontend,life"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">北方公园</a></h3><div class="description"><p>痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原</p></div></div></div><ul class="social-links"><li><a href="http://github.com/hunnble"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"></a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Web Audio API</a></h3></div><div class="post-content"><p>今天什么都没干，就看了一个Web Audio的API然后做了个音频可视化的小demo，呃呃，地址在这里。<br><del><a href="http://hunnble.github.io/JavaScript_demo/web-audio/index.html">demo地址(我把音乐删掉了所以demo看不了了)</a></del><br><a id="more"></a></p>
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Noski">
+    
+
+    <!-- Title -->
+    
+    <title>Web Audio API | 北方公园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Web Audio API</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>今天什么都没干，就看了一个Web Audio的API然后做了个音频可视化的小demo，呃呃，地址在这里。<br><del><a href="http://hunnble.github.io/JavaScript_demo/web-audio/index.html">demo地址(我把音乐删掉了所以demo看不了了)</a></del><br><a id="more"></a></p>
 <p>我早就想玩音频可视化了但是以前用html5的audio标签就没有解析音频的接口。然后昨天才知道有Web Audio这个东西。然后我发现audio标签的功能是这个API的子集，这个API跟多媒体啊信号啊有关的实现的属性和方法很多。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API" target="_blank" rel="external">Web Audio MDN文档</a><br>属性和方法太多了，我今天只掌握了用到的几个，而它们都是基于AudioContext的:</p>
 <blockquote>
 <p>AudioContext接口代表由音频模块构成的音频处理图。音频环境控制其所包含节点的创建和音频处理、解码的执行。进行任何处理前你必需创建一个音频环境，一切操作都在这个环境里进行。</p>
@@ -26,4 +95,51 @@
 <p>因为每个AudioBufferSource都只能start(noteOn)一次，所以每次切歌的时候这个方法都会重新调用生成新的。connect用来连接这些生成的实例。gainNode.gain.value就是音量了，取[0,1]区间的值。<br>整体的流程很简单，就是用XMLHTTPRequest来获取mp3，然后解析播放音频，并且解析出ArrayBuffer来用canvas生成可视化效果。直接放代码吧，写的有点乱，有时间慢慢填新效果吧，这只是个demo。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">Player.prototype.playSound = <span class="function"><span class="keyword">function</span> (<span class="params">url</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line">    self.xhr.abort();</div><div class="line">    self.xhr.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>);</div><div class="line">    self.xhr.responseType = <span class="string">'arraybuffer'</span>;</div><div class="line">    self.xhr.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        self.ac.decodeAudioData(self.xhr.response, <span class="function"><span class="keyword">function</span> (<span class="params">buffer</span>) </span>&#123;</div><div class="line">            self.isPlaying &amp;&amp; self.stop();</div><div class="line">            self.init();</div><div class="line">            self.source.buffer = buffer;</div><div class="line">            self.source.start ? self.source.start(<span class="number">0</span>) : self.source.noteOn(<span class="number">0</span>);</div><div class="line">            self.visualize();</div><div class="line">            self.isPlaying = <span class="literal">true</span>;</div><div class="line">        &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(err);</div><div class="line">        &#125;);</div><div class="line">    &#125;;</div><div class="line">    self.xhr.send();</div><div class="line">&#125;</div><div class="line"></div><div class="line">Player.prototype.changeVolume = <span class="function"><span class="keyword">function</span> (<span class="params">percent</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.gainNode.gain.value = percent;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Player.prototype.stop = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.source.stop ? <span class="keyword">this</span>.source.stop() : <span class="keyword">this</span>.source.noteOff();</div><div class="line">    <span class="keyword">this</span>.isPlaying = <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Player.prototype.visualize = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line">    <span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(self.analyser.frequencyBinCount);</div><div class="line">    <span class="keyword">var</span> v = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        self.analyser.getByteFrequencyData(arr);</div><div class="line">        self.draw(arr);</div><div class="line">        self.isPlaying ? RAF(v) : cancelRAF(v);</div><div class="line">    &#125;;</div><div class="line">    RAF(v);</div><div class="line">&#125;</div><div class="line"></div><div class="line">Player.prototype.draw = <span class="function"><span class="keyword">function</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> perWidth = <span class="keyword">this</span>.canvas.width / <span class="keyword">this</span>.arrSize;</div><div class="line">    <span class="keyword">var</span> perHeight;</div><div class="line">    <span class="keyword">this</span>.ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, <span class="keyword">this</span>.canvas.width, <span class="keyword">this</span>.canvas.height);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.arrSize; ++i) &#123;</div><div class="line">        perHeight = arr[i] / <span class="keyword">this</span>.arrSize / <span class="number">2</span> * <span class="keyword">this</span>.canvas.height;</div><div class="line">        <span class="keyword">this</span>.ctx.fillRect(perWidth * i, <span class="keyword">this</span>.canvas.height - perHeight, perWidth, perHeight);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>RAF忘了说了，是动画的那个API,RequestAnimationFrame，配合canvas很好用。</p>
 <p>嗯，这个API在MDN里也好多没有翻译的页，我在考虑要不要去帮忙翻译几个。<br>关于Audio的js库有个howler，看起来不错的，如果业务代码里要加音频什么的还是推荐用这种库。</p>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-07-30</span><i class="fa fa-tag"></i><a href="/tag/前端/" title="前端" class="tag">前端 </a></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://hunnble.github.io/2016/07/30/Web-Audio-API/,北方公园,Web Audio API,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2016/08/01/React-redux实践/" title="React-redux实践" class="btn">上一篇</a></li><li class="next pagbuttons"><a role="navigation" href="/2016/07/21/身份证号匹配正则/" title="身份证号匹配正则" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                            
+
+<a href="/tag/前端/">#前端</a>
+
+
+                        
+                    </div>
+                    <div class="post-date">
+                        2016 年 07 月 30 日
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
+    </div>
+</article>
+</section>
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
+
+    <!-- Google Analytics -->
+    
+
+</body>
+
+</html>

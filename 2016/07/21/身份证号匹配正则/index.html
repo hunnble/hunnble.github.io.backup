@@ -1,5 +1,74 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="hunnble,hante_hunter@163.com"><title>身份证号匹配正则 · 北方公园</title><meta name="description" content="今天继续编写我的正则库cr.js，长了不少知识，比如手机号的格式啊身份证号的格式啊什么的。身份证号我写的是二代身份证，也就是18位的那个。18位的身份证分成三部分：
-1.地区码前六位是地区码，跟注册身份证的地点（一般就是出生地）关联，正则表达式就很好写，是这个：1'\\d&amp;#123;6&amp;#125;'"><meta name="keywords" content="frontend,life"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">北方公园</a></h3><div class="description"><p>痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原</p></div></div></div><ul class="social-links"><li><a href="http://github.com/hunnble"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"></a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>身份证号匹配正则</a></h3></div><div class="post-content"><p>今天继续编写我的正则库cr.js，长了不少知识，比如手机号的格式啊身份证号的格式啊什么的。身份证号我写的是二代身份证，也就是18位的那个。<br><a id="more"></a><br>18位的身份证分成三部分：</p>
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Noski">
+    
+
+    <!-- Title -->
+    
+    <title>身份证号匹配正则 | 北方公园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>身份证号匹配正则</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>今天继续编写我的正则库cr.js，长了不少知识，比如手机号的格式啊身份证号的格式啊什么的。身份证号我写的是二代身份证，也就是18位的那个。<br><a id="more"></a><br>18位的身份证分成三部分：</p>
 <h4 id="1-地区码"><a href="#1-地区码" class="headerlink" title="1.地区码"></a>1.地区码</h4><p>前六位是地区码，跟注册身份证的地点（一般就是出生地）关联，正则表达式就很好写，是这个：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'\\d&#123;6&#125;'</span></div></pre></td></tr></table></figure></p>
 <h4 id="2-出生日期"><a href="#2-出生日期" class="headerlink" title="2.出生日期"></a>2.出生日期</h4><p>中间8位是出生年月日，YYYYMMDD的格式。我本来不打算把日期匹配加到库里了因为用正则匹配这种纯数字的日期还不如用js的内建函数方便。不过既然现在需要用了，也不是不会，而且身份证的年份我只取了19和20开始的，也算降低难度了（也没怎么降啊其实，但是还是自我安慰一下啊哈哈哈）<br>由于2月份的特殊性，所以要判断闰年，判断闰年分能被4整除不能被100整除的情况和能被400整除的情况。<br>先从最普遍的情况开始：每个月都有1号到28号<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'(?:(19[0-9]&#123;2&#125;|200[0-9]|201[0-6])(?:(?:(?:0[1-9]|1[0-2])(?:0[1-9]|1[0-9]|2[0-8]))'</span></div></pre></td></tr></table></figure></p>
 <p>你会看到我加了很多?:，这是用非捕获组来优化性能，我也是第一次这么用。<br>下面又是两种比较好写的情况：除二月之外的其它月份有29号和30号，13578十腊有31号<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'(?:(?:0[13-9]|1[0-2])(?:29|30))|(?:0[13578]|1[02])31))'</span></div></pre></td></tr></table></figure></p>
@@ -7,4 +76,51 @@
 <p>啊，其实也不长哈，我怎么错了那么多次才写好…<br>只需要19和20开头的年份，<code>(0[48]|[2468][048]|[13579][26])</code>是能被4整除不能被100整除的后两位，而另一种情况是能被400整除的，如果是从公园0年开始计的话应该是<code>(0[48]|[2468][048]|[13579][26])00</code>这样的，后两位肯定是00，前两位能被4整除就可以。然而我只用(1900, 2016]这个区间，所以符合的只有2000这一个。<br>最后再放上<code>0229</code>。<br>最后的最后把这几个小串用<code>|</code>连接起来。</p>
 <h4 id="3-最后4位"><a href="#3-最后4位" class="headerlink" title="3.最后4位"></a>3.最后4位</h4><p>光用地区和日期区分肯定会有很多同年同月同日同地区出生的人重合，所以后四位是区分码，其中第三位，也就是身份证的第十七位遵守男单数女双数的规则。最后一位也就是身份证的第十八位除了阿拉伯数字之外还可以出现大写英文字母X。<br>所以这么匹配就好了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'([0-9]&#123;3&#125;[0-9X])'</span></div></pre></td></tr></table></figure></p>
 <h4 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h4><p>我上面写的都是字符串形式的，所以最后把字符串合并，然后用它创建新的RegExp实例就可以了。<br>详细代码点<a href="https://github.com/hunnble/common_regexps/blob/master/index.js" target="_blank" rel="external">这里</a></p>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-07-21</span><i class="fa fa-tag"></i><a href="/tag/前端/" title="前端" class="tag">前端 </a><a href="/tag/regexp/" title="regexp" class="tag">regexp </a></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://hunnble.github.io/2016/07/21/身份证号匹配正则/,北方公园,身份证号匹配正则,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2016/07/30/Web-Audio-API/" title="Web Audio API" class="btn">上一篇</a></li><li class="next pagbuttons"><a role="navigation" href="/2016/07/11/几种跨域的方法/" title="几种跨域的方法" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                            
+
+<a href="/tag/前端/">#前端</a> <a href="/tag/regexp/">#regexp</a>
+
+
+                        
+                    </div>
+                    <div class="post-date">
+                        2016 年 07 月 21 日
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
+    </div>
+</article>
+</section>
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
+
+    <!-- Google Analytics -->
+    
+
+</body>
+
+</html>

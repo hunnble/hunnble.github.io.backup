@@ -1,7 +1,123 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="hunnble,hante_hunter@163.com"><title>MVC模式学习笔记 · 北方公园</title><meta name="description" content="MVC(Model-View-Control)模式是一种很流行的架构,它将业务数据(Model)与用户界面(View)隔离,第三个组件(Control)管理逻辑和用户输入。
-Model(模型)模型管理数据,不涉及页面和表示层。当模型改变时,它通常会通知它的观察者(Observer模式)或者订阅者(P"><meta name="keywords" content="frontend,life"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">北方公园</a></h3><div class="description"><p>痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原</p></div></div></div><ul class="social-links"><li><a href="http://github.com/hunnble"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"></a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>MVC模式学习笔记</a></h3></div><div class="post-content"><p>MVC(Model-View-Control)模式是一种很流行的架构,它将业务数据(Model)与用户界面(View)隔离,第三个组件(Control)管理逻辑和用户输入。<br><a id="more"></a></p>
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="痛苦如此持久，像蜗牛充满耐心地移动；快乐如此短暂，像兔子的尾巴掠过秋天的草原">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Noski">
+    
+
+    <!-- Title -->
+    
+    <title>MVC模式学习笔记 | 北方公园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>MVC模式学习笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>MVC(Model-View-Control)模式是一种很流行的架构,它将业务数据(Model)与用户界面(View)隔离,第三个组件(Control)管理逻辑和用户输入。<br><a id="more"></a></p>
 <h3 id="Model-模型"><a href="#Model-模型" class="headerlink" title="Model(模型)"></a>Model(模型)</h3><p>模型管理数据,不涉及页面和表示层。当模型改变时,它通常会通知它的观察者(Observer模式)或者订阅者(Publish/Subscribe模式)。<br>模型一般需要具持久化。持久化可以允许模型被编辑和更新,保存最新状态在内存中、用户的localStorage中或与数据库同步。<br>此外一个模型可能有多个观察它的视图(一个视图也应该可以观察多个模型吧,又不是一对一映射关系)</p>
 <h3 id="View-视图"><a href="#View-视图" class="headerlink" title="View(视图)"></a>View(视图)</h3><p>视图是模型的可视化表示。一个视图通常检测一个模型(我刚才想多了诶)，并在模型更改时进行通知，使视图自己可以进行相应的刷新。<br>用户可以与视图交互,包括读取(视图背后的)模型。可以通过视图便利地编辑模型。<br>然而更新模型的实际任务是在处理逻辑的控制器上…</p>
 <h3 id="Controller-控制器"><a href="#Controller-控制器" class="headerlink" title="Controller(控制器)"></a>Controller(控制器)</h3><p>控制器就是刚才所说的模型与视图之间的中介,用户操作视图,它更新模型,模型更新,它通知视图。<br>专业一点地说,控制器在MVC中控制器扮演地角色是视图策略模式的简易化。视图可以委托它处理用户事件或者处理模型更改。</p>
 <h3 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h3><p>我做过一个task是这么要求的,一个模拟飞船飞行的页面(View),页面里有个按钮控制创建飞船,还有控制飞船飞行停止和销毁的按钮。发送指令以后在javascript代码中要先发给一个中介者,中介者处理(模拟丢包率什么的)后再发给控制中心对象让控制中心更新控制中心处的状态和数据(飞船燃料速度什么的)。这个就需要分别编写模型视图控制器模块。<br>写这种架构的代码的感受就是分的比较清楚,模型和视图耦合低了,感觉还是让开发前端代码变得更轻松了。<br>对MV*的了解还是很浅,keep learning~</p>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-04-07</span><i class="fa fa-tag"></i><a href="/tag/设计模式/" title="设计模式" class="tag">设计模式 </a></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://hunnble.github.io/2016/04/07/MVC模式/,北方公园,MVC模式学习笔记,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2016/04/09/Gulp入门/" title="Gulp入门" class="btn">上一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                            
+
+<a href="/tag/设计模式/">#设计模式</a>
+
+
+                        
+                    </div>
+                    <div class="post-date">
+                        2016 年 04 月 07 日
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
+    </div>
+</article>
+</section>
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
+
+    <!-- Google Analytics -->
+    
+
+</body>
+
+</html>
