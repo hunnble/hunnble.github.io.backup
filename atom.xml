@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hunnble.github.io/"/>
-  <updated>2017-11-15T12:51:29.000Z</updated>
+  <updated>2018-07-02T07:48:21.000Z</updated>
   <id>http://hunnble.github.io/</id>
   
   <author>
@@ -16,11 +16,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一种让自己专注的好办法</title>
+    <link href="http://hunnble.github.io/2018/07/02/%E4%B8%80%E7%A7%8D%E8%AE%A9%E8%87%AA%E5%B7%B1%E4%B8%93%E6%B3%A8%E7%9A%84%E5%A5%BD%E5%8A%9E%E6%B3%95/"/>
+    <id>http://hunnble.github.io/2018/07/02/一种让自己专注的好办法/</id>
+    <published>2018-07-02T07:46:09.000Z</published>
+    <updated>2018-07-02T07:48:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>用尖的那个牙咬舌尖，注意力就会特别集中，亲测有效</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;用尖的那个牙咬舌尖，注意力就会特别集中，亲测有效&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="啥也不是" scheme="http://hunnble.github.io/tag/%E5%95%A5%E4%B9%9F%E4%B8%8D%E6%98%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>提前总结一下2017年</title>
     <link href="http://hunnble.github.io/2017/11/15/%E6%8F%90%E5%89%8D%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B2017%E5%B9%B4/"/>
     <id>http://hunnble.github.io/2017/11/15/提前总结一下2017年/</id>
     <published>2017-11-15T12:48:17.000Z</published>
-    <updated>2017-11-15T12:51:29.000Z</updated>
+    <updated>2018-07-02T07:47:26.000Z</updated>
     
     <content type="html"><![CDATA[<p>1.发现了更多自己不擅长做的事<br>2.赚钱，花更多的钱<br>3.有一段时间没有自我驱动学习，因为忙着做不擅长做的东西，看来选择很重要</p>
 ]]></content>
@@ -32,6 +54,8 @@
     
     </summary>
     
+    
+      <category term="啥也不是" scheme="http://hunnble.github.io/tag/%E5%95%A5%E4%B9%9F%E4%B8%8D%E6%98%AF/"/>
     
   </entry>
   
@@ -664,39 +688,6 @@
     <summary type="html">
     
       &lt;p&gt;ES6扩展了JavaScript中的正则&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
-    
-      <category term="ES6标准入门学习笔记" scheme="http://hunnble.github.io/tag/ES6%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6-字符串</title>
-    <link href="http://hunnble.github.io/2016/06/25/ES6-%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    <id>http://hunnble.github.io/2016/06/25/ES6-字符串/</id>
-    <published>2016-06-25T15:23:09.000Z</published>
-    <updated>2016-12-26T14:57:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>ES6扩展了很多字符串的属性和方法。<br><a id="more"></a></p>
-<h3 id="大括号表示Unicode字符"><a href="#大括号表示Unicode字符" class="headerlink" title="大括号表示Unicode字符"></a>大括号表示Unicode字符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> t = <span class="string">"\uD842\uDFB7"</span>;</div><div class="line"><span class="keyword">let</span> t1 = <span class="string">"\u&#123;20BB7&#125;"</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(t, t1); <span class="comment">//𠮷 𠮷</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'\u&#123;1f680&#125;'</span> === <span class="string">'\uD83D\uDE80'</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure>
-<p>现在可以不受0xFFFF的最大限制了，只要把码点放到大括号里就可以正确解读。</p>
-<h3 id="codePointAt-fromCodePoint-at"><a href="#codePointAt-fromCodePoint-at" class="headerlink" title="codePointAt, fromCodePoint, at"></a>codePointAt, fromCodePoint, at</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(t.charCodeAt(<span class="number">0</span>)); <span class="comment">// 55362</span></div><div class="line"><span class="built_in">console</span>.log(t.codePointAt(<span class="number">0</span>)); <span class="comment">// 134071</span></div></pre></td></tr></table></figure>
-<p>还是因为javascript中对4个字节存储的字符无法正确处理，ES6中对charCodeAt升级出codePointAt方法，可以正确处理4个字节存储的字符了。返回值是32位UTF-16字符的码点。<br>相应的，对于fromCharCode也升级出fromCodePoint方法， charAt升级出at方法。</p>
-<h3 id="includes-startsWith-endsWith"><a href="#includes-startsWith-endsWith" class="headerlink" title="includes, startsWith, endsWith"></a>includes, startsWith, endsWith</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> goodnight = <span class="string">'good night'</span>;</div><div class="line"><span class="built_in">console</span>.log(goodnight.includes(<span class="string">'ood'</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(goodnight.startsWith(<span class="string">'good'</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(goodnight.endsWith(<span class="string">'night'</span>)); <span class="comment">// true</span></div></pre></td></tr></table></figure>
-<p>这三个方法都支持第二个参数，includes和startsWith的第二个参数表示开始搜索的位置，而endsWith的第二个参数表示对前n个字符进行处理。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> goodnight = <span class="string">'good night'</span>;</div><div class="line"><span class="built_in">console</span>.log(goodnight.includes(<span class="string">'ood'</span>, <span class="number">1</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(goodnight.startsWith(<span class="string">'good'</span>, <span class="number">1</span>)); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(goodnight.endsWith(<span class="string">'night'</span>, <span class="number">5</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
-<h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat"></a>repeat</h3><p>返回一个新字符串，值是原字符串重复n次<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(goodnight.repeat(<span class="number">10</span>));</div></pre></td></tr></table></figure></p>
-<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>使用反引号括起来的字符串称为模板字符串（template string），可以换行的时候保留空格和缩进，还可以使用变量, 将变量名放在${}中即可。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="number">1</span>,</div><div class="line">    y = <span class="number">3</span>;</div><div class="line"></div><div class="line"><span class="string">`<span class="subst">$&#123;x&#125;</span> + <span class="subst">$&#123;y&#125;</span></span></div><div class="line">   = ?`</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;ES6扩展了很多字符串的属性和方法。&lt;br&gt;
     
     </summary>
     
