@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hunnble.github.io/"/>
-  <updated>2018-07-02T07:48:21.000Z</updated>
+  <updated>2018-07-13T16:10:46.000Z</updated>
   <id>http://hunnble.github.io/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新的结束和新的开始</title>
+    <link href="http://hunnble.github.io/2018/07/13/%E6%96%B0%E7%9A%84%E7%BB%93%E6%9D%9F%E5%92%8C%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
+    <id>http://hunnble.github.io/2018/07/13/新的结束和新的开始/</id>
+    <published>2018-07-13T15:57:15.000Z</published>
+    <updated>2018-07-13T16:10:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>写下这段话的时候听的歌是《OGNI COSA》，很好听，中文名字是《每一件事》<br>感觉自己以前有很多好的机遇没有把握住，之前听别人说人生不如意十之八九，也不知道是骗人的还是真的。反正我觉得我不如意的事情最多十之一二，但是还是会很遗憾。遗憾大多不是希望没发生的事情发生，而是希望有些事情当初没有做或者做得成熟一些。<br>有的人缅怀过去是因为对现状的不满，我倒是没有不满，因为对自己的期望一直不高，所以相当满意现在的状况了。最近想把霍乱时期的爱情看完，爸妈来看我的时候好好陪陪他们，工作别出什么差错，至于以后会对现在又什么遗憾，还是和过去一样留到以后吧。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写下这段话的时候听的歌是《OGNI COSA》，很好听，中文名字是《每一件事》&lt;br&gt;感觉自己以前有很多好的机遇没有把握住，之前听别人说人生不如意十之八九，也不知道是骗人的还是真的。反正我觉得我不如意的事情最多十之一二，但是还是会很遗憾。遗憾大多不是希望没发生的事情发生，而
+    
+    </summary>
+    
+    
+      <category term="啥也不是" scheme="http://hunnble.github.io/tag/%E5%95%A5%E4%B9%9F%E4%B8%8D%E6%98%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>一种让自己专注的好办法</title>
@@ -656,38 +677,6 @@
     <summary type="html">
     
       &lt;p&gt;JS的数值设计的不好，嗯，但是ES6说，还可以抢救一下…&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
-    
-      <category term="ES6标准入门学习笔记" scheme="http://hunnble.github.io/tag/ES6%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6-RegExp扩展</title>
-    <link href="http://hunnble.github.io/2016/06/27/ES6-RegExp%E6%89%A9%E5%B1%95/"/>
-    <id>http://hunnble.github.io/2016/06/27/ES6-RegExp扩展/</id>
-    <published>2016-06-27T14:39:50.000Z</published>
-    <updated>2016-12-26T14:57:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>ES6扩展了JavaScript中的正则<br><a id="more"></a></p>
-<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>ES5中的RegExp只能接收字符串作为参数，ES6中接收正则表达式作为参数，返回原有正则表达式的拷贝<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/abc/ig</span>);</div></pre></td></tr></table></figure></p>
-<p>另外，第二个参数可以改变修饰符<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/abc/ig</span>, <span class="string">"i"</span>);</div></pre></td></tr></table></figure></p>
-<p>但是在使用gulp转化ES6到ES5后代码还是形如上面这样，所以浏览器按ES5解释后报错，也许是转的有问题。</p>
-<h3 id="字符串方法交给正则表达式对象"><a href="#字符串方法交给正则表达式对象" class="headerlink" title="字符串方法交给正则表达式对象"></a>字符串方法交给正则表达式对象</h3><p>match, replace, search, split是String对象的四个可以调用正则表达式的方法，ES6将这四个方法分别编程调用RegExp上的Symbol.*方法。</p>
-<h3 id="新增修饰符"><a href="#新增修饰符" class="headerlink" title="新增修饰符"></a>新增修饰符</h3><h4 id="u修饰符"><a href="#u修饰符" class="headerlink" title="u修饰符"></a>u修饰符</h4><p>新增的u修饰符含义为”Unicode模式”，上篇博客（ES-字符串）介绍了Es6对Unicode的0xFFFF限制没有了， 以及可以用大括号表示Unicode字符，在正则中用u修饰符来开启这些功能。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/^\uD83D/.test(<span class="string">'\uD83D\uDC2A'</span>); <span class="comment">// false</span></div><div class="line">/^\uD83D/u.test(<span class="string">'\uD83D\uDC2A'</span>); <span class="comment">// true</span></div><div class="line">/\u&#123;<span class="number">61</span>&#125;/.test(<span class="string">'a'</span>)；<span class="comment">// false</span></div><div class="line">/\u&#123;<span class="number">61</span>&#125;/u.test(<span class="string">'a'</span>)；<span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 正确返回字符串长度的函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">codePointLength</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> result = str.match(<span class="regexp">/[\s\S]/gu</span>);</div><div class="line">    <span class="keyword">return</span> result ? result.length : <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="y修饰符"><a href="#y修饰符" class="headerlink" title="y修饰符"></a>y修饰符</h4><p>y修饰符是粘连（sticky）修饰符，也不知道为什么要用y这个字母。<br>y修饰符和g修饰符类似，都是全局匹配，但是不同于g修饰符每次匹配的时候只需要剩余未匹配位置中存在匹配，而y修饰符要求匹配必须从剩余的第一个位置开始，也就是sticky。<br>与y修饰符相配，ES6为正则对象添加了sticky属性，表示是否设置了y修饰符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> r = <span class="regexp">/abc/y</span>;</div><div class="line">r.sticky <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
-<h3 id="flags属性"><a href="#flags属性" class="headerlink" title="flags属性"></a>flags属性</h3><p>ES6为正则对象添加了flags属性，会返回修饰符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> r = <span class="regexp">/abc/ig</span>;</div><div class="line">r.source <span class="comment">// "abc"</span></div><div class="line">r.flags <span class="comment">// "ig"</span></div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;ES6扩展了JavaScript中的正则&lt;br&gt;
     
     </summary>
     
