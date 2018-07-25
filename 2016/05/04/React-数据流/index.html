@@ -68,7 +68,8 @@
         <div class="row">
             <!-- Post Main Content -->
             <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>这篇博客主要介绍React中的数据流。区分props和state。<br><a id="more"></a></p>
+                <p>这篇博客主要介绍React中的数据流。区分props和state。</p>
+<a id="more"></a>
 <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>React中，数据的流向是单向的，也就是只能从父节点传递到子节点，具体方法是通过props。如果顶层组件的某个prop改变了，React会递归向下遍历整棵组件树，重新渲染所有这个属性的组件。<br>React组件本身也具有自己的状态，也就是state。</p>
 <h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><p>props是properties的缩写，它的数据类型可以是任意的。<br>在挂载组件时设置props：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> survey = [&#123;<span class="attr">title</span>: <span class="string">'master'</span>&#125;];</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">Surveys</span> <span class="attr">survey</span>=<span class="string">&#123;survey&#125;</span> /&gt;</span></span></div></pre></td></tr></table></figure></p>
 <p>组件实例还有一个setProps方法，但是不常用。<br>组件使用this.props访问自身props，但不能修改自己的props。</p>

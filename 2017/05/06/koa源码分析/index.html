@@ -68,7 +68,8 @@
         <div class="row">
             <!-- Post Main Content -->
             <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>本文是对Node.js框架koa部分源码的分析，如有错误欢迎指正。<br><a id="more"></a></p>
+                <p>本文是对Node.js框架koa部分源码的分析，如有错误欢迎指正。</p>
+<a id="more"></a>
 <h3 id="从构造函数开始"><a href="#从构造函数开始" class="headerlink" title="从构造函数开始"></a>从构造函数开始</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>() &#123;</div><div class="line">  <span class="keyword">super</span>();</div><div class="line">  <span class="keyword">this</span>.proxy = <span class="literal">false</span>;</div><div class="line">  <span class="keyword">this</span>.middleware = [];</div><div class="line">  <span class="keyword">this</span>.subdomainOffset = <span class="number">2</span>;</div><div class="line">  <span class="keyword">this</span>.env = process.env.NODE_ENV || <span class="string">'development'</span>;</div><div class="line">  <span class="keyword">this</span>.context = <span class="built_in">Object</span>.create(context);</div><div class="line">  <span class="keyword">this</span>.request = <span class="built_in">Object</span>.create(request);</div><div class="line">  <span class="keyword">this</span>.response = <span class="built_in">Object</span>.create(response);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>koa的Application类继承了events模块，在构造函数中做了这些事情：</p>
 <ul>

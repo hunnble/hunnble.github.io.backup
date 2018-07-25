@@ -68,7 +68,8 @@
         <div class="row">
             <!-- Post Main Content -->
             <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>ES6扩展了JavaScript中的正则<br><a id="more"></a></p>
+                <p>ES6扩展了JavaScript中的正则</p>
+<a id="more"></a>
 <h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>ES5中的RegExp只能接收字符串作为参数，ES6中接收正则表达式作为参数，返回原有正则表达式的拷贝<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/abc/ig</span>);</div></pre></td></tr></table></figure></p>
 <p>另外，第二个参数可以改变修饰符<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/abc/ig</span>, <span class="string">"i"</span>);</div></pre></td></tr></table></figure></p>
 <p>但是在使用gulp转化ES6到ES5后代码还是形如上面这样，所以浏览器按ES5解释后报错，也许是转的有问题。</p>

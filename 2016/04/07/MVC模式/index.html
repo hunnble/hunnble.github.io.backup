@@ -68,7 +68,8 @@
         <div class="row">
             <!-- Post Main Content -->
             <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>MVC(Model-View-Control)模式是一种很流行的架构,它将业务数据(Model)与用户界面(View)隔离,第三个组件(Control)管理逻辑和用户输入。<br><a id="more"></a></p>
+                <p>MVC(Model-View-Control)模式是一种很流行的架构,它将业务数据(Model)与用户界面(View)隔离,第三个组件(Control)管理逻辑和用户输入。</p>
+<a id="more"></a>
 <h3 id="Model-模型"><a href="#Model-模型" class="headerlink" title="Model(模型)"></a>Model(模型)</h3><p>模型管理数据,不涉及页面和表示层。当模型改变时,它通常会通知它的观察者(Observer模式)或者订阅者(Publish/Subscribe模式)。<br>模型一般需要具持久化。持久化可以允许模型被编辑和更新,保存最新状态在内存中、用户的localStorage中或与数据库同步。<br>此外一个模型可能有多个观察它的视图(一个视图也应该可以观察多个模型吧,又不是一对一映射关系)</p>
 <h3 id="View-视图"><a href="#View-视图" class="headerlink" title="View(视图)"></a>View(视图)</h3><p>视图是模型的可视化表示。一个视图通常检测一个模型(我刚才想多了诶)，并在模型更改时进行通知，使视图自己可以进行相应的刷新。<br>用户可以与视图交互,包括读取(视图背后的)模型。可以通过视图便利地编辑模型。<br>然而更新模型的实际任务是在处理逻辑的控制器上…</p>
 <h3 id="Controller-控制器"><a href="#Controller-控制器" class="headerlink" title="Controller(控制器)"></a>Controller(控制器)</h3><p>控制器就是刚才所说的模型与视图之间的中介,用户操作视图,它更新模型,模型更新,它通知视图。<br>专业一点地说,控制器在MVC中控制器扮演地角色是视图策略模式的简易化。视图可以委托它处理用户事件或者处理模型更改。</p>

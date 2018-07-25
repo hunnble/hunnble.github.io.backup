@@ -68,7 +68,8 @@
         <div class="row">
             <!-- Post Main Content -->
             <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>ES6扩展了很多字符串的属性和方法。<br><a id="more"></a></p>
+                <p>ES6扩展了很多字符串的属性和方法。</p>
+<a id="more"></a>
 <h3 id="大括号表示Unicode字符"><a href="#大括号表示Unicode字符" class="headerlink" title="大括号表示Unicode字符"></a>大括号表示Unicode字符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> t = <span class="string">"\uD842\uDFB7"</span>;</div><div class="line"><span class="keyword">let</span> t1 = <span class="string">"\u&#123;20BB7&#125;"</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(t, t1); <span class="comment">//𠮷 𠮷</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'\u&#123;1f680&#125;'</span> === <span class="string">'\uD83D\uDE80'</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure>
 <p>现在可以不受0xFFFF的最大限制了，只要把码点放到大括号里就可以正确解读。</p>
 <h3 id="codePointAt-fromCodePoint-at"><a href="#codePointAt-fromCodePoint-at" class="headerlink" title="codePointAt, fromCodePoint, at"></a>codePointAt, fromCodePoint, at</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(t.charCodeAt(<span class="number">0</span>)); <span class="comment">// 55362</span></div><div class="line"><span class="built_in">console</span>.log(t.codePointAt(<span class="number">0</span>)); <span class="comment">// 134071</span></div></pre></td></tr></table></figure>

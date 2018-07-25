@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hunnble.github.io/"/>
-  <updated>2018-07-14T15:54:39.000Z</updated>
+  <updated>2018-07-25T15:38:36.000Z</updated>
   <id>http://hunnble.github.io/</id>
   
   <author>
@@ -16,18 +16,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>新的结束和新的开始</title>
-    <link href="http://hunnble.github.io/2018/07/13/%E6%96%B0%E7%9A%84%E7%BB%93%E6%9D%9F%E5%92%8C%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
-    <id>http://hunnble.github.io/2018/07/13/新的结束和新的开始/</id>
-    <published>2018-07-13T15:57:15.000Z</published>
-    <updated>2018-07-14T15:54:39.000Z</updated>
+    <title>首屏优化部分知识点</title>
+    <link href="http://hunnble.github.io/2018/07/25/%E9%A6%96%E5%B1%8F%E4%BC%98%E5%8C%96%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>http://hunnble.github.io/2018/07/25/首屏优化部分知识点/</id>
+    <published>2018-07-25T14:31:10.000Z</published>
+    <updated>2018-07-25T15:38:36.000Z</updated>
     
-    <content type="html"><![CDATA[<p>写下这段话的时候听的歌是《OGNI COSA》，很好听，中文名字是《每一件事》<br>感觉自己以前有很多好的机遇没有把握住，之前听别人说人生不如意十之八九，也不知道是骗人的还是真的。反正我觉得我不如意的事情最多十之一二，但是还是会很遗憾。遗憾大多不是希望没发生的事情发生，而是希望有些事情当初没有做或者做得成熟一些。<br>有的人缅怀过去是因为对现状的不满，我倒是没有不满，因为对自己的期望一直不高，所以相当满意现在的状况了。最近想把霍乱时期的爱情看完，爸妈来看我的时候好好陪陪他们，工作别出什么差错，至于以后会对现在有什么遗憾，还是和过去一样留到以后吧。</p>
+    <content type="html"><![CDATA[<p>之前对体验优化方面深入了解的不多，最近打算系统地学习一下这方面的知识，今天先总结一些首屏优化相关的知识点。</p>
+<a id="more"></a>
+<p>首屏时间是指浏览器从响应用户输入网络地址，到首屏内容渲染完成的时间。<br>一些优化手段：</p>
+<ul>
+<li>skeleton screen（骨架屏）：在加载完成前使用图形进行占位，在加载完成后换成真实的内容</li>
+<li>交互优化：加载完成前显示一个菊花什么的，和骨架屏一样都是比较直接地提升用户体验</li>
+<li>路由懒加载：代码分拆打包，按路由来加载代码块</li>
+<li>渐进式预加载，并行加载资源和数据</li>
+<li>服务端渲染，同构直出，即使是部分同构</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;写下这段话的时候听的歌是《OGNI COSA》，很好听，中文名字是《每一件事》&lt;br&gt;感觉自己以前有很多好的机遇没有把握住，之前听别人说人生不如意十之八九，也不知道是骗人的还是真的。反正我觉得我不如意的事情最多十之一二，但是还是会很遗憾。遗憾大多不是希望没发生的事情发生，而
+      &lt;p&gt;之前对体验优化方面深入了解的不多，最近打算系统地学习一下这方面的知识，今天先总结一些首屏优化相关的知识点。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新的结束和新的开始</title>
+    <link href="http://hunnble.github.io/2018/07/13/%E6%96%B0%E7%9A%84%E7%BB%93%E6%9D%9F%E5%92%8C%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
+    <id>http://hunnble.github.io/2018/07/13/新的结束和新的开始/</id>
+    <published>2018-07-13T15:57:15.000Z</published>
+    <updated>2018-07-25T15:37:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<p>写下这段话的时候听的歌是《OGNI COSA》，很好听，中文名字是《每一件事》<br>感觉自己以前有很多好的机遇没有把握住，之前听别人说人生不如意十之八九，也不知道是骗人的还是真的。反正我觉得我不如意的事情最多十之一二，但是还是会很遗憾。遗憾大多不是希望没发生的事情发生，而是希望有些事情当初没有做或者做得成熟一些。<br>有的人缅怀过去是因为对现状的不满，我倒是没有不满，因为对自己的期望一直不高，所以相当满意现在的状况了。最近想把霍乱时期的爱情看完，爸妈来看我的时候好好陪陪他们，工作别出什么差错，至于以后会对现在有什么遗憾，还是和过去一样留到以后吧。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;写下这段话的时候听的歌是《OGNI COSA》，很好听，中文名字是《每一件事》&lt;br&gt;感觉自己以前有很多好的机遇没有把握住，之前听别人说人生不如意十之八九，也不知道是骗人的还是真的。反正我觉得我不如意的事情最多十之一二，但是还是会很遗憾。
     
     </summary>
     
@@ -112,9 +144,10 @@
     <link href="http://hunnble.github.io/2017/06/09/ES6-class%E5%AE%9E%E7%8E%B0%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/"/>
     <id>http://hunnble.github.io/2017/06/09/ES6-class实现私有方法/</id>
     <published>2017-06-09T09:18:14.000Z</published>
-    <updated>2017-06-09T10:28:14.000Z</updated>
+    <updated>2018-07-25T15:35:07.000Z</updated>
     
-    <content type="html"><![CDATA[<p>ES6中的<code>class</code>是没有<code>private</code>、<code>protected</code>和<code>public</code>关键字的，也就是说，在语法层面直接对<code>class</code>进行访问权限控制是无法做到的。这篇文章会介绍一些可行的解决方法。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>ES6中的<code>class</code>是没有<code>private</code>、<code>protected</code>和<code>public</code>关键字的，也就是说，在语法层面直接对<code>class</code>进行访问权限控制是无法做到的。这篇文章会介绍一些可行的解决方法。</p>
+<a id="more"></a>
 <h3 id="简单解决方法"><a href="#简单解决方法" class="headerlink" title="简单解决方法"></a>简单解决方法</h3><p>如果只考虑访问权限的限制，可以使用如下的解决方案</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> privateMethods = &#123;</div><div class="line">  privateMethod () &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.say);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Service</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">this</span>.say = <span class="string">"Hello"</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  publicMethod() &#123;</div><div class="line">    privateMethods.privateMethod.call(<span class="keyword">this</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>也就是说，在外部维护所谓的<code>private</code>方法，然后在使用时通过<code>call/apply</code>来把<code>this</code>绑定到类的实例上。这是一种丑陋的解决方案，因为<code>privateMethods</code>根本不是<code>Service</code>类的方法，只是在调用的时候通过额外的代码使其能访问到自己。然而，如果一个东西走起来像鸭子，叫起来也像鸭子，那么它就是鸭子，这种方案是可行的。</p>
@@ -130,7 +163,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;ES6中的&lt;code&gt;class&lt;/code&gt;是没有&lt;code&gt;private&lt;/code&gt;、&lt;code&gt;protected&lt;/code&gt;和&lt;code&gt;public&lt;/code&gt;关键字的，也就是说，在语法层面直接对&lt;code&gt;class&lt;/code&gt;进行访问权限控制是无法做到的。这篇文章会介绍一些可行的解决方法。&lt;br&gt;
+      &lt;p&gt;ES6中的&lt;code&gt;class&lt;/code&gt;是没有&lt;code&gt;private&lt;/code&gt;、&lt;code&gt;protected&lt;/code&gt;和&lt;code&gt;public&lt;/code&gt;关键字的，也就是说，在语法层面直接对&lt;code&gt;class&lt;/code&gt;进行访问权限控制是无法做到的。这篇文章会介绍一些可行的解决方法。&lt;/p&gt;
     
     </summary>
     
@@ -146,9 +179,10 @@
     <link href="http://hunnble.github.io/2017/05/06/koa%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
     <id>http://hunnble.github.io/2017/05/06/koa源码分析/</id>
     <published>2017-05-06T02:10:18.000Z</published>
-    <updated>2017-05-06T08:03:12.000Z</updated>
+    <updated>2018-07-25T15:34:27.000Z</updated>
     
-    <content type="html"><![CDATA[<p>本文是对Node.js框架koa部分源码的分析，如有错误欢迎指正。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>本文是对Node.js框架koa部分源码的分析，如有错误欢迎指正。</p>
+<a id="more"></a>
 <h3 id="从构造函数开始"><a href="#从构造函数开始" class="headerlink" title="从构造函数开始"></a>从构造函数开始</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>() &#123;</div><div class="line">  <span class="keyword">super</span>();</div><div class="line">  <span class="keyword">this</span>.proxy = <span class="literal">false</span>;</div><div class="line">  <span class="keyword">this</span>.middleware = [];</div><div class="line">  <span class="keyword">this</span>.subdomainOffset = <span class="number">2</span>;</div><div class="line">  <span class="keyword">this</span>.env = process.env.NODE_ENV || <span class="string">'development'</span>;</div><div class="line">  <span class="keyword">this</span>.context = <span class="built_in">Object</span>.create(context);</div><div class="line">  <span class="keyword">this</span>.request = <span class="built_in">Object</span>.create(request);</div><div class="line">  <span class="keyword">this</span>.response = <span class="built_in">Object</span>.create(response);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>koa的Application类继承了events模块，在构造函数中做了这些事情：</p>
 <ul>
@@ -180,7 +214,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;本文是对Node.js框架koa部分源码的分析，如有错误欢迎指正。&lt;br&gt;
+      &lt;p&gt;本文是对Node.js框架koa部分源码的分析，如有错误欢迎指正。&lt;/p&gt;
     
     </summary>
     
@@ -194,9 +228,10 @@
     <link href="http://hunnble.github.io/2016/12/26/JavaScript%E4%B8%AD%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
     <id>http://hunnble.github.io/2016/12/26/JavaScript中的装饰器/</id>
     <published>2016-12-26T14:55:19.000Z</published>
-    <updated>2017-01-02T02:19:52.000Z</updated>
+    <updated>2018-07-25T15:37:26.000Z</updated>
     
-    <content type="html"><![CDATA[<p>如果你学过<code>python</code>，一定对装饰器已经很熟悉了，在新标准下，<code>JavaScript</code>也支持了装饰器语法。如果你没有使用过装饰器，希望这篇文章可以带你入门。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>如果你学过<code>python</code>，一定对装饰器已经很熟悉了，在新标准下，<code>JavaScript</code>也支持了装饰器语法。如果你没有使用过装饰器，希望这篇文章可以带你入门。</p>
+<a id="more"></a>
 <h3 id="我们所熟知的Python中的装饰器"><a href="#我们所熟知的Python中的装饰器" class="headerlink" title="我们所熟知的Python中的装饰器"></a>我们所熟知的Python中的装饰器</h3><p>装饰器装饰的是谁？是函数。<br>装饰器长什么样子？以<code>@</code>开头，接着是装饰器函数的名字和参数（可选），接下来是被修饰的函数和被修饰函数的参数。举个栗子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator(dec_opt_args)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">funcBeDecorated</span><span class="params">(func_opt_args)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
 <p>至于装饰器解决了什么问题，以及有参数无参数的装饰器的区别，我觉得下面的代码可以解释清楚：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@decorator1</span></div><div class="line"><span class="meta">@decorator2(args)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
 <p>可以理解为<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func = decorator1(decorator2(args)(func))</div></pre></td></tr></table></figure></p>
@@ -212,7 +247,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;如果你学过&lt;code&gt;python&lt;/code&gt;，一定对装饰器已经很熟悉了，在新标准下，&lt;code&gt;JavaScript&lt;/code&gt;也支持了装饰器语法。如果你没有使用过装饰器，希望这篇文章可以带你入门。&lt;br&gt;
+      &lt;p&gt;如果你学过&lt;code&gt;python&lt;/code&gt;，一定对装饰器已经很熟悉了，在新标准下，&lt;code&gt;JavaScript&lt;/code&gt;也支持了装饰器语法。如果你没有使用过装饰器，希望这篇文章可以带你入门。&lt;/p&gt;
     
     </summary>
     
@@ -226,14 +261,16 @@
     <link href="http://hunnble.github.io/2016/12/13/%E8%AE%B0%E4%B8%80%E4%B8%AAReact%E7%9B%B8%E5%85%B3%E7%9A%84%E5%9D%91/"/>
     <id>http://hunnble.github.io/2016/12/13/记一个React相关的坑/</id>
     <published>2016-12-13T07:45:11.000Z</published>
-    <updated>2016-12-13T13:40:31.000Z</updated>
+    <updated>2018-07-25T15:38:25.000Z</updated>
     
-    <content type="html"><![CDATA[<p>React写表单一直挺难受的，即使有react-form也很难受，不过优点太大把这点小瑕疵掩盖住了。不过今天我要记一下<code>redux-form-utils</code>的坑。<br><a id="more"></a><br>这个中间件开始用的时候很方便，可以用更少和更少重复的代码构建表单。不用给每个都加<code>onChange</code>。但是用了以后一直出bug，后来发现它的源码里只支持state里有一个formState，因为它是写死了的。<br>先看它的示例用法，我没复制写组件的那部分，那部分是无辜的：<br><figure class="highlight javascript"><figcaption><span>https://github.com/jasonslyvia/redux-form-utils</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; bindRedux &#125; <span class="keyword">from</span> <span class="string">'redux-form-utils'</span>;</div><div class="line"><span class="keyword">const</span> &#123; <span class="attr">state</span>: formState , <span class="attr">reducer</span>: formReducer, <span class="attr">actionCreators</span>: formActionCreators &#125; = bindRedux(&#123;</div><div class="line">    <span class="attr">form</span>: <span class="string">'my-form'</span>,</div><div class="line">    <span class="attr">fields</span>: [<span class="string">'name'</span>, <span class="string">'address'</span>]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// `formState` has a shape of:</span></div><div class="line"><span class="comment">//  &#123;</span></div><div class="line"><span class="comment">//      form: &#123;</span></div><div class="line"><span class="comment">//          name: &#123;</span></div><div class="line"><span class="comment">//          value: '',</span></div><div class="line"><span class="comment">//      &#125;,</span></div><div class="line"><span class="comment">//      address: &#123;</span></div><div class="line"><span class="comment">//          value: '',</span></div><div class="line"><span class="comment">//      &#125;</span></div><div class="line"><span class="comment">//  &#125;</span></div><div class="line"></div><div class="line"><span class="comment">// Compose initialState with formState</span></div><div class="line"><span class="keyword">const</span> initialState = &#123;</div><div class="line">    <span class="attr">foo</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">bar</span>: <span class="number">2</span>,</div><div class="line">    ...formState</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state = initialState, action</span>) </span>&#123;</div><div class="line">    <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">        <span class="keyword">case</span> <span class="string">'XXX_ACTION'</span>: &#123;</div><div class="line">            <span class="comment">// Do sth for your own action</span></div><div class="line">        &#125;</div><div class="line"></div><div class="line">      <span class="keyword">default</span>:</div><div class="line">          <span class="comment">// Let formReducer handle default situation instead of returning state directly</span></div><div class="line">          <span class="keyword">return</span> formReducer(state, action);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>我想有多个formState的话肯定需要把state改成类似这样<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">foo</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">bar</span>: <span class="number">2</span>,</div><div class="line">    <span class="attr">formState1</span>: formState1,</div><div class="line">    <span class="attr">formState2</span>: formState2</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>我就这么改的，然后发现onChange就没有用了，输入也不会改变value。原因看源码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">switch (action.type) &#123;</div><div class="line">    case &apos;@@form/VALUE_CHANGE&apos;: &#123;</div><div class="line">        const fieldConfig = findConfig(action.meta.field);</div><div class="line">        let newField;</div><div class="line">        if (action.meta.complex) &#123;</div><div class="line">            return &#123;</div><div class="line">                ...state,</div><div class="line">                form: &#123;</div><div class="line">                    ...state.form,</div><div class="line">                    [action.meta.field]: &#123;</div><div class="line">                        ...state.form[action.meta.field],</div><div class="line">                        ...action.payload,</div><div class="line">                    &#125;,</div><div class="line">                &#125;,</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line">        // ...</div><div class="line">    &#125;</div><div class="line">    // ...</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>这里截取了源码的reducer中的对value change这种action的响应，还有对action.meta的判断由于篇幅就没有截取全。<br>问题就在于它把返回的格式写死了，永远都是放到form了。<br>默默uninstall掉它，还是自己写吧…<br>由此可见还是自己把常用的一些轮子造好比较好</p>
+    <content type="html"><![CDATA[<p>React写表单一直挺难受的，即使有react-form也很难受，不过优点太大把这点小瑕疵掩盖住了。不过今天我要记一下<code>redux-form-utils</code>的坑。</p>
+<a id="more"></a>
+<p>这个中间件开始用的时候很方便，可以用更少和更少重复的代码构建表单。不用给每个都加<code>onChange</code>。但是用了以后一直出bug，后来发现它的源码里只支持state里有一个formState，因为它是写死了的。<br>先看它的示例用法，我没复制写组件的那部分，那部分是无辜的：<br><figure class="highlight javascript"><figcaption><span>https://github.com/jasonslyvia/redux-form-utils</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; bindRedux &#125; <span class="keyword">from</span> <span class="string">'redux-form-utils'</span>;</div><div class="line"><span class="keyword">const</span> &#123; <span class="attr">state</span>: formState , <span class="attr">reducer</span>: formReducer, <span class="attr">actionCreators</span>: formActionCreators &#125; = bindRedux(&#123;</div><div class="line">    <span class="attr">form</span>: <span class="string">'my-form'</span>,</div><div class="line">    <span class="attr">fields</span>: [<span class="string">'name'</span>, <span class="string">'address'</span>]</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// `formState` has a shape of:</span></div><div class="line"><span class="comment">//  &#123;</span></div><div class="line"><span class="comment">//      form: &#123;</span></div><div class="line"><span class="comment">//          name: &#123;</span></div><div class="line"><span class="comment">//          value: '',</span></div><div class="line"><span class="comment">//      &#125;,</span></div><div class="line"><span class="comment">//      address: &#123;</span></div><div class="line"><span class="comment">//          value: '',</span></div><div class="line"><span class="comment">//      &#125;</span></div><div class="line"><span class="comment">//  &#125;</span></div><div class="line"></div><div class="line"><span class="comment">// Compose initialState with formState</span></div><div class="line"><span class="keyword">const</span> initialState = &#123;</div><div class="line">    <span class="attr">foo</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">bar</span>: <span class="number">2</span>,</div><div class="line">    ...formState</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state = initialState, action</span>) </span>&#123;</div><div class="line">    <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">        <span class="keyword">case</span> <span class="string">'XXX_ACTION'</span>: &#123;</div><div class="line">            <span class="comment">// Do sth for your own action</span></div><div class="line">        &#125;</div><div class="line"></div><div class="line">      <span class="keyword">default</span>:</div><div class="line">          <span class="comment">// Let formReducer handle default situation instead of returning state directly</span></div><div class="line">          <span class="keyword">return</span> formReducer(state, action);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>我想有多个formState的话肯定需要把state改成类似这样<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">foo</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">bar</span>: <span class="number">2</span>,</div><div class="line">    <span class="attr">formState1</span>: formState1,</div><div class="line">    <span class="attr">formState2</span>: formState2</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>我就这么改的，然后发现onChange就没有用了，输入也不会改变value。原因看源码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">switch (action.type) &#123;</div><div class="line">    case &apos;@@form/VALUE_CHANGE&apos;: &#123;</div><div class="line">        const fieldConfig = findConfig(action.meta.field);</div><div class="line">        let newField;</div><div class="line">        if (action.meta.complex) &#123;</div><div class="line">            return &#123;</div><div class="line">                ...state,</div><div class="line">                form: &#123;</div><div class="line">                    ...state.form,</div><div class="line">                    [action.meta.field]: &#123;</div><div class="line">                        ...state.form[action.meta.field],</div><div class="line">                        ...action.payload,</div><div class="line">                    &#125;,</div><div class="line">                &#125;,</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line">        // ...</div><div class="line">    &#125;</div><div class="line">    // ...</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>这里截取了源码的reducer中的对value change这种action的响应，还有对action.meta的判断由于篇幅就没有截取全。<br>问题就在于它把返回的格式写死了，永远都是放到form了。<br>默默uninstall掉它，还是自己写吧…<br>由此可见还是自己把常用的一些轮子造好比较好</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;React写表单一直挺难受的，即使有react-form也很难受，不过优点太大把这点小瑕疵掩盖住了。不过今天我要记一下&lt;code&gt;redux-form-utils&lt;/code&gt;的坑。&lt;br&gt;
+      &lt;p&gt;React写表单一直挺难受的，即使有react-form也很难受，不过优点太大把这点小瑕疵掩盖住了。不过今天我要记一下&lt;code&gt;redux-form-utils&lt;/code&gt;的坑。&lt;/p&gt;
     
     </summary>
     
@@ -247,9 +284,10 @@
     <link href="http://hunnble.github.io/2016/12/08/AppleScript%E5%AE%9E%E7%8E%B0hexo%E6%96%B0%E5%BB%BA-%E5%8F%91%E5%B8%83%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
     <id>http://hunnble.github.io/2016/12/08/AppleScript实现hexo新建-发布工作流/</id>
     <published>2016-12-08T14:50:03.000Z</published>
-    <updated>2016-12-08T15:14:18.000Z</updated>
+    <updated>2018-07-25T15:35:30.000Z</updated>
     
-    <content type="html"><![CDATA[<p>最近在折腾hexo主题，然后发现在OSX系统中可以用AppleScript脚本实现很多快捷的工作流小应用。所以花了半个下午在别人的基础上改写了两个AppleScript脚本实现hexo的快速部署。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>最近在折腾hexo主题，然后发现在OSX系统中可以用AppleScript脚本实现很多快捷的工作流小应用。所以花了半个下午在别人的基础上改写了两个AppleScript脚本实现hexo的快速部署。</p>
+<a id="more"></a>
 <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>在没有脚本的情况下，用hexo新建一篇文章的流程是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;文章名&quot;</div><div class="line">...切换到命令行</div><div class="line">...切换到编辑器写文章</div><div class="line">...切换到命令行</div><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">gulp</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
 <p>因为我用gulp压缩要发布的html,css,js,image所以不能直接<code>hexo d -g</code>这样。<br>这样太麻烦了，为了节省自己的时间，我如上文所说的那样花了半个下午去了解了一下AppleScript并且写了两个脚本。呃呃，不知道要写多少篇文章才能把半个下午节约回来…哈哈</p>
 <h3 id="hexo-new"><a href="#hexo-new" class="headerlink" title="hexo-new"></a>hexo-new</h3><p>下面是新建hexo的脚本，执行效果是弹出dialog，填写文章名后确认，自动打开Atom编辑器编辑文章。<br><figure class="highlight applescript"><figcaption><span>hexo-new</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"Finder"</span></div><div class="line">	<span class="built_in">activate</span></div><div class="line">	<span class="built_in">display dialog</span> <span class="string">"填入文章标题"</span> default answer <span class="string">"title"</span></div><div class="line">	<span class="keyword">set</span> title <span class="keyword">to</span> <span class="built_in">text</span> returned <span class="keyword">of</span> <span class="literal">result</span> <span class="keyword">as</span> <span class="built_in">text</span></div><div class="line"><span class="keyword">end</span> <span class="keyword">tell</span></div><div class="line"><span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"Terminal"</span></div><div class="line">	<span class="built_in">activate</span></div><div class="line">	<span class="keyword">if</span> (<span class="built_in">count</span> <span class="keyword">of</span> windows) <span class="keyword">is</span> <span class="number">0</span> <span class="keyword">then</span></div><div class="line">		<span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"System Events"</span></div><div class="line">			keystroke <span class="string">"n"</span> using &#123;command down&#125;</div><div class="line">		<span class="keyword">end</span> <span class="keyword">tell</span></div><div class="line">	<span class="keyword">else</span></div><div class="line">		<span class="built_in">activate</span></div><div class="line">	<span class="keyword">end</span> <span class="keyword">if</span></div><div class="line">	<span class="keyword">set</span> win <span class="keyword">to</span> window [<span class="number">0</span>]</div><div class="line">	<span class="keyword">set</span> currentTab <span class="keyword">to</span> selected <span class="literal">tab</span> <span class="keyword">of</span> win</div><div class="line">	do <span class="keyword">script</span> <span class="string">"cd ........../hexo_blog"</span> <span class="keyword">in</span> currentTab</div><div class="line">	do <span class="keyword">script</span> <span class="string">"hexo new "</span> &amp; title <span class="keyword">in</span> currentTab</div><div class="line">	<span class="built_in">delay</span> <span class="number">1</span></div><div class="line">	do <span class="keyword">script</span> <span class="string">"open -a Atom source/_posts/"</span> &amp; title &amp; <span class="string">".md"</span> <span class="keyword">in</span> currentTab</div><div class="line">	<span class="built_in">delay</span> <span class="number">3</span></div><div class="line">	close windows</div><div class="line"><span class="keyword">end</span> <span class="keyword">tell</span></div></pre></td></tr></table></figure></p>
@@ -260,7 +298,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;最近在折腾hexo主题，然后发现在OSX系统中可以用AppleScript脚本实现很多快捷的工作流小应用。所以花了半个下午在别人的基础上改写了两个AppleScript脚本实现hexo的快速部署。&lt;br&gt;
+      &lt;p&gt;最近在折腾hexo主题，然后发现在OSX系统中可以用AppleScript脚本实现很多快捷的工作流小应用。所以花了半个下午在别人的基础上改写了两个AppleScript脚本实现hexo的快速部署。&lt;/p&gt;
     
     </summary>
     
@@ -274,9 +312,10 @@
     <link href="http://hunnble.github.io/2016/11/05/%E7%94%A8JavaScript%E5%AE%9E%E7%8E%B0%E5%87%A0%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     <id>http://hunnble.github.io/2016/11/05/用JavaScript实现几种排序算法/</id>
     <published>2016-11-05T01:49:07.000Z</published>
-    <updated>2017-01-02T02:19:30.000Z</updated>
+    <updated>2018-07-25T15:37:55.000Z</updated>
     
-    <content type="html"><![CDATA[<p>今天周六，打算花一些时间把几种排序算法使用js实现一下。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>今天周六，打算花一些时间把几种排序算法使用js实现一下。</p>
+<a id="more"></a>
 <h3 id="0-准备工作"><a href="#0-准备工作" class="headerlink" title="0.准备工作"></a>0.准备工作</h3><p>首先用mocha+chai写几行测试，然后测排序是不是正确就不用自己瞅了…以测试归并排序为例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> expect = <span class="built_in">require</span>(<span class="string">'chai'</span>).expect;</div><div class="line"><span class="keyword">var</span> sortFuncs = <span class="built_in">require</span>(<span class="string">'./sort.js'</span>);</div><div class="line"></div><div class="line">describe(<span class="string">'sort function must be right'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    describe(<span class="string">'merge sort'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> arr = arrayGenerator(<span class="number">20</span>);</div><div class="line">        it(<span class="string">'merge sort should be correct'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            expect(sortFuncs.mergeSort(arr)).to.eql(sort(arr));</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrayGenerator</span> (<span class="params">n</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">        arr.push(<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">100</span>));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">v1, v2</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> v2 - v1;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>生成随机数组成的数组，然后去断言被测试的函数的排序结果是否和js的sort返回的正确结果一致。我今天写的所有排序都是从大到小哈。</p>
 <h3 id="1-归并排序"><a href="#1-归并排序" class="headerlink" title="1.归并排序"></a>1.归并排序</h3><p>直接上代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span> (<span class="params">a1, a2</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line">    <span class="keyword">var</span> a1Cursor = <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> a2Cursor = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span> (a1Cursor &lt; a1.length &amp;&amp; a2Cursor &lt; a2.length) &#123;</div><div class="line">        <span class="keyword">if</span> (a1[a1Cursor] &gt; a2[a2Cursor]) &#123;</div><div class="line">            result.push(a1[a1Cursor]);</div><div class="line">            a1Cursor += <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            result.push(a2[a2Cursor]);</div><div class="line">            a2Cursor += <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result.concat(a1.slice(a1Cursor)).concat(a2.slice(a2Cursor));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (arr.length === <span class="number">0</span> || arr.length === <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> arr;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> n = <span class="built_in">parseInt</span>(arr.length / <span class="number">2</span>, <span class="number">10</span>);</div><div class="line">    <span class="keyword">var</span> a1 = arr.slice(<span class="number">0</span>, n);</div><div class="line">    <span class="keyword">var</span> a2 = arr.slice(n);</div><div class="line">    <span class="keyword">return</span> merge(mergeSort(a1), mergeSort(a2));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -290,7 +329,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;今天周六，打算花一些时间把几种排序算法使用js实现一下。&lt;br&gt;
+      &lt;p&gt;今天周六，打算花一些时间把几种排序算法使用js实现一下。&lt;/p&gt;
     
     </summary>
     
@@ -306,11 +345,12 @@
     <link href="http://hunnble.github.io/2016/11/02/AMD%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E5%B7%A5%E5%85%B7requirejs/"/>
     <id>http://hunnble.github.io/2016/11/02/AMD模块加载工具requirejs/</id>
     <published>2016-11-02T12:58:44.000Z</published>
-    <updated>2016-12-26T14:57:07.000Z</updated>
+    <updated>2018-07-25T15:35:36.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p>苏子曰：<br>“客亦知夫水与月乎?逝者如斯,而未尝往也；<br>盈虚者如彼,而卒莫消长也。<br>盖将自其变者而观之,而天地曾不能一瞬；<br>自其不变者而观之,则物于我皆无尽也。<br>而又何羡乎?<br>且夫天地之间,物各有主。<br>苟非吾之所有,虽一毫而莫取。<br>惟江上之清风,与山间之明月,耳得之而为声,目遇之而成色。<br>取之无禁,用之不竭。<br>是造物者之无尽藏也,而吾与子之所共适.”<br><a id="more"></a></p>
+<p>苏子曰：<br>“客亦知夫水与月乎?逝者如斯,而未尝往也；<br>盈虚者如彼,而卒莫消长也。<br>盖将自其变者而观之,而天地曾不能一瞬；<br>自其不变者而观之,则物于我皆无尽也。<br>而又何羡乎?<br>且夫天地之间,物各有主。<br>苟非吾之所有,虽一毫而莫取。<br>惟江上之清风,与山间之明月,耳得之而为声,目遇之而成色。<br>取之无禁,用之不竭。<br>是造物者之无尽藏也,而吾与子之所共适.”</p>
 </blockquote>
+<a id="more"></a>
 <p>虽然2016年大家都在用<code>webpack</code>、<code>react</code>、<code>vue</code>和<code>ng2</code>什么的，但是我还是炒一下<code>jquery</code>和<code>requirejs</code>的冷饭吧。这篇博客就说一下这个AMD模块加载方案工具<code>requirejs</code>。</p>
 <p><a href="https://github.com/amdjs/amdjs-api/wiki/AMD" target="_blank" rel="external">AMD</a>和<a href="https://github.com/seajs/seajs/issues/242" target="_blank" rel="external">CMD</a>的介绍就不放这里了。CMD的加载方案有<code>sea.js</code>，是阿里做的一套方案，我没有用过，因为<code>requirejs</code>已经够用了，更何况学<code>ES6</code>和<code>react</code>之后其实还是用<code>webpack</code>比较多。话说前端的轮子实在多的不行，写这篇博客之前一搜模块加载方案搜出来好几页。还好加载机制只有AMD/CMD/UMD/CommonJS，了解这几种思想就不用怕了，万变不离其宗嘛。</p>
 <p><code>requirejs</code>的功能是js脚本的模块化，一句话解释一下，就是用模块名称代替url来加载js脚本。使用<code>requirejs</code>后就可以把一堆<code>script</code>标签用一行代替：</p>
@@ -326,7 +366,8 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;苏子曰：&lt;br&gt;“客亦知夫水与月乎?逝者如斯,而未尝往也；&lt;br&gt;盈虚者如彼,而卒莫消长也。&lt;br&gt;盖将自其变者而观之,而天地曾不能一瞬；&lt;br&gt;自其不变者而观之,则物于我皆无尽也。&lt;br&gt;而又何羡乎?&lt;br&gt;且夫天地之间,物各有主。&lt;br&gt;苟非吾之所有,虽一毫而莫取。&lt;br&gt;惟江上之清风,与山间之明月,耳得之而为声,目遇之而成色。&lt;br&gt;取之无禁,用之不竭。&lt;br&gt;是造物者之无尽藏也,而吾与子之所共适.”&lt;br&gt;
+&lt;p&gt;苏子曰：&lt;br&gt;“客亦知夫水与月乎?逝者如斯,而未尝往也；&lt;br&gt;盈虚者如彼,而卒莫消长也。&lt;br&gt;盖将自其变者而观之,而天地曾不能一瞬；&lt;br&gt;自其不变者而观之,则物于我皆无尽也。&lt;br&gt;而又何羡乎?&lt;br&gt;且夫天地之间,物各有主。&lt;br&gt;苟非吾之所有,虽一毫而莫取。&lt;br&gt;惟江上之清风,与山间之明月,耳得之而为声,目遇之而成色。&lt;br&gt;取之无禁,用之不竭。&lt;br&gt;是造物者之无尽藏也,而吾与子之所共适.”&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -340,9 +381,10 @@
     <link href="http://hunnble.github.io/2016/08/17/%E9%97%AD%E5%8C%85/"/>
     <id>http://hunnble.github.io/2016/08/17/闭包/</id>
     <published>2016-08-17T03:52:05.000Z</published>
-    <updated>2016-12-26T14:56:27.000Z</updated>
+    <updated>2018-07-25T15:38:33.000Z</updated>
     
-    <content type="html"><![CDATA[<p>本篇文章简单介绍闭包及在JavaScript语言中的应用<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>本篇文章简单介绍闭包及在JavaScript语言中的应用</p>
+<a id="more"></a>
 <h2 id="离散数学中的闭包："><a href="#离散数学中的闭包：" class="headerlink" title="离散数学中的闭包："></a>离散数学中的闭包：</h2><p>包含指定集合的满足在某个运算下闭合的最小集合／如果集合A在某种操作作用下的结果仍然属于集合A，那么就认为集合A在这个操作下拥有闭包属性。也可以说，集合A在这个操作下是闭合的</p>
 <h2 id="程序语言中的闭包："><a href="#程序语言中的闭包：" class="headerlink" title="程序语言中的闭包："></a>程序语言中的闭包：</h2><p>又叫词法闭包，或者函数闭包，指的是程序语言中的特性，具备该特性的程序语言能将函数和函数所处的环境当做整体使用。有时也把这个整体叫做闭包。</p>
 <p><em>二者是不同的，这里说的是程序语言中的JavaScript中的闭包。JavaScript中的闭包指持有外部环境变量的函数。</em></p>
@@ -365,7 +407,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;本篇文章简单介绍闭包及在JavaScript语言中的应用&lt;br&gt;
+      &lt;p&gt;本篇文章简单介绍闭包及在JavaScript语言中的应用&lt;/p&gt;
     
     </summary>
     
@@ -414,9 +456,10 @@
     <link href="http://hunnble.github.io/2016/08/01/React-redux%E5%AE%9E%E8%B7%B5/"/>
     <id>http://hunnble.github.io/2016/08/01/React-redux实践/</id>
     <published>2016-08-01T09:16:56.000Z</published>
-    <updated>2016-12-26T15:00:39.000Z</updated>
+    <updated>2018-07-25T15:36:58.000Z</updated>
     
-    <content type="html"><![CDATA[<p>对于复杂的单页面应用，状态（state）管理非常重要。state 可能包括：服务端的响应数据、本地对响应数据的缓存、本地创建的数据（比如，表单数据）以及一些 UI 的状态信息（比如，路由、选中的 tab、是否显示下拉列表、页码控制等等）。如果 state 变化不可预测，就会难于调试（state 不易重现，很难复现一些 bug）和不易于扩展（比如，优化更新渲染、服务端渲染、路由切换时获取数据等等）。<br>redux解决了state的问题<a id="more"></a>，它的特点沿袭了flux，主要有：</p>
+    <content type="html"><![CDATA[<a id="more"></a>
+<p>对于复杂的单页面应用，状态（state）管理非常重要。state 可能包括：服务端的响应数据、本地对响应数据的缓存、本地创建的数据（比如，表单数据）以及一些 UI 的状态信息（比如，路由、选中的 tab、是否显示下拉列表、页码控制等等）。如果 state 变化不可预测，就会难于调试（state 不易重现，很难复现一些 bug）和不易于扩展（比如，优化更新渲染、服务端渲染、路由切换时获取数据等等）。<br>redux解决了state的问题，它的特点沿袭了flux，主要有：</p>
 <ul>
 <li>state 以单一对象存储在 store 对象中</li>
 <li>state 只读</li>
@@ -442,7 +485,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;对于复杂的单页面应用，状态（state）管理非常重要。state 可能包括：服务端的响应数据、本地对响应数据的缓存、本地创建的数据（比如，表单数据）以及一些 UI 的状态信息（比如，路由、选中的 tab、是否显示下拉列表、页码控制等等）。如果 state 变化不可预测，就会难于调试（state 不易重现，很难复现一些 bug）和不易于扩展（比如，优化更新渲染、服务端渲染、路由切换时获取数据等等）。&lt;br&gt;redux解决了state的问题
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;对于复杂的单页面应用，状态（state）管理非常重要。state 可能包括：服务端的响应数据、本地对响应数据的缓存、本地创建的数据（比如，表单数据）以及一些 UI 的状态信息（比如，路由、选中的 tab、是否显示下拉列表、页码控制等等）。
     
     </summary>
     
@@ -458,9 +502,10 @@
     <link href="http://hunnble.github.io/2016/07/30/Web-Audio-API/"/>
     <id>http://hunnble.github.io/2016/07/30/Web-Audio-API/</id>
     <published>2016-07-30T13:11:23.000Z</published>
-    <updated>2016-12-26T15:00:44.000Z</updated>
+    <updated>2018-07-25T15:35:58.000Z</updated>
     
-    <content type="html"><![CDATA[<p>今天什么都没干，就看了一个Web Audio的API然后做了个音频可视化的小demo，呃呃，地址在这里。<br><del><a href="http://hunnble.github.io/JavaScript_demo/web-audio/index.html">demo地址(我把音乐删掉了所以demo看不了了)</a></del><br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>今天什么都没干，就看了一个Web Audio的API然后做了个音频可视化的小demo，呃呃，地址在这里。<br><del><a href="http://hunnble.github.io/JavaScript_demo/web-audio/index.html">demo地址(我把音乐删掉了所以demo看不了了)</a></del></p>
+<a id="more"></a>
 <p>我早就想玩音频可视化了但是以前用html5的audio标签就没有解析音频的接口。然后昨天才知道有Web Audio这个东西。然后我发现audio标签的功能是这个API的子集，这个API跟多媒体啊信号啊有关的实现的属性和方法很多。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API" target="_blank" rel="external">Web Audio MDN文档</a><br>属性和方法太多了，我今天只掌握了用到的几个，而它们都是基于AudioContext的:</p>
 <blockquote>
 <p>AudioContext接口代表由音频模块构成的音频处理图。音频环境控制其所包含节点的创建和音频处理、解码的执行。进行任何处理前你必需创建一个音频环境，一切操作都在这个环境里进行。</p>
@@ -491,7 +536,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;今天什么都没干，就看了一个Web Audio的API然后做了个音频可视化的小demo，呃呃，地址在这里。&lt;br&gt;&lt;del&gt;&lt;a href=&quot;http://hunnble.github.io/JavaScript_demo/web-audio/index.html&quot;&gt;demo地址(我把音乐删掉了所以demo看不了了)&lt;/a&gt;&lt;/del&gt;&lt;br&gt;
+      &lt;p&gt;今天什么都没干，就看了一个Web Audio的API然后做了个音频可视化的小demo，呃呃，地址在这里。&lt;br&gt;&lt;del&gt;&lt;a href=&quot;http://hunnble.github.io/JavaScript_demo/web-audio/index.html&quot;&gt;demo地址(我把音乐删掉了所以demo看不了了)&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
     
     </summary>
     
@@ -505,9 +550,11 @@
     <link href="http://hunnble.github.io/2016/07/21/%E8%BA%AB%E4%BB%BD%E8%AF%81%E5%8F%B7%E5%8C%B9%E9%85%8D%E6%AD%A3%E5%88%99/"/>
     <id>http://hunnble.github.io/2016/07/21/身份证号匹配正则/</id>
     <published>2016-07-20T19:17:47.000Z</published>
-    <updated>2016-12-26T14:56:45.000Z</updated>
+    <updated>2018-07-25T15:38:29.000Z</updated>
     
-    <content type="html"><![CDATA[<p>今天继续编写我的正则库cr.js，长了不少知识，比如手机号的格式啊身份证号的格式啊什么的。身份证号我写的是二代身份证，也就是18位的那个。<br><a id="more"></a><br>18位的身份证分成三部分：</p>
+    <content type="html"><![CDATA[<p>今天继续编写我的正则库cr.js，长了不少知识，比如手机号的格式啊身份证号的格式啊什么的。身份证号我写的是二代身份证，也就是18位的那个。</p>
+<a id="more"></a>
+<p>18位的身份证分成三部分：</p>
 <h4 id="1-地区码"><a href="#1-地区码" class="headerlink" title="1.地区码"></a>1.地区码</h4><p>前六位是地区码，跟注册身份证的地点（一般就是出生地）关联，正则表达式就很好写，是这个：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'\\d&#123;6&#125;'</span></div></pre></td></tr></table></figure></p>
 <h4 id="2-出生日期"><a href="#2-出生日期" class="headerlink" title="2.出生日期"></a>2.出生日期</h4><p>中间8位是出生年月日，YYYYMMDD的格式。我本来不打算把日期匹配加到库里了因为用正则匹配这种纯数字的日期还不如用js的内建函数方便。不过既然现在需要用了，也不是不会，而且身份证的年份我只取了19和20开始的，也算降低难度了（也没怎么降啊其实，但是还是自我安慰一下啊哈哈哈）<br>由于2月份的特殊性，所以要判断闰年，判断闰年分能被4整除不能被100整除的情况和能被400整除的情况。<br>先从最普遍的情况开始：每个月都有1号到28号<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'(?:(19[0-9]&#123;2&#125;|200[0-9]|201[0-6])(?:(?:(?:0[1-9]|1[0-2])(?:0[1-9]|1[0-9]|2[0-8]))'</span></div></pre></td></tr></table></figure></p>
 <p>你会看到我加了很多?:，这是用非捕获组来优化性能，我也是第一次这么用。<br>下面又是两种比较好写的情况：除二月之外的其它月份有29号和30号，13578十腊有31号<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'(?:(?:0[13-9]|1[0-2])(?:29|30))|(?:0[13578]|1[02])31))'</span></div></pre></td></tr></table></figure></p>
@@ -519,7 +566,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;今天继续编写我的正则库cr.js，长了不少知识，比如手机号的格式啊身份证号的格式啊什么的。身份证号我写的是二代身份证，也就是18位的那个。&lt;br&gt;
+      &lt;p&gt;今天继续编写我的正则库cr.js，长了不少知识，比如手机号的格式啊身份证号的格式啊什么的。身份证号我写的是二代身份证，也就是18位的那个。&lt;/p&gt;
     
     </summary>
     
@@ -535,9 +582,10 @@
     <link href="http://hunnble.github.io/2016/07/11/%E5%87%A0%E7%A7%8D%E8%B7%A8%E5%9F%9F%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>http://hunnble.github.io/2016/07/11/几种跨域的方法/</id>
     <published>2016-07-11T13:49:20.000Z</published>
-    <updated>2016-12-26T14:56:39.000Z</updated>
+    <updated>2018-07-25T15:35:48.000Z</updated>
     
-    <content type="html"><![CDATA[<p>谈到前端肯定少不了Ajax,谈到Ajax肯定少不了跨域。诗兴大发的我很想说一句，哦，跨域，你就像毒蛇一样，美丽而又危险。<br>今天写小玩具的时候又遇到跨域问题，索性先粗略总结一下跨域的一些方法。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>谈到前端肯定少不了Ajax,谈到Ajax肯定少不了跨域。诗兴大发的我很想说一句，哦，跨域，你就像毒蛇一样，美丽而又危险。<br>今天写小玩具的时候又遇到跨域问题，索性先粗略总结一下跨域的一些方法。</p>
+<a id="more"></a>
 <h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>我刚开始学Ajax的时候要写demo练习嘛，所以就用世界上最好的语言php在后端echo一些数据。比如这样的：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">header(<span class="string">"Access-Control-Allow-Origin:./js/create_data.js"</span>);</div><div class="line">$test_obj1 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">2</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试一, data类型为数组"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading1"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">Array</span>(<span class="string">"aaaaaaaaaaaaa"</span>, <span class="string">"bbbbbbbbbbbbbb"</span>, <span class="string">"ccccccccccc"</span>)</div><div class="line">);</div><div class="line">$test_obj2 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">4</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试二, data类型为键值对(对象)"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading2"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">array</span>(</div><div class="line">        <span class="string">"aaa"</span>=&gt; <span class="string">"aaaaaa"</span>,</div><div class="line">        <span class="string">"bbb"</span>=&gt; <span class="string">"bbbbbbbbb"</span></div><div class="line">    )</div><div class="line">);</div><div class="line">$test_obj3 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">5</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试三, data类型为字符串(暂时不进行trim和过滤特殊字符操作)"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading3"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="string">"cccccccc！！！"</span></div><div class="line">);</div><div class="line">$test_obj4 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">5</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试四, data类型为含有对象的数组"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading4"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">Array</span>(<span class="string">"data1"</span>, <span class="keyword">array</span>(<span class="string">"data2"</span>=&gt; <span class="string">"data2value"</span>), <span class="string">"data3"</span>)</div><div class="line">);</div><div class="line">$test_obj5 = <span class="keyword">array</span> (</div><div class="line">    <span class="string">'rank'</span>=&gt; <span class="number">5</span>,</div><div class="line">    <span class="string">'title'</span>=&gt; <span class="string">"测试五 data类型为含有数组的对象"</span>,</div><div class="line">    <span class="string">'describe'</span>=&gt; <span class="string">"subheading5"</span>,</div><div class="line">    <span class="string">'data'</span>=&gt; <span class="keyword">array</span>(</div><div class="line">        <span class="string">'data1'</span>=&gt; <span class="string">"data1value"</span>,</div><div class="line">        <span class="string">'data2'</span>=&gt; <span class="keyword">Array</span>(<span class="string">"data2"</span>, <span class="string">"data3"</span>)</div><div class="line">    )</div><div class="line">);</div><div class="line"></div><div class="line"><span class="keyword">echo</span> json_encode(<span class="keyword">Array</span>($test_obj1, $test_obj2, $test_obj3, $test_obj4, $test_obj5));</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
 <p>第一次写的时候没有加第二行的那个添加http头的语句，在运行的时候就报错，因为我当时测试当然是在本地，本地不同文件夹不在同一域内，这就形成了跨域。<br>而聪明的我机智地找到了破解之法，那就是给php手动设置Access-Control-Allow-Origin，允许我前端的文件去访问，再次在前端get，成功得到数据。这种方法叫做CORS（跨域资源共享，Cross-Origin Resource Sharing），这种方法比较方便，浏览器的兼容性也不错，被广泛运用在移动端。<br>但是不能满足于此，比如今天我遇到的问题是要用豆瓣的读书API，总不能给豆瓣API小组打电话说：“嗨，给我加一行代码吧我跨域了解决不了了在线等挺急的。”吧。所以说打铁还需自身硬（这句话怎么怪怪的），一定有别的方法可以（在一定程度上）直接解决跨域问题。</p>
 <h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP吧，这个方法很强大滴。<br>今天想玩玩豆瓣API，给自己正在用express做的一个书单（叫图书管理系统总是有种浓浓的大作业风）应用加点内容，然后去<a href="https://developers.douban.com/wiki/?title=book_v2" target="_blank" rel="external">豆瓣API文档</a>看了看就开始写了。为了简洁还是用上了jQuery，今天试的是根据图书名来获取图书信息。<br>路由：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">router.get(<span class="string">'/book/:name/:author'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  book.get(req.params.name, req.params.author, <span class="function"><span class="keyword">function</span> (<span class="params">err, _book</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!_book) &#123;</div><div class="line">      req.flash(<span class="string">'error'</span>, <span class="string">'获取书籍信息失败'</span>);</div><div class="line">      <span class="keyword">return</span> res.redirect(<span class="string">'/'</span>);</div><div class="line">    &#125;</div><div class="line">    res.render(<span class="string">'book'</span>, &#123;</div><div class="line">      <span class="attr">title</span>: _book.name,</div><div class="line">      <span class="attr">user</span>: req.session.user,</div><div class="line">      <span class="attr">success</span>: req.flash(<span class="string">'success'</span>).toString(),</div><div class="line">      <span class="attr">error</span>: req.flash(<span class="string">'error'</span>).toString()</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
@@ -552,7 +600,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;谈到前端肯定少不了Ajax,谈到Ajax肯定少不了跨域。诗兴大发的我很想说一句，哦，跨域，你就像毒蛇一样，美丽而又危险。&lt;br&gt;今天写小玩具的时候又遇到跨域问题，索性先粗略总结一下跨域的一些方法。&lt;br&gt;
+      &lt;p&gt;谈到前端肯定少不了Ajax,谈到Ajax肯定少不了跨域。诗兴大发的我很想说一句，哦，跨域，你就像毒蛇一样，美丽而又危险。&lt;br&gt;今天写小玩具的时候又遇到跨域问题，索性先粗略总结一下跨域的一些方法。&lt;/p&gt;
     
     </summary>
     
@@ -566,9 +614,10 @@
     <link href="http://hunnble.github.io/2016/07/05/ES6-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95/"/>
     <id>http://hunnble.github.io/2016/07/05/ES6-函数的扩展/</id>
     <published>2016-07-05T02:41:30.000Z</published>
-    <updated>2016-12-26T14:57:34.000Z</updated>
+    <updated>2018-07-25T15:34:55.000Z</updated>
     
-    <content type="html"><![CDATA[<p>js中函数是“一等公民”，ES6标准对函数做了一些扩展使得熟悉其它语言的程序员可以更快地上手，而js程序员也会发现函数更强大也更便于编写了。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>js中函数是“一等公民”，ES6标准对函数做了一些扩展使得熟悉其它语言的程序员可以更快地上手，而js程序员也会发现函数更强大也更便于编写了。</p>
+<a id="more"></a>
 <h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><p>很多语言都支持函数有默认值，比如<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span> <span class="params">(x = <span class="number">10</span>)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
 <p>ES6也引入了函数默认参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">x = <span class="number">50</span>, y</span>) </span>&#123;</div><div class="line">    <span class="comment">// x: 50, y: undefined</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>给参数指定默认值后，该参数及之后的参数不会被函数的length计数（rest参数也不会计数）。且有默认值的参数都不是尾参数，无法跳过，在调用函数的时候只能写undefined跳过。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">x, y = <span class="number">50</span>, z</span>) </span>&#123;&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span> (<span class="params">...args</span>) </span>&#123;&#125;</div><div class="line">foo.length <span class="comment">// 1 =&gt; 只有x被计入length</span></div><div class="line">bar.length <span class="comment">// 0</span></div></pre></td></tr></table></figure></p>
@@ -592,7 +641,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;js中函数是“一等公民”，ES6标准对函数做了一些扩展使得熟悉其它语言的程序员可以更快地上手，而js程序员也会发现函数更强大也更便于编写了。&lt;br&gt;
+      &lt;p&gt;js中函数是“一等公民”，ES6标准对函数做了一些扩展使得熟悉其它语言的程序员可以更快地上手，而js程序员也会发现函数更强大也更便于编写了。&lt;/p&gt;
     
     </summary>
     
@@ -610,9 +659,10 @@
     <link href="http://hunnble.github.io/2016/06/30/ES6-%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95/"/>
     <id>http://hunnble.github.io/2016/06/30/ES6-数组的扩展/</id>
     <published>2016-06-30T02:38:03.000Z</published>
-    <updated>2016-12-26T14:57:42.000Z</updated>
+    <updated>2018-07-25T15:34:34.000Z</updated>
     
-    <content type="html"><![CDATA[<p>ES6对Array的扩展<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>ES6对Array的扩展</p>
+<a id="more"></a>
 <h3 id="from方法"><a href="#from方法" class="headerlink" title="from方法"></a>from方法</h3><p>Array.from方法用于将类似数组的对象（array-like object）和可遍历对象（iterable）转化为真正的数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arrayLike = &#123;</div><div class="line">    <span class="string">'0'</span>: <span class="string">'a'</span>,</div><div class="line">    <span class="string">'1'</span>: <span class="string">'o'</span>,</div><div class="line">    <span class="string">'2'</span>: <span class="string">'e'</span>,</div><div class="line">    <span class="attr">length</span>: <span class="number">3</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">let</span> arrES5 = [].slice.call(arrayLike); <span class="comment">// ['a', 'o', 'e']</span></div><div class="line"><span class="keyword">let</span> arrES6 = arrayLike.from(arrayLike); <span class="comment">// ['a', 'o', 'e']</span></div><div class="line"><span class="keyword">let</span> arr1 = <span class="built_in">Array</span>.from(<span class="string">'aoe'</span>); <span class="comment">// ['a', 'o', 'e']</span></div></pre></td></tr></table></figure></p>
 <p>实际应用中，常见的类似数组的对象是DOM操作返回的NodeList集合以及函数内部的arguments对象，Array.form可以将它们转换成真正的数组。<br>Array.from的用处在于，将各种值转为数组后，可以有效使用各种数组方法来处理。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 返回参数类型组成的数组</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">typesOf</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>, value =&gt; <span class="keyword">typeof</span> value);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>另一个应用是将字符串转为数组来求长度，绕过了Unicode的\uFFFF限制<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">countSymbols</span> (<span class="params">string</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(string).length;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -642,41 +692,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;ES6对Array的扩展&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
-    
-      <category term="ES6标准入门学习笔记" scheme="http://hunnble.github.io/tag/ES6%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6-数值的扩展</title>
-    <link href="http://hunnble.github.io/2016/06/28/ES6-%E6%95%B0%E5%80%BC%E7%9A%84%E6%89%A9%E5%B1%95/"/>
-    <id>http://hunnble.github.io/2016/06/28/ES6-数值的扩展/</id>
-    <published>2016-06-28T15:44:55.000Z</published>
-    <updated>2016-12-26T14:57:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>JS的数值设计的不好，嗯，但是ES6说，还可以抢救一下…<br><a id="more"></a></p>
-<h3 id="二进制和八进制和十六进制…"><a href="#二进制和八进制和十六进制…" class="headerlink" title="二进制和八进制和十六进制…"></a>二进制和八进制和十六进制…</h3><p>从ES5开始，在严格模式中，八进制数值就不再允许使用前缀0表示，ES6进一步明确，要使用前缀0o表示。同理，二进制使用0B前缀。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">0b11</span> === <span class="number">3</span>); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="number">0o11</span> === <span class="number">9</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
-<p>而16进制依然是0x前缀。<br>要将8进制和16进制的数值转化成10进制可以使用Number:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Number</span>(<span class="number">0o11</span>) <span class="comment">// 9</span></div><div class="line"><span class="built_in">Number</span>(<span class="number">0x11</span>) <span class="comment">// 17</span></div></pre></td></tr></table></figure></p>
-<h3 id="判断Infinite-NaN"><a href="#判断Infinite-NaN" class="headerlink" title="判断Infinite,NaN"></a>判断Infinite,NaN</h3><p>ES6对Number对象提供了isFinite和isNaN两个方法来检查Infinite和NaN两个特殊值，又算是填上了一个坑。<br>这两个方法和原来的同名全局方法的区别在于：传统方法将非数值一律转为数值再判断，而新方法对非数值一律返回false。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="string">'100'</span>)); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isFinite(<span class="string">'100'</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
-<h3 id="Number-isInteger"><a href="#Number-isInteger" class="headerlink" title="Number.isInteger"></a>Number.isInteger</h3><p>判断一个数是否是整数</p>
-<h3 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h3><p>一个很小的数，是常量。值是2.220446049250313e-16。<br>我们知道JS存数是按浮点型地存，所以数值运算常常有误差，ES6规定吗，误差比EPSILON小就认为得到了正确结果。</p>
-<h3 id="安全整数"><a href="#安全整数" class="headerlink" title="安全整数"></a>安全整数</h3><p>话说,坑好多呀…<br>JS能精确表示的正数范围是-2^[53]—2^[53]，超过就无法精确表示了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">53</span>)); <span class="comment">// 9007199254740992</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">53</span>) + <span class="number">1</span>); <span class="comment">// 还是9007199254740992</span></div></pre></td></tr></table></figure></p>
-<p>Number引入了MAX_SAFE_INTEGER和MIN_SAFE_INTEGER来表示上面说的两个临界值，以及isSafeInteger方法来判断数是否在这个闭区间内。</p>
-<h3 id="Math对象扩展"><a href="#Math对象扩展" class="headerlink" title="Math对象扩展"></a>Math对象扩展</h3><p>Math对象上都是些数学相关方法，ES6新增了16个，我不打算记录下来了，因为由于水平所限，实际应用中还没有遇到过需要这些方法的情况。</p>
-<h3 id="指数运算符"><a href="#指数运算符" class="headerlink" title="指数运算符**"></a>指数运算符**</h3><p>刚才又有用Math.pow,现在来说一下**这个运算符，它叫指数运算符，就是来算幂指数的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">2</span> ** <span class="number">3</span>); <span class="comment">// 8</span></div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;JS的数值设计的不好，嗯，但是ES6说，还可以抢救一下…&lt;br&gt;
+      &lt;p&gt;ES6对Array的扩展&lt;/p&gt;
     
     </summary>
     
