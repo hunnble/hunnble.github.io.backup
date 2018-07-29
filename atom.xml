@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hunnble.github.io/"/>
-  <updated>2018-07-25T15:38:36.000Z</updated>
+  <updated>2018-07-29T15:20:46.000Z</updated>
   <id>http://hunnble.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我又来定小目标了之18年8月到年底目标</title>
+    <link href="http://hunnble.github.io/2018/07/29/%E6%88%91%E5%8F%88%E6%9D%A5%E5%AE%9A%E5%B0%8F%E7%9B%AE%E6%A0%87%E4%BA%86%E4%B9%8B18%E5%B9%B48%E6%9C%88%E5%88%B0%E5%B9%B4%E5%BA%95%E7%9B%AE%E6%A0%87/"/>
+    <id>http://hunnble.github.io/2018/07/29/我又来定小目标了之18年8月到年底目标/</id>
+    <published>2018-07-29T15:13:37.000Z</published>
+    <updated>2018-07-29T15:20:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>虽然我经常定好多目标然后只能完成很小的一部分，但是梦想还是要有的，不然和贝拉米有什么区别对吧</p>
+<a id="more"></a>
+<p>年底之前玩好桌面足球、入门图形学、做个能用的产品出来，这个产品现在还没什么点子，不知道是做个unity的超级小的游戏在自己ipad上玩还是去学flutter然后做个什么东西出来，不过不管做不做flutter是肯定要去看一下的，呃呃。<br>工作方面尽量能多接触一下小团队在做的各个面吧，起码在入职时候说自己感兴趣的那个方向做出个东西出来。<br>学习方面想把霍乱时期的爱情和精神分析引论看完，然后了解一下经济学常识，不然都不知道怎么理财了。<br>养猫养狗什么的就先不想了😂</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虽然我经常定好多目标然后只能完成很小的一部分，但是梦想还是要有的，不然和贝拉米有什么区别对吧&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="啥也不是" scheme="http://hunnble.github.io/tag/%E5%95%A5%E4%B9%9F%E4%B8%8D%E6%98%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>首屏优化部分知识点</title>
@@ -642,57 +665,6 @@
     <summary type="html">
     
       &lt;p&gt;js中函数是“一等公民”，ES6标准对函数做了一些扩展使得熟悉其它语言的程序员可以更快地上手，而js程序员也会发现函数更强大也更便于编写了。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://hunnble.github.io/tag/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="es6" scheme="http://hunnble.github.io/tag/es6/"/>
-    
-      <category term="ES6标准入门学习笔记" scheme="http://hunnble.github.io/tag/ES6%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6-数组的扩展</title>
-    <link href="http://hunnble.github.io/2016/06/30/ES6-%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95/"/>
-    <id>http://hunnble.github.io/2016/06/30/ES6-数组的扩展/</id>
-    <published>2016-06-30T02:38:03.000Z</published>
-    <updated>2018-07-25T15:34:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>ES6对Array的扩展</p>
-<a id="more"></a>
-<h3 id="from方法"><a href="#from方法" class="headerlink" title="from方法"></a>from方法</h3><p>Array.from方法用于将类似数组的对象（array-like object）和可遍历对象（iterable）转化为真正的数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arrayLike = &#123;</div><div class="line">    <span class="string">'0'</span>: <span class="string">'a'</span>,</div><div class="line">    <span class="string">'1'</span>: <span class="string">'o'</span>,</div><div class="line">    <span class="string">'2'</span>: <span class="string">'e'</span>,</div><div class="line">    <span class="attr">length</span>: <span class="number">3</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">let</span> arrES5 = [].slice.call(arrayLike); <span class="comment">// ['a', 'o', 'e']</span></div><div class="line"><span class="keyword">let</span> arrES6 = arrayLike.from(arrayLike); <span class="comment">// ['a', 'o', 'e']</span></div><div class="line"><span class="keyword">let</span> arr1 = <span class="built_in">Array</span>.from(<span class="string">'aoe'</span>); <span class="comment">// ['a', 'o', 'e']</span></div></pre></td></tr></table></figure></p>
-<p>实际应用中，常见的类似数组的对象是DOM操作返回的NodeList集合以及函数内部的arguments对象，Array.form可以将它们转换成真正的数组。<br>Array.from的用处在于，将各种值转为数组后，可以有效使用各种数组方法来处理。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 返回参数类型组成的数组</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">typesOf</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>, value =&gt; <span class="keyword">typeof</span> value);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>另一个应用是将字符串转为数组来求长度，绕过了Unicode的\uFFFF限制<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">countSymbols</span> (<span class="params">string</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(string).length;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="of方法"><a href="#of方法" class="headerlink" title="of方法"></a>of方法</h3><p>Array.of方法将一组值转换为数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.of(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>) <span class="comment">// [2, 3, 4]</span></div></pre></td></tr></table></figure></p>
-<h3 id="copyWithin方法"><a href="#copyWithin方法" class="headerlink" title="copyWithin方法"></a>copyWithin方法</h3><p>Array.prototype.copyWithin将当前数组内部指定位置的成员复制到其它位置（会覆盖原有成员），然后返回当前数组。它接受三个参数：target, start = 0, end = this.length</p>
-<ul>
-<li>target（必需）： 从这个位置开始替换数据。</li>
-<li>start：从这个位置开始读取数据，负值表示倒数</li>
-<li>end：到这个位置停止读取数据。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">0</span>, <span class="number">-3</span>) <span class="comment">// [4,5,3,4,5]</span></div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">0</span>, <span class="number">-3</span>) <span class="comment">// [3,4,5,4,5]</span></div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">0</span>, <span class="number">3</span>, <span class="number">4</span>) <span class="comment">// [4,2,3,4,5]</span></div></pre></td></tr></table></figure>
-<h3 id="find-findIndex方法"><a href="#find-findIndex方法" class="headerlink" title="find,findIndex方法"></a>find,findIndex方法</h3><p>find方法用于找出数组中第一个符合条件的数据。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].find(<span class="function"><span class="keyword">function</span> (<span class="params">value, index, arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> value &gt; <span class="number">3</span>;</div><div class="line">&#125;) <span class="comment">// 4</span></div></pre></td></tr></table></figure></p>
-<p>findIndex则是返回索引值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].findIndex(<span class="function"><span class="keyword">function</span> (<span class="params">value, index, arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> value &gt; <span class="number">3</span>;</div><div class="line">&#125;) <span class="comment">// 3</span></div></pre></td></tr></table></figure></p>
-<h3 id="fill方法"><a href="#fill方法" class="headerlink" title="fill方法"></a>fill方法</h3><p>fill方法使用给定值填充数组，第二个参数指定填充的起始位置，第三个参数指定填充的结束位置。</p>
-<h3 id="entries-keys-values方法"><a href="#entries-keys-values方法" class="headerlink" title="entries,keys,values方法"></a>entries,keys,values方法</h3><p>这三个方法都用于遍历数组，返回值都是遍历器对象，区别是：entries是对键值对的遍历，keys是对键名的遍历，而values是对键值的遍历。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [index, elem] <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'o'</span>, <span class="string">'e'</span>].entries()) &#123;</div><div class="line">    <span class="built_in">console</span>.log(index + <span class="string">':'</span> + elem);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 0:a</span></div><div class="line"><span class="comment">// 1:o</span></div><div class="line"><span class="comment">// 2:e</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'o'</span>, <span class="string">'e'</span>].keys()) &#123;</div><div class="line">    <span class="built_in">console</span>.log(index);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 0</span></div><div class="line"><span class="comment">// 1</span></div><div class="line"><span class="comment">// 2</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> elem <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'o'</span>, <span class="string">'e'</span>].values()) &#123;</div><div class="line">    <span class="built_in">console</span>.log(elem);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 'a'</span></div><div class="line"><span class="comment">// 'o'</span></div><div class="line"><span class="comment">// 'e'</span></div></pre></td></tr></table></figure></p>
-<h3 id="includes方法"><a href="#includes方法" class="headerlink" title="includes方法"></a>includes方法</h3><p>Array.prototype.includes方法返回一个布尔值，表示数组是否包含给定值。第二个参数表示搜索的起始位置。</p>
-<h3 id="对数组空位的处理"><a href="#对数组空位的处理" class="headerlink" title="对数组空位的处理"></a>对数组空位的处理</h3><p>书上说，数组各方法对数组空位的处理是有区别的，不过大部分都是忽略二字。</p>
-<ul>
-<li>forEach(),filter(),every()和some():跳过空位</li>
-<li>map():跳过，但是保留值</li>
-<li>join()和toString():将空位当做undefined处理</li>
-<li>from():将空位转为undefined</li>
-<li>copyWithin():不忽略空位，也会一视同仁地复制</li>
-<li>fill():不跳过空位，空位也会被填充</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;ES6对Array的扩展&lt;/p&gt;
     
     </summary>
     
