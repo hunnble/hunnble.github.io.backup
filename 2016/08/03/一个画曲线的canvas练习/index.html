@@ -68,7 +68,9 @@
         <div class="row">
             <!-- Post Main Content -->
             <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>我在github上follow了好多很厉害的前端er，有一位有个好多star的repo里面就是各种canvas的小练习，canvas玩好了还是有好处的，毕竟前端要是每天光操作操作dom甚至切切页面是没什么长进的，甚至会被写CRUD的童鞋嘲讽。于是我今天又什么都没做，就写了一个画贝塞尔曲线的练习。<a id="more"></a><br>今天上午起来以后微信里有个大哥发朋友圈说替别人招前端，要先做个投名状，就是点几下就生成贝塞尔曲线的，当然要能拽着点到处动，类似于sketch软件里的那个小工具，我虽然不去应聘，但是还是写了。<br>写到这里我又很难过，因为我没有用过sketch，所以需求都是根据自己的感觉来的，也不知道要的交互效果和功能是不是这样。没有用过sketch的原因是没有macbook用，所以我要从现在开始攒钱买macbook，但是又没有钱赚，所以估计攒够的时候也就是以后工作以后了，只希望我现在的电脑能再给力点坚持两年，以及坏掉的linux系统我过段时间能修好或者重装好。<br>也许是因为今天看了张鑫旭的博客，中了毒，所以我的废话格外的多，还是要开始说这个练习了。</p>
+                <p>我在github上follow了好多很厉害的前端er，有一位有个好多star的repo里面就是各种canvas的小练习，canvas玩好了还是有好处的，毕竟前端要是每天光操作操作dom甚至切切页面是没什么长进的，甚至会被写CRUD的童鞋嘲讽。于是我今天又什么都没做，就写了一个画贝塞尔曲线的练习。</p>
+<a id="more"></a>
+<p>今天上午起来以后微信里有个大哥发朋友圈说替别人招前端，要先做个投名状，就是点几下就生成贝塞尔曲线的，当然要能拽着点到处动，类似于sketch软件里的那个小工具，我虽然不去应聘，但是还是写了。<br>写到这里我又很难过，因为我没有用过sketch，所以需求都是根据自己的感觉来的，也不知道要的交互效果和功能是不是这样。没有用过sketch的原因是没有macbook用，所以我要从现在开始攒钱买macbook，但是又没有钱赚，所以估计攒够的时候也就是以后工作以后了，只希望我现在的电脑能再给力点坚持两年，以及坏掉的linux系统我过段时间能修好或者重装好。<br>也许是因为今天看了张鑫旭的博客，中了毒，所以我的废话格外的多，还是要开始说这个练习了。</p>
 <h3 id="贝塞尔曲线是什么"><a href="#贝塞尔曲线是什么" class="headerlink" title="贝塞尔曲线是什么"></a>贝塞尔曲线是什么</h3><p>有时候在写css3的transition之后在开发者工具中看transition-timing-function这个属性，也就是什么ease-in,ease-out等等的时候，会发现是有不同形状的曲线从(0,0)坐标到(1,1)坐标的，代表不同的运动缓急，这个曲线就是贝塞尔曲线。它的特点是用少数的点就能产生复杂的平滑曲线。<br><img src="http://htmljs.b0.upaiyun.com/uploads/1415845715278-bezier-quadratic-animation.gif" alt="一次贝塞尔曲线"><br>它在计算机图形学领域的应用更加广泛，按下不表，贝塞尔曲线的更多内容可以看<a href="http://www.html-js.com/article/1628" target="_blank" rel="external">这里</a></p>
 <h3 id="canvas如何画贝塞尔曲线"><a href="#canvas如何画贝塞尔曲线" class="headerlink" title="canvas如何画贝塞尔曲线"></a>canvas如何画贝塞尔曲线</h3><p>我们知道，有n个控制点的贝塞尔曲线称为n次贝塞尔曲线，canvas中提供了<code>quadraticCurveTo</code>和<code>bezierCurveTo</code>函数来画一次和二次贝塞尔曲线。</p>
 <pre><code>quadraticCurveTo(x1, y1, x2, y2)
